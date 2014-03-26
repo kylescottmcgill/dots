@@ -1,0 +1,15 @@
+! General -----------------------------------------
+xterm*termName: xterm-256color
+xterm*locale: true
+
+Xft.autohint: true
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+Xft.dpi: 96
+
+#include "projects/base16-xresources-master/base16-monokai.dark.xresources"
+
+! vim: et sw=2 syn=xdefaults

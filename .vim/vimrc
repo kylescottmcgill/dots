@@ -1,0 +1,93 @@
+set nocompatible              " be iMproved
+set shell=/bin/bash
+
+" General
+
+set number              " Show line numbers
+set linebreak           " Break lines at word (requires Wrap lines)
+set showbreak=+++       " Wrap-broken line prefix
+set textwidth=100       " Line wrap (number of cols)
+set showmatch           " Highlight matching brace
+" set spell off         " Enable spell-checking
+set errorbells          " Beep or flash screen on errors
+set visualbell          " Use visual bell (no beeping)
+
+set nobackup
+set noswapfile
+set viminfo+=n~/.vim/viminfo
+
+set hlsearch            " Highlight all search results
+set smartcase           " Enable smart-case search
+set ignorecase          " Always case-insensitive
+set incsearch           " Searches for strings incrementally
+
+set autoindent          " Auto-indent new lines
+set cindent             " Use 'C' style program indenting
+set expandtab           " Use spaces instead of tabs
+set shiftwidth=4        " Number of auto-indent spaces
+set smartindent         " Enable smart-indent
+set smarttab            " Enable smart-tabs
+set softtabstop=4       " Number of spaces per Tab
+
+"" Advanced
+
+set ruler               " Show row and column ruler information
+set hidden              " Show hidden files in NerdTree and :e
+set autowriteall        " Auto-write all file changes
+
+set undolevels=1000     " Number of undo levels
+set backspace=indent,eol,start  " Backspace behaviour
+set mouse=a
+
+set wildmode=longest,list
+" make tab completion for files/buffers act like bash
+set wildmenu
+let mapleader=","
+
+set scrolloff=20
+set showcmd             " display incomplete commands
+
+syntax on
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My bundles here:
+"
+" original repos on GitHub
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'twerth/ir_black'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'gorodinskiy/vim-coloresque'
+Bundle 'elixir-lang/vim-elixir'
+
+filetype plugin indent on     " required!
+
+set background=dark
+colorscheme ir_black
+
+set cursorline
+set cursorcolumn
+highlight cursorline cterm=none ctermfg=NONE ctermbg=black
+highlight cursorcolumn cterm=none ctermfg=NONE ctermbg=black
+highlight statusline cterm=none ctermfg=white ctermbg=black
+highlight signcolumn cterm=none ctermfg=grey ctermbg=black
+
+set laststatus=2
+set statusline=\ %f%m%r%h%w\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
+
+autocmd BufWritePre * :%s/\s\+$//e
+
+" NerdTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <C-n> :NERDTreeToggle<CR>i
+nmap <space> zz
