@@ -1,0 +1,19 @@
+[color]
+    filemode = false
+    diff = auto
+    status = auto
+    branch = auto
+    pager = true
+    ui = true
+[user]
+    email = kylescottmcgill@gmail.com
+    name = Kyle Scott Mcgill
+[core]
+    editor = vim
+    whitespace = trailing-space,space-before-tab,indent-with-non-tab
+[push]
+    default = simple
+[help]
+    autocorrect = 10
+[merge]
+    renormalize = true
