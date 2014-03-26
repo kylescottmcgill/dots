@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ls -G ~/mail/*/INBOX/new/* | wc -l

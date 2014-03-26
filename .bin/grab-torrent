@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+cd ~/downloads/rtorrent/watch && { curl --silent -O -J -L $1 ; cd - ; }

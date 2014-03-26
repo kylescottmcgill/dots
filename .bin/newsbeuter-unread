@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo -en "RSS: $(newsbeuter -x print-unread | awk '{print $1}') ::"

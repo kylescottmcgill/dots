@@ -1,0 +1,5 @@
+#!/bin/bash
+
+[[ -n $(pgrep newsbeuter) ]]
+	newsbeuter -x reload &
+exit
