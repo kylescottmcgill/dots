@@ -69,6 +69,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'gorodinskiy/vim-coloresque'
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'tpope/vim-eunuch'
+Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on     " required!
 
@@ -91,3 +93,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>i
 nmap <space> zz
+
+" Syntastic
+let g:syntastic_php_checkers = ['php', 'phpcs']
+
