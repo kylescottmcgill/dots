@@ -31,6 +31,7 @@ source $BASH_IT/bash_it.sh
 # Custom Shiz
 export PATH=~/.bin/:$PATH
 export MYSQL_HISTFILE=/dev/null
+export LESSHISTFILE=/dev/null
 alias sl='ls'
 alias ls='ls --color'
 alias ccat='highlight -O ansi'
