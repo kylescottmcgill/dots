@@ -7,6 +7,7 @@ set number              " Show line numbers
 set linebreak           " Break lines at word (requires Wrap lines)
 set showbreak=+++       " Wrap-broken line prefix
 set textwidth=100       " Line wrap (number of cols)
+set colorcolumn=80
 set showmatch           " Highlight matching brace
 " set spell off         " Enable spell-checking
 set errorbells          " Beep or flash screen on errors
@@ -79,10 +80,11 @@ colorscheme ir_black
 
 set cursorline
 set cursorcolumn
-highlight cursorline cterm=none ctermfg=NONE ctermbg=black
-highlight cursorcolumn cterm=none ctermfg=NONE ctermbg=black
+highlight cursorline cterm=none ctermfg=none ctermbg=black
+highlight cursorcolumn cterm=none ctermfg=none ctermbg=black
 highlight statusline cterm=none ctermfg=white ctermbg=black
 highlight signcolumn cterm=none ctermfg=grey ctermbg=black
+highlight colorcolumn cterm=none ctermfg=none ctermbg=black
 
 set laststatus=2
 set statusline=\ %f%m%r%h%w\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
@@ -96,4 +98,5 @@ nmap <space> zz
 
 " Syntastic
 let g:syntastic_php_checkers = ['php', 'phpcs']
-
+let g:syntastic_check_on_open=1
+let g:syntastic_always_populate_loc_list=1
