@@ -49,3 +49,7 @@ PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
 # Functions to Execute per Interactive Session
 crontab-update >/dev/null 2>&1
+
+
+stty werase undef
+bind '\C-w:unix-filename-rubout'
