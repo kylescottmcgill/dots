@@ -5,8 +5,18 @@
 # host directory (branch*)»
 # for example:
 # ananas ~/Code/bash-it/themes (master*)»
+
+function git_status() {
+    if [[ $(vcprompt -f'%P') != "kyle" ]]; then
+        echo $(vcprompt -f'[%s:%P:%b%m%a]' -n 2>/dev/null)
+    else
+        echo $([[ `pwd` == "/home/kyle" ]] && vcprompt -f'%m' -n 2>/dev/null)
+    fi
+}
+
 function prompt_command() {
-PS1="$(rt=$?; if [ $rt = 0 ]; then echo ${bold_blue}; else echo ${bold_red};fi)\$(hostname)${bold_black} \w${normal} ${bold_white}$(vcprompt -f'[%s:%P:%b%m%a]' -n 2>/dev/null)${normal}» "
+    STATUS=$(rt=$?; if [[ $rt = 0 ]]; then echo ${bold_blue}; else echo ${bold_red};fi)
+    PS1="$STATUS\$(hostname)${bold_black} \w${normal} ${bold_white}$(git_status)${normal}» "
 }
 
 PROMPT_COMMAND=prompt_command;
