@@ -38,4 +38,4 @@ sh ~/.fehbg &                   # Set the wallpaper, i used this as i have more 
 
 # Finally, start the correct WindowManger based on the hostname, would like to swap to monster
 # across the board, just time.
-if [[ hostname == "ouroboros" ]]; then exec xmonad; else exec dwm; fi
+if [[ hostname == "ouroboros" ]]; then exec xmonad; else exec monsterwm; fi
