@@ -26,7 +26,7 @@ export RADEON_HYPERZ=1          # Sets Radeon Drivers to use HyperZ for vdpau
 export LIBVA_DRIVER_NAME=vdpau  # Use vdpau
 export VDPAU_DRIVER=radeonsi    # Use opensource Drivers
 
-xsetroot -cursor_name left_ptr  # Use a non-shit cursor
+xsetroot -cursor_name left_ptr &  # Use a non-shit cursor
 
 # This sets the main screen to Vetical, i have this at work, errors out on chromebook and main pc
 xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate left \
