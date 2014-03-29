@@ -43,9 +43,7 @@ alias ll='ls -lh'
 alias mpv='DISPLAY=:0 mpv -vo vdpau:fps=60 -ao=pulse'
 alias rm='rm -f'
 alias tmux='tmux -2'
-source /usr/share/chruby/chruby.sh
 PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-
 
 # Functions to Execute per Interactive Session
 crontab-update >/dev/null 2>&1
