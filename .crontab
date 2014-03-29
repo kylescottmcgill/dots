@@ -1,2 +1,4 @@
 */3 * * * * /home/kyle/.bin/mailrun
 * * * * * /home/kyle/.bin/newsbeuter-update
+
+# vim: set ft=crontab ts=8 sw=4 tw=100 et :
