@@ -37,9 +37,12 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0" &
 sh ~/.fehbg &                   # Set the wallpaper, i used this as i have more options then xsetroot
 
 # Finally, start the correct WindowManger based on the hostname
-case "$(hostname)" in
-    "ouroboros") exec xmonad ;; # Main PC
-    "xm-ouroboros") exec xmonad ;;   # Chromebook
-    "chrome") exec monsterwm ;;   # Work PC
-    *) exec dwm ;;
-esac
+#case "$(hostname)" in
+#    "ouroboros") exec xmonad ;; # Main PC
+#    "xm-ouroboros") exec xmonad ;;   # Chromebook
+#    "chrome") exec monsterwm ;;   # Work PC
+#    *) exec dwm ;;
+#esac
+
+xmonad || monsterwm
+
