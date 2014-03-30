@@ -4,7 +4,7 @@ pkgver=20120418
 pkgrel=3
 pkgdesc="Very minimal, lightweight, monsterous, tiny, dynamic tiling window manager"
 url="https://github.com/c00kiemon5ter/monsterwm"
-arch=('i686' 'x86_64', 'armv7h')
+arch=('i686' 'x86_64' 'armv7h')
 license=('MIT/X')
 groups=('modified')
 depends=('libx11')
@@ -46,3 +46,4 @@ package() {
 	install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
 
+#vim: set ts=8 sw=4 tw=100 et :
