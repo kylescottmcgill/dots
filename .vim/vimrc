@@ -96,8 +96,7 @@ nmap <space> zz
 
 " Syntastic
 let g:syntastic_php_checkers = ['php', 'phpcs']
-
-
+let g:syntastic_always_populate_loc_list = 1
 
 " Append modeline after last line in buffer.
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
