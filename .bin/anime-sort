@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $HOME/anime/Queued/ ;
+cd $HOME/anime/ ;
 
 anime=$(ls *.mkv | tr "_" " " | rev | cut -d"-" -f2- | rev | uniq > list.tmp)
 
