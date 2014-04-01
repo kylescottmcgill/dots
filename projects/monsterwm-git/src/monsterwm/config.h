@@ -11,7 +11,7 @@
 
 /** generic settings **/
 #define MASTER_SIZE     0.52
-#define SHOW_PANEL      True      /* show panel by default on exec */
+#define SHOW_PANEL      False     /* show panel by default on exec */
 #define TOP_PANEL       True      /* False means panel is on bottom */
 #define PANEL_HEIGHT    0         /* 0 for no space for panel, thus no panel */
 #define DEFAULT_MODE    TILE      /* initial layout/mode: TILE MONOCLE BSTACK GRID FLOAT */
@@ -48,8 +48,8 @@ static const char *termcmd[] = { "termite",   NULL };
 static const char *menucmd[] = { "dmenu_run", NULL };
 
 #define DESKTOPCHANGE(K,N) \
-    {  MOD1,             K,              change_desktop, {.i = N}}, \
-    {  MOD1|ShiftMask,   K,              client_to_desktop, {.i = N}},
+    {  MOD4,             K,              change_desktop, {.i = N}}, \
+    {  MOD4|ShiftMask,   K,              client_to_desktop, {.i = N}},
 
 /**
  * keyboard shortcuts
@@ -81,7 +81,7 @@ static Key keys[] = {
     {  MOD1|CONTROL,     XK_r,          quit,              {.i = 0}}, /* quit with exit value 0 */
     {  MOD1|CONTROL,     XK_q,          quit,              {.i = 1}}, /* quit with exit value 1 */
     {  MOD4,             XK_Return,     spawn,             {.com = termcmd}},
-    {  MOD4,             XK_p,          spawn,             {.com = menucmd}},
+    {  MOD4,             XK_grave,      spawn,             {.com = menucmd}},
     {  MOD4,             XK_j,          moveresize,        {.v = (int []){   0,  25,   0,   0 }}}, /* move down  */
     {  MOD4,             XK_k,          moveresize,        {.v = (int []){   0, -25,   0,   0 }}}, /* move up    */
     {  MOD4,             XK_l,          moveresize,        {.v = (int []){  25,   0,   0,   0 }}}, /* move right */
@@ -90,10 +90,10 @@ static Key keys[] = {
     {  MOD4|SHIFT,       XK_k,          moveresize,        {.v = (int []){   0,   0,   0, -25 }}}, /* height shrink */
     {  MOD4|SHIFT,       XK_l,          moveresize,        {.v = (int []){   0,   0,  25,   0 }}}, /* width grow    */
     {  MOD4|SHIFT,       XK_h,          moveresize,        {.v = (int []){   0,   0, -25,   0 }}}, /* width shrink  */
-       DESKTOPCHANGE(    XK_F1,                             0)
-       DESKTOPCHANGE(    XK_F2,                             1)
-       DESKTOPCHANGE(    XK_F3,                             2)
-       DESKTOPCHANGE(    XK_F4,                             3)
+       DESKTOPCHANGE(    XK_1,                             0)
+       DESKTOPCHANGE(    XK_2,                             1)
+       DESKTOPCHANGE(    XK_3,                             2)
+       DESKTOPCHANGE(    XK_4,                             3)
 };
 
 /**
