@@ -27,11 +27,11 @@ export VCPROMPT_EXECUTABLE=~/bin/vcprompt
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
-
 # Custom Shiz
 export PATH=~/.bin/:$PATH
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
+export BROWSER=chrome
 alias sl='ls'
 alias ls='ls --color'
 alias ccat='highlight -O ansi'
