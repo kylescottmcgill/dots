@@ -47,8 +47,17 @@ static const AppRule rules[] = { \
  * custom commands
  * must always end with ', NULL };'
  */
-static const char *termcmd[] = { "termite",   NULL };
-static const char *menucmd[] = { "dmenu_run", NULL };
+static const char *termcmd[] = { "termite",     NULL };
+static const char *menucmd[] = { "dmenu_run",   NULL };
+static const char *chrome[]  = { "chrome",      NULL };
+
+static const char *ncmpcpptoggle[] = { "ncmpcpp toggle", NULL };
+
+static const char *mpcnext[] = { "mpc", "next", NULL };
+static const char *mpcprev[] = { "mpc", "prev", NULL };
+
+static const char *volup[]   = { "amixer", "-c", "0", "set", "Master", "5dB+", NULL };
+static const char *voldown[] = { "amixer", "-c", "0", "set", "Master", "5dB-", NULL };
 
 #define MONITORCHANGE(K,N) \
     {  MOD4,             K,              change_monitor, {.i = N}}, \
@@ -63,8 +72,9 @@ static const char *menucmd[] = { "dmenu_run", NULL };
  */
 static Key keys[] = {
     /* modifier          key            function           argument */
-    // {  MOD1,             XK_b,          togglepanel,       {NULL}},
-    // {  MOD1,             XK_BackSpace,  focusurgent,       {NULL}},
+    {  MOD4,             XK_b,          spawn,             {.com = chrome}},
+    {  MOD1,             XK_b,          togglepanel,       {NULL}},
+    {  MOD1,             XK_BackSpace,  focusurgent,       {NULL}},
     {  MOD1|SHIFT,       XK_c,          killclient,        {NULL}},
     {  MOD1,             XK_j,          next_win,          {NULL}},
     {  MOD1,             XK_k,          prev_win,          {NULL}},
@@ -72,10 +82,10 @@ static Key keys[] = {
     {  MOD1,             XK_l,          resize_master,     {.i = +10}}, /* increase size in px */
     {  MOD1,             XK_o,          resize_stack,      {.i = -10}}, /* shrink   size in px */
     {  MOD1,             XK_p,          resize_stack,      {.i = +10}}, /* grow     size in px */
-    // {  MOD1|CONTROL,     XK_h,          rotate,            {.i = -1}},
-    // {  MOD1|CONTROL,     XK_l,          rotate,            {.i = +1}},
-    // {  MOD1|SHIFT,       XK_h,          rotate_filled,     {.i = -1}},
-    // {  MOD1|SHIFT,       XK_l,          rotate_filled,     {.i = +1}},
+    {  MOD1|CONTROL,     XK_h,          rotate,            {.i = -1}},
+    {  MOD1|CONTROL,     XK_l,          rotate,            {.i = +1}},
+    {  MOD1|SHIFT,       XK_h,          rotate_filled,     {.i = -1}},
+    {  MOD1|SHIFT,       XK_l,          rotate_filled,     {.i = +1}},
     {  MOD4,             XK_Tab,        last_desktop,      {NULL}},
     {  MOD1,             XK_Return,     swap_master,       {NULL}},
     {  MOD1|SHIFT,       XK_j,          move_down,         {NULL}},
@@ -86,7 +96,12 @@ static Key keys[] = {
     {  MOD1|SHIFT,       XK_g,          switch_mode,       {.i = GRID}},
     {  MOD1|SHIFT,       XK_f,          switch_mode,       {.i = FLOAT}},
     {  MOD1|CONTROL,     XK_r,          quit,              {.i = 0}}, /* quit with exit value 0 */
-    {  MOD1|CONTROL,     XK_q,          quit,              {.i = 1}}, /* quit with exit value 1 */
+    // 0x1008ff12, XF86AudioMute
+    {  0,                0x1008ff14,    spawn,             {.com = ncmpcpptoggle}},
+    {  0,                0x1008ff16,    spawn,             {.com = mpcprev}},
+    {  0,                0x1008ff17,    spawn,             {.com = mpcnext}},
+    {  0,                0x1008ff11,    spawn,             {.com = voldown}},
+    {  0,                0x1008ff13,    spawn,             {.com = volup}},
     {  MOD4,             XK_Return,     spawn,             {.com = termcmd}},
     {  MOD4,             XK_grave,      spawn,             {.com = menucmd}},
     {  MOD4,             XK_j,          moveresize,        {.v = (int []){   0,  25,   0,   0 }}}, /* move down  */
