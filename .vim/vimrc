@@ -72,6 +72,8 @@ Bundle 'gorodinskiy/vim-coloresque'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar'
+
 
 filetype plugin indent on     " required!
 
@@ -90,6 +92,9 @@ set laststatus=2
 set statusline=\ %f%m%r%h%w\ %{fugitive#statusline()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
