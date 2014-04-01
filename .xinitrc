@@ -44,5 +44,5 @@ sh ~/.fehbg &                   # Set the wallpaper, i used this as i have more 
 #    *) exec dwm ;;
 #esac
 
-xmonad || monsterwm
+exec monsterwm
 
