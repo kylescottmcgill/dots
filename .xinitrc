@@ -43,6 +43,7 @@ sh ~/.fehbg &                   # Set the wallpaper, i used this as i have more 
 #    "chrome") exec monsterwm ;;   # Work PC
 #    *) exec dwm ;;
 #esac
+#xmonad || monsterwm
 
-xmonad || monsterwm
+exec monsterwm
 
