@@ -118,4 +118,8 @@ endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
 
+" PHPUnit
+" phpunit compilation
+com! -nargs=* Phpunit make -c app <q-args> | cw
+
 "vim: set ft=vim ts=8 sw=4 tw=100 et :

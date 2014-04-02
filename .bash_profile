@@ -28,10 +28,11 @@ export VCPROMPT_EXECUTABLE=~/.bin/vcprompt
 source $BASH_IT/bash_it.sh
 
 # Custom Shiz
-export PATH=~/.bin/:$PATH
+export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$HOME/.bin:HOME/.composer/vendor/bin/:$PATH"
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BROWSER=chrome
+
 alias sl='ls'
 alias ls='ls --color'
 alias ccat='highlight -O ansi'
@@ -43,11 +44,9 @@ alias ll='ls -lh'
 alias mpv='DISPLAY=:0 mpv -vo vdpau:fps=60 -ao=pulse'
 alias rm='rm -f'
 alias tmux='tmux -2'
-PATH="`ruby -e 'puts Gem.user_dir'`/bin:$HOME/.composer/vendor/bin/:$PATH"
 
 # Functions to Execute per Interactive Session
 crontab-update >/dev/null 2>&1
-
 
 stty werase undef
 bind '\C-w:unix-filename-rubout'
