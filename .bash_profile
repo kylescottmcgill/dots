@@ -43,7 +43,7 @@ alias ll='ls -lh'
 alias mpv='DISPLAY=:0 mpv -vo vdpau:fps=60 -ao=pulse'
 alias rm='rm -f'
 alias tmux='tmux -2'
-PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+PATH="`ruby -e 'puts Gem.user_dir'`/bin:$HOME/.composer/vendor/bin/:$PATH"
 
 # Functions to Execute per Interactive Session
 crontab-update >/dev/null 2>&1
