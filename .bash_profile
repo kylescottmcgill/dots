@@ -50,6 +50,7 @@ crontab-update >/dev/null 2>&1
 
 stty werase undef
 bind '\C-w:unix-filename-rubout'
+bind Space:magic-space
 
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
