@@ -1,0 +1,1 @@
+defaults.pcm.rate_converter "samplerate_best"
