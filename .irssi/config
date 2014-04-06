@@ -33,9 +33,8 @@ chatnets = {
 };
 
 channels = (
-  { name = "cirrus"; chatnet = "geekshed"; autojoin = "yes"; },
-  { name = "xm"; chatnet = "geekshed"; autojoin = "yes"; }
-  { name = "##darkfox"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#cirrus"; chatnet = "geekshed"; autojoin = "yes"; },
+  { name = "##kaizen"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -216,16 +215,6 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#cirrus";
-        tag = "geekshed";
-      }
-    );
-  };
-  3 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#xm";
         tag = "geekshed";
       }
     );
