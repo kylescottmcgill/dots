@@ -1,10 +1,14 @@
 set nocompatible        " be iMproved
 set shell=/bin/bash
+set encoding=utf8
+set ffs=unix,dos,mac
 
 " General
 
 set number              " Show line numbers
+set wrap
 set linebreak           " Break lines at word (requires Wrap lines)
+set nolist
 set showbreak=+++       " Wrap-broken line prefix
 set textwidth=140       " Line wrap (number of cols)
 set colorcolumn=120
@@ -15,12 +19,14 @@ set visualbell          " Use visual bell (no beeping)
 
 set nobackup
 set noswapfile
+set nowb
 set viminfo+=n~/.vim/viminfo
 
 set hlsearch            " Highlight all search results
 set smartcase           " Enable smart-case search
 set ignorecase          " Always case-insensitive
 set incsearch           " Searches for strings incrementally
+set magic               " Magic shit, regex
 
 set autoindent          " Auto-indent new lines
 set cindent             " Use 'C' style program indenting
@@ -31,7 +37,7 @@ set smarttab            " Enable smart-tabs
 set softtabstop=4       " Number of spaces per Tab
 
 "" Advanced
-
+set autoread            " Auto Reads a file upon change
 set ruler               " Show row and column ruler information
 set hidden              " Show hidden files in NerdTree and :e
 set autowriteall        " Auto-write all file changes
@@ -47,6 +53,10 @@ let mapleader=","
 
 set scrolloff=20
 set showcmd             " display incomplete commands
+set cmdheight=2
+set hid                 " Abandoned buffers become hidden
+
+set lazyredraw          " Don't redraw while executing macros
 
 syntax on
 filetype off            " required!
@@ -64,7 +74,10 @@ Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
+
 Bundle 'twerth/ir_black'
+Bundle 'nanotech/jellybeans.vim'
+
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'airblade/vim-gitgutter'
@@ -73,12 +86,12 @@ Bundle 'elixir-lang/vim-elixir'
 Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
-
+Bundle 'junegunn/goyo.vim'
 
 filetype plugin indent on     " required!
 
 set background=dark
-colorscheme ir_black
+colorscheme jellybeans
 
 set cursorline
 set cursorcolumn
@@ -106,6 +119,10 @@ let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_check_on_open=1
 let g:syntastic_always_populate_loc_list=1
 
+" Vim Bindings
+nmap <leader>w :w!<cr>
+map <leader>ss :setlocal spell!<cr>
+
 " Append modeline after last line in buffer.
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
 " files.
@@ -117,9 +134,11 @@ function! AppendModeline()
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
-
 " PHPUnit
 " phpunit compilation
 com! -nargs=* Phpunit make -c app <q-args> | cw
+
+" Goyo
+nnoremap <Leader><Space> :Goyo<CR>
 
 "vim: set ft=vim ts=8 sw=4 tw=100 et :

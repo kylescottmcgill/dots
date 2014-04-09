@@ -9,7 +9,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = terminus 8
+font = Terminus 8
 scrollback_lines = 1000
 search_wrap = true
 
@@ -24,7 +24,7 @@ cursor_blink = on
 cursor_shape = ibeam
 
 # $BROWSER is used by default
-browser = chromium
+browser = chrome
 
 # word characters used for word selection
 # (default if unset: all graphic non-punctuation/space characters)
