@@ -44,6 +44,7 @@ alias ll='ls -lh'
 alias mpv='DISPLAY=:0 mpv -vo vdpau:fps=60 -ao=alsa'
 alias rm='rm -f'
 alias tmux='tmux -2'
+alias mpd='sudo -E mpd ~/.mpd/mpd.conf'
 
 # Functions to Execute per Interactive Session
 crontab-update >/dev/null 2>&1
