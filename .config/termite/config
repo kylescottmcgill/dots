@@ -24,7 +24,7 @@ cursor_blink = on
 cursor_shape = ibeam
 
 # $BROWSER is used by default
-browser = chrome
+browser = chromium
 
 # word characters used for word selection
 # (default if unset: all graphic non-punctuation/space characters)
