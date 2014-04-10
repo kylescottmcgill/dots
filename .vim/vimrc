@@ -46,6 +46,7 @@ set undolevels=1000     " Number of undo levels
 set backspace=indent,eol,start  " Backspace behaviour
 set mouse=a
 
+set wildchar=<Tab>
 set wildmode=longest,list
 " make tab completion for files/buffers act like bash
 set wildmenu
@@ -106,6 +107,65 @@ set statusline=\ %f%m%r%h%w\ %{fugitive#statusline()}\ %=%({%{&ff}\|%{(&fenc==\"
 
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Append modeline after last line in buffer.
+" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
+" files.
+function! AppendModeline()
+    let l:modeline = printf("vim: set ft=%s ts=%d sw=%d tw=%d %set :",
+                \ &filetype, &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+    let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+    call append(line("$"), l:modeline)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+
+function! BufSel(pattern)
+    let bufcount = bufnr("$")
+    let currbufnr = 1
+    let nummatches = 0
+    let firstmatchingbufnr = 0
+    while currbufnr <= bufcount
+        if(bufexists(currbufnr))
+            let currbufname = bufname(currbufnr)
+            if(match(currbufname, a:pattern) > -1)
+                echo currbufnr . ": ". bufname(currbufnr)
+                let nummatches += 1
+                let firstmatchingbufnr = currbufnr
+            endif
+        endif
+        let currbufnr = currbufnr + 1
+    endwhile
+    if(nummatches == 1)
+        execute ":buffer ". firstmatchingbufnr
+    elseif(nummatches > 1)
+        let desiredbufnr = input("Enter buffer number: ")
+        if(strlen(desiredbufnr) != 0)
+            execute ":buffer ". desiredbufnr
+        endif
+    else
+        echo "No matching buffers"
+    endif
+endfunction
+
+"Bind the BufSel() function to a user-command
+command! -nargs=1 Bs :call BufSel("<args>")
+
+
+" Vim Bindings
+nnoremap <leader>b :buffers<CR>:buffer<Space>
+nmap <leader>w :w!<cr>
+map <leader>ss :setlocal spell!<cr>
+nnoremap <silent> <C-Right> <c-w>l
+nnoremap <silent> <C-Left> <c-w>h
+nnoremap <silent> <C-Up> <c-w>k
+nnoremap <silent> <C-Down> <c-w>j
+
+
+
+
+
+
+" Plugin bindings and functionality
+
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 
@@ -119,23 +179,7 @@ let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_check_on_open=1
 let g:syntastic_always_populate_loc_list=1
 
-" Vim Bindings
-nmap <leader>w :w!<cr>
-map <leader>ss :setlocal spell!<cr>
-
-" Append modeline after last line in buffer.
-" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
-" files.
-function! AppendModeline()
-    let l:modeline = printf("vim: set ft=%s ts=%d sw=%d tw=%d %set :",
-                \ &filetype, &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
-    let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
-    call append(line("$"), l:modeline)
-endfunction
-nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
-
 " PHPUnit
-" phpunit compilation
 com! -nargs=* Phpunit make -c app <q-args> | cw
 
 " Goyo
