@@ -154,19 +154,12 @@ command! -nargs=1 Bs :call BufSel("<args>")
 nnoremap <leader>b :buffers<CR>:buffer<Space>
 nmap <leader>w :w!<cr>
 map <leader>ss :setlocal spell!<cr>
+map <leader>/ :noh<cr>
 
 nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
-
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-
-
 
 
 " Plugin bindings and functionality
