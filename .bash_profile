@@ -64,4 +64,4 @@ man() {
         man "$@"
 }
 
-[ -s "/home/kyle/.nvm/nvm.sh" ] && . "/home/kyle/.nvm/nvm.sh" # This loads nvm
+[[ -s "/home/kyle/.nvm/nvm.sh" ]] && . "/home/kyle/.nvm/nvm.sh" # This loads nvm
