@@ -16,7 +16,7 @@ function git_status() {
 
 function prompt_command() {
     STATUS=$(rt=$?; [[ $rt = 0 ]] && echo ${bold_blue} || echo ${bold_red})
-    PS1="${STATUS}\$(hostname)${bold_black} \w${normal} ${bold_white}$(git_status)${normal}» "
+    PS1="${STATUS}\$(hostname)${bold_black} \w${normal} ${bold_white}\$(git_status)${normal}» "
 }
 
 PROMPT_COMMAND=prompt_command;
