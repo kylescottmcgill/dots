@@ -57,7 +57,11 @@ set showcmd             " display incomplete commands
 set cmdheight=2
 set hid                 " Abandoned buffers become hidden
 
-" set lazyredraw off          " Don't redraw while executing macros
+set guioptions-=m       "menu bar
+set guioptions-=T       "toolbar
+set guioptions-=r       "scrollbar
+
+set lazyredraw      " Don't redraw while executing macros
 
 syntax on
 filetype off            " required!
