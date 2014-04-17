@@ -98,8 +98,8 @@ filetype plugin indent on     " required!
 set background=dark
 colorscheme jellybeans
 
-" set cursorline
-" set cursorcolumn
+set cursorline
+set cursorcolumn
 highlight cursorline cterm=none ctermfg=none ctermbg=black
 highlight cursorcolumn cterm=none ctermfg=none ctermbg=black
 highlight statusline cterm=none ctermfg=white ctermbg=black
