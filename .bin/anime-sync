@@ -6,7 +6,7 @@ if [ $? -eq 0 ]; then
         echo "running process"
     else
         rsync -P -avrz --ignore-existing --remove-source-files \
-        /home/kyle/downloads/rtorrent/completed/* 10.1.1.7:/home/kyle/anime/Queued/ && ssh \
-        10.1.1.7 '~/bin/anime-sort'
+        /home/kyle/downloads/rtorrent/completed/* 10.1.1.7:/home/kyle/anime/ && ssh \
+        10.1.1.7 '~/.bin/anime-sort'
     fi
 fi
