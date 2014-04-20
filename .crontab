@@ -1,6 +1,6 @@
 */3 * * * * /home/kyle/.bin/mailrun
-* * * * * /home/kyle/.bin/newsbeuter-update
-* 1 * * * /home/kyle/.bin/checkip
-* 1 * * * /home/kyle/.bin/anime-sync
+*/3 * * * * /home/kyle/.bin/newsbeuter-update
+*/3 * * * * /home/kyle/.bin/checkip
+*/3 * * * * /home/kyle/.bin/anime-sync
 
-#vim: set ft=crontab ts=8 sw=4 tw=100 et :
+#vim: set ft=crontab ts=8 sw=4 tw=140 et :
