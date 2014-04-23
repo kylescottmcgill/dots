@@ -61,7 +61,7 @@ set guioptions-=m       "menu bar
 set guioptions-=T       "toolbar
 set guioptions-=r       "scrollbar
 
-set lazyredraw      " Don't redraw while executing macros
+set lazyredraw          " Don't redraw while executing macros
 
 syntax on
 filetype off            " required!
@@ -92,6 +92,11 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'junegunn/goyo.vim'
+
+
+
+" Go Native Plugin
+set runtimepath+=$GOROOT/misc/vim
 
 filetype plugin indent on     " required!
 
@@ -153,15 +158,6 @@ endfunction
 "Bind the BufSel() function to a user-command
 command! -nargs=1 Bs :call BufSel("<args>")
 
-function! CursorPing()
-    set cursorline cursorcolumn
-    redraw
-    sleep 50m
-    set nocursorline nocursorcolumn
-endfunction
-
-nmap <C-Space> :call CursorPing()<CR>
-
 " Vim Bindings
 nnoremap <leader>b :buffers<CR>:buffer<Space>
 nmap <leader>w :w!<cr>
@@ -194,5 +190,6 @@ com! -nargs=* Phpunit make -c app <q-args> | cw
 
 " Goyo
 nnoremap <Leader><Space> :Goyo<CR>
+
 
 "vim: set ft=vim ts=8 sw=4 tw=100 et :

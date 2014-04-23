@@ -23,12 +23,14 @@ export IRC_CLIENT='irssi'
 # Set vcprompt executable path for scm advance info in prompt (demula theme)
 # https://github.com/xvzf/vcprompt
 export VCPROMPT_EXECUTABLE=~/.bin/vcprompt
+export GOPATH=~/.go/
+
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
 # Custom Shiz
-export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$HOME/.bin:HOME/.composer/vendor/bin/:$PATH"
+export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$HOME/.bin:HOME/.composer/vendor/bin/:$GOPATH/bin:$PATH"
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BROWSER=chrome
