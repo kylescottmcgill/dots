@@ -23,8 +23,9 @@ export IRC_CLIENT='irssi'
 # Set vcprompt executable path for scm advance info in prompt (demula theme)
 # https://github.com/xvzf/vcprompt
 export VCPROMPT_EXECUTABLE=~/.bin/vcprompt
-export GOPATH=~/.go/
 
+# Go Path
+export GOPATH=~/.go/
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
