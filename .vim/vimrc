@@ -114,6 +114,9 @@ highlight colorcolumn cterm=none ctermfg=none ctermbg=black
 set laststatus=2
 set statusline=\ %f%m%r%h%w\ %{fugitive#statusline()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 
+au InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
+au InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
+
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Append modeline after last line in buffer.
