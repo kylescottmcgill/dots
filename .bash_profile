@@ -66,5 +66,3 @@ man() {
         LESS_TERMCAP_us=$'\E[04;38;5;146m' \
         man "$@"
 }
-
-[[ -s "/home/kyle/.nvm/nvm.sh" ]] && . "/home/kyle/.nvm/nvm.sh" # This loads nvm
