@@ -92,6 +92,7 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'junegunn/goyo.vim'
+Bundle 'nsf/gocode', {'rtp': 'vim/'}
 
 
 
