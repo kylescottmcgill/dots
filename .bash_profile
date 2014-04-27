@@ -43,9 +43,6 @@ alias rm='rm -f'
 alias tmux='tmux -2'
 alias mpd='sudo -E mpd ~/.mpd/mpd.conf'
 
-# Functions to Execute per Interactive Session
-crontab-update >/dev/null 2>&
-
 stty werase undef
 bind '\C-w:unix-filename-rubout'
 bind Space:magic-space
