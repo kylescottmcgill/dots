@@ -7,16 +7,16 @@
 # ananas ~/Code/bash-it/themes [git:bash-it:master*]»
 
 function git_status() {
-    if [[ `vcprompt -f'%P'` != `whoami` ]]; then
-        vcprompt -f'[%s:%P:%b%m%a]' -n 2>/dev/null
+    if [[ `git rev-parse --show-toplevel 2>/dev/null` != $HOME ]]; then
+        vcprompt -f'[%n:%b%m]' 2>/dev/null
     else
-        vcprompt -f %m -n 2>/dev/null
+        vcprompt -f'%m' 2>/dev/null
     fi
 }
 
 function prompt_command() {
     STATUS=$(rt=$?; [[ $rt = 0 ]] && echo ${bold_blue} || echo ${bold_red})
-    PS1="${STATUS}\$(hostname)${bold_black} \w${normal} ${bold_white}\$(git_status)${normal}» "
+    PS1="${STATUS}\h${bold_black} \w${normal} ${bold_white}\$(git_status)${normal}» "
 }
 
 PROMPT_COMMAND=prompt_command;
