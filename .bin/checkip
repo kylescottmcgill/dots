@@ -17,6 +17,6 @@ IP Address: $ExternalIp
 EOF
     echo "$email" | msmtp -a default email@kylescottmcgill.com
     : > .ip
-    cat $ExternalIp > $HOME/.ip
+    echo $ExternalIp > $HOME/.ip
     fi
 done < "$HOME/.ip"
