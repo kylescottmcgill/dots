@@ -17,9 +17,6 @@ unset MAILCHECK
 # Change this to your console based IRC client of choice.
 export IRC_CLIENT='irssi'
 
-# Set this to the command you use for todo.txt-cli
-# export TODO="t"
-
 # Go Path
 export GOPATH=~/.go/
 
@@ -47,7 +44,7 @@ alias tmux='tmux -2'
 alias mpd='sudo -E mpd ~/.mpd/mpd.conf'
 
 # Functions to Execute per Interactive Session
-crontab-update >/dev/null 2>&1
+crontab-update >/dev/null 2>&
 
 stty werase undef
 bind '\C-w:unix-filename-rubout'
