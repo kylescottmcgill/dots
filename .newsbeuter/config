@@ -23,8 +23,8 @@ color listnormal        white       black
 color listfocus_unread  white       red
 color listnormal_unread white       black
 
-#feedlist-format "%-35t %?d?- %-35d&? %> %u"
-articlelist-format "%-4i %f %t"
+articlelist-format "%-4i %D %f %t"
+feedlist-format "%-35t %?d?- %-35d&? %> %u"
 #feedlist-title-format "%N %V %> %u feeds with new articles"
 #articlelist-title-format "%T"
 #html-renderer "w3m -dump -T text/HTML -cols 72"
