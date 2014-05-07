@@ -49,7 +49,7 @@ static const AppRule rules[] = { \
  */
 static const char *termcmd[] = { "termite",     NULL };
 static const char *menucmd[] = { "dmenu_run",   NULL };
-static const char *chrome[]  = { "chrome",      NULL };
+static const char *firefox[]  = { "firefox",      NULL };
 
 static const char *ncmpcpptoggle[] = { "ncmpcpp toggle", NULL };
 
@@ -72,7 +72,7 @@ static const char *voldown[] = { "amixer", "-c", "0", "set", "Master", "5dB-", N
  */
 static Key keys[] = {
     /* modifier          key            function           argument */
-    {  MOD4,             XK_b,          spawn,             {.com = chrome}},
+    {  MOD4,             XK_b,          spawn,             {.com = firefox}},
     {  MOD1,             XK_b,          togglepanel,       {NULL}},
     {  MOD1,             XK_BackSpace,  focusurgent,       {NULL}},
     {  MOD1|SHIFT,       XK_c,          killclient,        {NULL}},
