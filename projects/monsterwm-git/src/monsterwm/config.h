@@ -28,7 +28,7 @@
 #define MINWSZ          50        /* minimum window size in pixels  */
 #define DEFAULT_DESKTOP 0         /* the desktop to focus initially */
 #define DEFAULT_MONITOR 0         /* the desktop to focus initially */
-#define DESKTOPS        4         /* number of desktops - edit DESKTOPCHANGE keys to suit */
+#define DESKTOPS        9         /* number of desktops - edit DESKTOPCHANGE keys to suit */
 
 /**
  * open applications to specified desktop with specified mode.
@@ -36,7 +36,7 @@
  */
 static const AppRule rules[] = { \
     /*  class       monitor   desktop   follow      float */
-    { "chromium",   1,        0,        True,       False },
+    { "firefox",   1,        0,        True,       False },
     { "Mplayer",    0,        0,        False,      True  },
 };
 
