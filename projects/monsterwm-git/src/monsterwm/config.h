@@ -29,6 +29,7 @@
 #define DEFAULT_DESKTOP 0         /* the desktop to focus initially */
 #define DEFAULT_MONITOR 0         /* the desktop to focus initially */
 #define DESKTOPS        9         /* number of desktops - edit DESKTOPCHANGE keys to suit */
+#define USELESSGAP      8         /* the size of the useless gap in pixels */
 
 /**
  * open applications to specified desktop with specified mode.
