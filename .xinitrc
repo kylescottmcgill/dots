@@ -34,7 +34,7 @@ xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate left \
 
 # This is required for some GTK2 themes to get set correctly
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-sh ~/.fehbg &                   # Set the wallpaper, i used this as i have more options then xsetroot
+nitrogen --restore
 
 # Finally, start the correct WindowManger based on the hostname
 #case "$(hostname)" in
