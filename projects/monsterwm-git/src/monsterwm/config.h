@@ -116,6 +116,11 @@ static Key keys[] = {
        DESKTOPCHANGE(    XK_2,                             1)
        DESKTOPCHANGE(    XK_3,                             2)
        DESKTOPCHANGE(    XK_4,                             3)
+       DESKTOPCHANGE(    XK_5,                             4)
+       DESKTOPCHANGE(    XK_6,                             5)
+       DESKTOPCHANGE(    XK_7,                             6)
+       DESKTOPCHANGE(    XK_8,                             7)
+       DESKTOPCHANGE(    XK_9,                             8)
 
        MONITORCHANGE(    XK_e,                             1)
        MONITORCHANGE(    XK_r,                             0)
