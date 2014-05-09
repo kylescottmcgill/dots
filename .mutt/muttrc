@@ -81,13 +81,17 @@ mailboxes +Kyle/INBOX
 mailboxes +Kyle/INBOX.Completed
 mailboxes +Kyle/INBOX.Sent
 
-
+# boxes
+mailboxes +XM/inbox
+mailboxes +XM/completed
+mailboxes +XM/sent
 
 # always sourced
 source $alias_file             # required for functionality
 source ~/.mutt/themes/blah   # source colors file
 #source ~/.mutt/sidebar.muttrc  # any muttng options are here
 source ~/.mutt/kyle.muttrc    # source gmail as default
+source ~/.mutt/XM.muttrc    # source gmail as default
 
 # account specific sources
 folder-hook Kyle/* source ~/.mutt/kyle.muttrc
