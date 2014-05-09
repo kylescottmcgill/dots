@@ -31,7 +31,7 @@ browser = firefox
 #word_chars = -A-Za-z0-9,./?%&#:_=+@~
 
 # set size hints for the window
-size_hints = true
+#size_hints = true
 
 # emit escape sequences for other keys modified by Control
 #modify_other_keys = false
@@ -65,9 +65,9 @@ color7 = #eeeeee
 color15 = #ffffff
 
 [hints]
-padding = 2
+padding = 1
 border = #3f3f3f
 border_width = 0.5
-roundness = 2.0
+roundness = 1.0
 
 # vim: set filetype=dosini :
