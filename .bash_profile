@@ -27,7 +27,7 @@ export GOPATH=~/.go/
 source $BASH_IT/bash_it.sh
 
 # Custom Shiz
-export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$HOME/.bin:HOME/.composer/vendor/bin/:$GOPATH/bin:$PATH"
+export PATH="$HOME/.bin:HOME/.composer/vendor/bin/:$GOPATH/bin:$PATH"
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
