@@ -45,6 +45,6 @@ compton -b
 #    *) exec dwm ;;
 #esac
 #xmonad || monsterwm
-exec $HOME/.bin/monsterwmstatus
-#exec monsterwm
+#exec $HOME/.bin/monsterwmstatus
+exec monsterwm
 
