@@ -96,6 +96,7 @@ static Key keys[] = {
     {  MOD1|SHIFT,       XK_b,          switch_mode,       {.i = BSTACK}},
     {  MOD1|SHIFT,       XK_g,          switch_mode,       {.i = GRID}},
     {  MOD1|SHIFT,       XK_f,          switch_mode,       {.i = FLOAT}},
+    {  MOD1|SHIFT,       XK_i,          switch_mode,       {.i = FIBONACCI}},
     {  MOD1|CONTROL,     XK_r,          quit,              {.i = 0}}, /* quit with exit value 0 */
     // 0x1008ff12, XF86AudioMute
     {  0,                0x1008ff14,    spawn,             {.com = ncmpcpptoggle}},
