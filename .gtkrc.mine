@@ -1,6 +1,6 @@
 [Settings]
 gtk-theme-name=iris-dark
-gtk-icon-theme-name=AwOkenDark
+gtk-icon-theme-name=iris-dark
 #gtk-font-name=Liberation Sans 10
 gtk-cursor-theme-name=DMZ-White
 gtk-cursor-theme-size=0

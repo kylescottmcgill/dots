@@ -44,7 +44,7 @@ compton -b
 #    "chrome") exec monsterwm ;;   # Work PC
 #    *) exec dwm ;;
 #esac
-#xmonad || monsterwm
-#exec $HOME/.bin/monsterwmstatus
+
+#exec $HOME/.bin/wmrun
 exec monsterwm
 
