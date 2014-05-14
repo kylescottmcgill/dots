@@ -19,7 +19,7 @@ xrdb -merge $HOME/.Xresources   # Merge Xresources
 sleep 1; xset -dpms             # Do not turn off the screen
 xset s off                      # Do not allow the screensaver to start
 
-mpd                             # Start MPD
+# mpd                             # Start MPD
 numlockx                        # Chromebook doesnt have Numlock but thats ok
 
 export RADEON_HYPERZ=1          # Sets Radeon Drivers to use HyperZ for vdpau
@@ -33,8 +33,9 @@ xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate left \
        --output VGA1 --mode 1920x1080 --pos 1080x376 --rotate normal
 
 # This is required for some GTK2 themes to get set correctly
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0" &
-sh ~/.fehbg &                   # Set the wallpaper, i used this as i have more options then xsetroot
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+nitrogen --restore &
+compton -b
 
 # Finally, start the correct WindowManger based on the hostname
 #case "$(hostname)" in
@@ -43,7 +44,7 @@ sh ~/.fehbg &                   # Set the wallpaper, i used this as i have more 
 #    "chrome") exec monsterwm ;;   # Work PC
 #    *) exec dwm ;;
 #esac
-#xmonad || monsterwm
 
+#exec $HOME/.bin/wmrun
 exec monsterwm
 

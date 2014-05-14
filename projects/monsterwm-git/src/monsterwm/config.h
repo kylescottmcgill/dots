@@ -28,7 +28,8 @@
 #define MINWSZ          50        /* minimum window size in pixels  */
 #define DEFAULT_DESKTOP 0         /* the desktop to focus initially */
 #define DEFAULT_MONITOR 0         /* the desktop to focus initially */
-#define DESKTOPS        4         /* number of desktops - edit DESKTOPCHANGE keys to suit */
+#define DESKTOPS        9         /* number of desktops - edit DESKTOPCHANGE keys to suit */
+#define USELESSGAP      8         /* the size of the useless gap in pixels */
 
 /**
  * open applications to specified desktop with specified mode.
@@ -36,7 +37,7 @@
  */
 static const AppRule rules[] = { \
     /*  class       monitor   desktop   follow      float */
-    { "chromium",   1,        0,        True,       False },
+    { "firefox",   1,        0,        True,       False },
     { "Mplayer",    0,        0,        False,      True  },
 };
 
@@ -49,7 +50,7 @@ static const AppRule rules[] = { \
  */
 static const char *termcmd[] = { "termite",     NULL };
 static const char *menucmd[] = { "dmenu_run",   NULL };
-static const char *chrome[]  = { "chrome",      NULL };
+static const char *firefox[]  = { "firefox",      NULL };
 
 static const char *ncmpcpptoggle[] = { "ncmpcpp toggle", NULL };
 
@@ -72,7 +73,7 @@ static const char *voldown[] = { "amixer", "-c", "0", "set", "Master", "5dB-", N
  */
 static Key keys[] = {
     /* modifier          key            function           argument */
-    {  MOD4,             XK_b,          spawn,             {.com = chrome}},
+    {  MOD4,             XK_b,          spawn,             {.com = firefox}},
     {  MOD1,             XK_b,          togglepanel,       {NULL}},
     {  MOD1,             XK_BackSpace,  focusurgent,       {NULL}},
     {  MOD1|SHIFT,       XK_c,          killclient,        {NULL}},
@@ -95,6 +96,7 @@ static Key keys[] = {
     {  MOD1|SHIFT,       XK_b,          switch_mode,       {.i = BSTACK}},
     {  MOD1|SHIFT,       XK_g,          switch_mode,       {.i = GRID}},
     {  MOD1|SHIFT,       XK_f,          switch_mode,       {.i = FLOAT}},
+    {  MOD1|SHIFT,       XK_i,          switch_mode,       {.i = FIBONACCI}},
     {  MOD1|CONTROL,     XK_r,          quit,              {.i = 0}}, /* quit with exit value 0 */
     // 0x1008ff12, XF86AudioMute
     {  0,                0x1008ff14,    spawn,             {.com = ncmpcpptoggle}},
@@ -116,6 +118,11 @@ static Key keys[] = {
        DESKTOPCHANGE(    XK_2,                             1)
        DESKTOPCHANGE(    XK_3,                             2)
        DESKTOPCHANGE(    XK_4,                             3)
+       DESKTOPCHANGE(    XK_5,                             4)
+       DESKTOPCHANGE(    XK_6,                             5)
+       DESKTOPCHANGE(    XK_7,                             6)
+       DESKTOPCHANGE(    XK_8,                             7)
+       DESKTOPCHANGE(    XK_9,                             8)
 
        MONITORCHANGE(    XK_e,                             1)
        MONITORCHANGE(    XK_r,                             0)

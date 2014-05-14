@@ -93,7 +93,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'junegunn/goyo.vim'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
-
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 
 " Go Native Plugin
@@ -195,5 +196,11 @@ com! -nargs=* Phpunit make -c app <q-args> | cw
 " Goyo
 nnoremap <Leader><Space> :Goyo<CR>
 
+" gist-vim
+let g:gist_post_private = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_show_privates = 1
+let g:gist_get_multiplefile = 1
+nnoremap <silent> <Leader>g :Gist<CR>
 
 "vim: set ft=vim ts=8 sw=4 tw=100 et :

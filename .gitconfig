@@ -17,3 +17,5 @@
     autocorrect = 10
 [merge]
     renormalize = true
+[github]
+	user = kylescottmcgill
