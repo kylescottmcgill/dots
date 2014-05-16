@@ -204,4 +204,7 @@ let g:gist_show_privates = 1
 let g:gist_get_multiplefile = 1
 nnoremap <silent> <Leader>g :Gist<CR>
 
+" Vim-go
+let g:go_bin_path = expand("~/.go/bin")
+
 "vim: set ft=vim ts=8 sw=4 tw=100 et :

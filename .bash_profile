@@ -18,7 +18,7 @@ unset MAILCHECK
 export IRC_CLIENT='irssi'
 
 # Go Path
-export GOPATH=~/.go/
+export GOPATH=~/.go
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
