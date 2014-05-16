@@ -92,9 +92,10 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'junegunn/goyo.vim'
-Bundle 'nsf/gocode', {'rtp': 'vim/'}
+" Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'fatih/vim-go'
 
 
 " Go Native Plugin
