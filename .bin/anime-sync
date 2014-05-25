@@ -8,9 +8,8 @@ if [ $? -eq 0 ]; then
     then
         echo "running process"
     else
-        if [[ "$(hostname -i)" -eq "$REMOTE_HOST" ]]
-        then
-            mv $HOME/downloads/completed/*.mkv $HOME/anime/
+        if [ $(hostname -i) == "$REMOTE_HOST" ]; then
+            mv $HOME/downloads/completed/*.mkv $HOME/anime/ 2> /dev/null
         else
             rsync -P -avrz --ignore-existing --remove-source-files \
             /home/kyle/downloads/rtorrent/completed/ $REMOTE_HOST:/home/kyle/anime/ && \
