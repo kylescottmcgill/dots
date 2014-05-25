@@ -9,14 +9,14 @@ do
     if [[ "$ExternalIp" != $line ]]; then
         # Are Not the same, send an email and update the file
         read -r -d '' email <<EOF
-        To: email@kylescottmcgill.com
+To: email@kylescottmcgill.com
 From: `hostname`@kylescottmcgill.com
 Subject: External IP Address
 
 IP Address: $ExternalIp
 EOF
-    echo "$email" | msmtp -a default email@kylescottmcgill.com
-    : > .ip
-    echo $ExternalIp > $HOME/.ip
+        echo "$email" | msmtp -a default email@kylescottmcgill.com
+        : > .ip
+        echo "$ExternalIp" > $HOME/.ip
     fi
 done < "$HOME/.ip"
