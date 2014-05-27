@@ -19,7 +19,7 @@ xrdb -merge $HOME/.Xresources   # Merge Xresources
 sleep 1; xset -dpms             # Do not turn off the screen
 xset s off                      # Do not allow the screensaver to start
 
-# mpd                             # Start MPD
+mpd                             # Start MPD
 numlockx                        # Chromebook doesnt have Numlock but thats ok
 
 export RADEON_HYPERZ=1          # Sets Radeon Drivers to use HyperZ for vdpau
@@ -49,4 +49,3 @@ exec gnome-session
 
 #exec $HOME/.bin/wmrun
 #exec monsterwm
-

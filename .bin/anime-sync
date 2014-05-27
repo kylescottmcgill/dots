@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REMOTE_HOST=192.168.20.10
+REMOTE_HOST="192.168.20.10"
 
 ping -c 1 -t 1 $REMOTE_HOST;
 if [ $? -eq 0 ]; then
@@ -8,8 +8,12 @@ if [ $? -eq 0 ]; then
     then
         echo "running process"
     else
-        rsync -P -avrz --ignore-existing --remove-source-files \
-        /home/kyle/downloads/rtorrent/completed/* : $REMOTE_HOST:/home/kyle/anime/ && \
-        ssh $REMOTE_HOST '~/.bin/anime-sort'
+        if [ $(hostname -i) == "$REMOTE_HOST" ]; then
+            mv $HOME/downloads/completed/*.mkv $HOME/anime/ 2> /dev/null
+        else
+            rsync -P -avrz --ignore-existing --remove-source-files \
+            /home/kyle/downloads/rtorrent/completed/ $REMOTE_HOST:/home/kyle/anime/ && \
+            ssh $REMOTE_HOST '~/.bin/anime-sort'
+        fi
     fi
 fi
