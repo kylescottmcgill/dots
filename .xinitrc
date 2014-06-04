@@ -29,13 +29,13 @@ export VDPAU_DRIVER=radeonsi    # Use opensource Drivers
 xsetroot -cursor_name left_ptr &  # Use a non-shit cursor
 
 # This sets the main screen to Vetical, i have this at work, errors out on chromebook and main pc
-#xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate left \
-#       --output VGA1 --mode 1920x1080 --pos 1080x376 --rotate normal
+xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate left \
+       --output VGA1 --mode 1920x1080 --pos 1080x376 --rotate normal
 
 # This is required for some GTK2 themes to get set correctly
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-#nitrogen --restore &
-#compton -b
+nitrogen --restore &
+compton -b
 
 # Finally, start the correct WindowManger based on the hostname
 #case "$(hostname)" in
@@ -45,7 +45,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 #    *) exec dwm ;;
 #esac
 
-exec gnome-session
+#exec gnome-session
 
 #exec $HOME/.bin/wmrun
-#exec monsterwm
+exec monsterwm

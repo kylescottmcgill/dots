@@ -14,8 +14,8 @@ scrollback_lines = 1000
 search_wrap = true
 
 # 0.0: opaque, 1.0: transparent
-transparency = 0.0
-pseudo_transparency = false
+transparency = 0.5
+pseudo_transparency = true
 
 # "system", "on" or "off"
 cursor_blink = on
