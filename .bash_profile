@@ -19,12 +19,13 @@ export IRC_CLIENT='irssi'
 
 # Go Path
 export GOPATH=~/.go
+export GOBIN=$GOPATH/bin
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
 # Custom Shiz
-export PATH="$HOME/.bin:HOME/.composer/vendor/bin/:$GOPATH/bin:$PATH"
+export PATH="$HOME/.bin:HOME/.composer/vendor/bin/:$GOBIN:$PATH"
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
