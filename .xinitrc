@@ -35,7 +35,6 @@ xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate left \
 # This is required for some GTK2 themes to get set correctly
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 nitrogen --restore &
-xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 
 # Finally, start the correct WindowManger based on the hostname
 #case "$(hostname)" in
@@ -45,7 +44,5 @@ xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 #    *) exec dwm ;;
 #esac
 
-#exec gnome-session
-
-#exec $HOME/.bin/wmrun
-exec monsterwm
+#exec monsterwm
+exec dwm
