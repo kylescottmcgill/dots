@@ -127,12 +127,11 @@ statusbar = {
     # the "default statusbar" to be displayed at the bottom of the window.
     # contains all the normal items.
     window = {
-      disabled = "no";
 
       # window, root
       type = "window";
       # top, bottom
-      placement = "bottom";
+      placement = "top";
       # number
       position = "1";
       # active, inactive, always
@@ -195,7 +194,9 @@ statusbar = {
         topic_empty = { };
         topicbarend = { priority = "100"; alignment = "right"; };
       };
+      disabled = "yes";
     };
+    top = { position = "0"; };
   };
 };
 settings = {
@@ -221,4 +222,4 @@ windows = {
   };
 };
 mainwindows = { 1 = { first_line = "1"; lines = "36"; }; };
-ignores = ( { level = "JOINS PARTS QUITS"; } );
+# ignores = ( { level = "JOINS PARTS QUITS"; } );
