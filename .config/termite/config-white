@@ -43,26 +43,26 @@ size_hints = true
 # if unset, will reverse foreground and background
 #highlight =         #ffffff
 
-background =        #e6e1dc
-foreground =        #2b2b2b
 cursor =            #e6e1dc
+background = #ffffff
+foreground = #262626
 
-#color0 =            #333333
-#color8 =            #666666
-#color1 =            #d15517
-#color9 =            #d11723
-#color2 =            #36b217
-#color10 =           #00d56a
-#color3 =            #d1b217
-#color11 =           #ffea55
-#color4 =            #55aaff
-#color12 =           #1793d1
-#color5 =            #b217d1
-#color13 =           #d11793
-#color6 =            #93d1b2
-#color14 =           #17d1b2
-#color7 =            #eeeeee
-#color15 =           #ffffff
+color0 = #000000
+color8 = #262626
+color1 = #a95858
+color9 = #dcbcbc
+color2 = #58a958
+color10 = #bcdcbc
+color3 = #a9a958
+color11 = #dcdcbc
+color4 = #5858a9
+color12 = #bcbcdc
+color5 = #a958a9
+color13 = #dcbcdc
+color6 = #58a9a9
+color14 = #bcdcdc
+color7 = #d9d9d9
+color15 = #ffffff
 
 [hints]
 padding = 1

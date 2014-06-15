@@ -10,6 +10,57 @@ Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 Xft.dpi: 96
 
-#include "projects/base16-xresources-master/base16-monokai.dark.xresources"
+!#include "projects/base16-xresources-master/base16-monokai.dark.xresources"
+
+!--- ~/.Xresources ------------------------------------------------------------
+! ------------------------------------------------------------------------------
+! --- generated with 4bit Terminal Color Scheme Designer -----------------------
+! ------------------------------------------------------------------------------
+! --- http://ciembor.github.com/4bit -------------------------------------------
+! ------------------------------------------------------------------------------
+
+! --- special colors ---
+*background: #ffffff
+*foreground: #262626
+
+! --- standard colors ---
+! black
+*color0: #000000
+! bright_black
+*color8: #262626
+! red
+*color1: #a95858
+! bright_red
+*color9: #dcbcbc
+! green
+*color2: #58a958
+! bright_green
+*color10: #bcdcbc
+! yellow
+*color3: #a9a958
+! bright_yellow
+*color11: #dcdcbc
+! blue
+*color4: #5858a9
+! bright_blue
+*color12: #bcbcdc
+! magenta
+*color5: #a958a9
+! bright_magenta
+*color13: #dcbcdc
+! cyan
+*color6: #58a9a9
+! bright_cyan
+*color14: #bcdcdc
+! white
+*color7: #d9d9d9
+! bright_white
+*color15: #ffffff
+
+! ------------------------------------------------------------------------------
+! --- end of terminal colors section -------------------------------------------
+! ------------------------------------------------------------------------------
+
 
 ! vim: et sw=2 syn=xdefaults
+
