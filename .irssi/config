@@ -205,7 +205,7 @@ settings = {
     nick = "turtil";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { theme = "hv"; };
+  "fe-common/core" = { theme = "simple"; };
 };
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };

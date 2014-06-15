@@ -1,7 +1,0 @@
-#!/bin/bash
-
-mpc -p 6600 load "soundcloud://url/http://soundcloud.com/kylescottmcgill/sets/work"
-
-mpc -p 6600 load "soundcloud://url/https://soundcloud.com/kylescottmcgill/sets/work"
-
-mpc -p 6600 load "soundcloud://kylescottmcgill/sets/work"
