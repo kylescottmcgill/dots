@@ -15,16 +15,16 @@
 #define TOP_PANEL       False      /* False means panel is on bottom */
 #define PANEL_HEIGHT    0         /* 0 for no space for panel, thus no panel */
 #define DEFAULT_MODE    MONOCLE      /* initial layout/mode: TILE MONOCLE BSTACK GRID FLOAT */
-#define ATTACH_ASIDE    True      /* False means new window is master */
+#define ATTACH_ASIDE    False      /* False means new window is master */
 #define FOLLOW_WINDOW   True      /* follow the window when moved to a different desktop */
 #define FOLLOW_MONITOR  True      /* focus the window the mouse just entered */
 #define FOLLOW_MOUSE    False      /* focus the window the mouse just entered */
 #define CLICK_TO_FOCUS  True      /* focus an unfocused window when clicked  */
 #define FOCUS_BUTTON    Button1   /* mouse button to be used along with CLICK_TO_FOCUS */
 #define BORDER_WIDTH    1         /* window border width */
-#define FOCUS           "#ff950e" /* focused window border color    */
-#define UNFOCUS         "#444444" /* unfocused window border color  */
-#define INFOCUS         "#444444" /* unfocused window border color  */
+#define FOCUS           "#b2b2b2" /* focused window border color    */
+#define UNFOCUS         "#262626" /* unfocused window border color  */
+#define INFOCUS         "#262626" /* unfocused window border color  */
 #define MINWSZ          50        /* minimum window size in pixels  */
 #define DEFAULT_DESKTOP 0         /* the desktop to focus initially */
 #define DEFAULT_MONITOR 0         /* the desktop to focus initially */

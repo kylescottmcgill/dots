@@ -5,7 +5,7 @@ scroll_on_keystroke = true
 audible_bell = true
 visible_bell = false
 mouse_autohide = true
-allow_bold = true
+allow_bold = false
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
@@ -37,8 +37,8 @@ size_hints = true
 #modify_other_keys = false
 
 [colors]
-#foreground_bold =   #fedfed
-#foreground_dim =    #888888
+foreground_bold =   #fedfed
+foreground_dim =    #888888
 
 # if unset, will reverse foreground and background
 #highlight =         #ffffff
