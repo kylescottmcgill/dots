@@ -44,5 +44,6 @@ nitrogen --restore &
 #    *) exec dwm ;;
 #esac
 
-#exec monsterwm
-exec dwm
+exec monsterwm
+#exec dwm
+#exec wm
