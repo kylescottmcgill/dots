@@ -37,7 +37,7 @@ size_hints = true
 #modify_other_keys = false
 
 [colors]
-foreground_bold =   #fedfed
+foreground_bold =   #cccccc
 foreground_dim =    #888888
 
 # if unset, will reverse foreground and background
