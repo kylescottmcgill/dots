@@ -222,4 +222,4 @@ windows = {
   };
 };
 mainwindows = { 1 = { first_line = "1"; lines = "36"; }; };
-# ignores = ( { level = "JOINS PARTS QUITS"; } );
+ignores = ( { level = "PARTS"; } );

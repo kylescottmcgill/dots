@@ -14,7 +14,7 @@
 #define SHOW_PANEL      False     /* show panel by default on exec */
 #define TOP_PANEL       False      /* False means panel is on bottom */
 #define PANEL_HEIGHT    0         /* 0 for no space for panel, thus no panel */
-#define DEFAULT_MODE    MONOCLE      /* initial layout/mode: TILE MONOCLE BSTACK GRID FLOAT */
+#define DEFAULT_MODE    TILE      /* initial layout/mode: TILE MONOCLE BSTACK GRID FLOAT */
 #define ATTACH_ASIDE    False      /* False means new window is master */
 #define FOLLOW_WINDOW   True      /* follow the window when moved to a different desktop */
 #define FOLLOW_MONITOR  True      /* focus the window the mouse just entered */
