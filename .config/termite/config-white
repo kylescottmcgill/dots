@@ -21,7 +21,7 @@ pseudo_transparency = true
 cursor_blink = on
 
 # "block", "underline" or "ibeam"
-cursor_shape = ibeam
+cursor_shape = block
 
 # $BROWSER is used by default
 browser = firefox
