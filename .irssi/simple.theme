@@ -232,7 +232,7 @@ abstracts = {
 
   # prompt = " %r» %n ";
   # prompt = "$c%K └─ ";
-  prompt = "              |  ";
+  prompt = "              │  ";
 
   sb = "[$*]";
   sbmode = " %K[%g%g+%n$*%K]";

@@ -197,7 +197,6 @@ statusbar = {
       };
       disabled = "yes";
     };
-    top = { position = "0"; };
   };
 };
 settings = {
