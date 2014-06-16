@@ -14,11 +14,11 @@
 #define SHOW_PANEL      False     /* show panel by default on exec */
 #define TOP_PANEL       False      /* False means panel is on bottom */
 #define PANEL_HEIGHT    0         /* 0 for no space for panel, thus no panel */
-#define DEFAULT_MODE    GRID      /* initial layout/mode: TILE MONOCLE BSTACK GRID FLOAT */
+#define DEFAULT_MODE    MONOCLE      /* initial layout/mode: TILE MONOCLE BSTACK GRID FLOAT */
 #define ATTACH_ASIDE    True      /* False means new window is master */
 #define FOLLOW_WINDOW   True      /* follow the window when moved to a different desktop */
 #define FOLLOW_MONITOR  True      /* focus the window the mouse just entered */
-#define FOLLOW_MOUSE    True      /* focus the window the mouse just entered */
+#define FOLLOW_MOUSE    False      /* focus the window the mouse just entered */
 #define CLICK_TO_FOCUS  True      /* focus an unfocused window when clicked  */
 #define FOCUS_BUTTON    Button1   /* mouse button to be used along with CLICK_TO_FOCUS */
 #define BORDER_WIDTH    1         /* window border width */
@@ -49,6 +49,7 @@ static const AppRule rules[] = { \
  * must always end with ', NULL };'
  */
 static const char *termcmd[] = { "termite",     NULL };
+static const char *termcmdwhite[] = { "termite-white", NULL };
 static const char *menucmd[] = { "dmenu_run",   NULL };
 static const char *firefox[]  = { "firefox",      NULL };
 
@@ -98,13 +99,13 @@ static Key keys[] = {
     {  MOD1|SHIFT,       XK_f,          switch_mode,       {.i = FLOAT}},
     {  MOD1|SHIFT,       XK_i,          switch_mode,       {.i = FIBONACCI}},
     {  MOD1|CONTROL,     XK_r,          quit,              {.i = 0}}, /* quit with exit value 0 */
-    // 0x1008ff12, XF86AudioMute
     {  0,                0x1008ff14,    spawn,             {.com = ncmpcpptoggle}},
     {  0,                0x1008ff16,    spawn,             {.com = mpcprev}},
     {  0,                0x1008ff17,    spawn,             {.com = mpcnext}},
     {  0,                0x1008ff11,    spawn,             {.com = voldown}},
     {  0,                0x1008ff13,    spawn,             {.com = volup}},
     {  MOD4,             XK_Return,     spawn,             {.com = termcmd}},
+    {  MOD4|SHIFT,       XK_Return,     spawn,             {.com = termcmdwhite}},
     {  MOD4,             XK_grave,      spawn,             {.com = menucmd}},
     {  MOD4,             XK_j,          moveresize,        {.v = (int []){   0,  25,   0,   0 }}}, /* move down  */
     {  MOD4,             XK_k,          moveresize,        {.v = (int []){   0, -25,   0,   0 }}}, /* move up    */

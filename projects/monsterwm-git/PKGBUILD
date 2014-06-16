@@ -16,34 +16,41 @@ _gitroot="git://github.com/c00kiemon5ter/monsterwm.git"
 _gitname="monsterwm"
 _gitbranch="master"
 
+prepare() {
+    if [[ -f $SRCDEST/config.h ]]; then
+        cp $SRCDEST/config.h $srcdir/monsterwm/config.h
+    fi
+}
+
+
 build() {
-	cd "${srcdir}"
-	msg "Connecting to GIT server...."
-	if [ -d ${_gitname} ] ; then
-	    cd ${_gitname} && git pull
-	    msg "The local files are updated."
-	else
-	    git clone ${_gitroot} ${_gitname} -b ${_gitbranch}
-	fi
+    cd "${srcdir}"
+    msg "Connecting to GIT server...."
+    if [ -d ${_gitname} ] ; then
+        cd ${_gitname} && git pull
+        msg "The local files are updated."
+    else
+        git clone ${_gitroot} ${_gitname} -b ${_gitbranch}
+    fi
 
-        msg "GIT checkout done or server timeout"
-	rm -rf "${srcdir}/${_gitname}-build"
-	git clone "${srcdir}/${_gitname}" "${srcdir}/${_gitname}-build"
-	cd "${srcdir}/${_gitname}-build"
+    msg "GIT checkout done or server timeout"
+    rm -rf "${srcdir}/${_gitname}-build"
+    git clone "${srcdir}/${_gitname}" "${srcdir}/${_gitname}-build"
+    cd "${srcdir}/${_gitname}-build"
 
-        if [ -e ${srcdir}/${_gitname}/config.h ]
-	then
-	    msg "use custom config.h"
-	    cp ${srcdir}/${_gitname}/config.h .
-	else
-	    msg "use default config.h"
-	fi
+    if [ -e ${srcdir}/${_gitname}/config.h ]
+    then
+        msg "use custom config.h"
+        cp ${srcdir}/${_gitname}/config.h .
+    else
+        msg "use default config.h"
+    fi
 }
 
 package() {
-	cd "${srcdir}/${_gitname}-build"
-	make PREFIX=/usr DESTDIR="${pkgdir}" install
-	install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    cd "${srcdir}/${_gitname}-build"
+    make PREFIX=/usr DESTDIR="${pkgdir}" install
+    install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
 
 #vim: set ts=8 sw=4 tw=100 et :
