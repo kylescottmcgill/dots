@@ -154,9 +154,10 @@ statusbar = {
     # statusbar to use in inactive split windows
     window_inact = {
       type = "window";
-      placement = "bottom";
+      placement = "top";
       position = "1";
       visible = "inactive";
+      disabled = "yes";
       items = {
         barstart = { priority = "100"; };
         window = { };
