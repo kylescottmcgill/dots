@@ -34,7 +34,11 @@ chatnets = {
 
 channels = (
   { name = "#cirrus"; chatnet = "geekshed"; autojoin = "yes"; },
-  { name = "##kaizen"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "##kaizen"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##darkfox"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##hackerhaven"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#go-nuts"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -102,13 +106,16 @@ statusbar = {
     topicbarend = "{topicsbend}";
 
     # treated "normally", you could change the time/user name to whatever
-    time = "{sb $Z}";
-    user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
+    # time = "{sb $Z}";
+    time = "{}";
+    # user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
+    user = "{}";
 
     # treated specially .. window is printed with non-empty windows,
     # window_empty is printed with empty windows
-    window = "{sb $winref:$tag/$itemname{sbmode $M}}";
-    window_empty = "{sb $winref{sbservertag $tag}}";
+    # window = "{sb $winref:$tag/$itemname{sbmode $M}}";
+    window = "{sb $winref : $tag/$itemname} ";
+    # window_empty = "{sb $winref{sbservertag $tag}}";
     prompt = "{prompt $[.15]itemname}";
     prompt_empty = "{prompt $winname}";
     topic = " $topic";
@@ -116,7 +123,7 @@ statusbar = {
 
     # all of these treated specially, they're only displayed when needed
     lag = "{sb Lag: $0-}";
-    act = "{sb Act: $0-}";
+    act = "{sb Active : $0-}";
     more = "-- more --";
   };
 
@@ -145,7 +152,7 @@ statusbar = {
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
-        act = { priority = "10"; };
+        act = { priority = "10"; alignment = "right"; };
         more = { priority = "-1"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
       };

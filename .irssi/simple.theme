@@ -234,7 +234,7 @@ abstracts = {
   # prompt = "$c%K └─ ";
   prompt = "              │  ";
 
-  sb = "[$*]";
+  sb = "$*";
   sbmode = " %K[%g%g+%n$*%K]";
   sbaway = " %g/* zZzZ */%n";
   sbservertag = ":%g$0%n";
