@@ -48,7 +48,7 @@
 
 [irssi]
     appname = notify.pl
-    timeout = 0
+    timeout = 60
     background = "#000000"
     foreground = "#ffffff"
 
