@@ -230,3 +230,5 @@ windows = {
 };
 mainwindows = { 1 = { first_line = "1"; lines = "36"; }; };
 ignores = ( { level = "PARTS"; } );
+
+# vim: set ft=conf ts=8 sw=4 tw=140 et :#

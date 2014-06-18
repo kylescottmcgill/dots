@@ -1,0 +1,59 @@
+[global]
+    font = "Terminus 8"
+    allow_markup = yes
+    format = "<b>%s %p</b>\n%b"
+    sort = yes
+    indicate_hidden = true
+# geometry = "x5"
+    idle_threshold = 0
+    geometry = "300x5-20+20"
+    alignment = center
+    show_age_threshold = 60
+    sticky_history = no
+    follow = mouse
+    word_wrap = yes
+    separator_height = 10
+    padding = 5
+    horizontal_padding = 5
+    separator_color = frame
+    startup_notification = true
+    dmenu = "/usr/bin/dmenu -p dunst: -nb #ffffff -nf #ffffff -sb #ffffff -sf #ffffff"
+    browser = firefox
+
+
+[frame]
+    width = 1
+    color = "#ffffff"
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+
+[urgency_low]
+    background = "#000000"
+    foreground = "#ffffff"
+    timeout = 30
+
+[urgency_normal]
+    background = "#000000"
+    foreground = "#ffffff"
+    timeout = 45
+
+[urgency_critical]
+    background = "#000000"
+    foreground = "#ffffff"
+    timeout = 0
+
+[irssi]
+    appname = notify.pl
+    timeout = 60
+    background = "#000000"
+    foreground = "#ffffff"
+
+[test]
+    summary = "*test*"
+    background="#22dd22"
+
+# vim: set ft=dosini ts=8 sw=4 tw=140 et :

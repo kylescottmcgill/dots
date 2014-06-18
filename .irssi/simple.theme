@@ -307,3 +307,4 @@ formats = {
   };
 };
 
+# vim: set ft=conf ts=8 sw=4 tw=140 et :
