@@ -213,7 +213,7 @@ settings = {
     nick = "turtil";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { theme = "simple"; };
+  "fe-common/core" = { theme = "simple"; show_names_on_join = "no"; };
 };
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
