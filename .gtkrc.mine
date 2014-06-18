@@ -1,7 +1,7 @@
 [Settings]
 gtk-theme-name=iris-dark
-gtk-icon-theme-name=iris-dark
-gtk-font-name=Liberation Sans 8
+gtk-icon-theme-name=numix
+gtk-font-name=Terminus 8
 gtk-cursor-theme-name=DMZ-White
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_ICONS
