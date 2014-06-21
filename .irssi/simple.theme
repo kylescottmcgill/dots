@@ -118,7 +118,7 @@ abstracts = {
 
   ########## Actions (/ME stuff) #########################
   # used internally by this theme
-  action_core = " %n$* >";
+  action_core = " %n$* > ";
 
   # generic one that's used by most actions
   action = "{action_core $*} ";
