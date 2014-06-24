@@ -47,4 +47,4 @@ nitrogen --restore &
 #    *) exec dwm ;;
 #esac
 
-exec wmrun &> ~/.cache/xlog.log
+exec monsterwm &> ~/.cache/xlog.log
