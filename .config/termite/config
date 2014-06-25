@@ -70,4 +70,4 @@ border = #3f3f3f
 border_width = 0.5
 roundness = 1.0
 
-# vim: set filetype=dosini :
+# vim: set filetype=dosini cms=#%s :
