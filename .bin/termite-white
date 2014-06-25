@@ -1,3 +1,4 @@
 #!/bin/bash
 export COLORSCHEME=minimal
-exec termite -c ~/.config/termite/config-white
+export GTK_THEME=iris-dark
+exec termite -c ~/.config/termite/config-white --class=termitewhite --name=termitewhite
