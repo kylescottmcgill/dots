@@ -22,9 +22,9 @@ xset s off                      # Do not allow the screensaver to start
 mpd                             # Start MPD
 numlockx                        # Chromebook doesnt have Numlock but thats ok
 
-#export RADEON_HYPERZ=1          # Sets Radeon Drivers to use HyperZ for vdpau
-#export LIBVA_DRIVER_NAME=vdpau  # Use vdpau
-#export VDPAU_DRIVER=radeonsi    # Use opensource Drivers
+export RADEON_HYPERZ=1          # Sets Radeon Drivers to use HyperZ for vdpau
+export LIBVA_DRIVER_NAME=vdpau  # Use vdpau
+export VDPAU_DRIVER=radeonsi    # Use opensource Drivers
 
 xsetroot -cursor_name left_ptr &  # Use a non-shit cursor
 
@@ -47,5 +47,4 @@ nitrogen --restore &
 #    *) exec dwm ;;
 #esac
 
-exec monsterwm
-#exec dwm
+exec monsterwm &> ~/.cache/xlog.log

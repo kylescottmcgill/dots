@@ -52,7 +52,7 @@ channels = (
   { name = "##darkfox"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##hackerhaven"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#go-nuts"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#nixers"; chatnet = "nixers"; autojoin = "yes"; }
 );
 
@@ -227,13 +227,63 @@ settings = {
     user_name = "turtil";
     nick = "turtil";
   };
-  "fe-text" = { actlist_sort = "refnum"; };
+  "fe-text" = { actlist_sort = "refnum"; autostick_split_windows = "no"; };
   "fe-common/core" = { theme = "simple"; show_names_on_join = "no"; };
 };
-windows = {
-  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-};
-mainwindows = { 1 = { first_line = "1"; lines = "36"; }; };
 ignores = ( { level = "PARTS"; } );
 
 # vim: set ft=conf ts=8 sw=4 tw=140 et :#
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#cirrus";
+        tag = "geekshed";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#nixers";
+        tag = "nixers";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##kaizen";
+        tag = "freenode";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#go-nuts";
+        tag = "freenode";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "##darkfox";
+        tag = "freenode";
+      }
+    );
+  };
+};
+mainwindows = { 2 = { first_line = "0"; lines = "85"; }; };
