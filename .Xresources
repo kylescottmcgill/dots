@@ -2,6 +2,8 @@
 xterm*termName: xterm-256color
 xterm*locale: true
 
+#include "/home/kyle/bow"
+
 Xft.autohint: true
 Xft.antialias: true
 Xft.hinting: true
@@ -10,7 +12,21 @@ Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 Xft.dpi: 96
 
-!#include "projects/base16-xresources-master/base16-monokai.dark.xresources"
+URxvt*termName:             rxvt-256color
+URxvt*loginShell:           false
+URxvt*saveLines:            1024
+URxvt*geometry:             80x20
+URxvt*font:                 xft:Terminus:pixelsize=12
+URxvt*boldFont:             xft:Terminus:pixelsize=12
+URxvt*scrollBar:            false
+URxvt*cursorBlink:          true
+URxvt*internalBorder:       20
+! URxvt*perl-ext-common:      default,url-select,keyboard-select
+! URxvt.url-select.launcher:  /usr/bin/dwb
+! URxvt.url-select.launcher:  /usr/bin/urxvt -e elinks
+! URxvt.url-select.underline: true
+! URxvt.keysym.M-u:           perl:url-select:select_next
+! URxvt.keysym.M-v:           perl:keyboard-select:activate
 
 !--- ~/.Xresources ------------------------------------------------------------
 ! ------------------------------------------------------------------------------
@@ -20,42 +36,42 @@ Xft.dpi: 96
 ! ------------------------------------------------------------------------------
 
 ! --- special colors ---
-*background: #ffffff
-*foreground: #262626
+! URxvt*background: #ffffff
+! URxvt*foreground: #262626
 
 ! --- standard colors ---
 ! black
-*color0: #000000
+! URxvt*color0: #000000
 ! bright_black
-*color8: #262626
+! URxvt*color8: #262626
 ! red
-*color1: #a95858
+! URxvt*color1: #a95858
 ! bright_red
-*color9: #dcbcbc
+! URxvt*color9: #dcbcbc
 ! green
-*color2: #58a958
+! URxvt*color2: #58a958
 ! bright_green
-*color10: #bcdcbc
+! URxvt*color10: #bcdcbc
 ! yellow
-*color3: #a9a958
+! URxvt*color3: #a9a958
 ! bright_yellow
-*color11: #dcdcbc
+! URxvt*color11: #dcdcbc
 ! blue
-*color4: #5858a9
+! URxvt*color4: #5858a9
 ! bright_blue
-*color12: #bcbcdc
+! URxvt*color12: #bcbcdc
 ! magenta
-*color5: #a958a9
+! URxvt*color5: #a958a9
 ! bright_magenta
-*color13: #dcbcdc
+! URxvt*color13: #dcbcdc
 ! cyan
-*color6: #58a9a9
+! URxvt*color6: #58a9a9
 ! bright_cyan
-*color14: #bcdcdc
+! URxvt*color14: #bcdcdc
 ! white
-*color7: #d9d9d9
+! URxvt*color7: #d9d9d9
 ! bright_white
-*color15: #ffffff
+! URxvt*color15: #ffffff
 
 ! ------------------------------------------------------------------------------
 ! --- end of terminal colors section -------------------------------------------
