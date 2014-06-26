@@ -2,8 +2,6 @@
 xterm*termName: xterm-256color
 xterm*locale: true
 
-#include "/home/kyle/bow"
-
 Xft.autohint: true
 Xft.antialias: true
 Xft.hinting: true
@@ -27,6 +25,36 @@ URxvt*internalBorder:       20
 ! URxvt.url-select.underline: true
 ! URxvt.keysym.M-u:           perl:url-select:select_next
 ! URxvt.keysym.M-v:           perl:keyboard-select:activate
+
+*background:#eeeeee
+*foreground:#888888
+
+*color0:    #eeeeee
+*color1:    #666666
+*color2:    #666666
+*color3:    #666666
+*color4:    #666666
+*color5:    #666666
+*color6:    #666666
+*color7:    #888888
+
+*color8:    #bbbbbb
+*color9:    #6688bb
+*color10:   #6688bb
+*color11:   #6688bb
+*color12:   #6688bb
+*color13:   #6688bb
+*color14:   #6688bb
+*color15:   #111111
+
+URxvt*highlightColor:       #aaaaaa
+URxvt*highlightTextColor:   #000000
+
+URxvt*cursorColor:  #333333
+
+URxvt*colorIT:      #666666
+URxvt*colorBD:      #aaaaaa
+URxvt*colorUL:      #000000
 
 !--- ~/.Xresources ------------------------------------------------------------
 ! ------------------------------------------------------------------------------
