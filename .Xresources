@@ -10,15 +10,16 @@ Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 Xft.dpi: 96
 
-URxvt*termName:             rxvt-256color
-URxvt*loginShell:           false
-URxvt*saveLines:            1024
-URxvt*geometry:             80x20
-URxvt*font:                 xft:Terminus:pixelsize=12
-URxvt*boldFont:             xft:Terminus:pixelsize=12
-URxvt*scrollBar:            false
-URxvt*cursorBlink:          true
-URxvt*internalBorder:       20
+URxvt*termName: rxvt-256color
+URxvt*loginShell: false
+URxvt*saveLines: 1024
+URxvt*geometry: 80x20
+URxvt*font: xft:Terminus:pixelsize=12
+URxvt*boldFont: xft:Terminus:pixelsize=12
+URxvt*scrollBar: false
+URxvt*cursorBlink: true
+URxvt-white*internalBorder: 20
+URxvt*internelBorder: 10
 ! URxvt*perl-ext-common:      default,url-select,keyboard-select
 ! URxvt.url-select.launcher:  /usr/bin/dwb
 ! URxvt.url-select.launcher:  /usr/bin/urxvt -e elinks
@@ -26,85 +27,57 @@ URxvt*internalBorder:       20
 ! URxvt.keysym.M-u:           perl:url-select:select_next
 ! URxvt.keysym.M-v:           perl:keyboard-select:activate
 
-*background:#eeeeee
-*foreground:#888888
+! Termite Config !
+*foreground: #e6e1dc
+*background: #2b2b2b
+*cursor: #e6e1dc
 
-*color0:    #eeeeee
-*color1:    #666666
-*color2:    #666666
-*color3:    #666666
-*color4:    #666666
-*color5:    #666666
-*color6:    #666666
-*color7:    #888888
+*color0: #333333
+*color8: #666666
+*color1: #d15517
+*color9: #d11723
+*color2: #36b217
+*color10: #00d56a
+*color3: #d1b217
+*color11: #ffea55
+*color4: #55aaff
+*color12: #1793d1
+*color5: #b217d1
+*color13: #d11793
+*color6: #93d1b2
+*color14: #17d1b2
+*color7: #eeeeee
+*color15: #ffffff
 
-*color8:    #bbbbbb
-*color9:    #6688bb
-*color10:   #6688bb
-*color11:   #6688bb
-*color12:   #6688bb
-*color13:   #6688bb
-*color14:   #6688bb
-*color15:   #111111
+URxvt-white*background:#eeeeee
+URxvt-white*foreground:#888888
 
-URxvt*highlightColor:       #aaaaaa
-URxvt*highlightTextColor:   #000000
+URxvt-white*color0:    #eeeeee
+URxvt-white*color1:    #666666
+URxvt-white*color2:    #666666
+URxvt-white*color3:    #666666
+URxvt-white*color4:    #666666
+URxvt-white*color5:    #666666
+URxvt-white*color6:    #666666
+URxvt-white*color7:    #888888
 
-URxvt*cursorColor:  #333333
+URxvt-white*color8:    #bbbbbb
+URxvt-white*color9:    #6688bb
+URxvt-white*color10:   #6688bb
+URxvt-white*color11:   #6688bb
+URxvt-white*color12:   #6688bb
+URxvt-white*color13:   #6688bb
+URxvt-white*color14:   #6688bb
+URxvt-white*color15:   #111111
 
-URxvt*colorIT:      #666666
-URxvt*colorBD:      #aaaaaa
-URxvt*colorUL:      #000000
+URxvt-white*highlightColor:       #aaaaaa
+URxvt-white*highlightTextColor:   #000000
 
-!--- ~/.Xresources ------------------------------------------------------------
-! ------------------------------------------------------------------------------
-! --- generated with 4bit Terminal Color Scheme Designer -----------------------
-! ------------------------------------------------------------------------------
-! --- http://ciembor.github.com/4bit -------------------------------------------
-! ------------------------------------------------------------------------------
+URxvt-white*cursorColor:  #333333
 
-! --- special colors ---
-! URxvt*background: #ffffff
-! URxvt*foreground: #262626
-
-! --- standard colors ---
-! black
-! URxvt*color0: #000000
-! bright_black
-! URxvt*color8: #262626
-! red
-! URxvt*color1: #a95858
-! bright_red
-! URxvt*color9: #dcbcbc
-! green
-! URxvt*color2: #58a958
-! bright_green
-! URxvt*color10: #bcdcbc
-! yellow
-! URxvt*color3: #a9a958
-! bright_yellow
-! URxvt*color11: #dcdcbc
-! blue
-! URxvt*color4: #5858a9
-! bright_blue
-! URxvt*color12: #bcbcdc
-! magenta
-! URxvt*color5: #a958a9
-! bright_magenta
-! URxvt*color13: #dcbcdc
-! cyan
-! URxvt*color6: #58a9a9
-! bright_cyan
-! URxvt*color14: #bcdcdc
-! white
-! URxvt*color7: #d9d9d9
-! bright_white
-! URxvt*color15: #ffffff
-
-! ------------------------------------------------------------------------------
-! --- end of terminal colors section -------------------------------------------
-! ------------------------------------------------------------------------------
-
+URxvt-white*colorIT:      #666666
+URxvt-white*colorBD:      #aaaaaa
+URxvt-white*colorUL:      #000000
 
 ! vim: et sw=2 syn=xdefaults
 

@@ -1,8 +1,0 @@
-#!/bin/bash
-
-urxvt
-
-
-#export COLORSCHEME=minimal
-#export GTK_THEME=iris-dark
-#exec termite -c ~/.config/termite/config-white --class=termitewhite --name=termitewhite
