@@ -18,8 +18,8 @@ URxvt*font: xft:Terminus:pixelsize=12
 URxvt*boldFont: xft:Terminus:pixelsize=12
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
-URxvt-white*internalBorder: 20
 URxvt*internelBorder: 10
+URxvt-white*internalBorder: 20
 ! URxvt*perl-ext-common:      default,url-select,keyboard-select
 ! URxvt.url-select.launcher:  /usr/bin/dwb
 ! URxvt.url-select.launcher:  /usr/bin/urxvt -e elinks
