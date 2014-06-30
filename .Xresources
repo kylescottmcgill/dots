@@ -27,57 +27,56 @@ URxvt-white*internalBorder: 20
 ! URxvt.keysym.M-u:           perl:url-select:select_next
 ! URxvt.keysym.M-v:           perl:keyboard-select:activate
 
-! Termite Config !
-*foreground: #e6e1dc
-*background: #2b2b2b
-*cursor: #e6e1dc
+URxvt*foreground: #e6e1dc
+URxvt*background: #2b2b2b
+URxvt*cursor: #e6e1dc
 
-*color0: #333333
-*color8: #666666
-*color1: #d15517
-*color9: #d11723
-*color2: #36b217
-*color10: #00d56a
-*color3: #d1b217
-*color11: #ffea55
-*color4: #55aaff
-*color12: #1793d1
-*color5: #b217d1
-*color13: #d11793
-*color6: #93d1b2
-*color14: #17d1b2
-*color7: #eeeeee
-*color15: #ffffff
+URxvt*color0: #333333
+URxvt*color8: #666666
+URxvt*color1: #d15517
+URxvt*color9: #d11723
+URxvt*color2: #36b217
+URxvt*color10: #00d56a
+URxvt*color3: #d1b217
+URxvt*color11: #ffea55
+URxvt*color4: #55aaff
+URxvt*color12: #1793d1
+URxvt*color5: #b217d1
+URxvt*color13: #d11793
+URxvt*color6: #93d1b2
+URxvt*color14: #17d1b2
+URxvt*color7: #eeeeee
+URxvt*color15: #ffffff
 
-URxvt-white*background:#eeeeee
-URxvt-white*foreground:#888888
+URxvt-white*background: #eeeeee
+URxvt-white*foreground: #888888
 
-URxvt-white*color0:    #eeeeee
-URxvt-white*color1:    #666666
-URxvt-white*color2:    #666666
-URxvt-white*color3:    #666666
-URxvt-white*color4:    #666666
-URxvt-white*color5:    #666666
-URxvt-white*color6:    #666666
-URxvt-white*color7:    #888888
+URxvt-white*color0: #eeeeee
+URxvt-white*color1: #666666
+URxvt-white*color2: #666666
+URxvt-white*color3: #666666
+URxvt-white*color4: #666666
+URxvt-white*color5: #666666
+URxvt-white*color6: #666666
+URxvt-white*color7: #888888
 
-URxvt-white*color8:    #bbbbbb
-URxvt-white*color9:    #6688bb
-URxvt-white*color10:   #6688bb
-URxvt-white*color11:   #6688bb
-URxvt-white*color12:   #6688bb
-URxvt-white*color13:   #6688bb
-URxvt-white*color14:   #6688bb
-URxvt-white*color15:   #111111
+URxvt-white*color8: #bbbbbb
+URxvt-white*color9: #6688bb
+URxvt-white*color10: #6688bb
+URxvt-white*color11: #6688bb
+URxvt-white*color12: #6688bb
+URxvt-white*color13: #6688bb
+URxvt-white*color14: #6688bb
+URxvt-white*color15: #111111
 
-URxvt-white*highlightColor:       #aaaaaa
-URxvt-white*highlightTextColor:   #000000
+URxvt-white*highlightColor: #aaaaaa
+URxvt-white*highlightTextColor: #000000
 
-URxvt-white*cursorColor:  #333333
+URxvt-white*cursorColor: #333333
 
-URxvt-white*colorIT:      #666666
-URxvt-white*colorBD:      #aaaaaa
-URxvt-white*colorUL:      #000000
+URxvt-white*colorIT: #666666
+URxvt-white*colorBD: #aaaaaa
+URxvt-white*colorUL: #000000
 
 ! vim: et sw=2 syn=xdefaults
 
