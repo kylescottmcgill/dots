@@ -32,6 +32,7 @@ export BZR_LOG=/dev/null
 export BROWSER=firefox
 export PULSE_LATENCY_MSEC=60
 #export RXVT_SOCKET=$HOME/.cache/
+export COLUMNS=250
 
 alias sl='ls'
 alias ls='ls --color'
