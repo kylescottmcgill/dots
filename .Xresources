@@ -20,12 +20,16 @@ URxvt*scrollBar: false
 URxvt*cursorBlink: true
 URxvt*internelBorder: 10
 URxvt-white*internalBorder: 20
-! URxvt*perl-ext-common:      default,url-select,keyboard-select
-! URxvt.url-select.launcher:  /usr/bin/dwb
-! URxvt.url-select.launcher:  /usr/bin/urxvt -e elinks
-! URxvt.url-select.underline: true
-! URxvt.keysym.M-u:           perl:url-select:select_next
-! URxvt.keysym.M-v:           perl:keyboard-select:activate
+
+URxvt*perl-ext-common:      default,clipboard,url-select,keyboard-select,matcher
+URxvt.url-select.launcher:  firefox
+URxvt.url-select.underline: true
+URxvt.matcher.button:       1
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+URxvt.keysym.M-c:           perl:clipboard:copy
+URxvt.keysyn.M-v:           perl:clipboard:paste
 
 URxvt*foreground: #e6e1dc
 URxvt*background: #2b2b2b

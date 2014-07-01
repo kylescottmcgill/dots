@@ -14,7 +14,7 @@ fi
 xset +fp /usr/share/fonts/local # Load some fonts... all of dem
 xset fp rehash                  # Something else for the fonts
 xset -b                         # disable bell
-xrdb -merge $HOME/.Xresources   # Merge Xresources
+xrdb $HOME/.Xresources   # Merge Xresources
 
 sleep 1; xset -dpms             # Do not turn off the screen
 xset s off                      # Do not allow the screensaver to start
@@ -38,6 +38,8 @@ xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUA
 # This is required for some GTK2 themes to get set correctly
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 nitrogen --restore &
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
 
 # Finally, start the correct WindowManger based on the hostname
 #case "$(hostname)" in
