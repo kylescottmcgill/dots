@@ -62,3 +62,15 @@ man() {
         LESS_TERMCAP_us=$'\E[04;38;5;146m' \
         man "$@"
 }
+
+
+
+
+
+
+
+
+# Startx Automagically.... unsure about this one
+if [[ ! ${DISPLAY} && ${XDG_VTNR} == 1 ]] ; then
+    exec startx
+fi
