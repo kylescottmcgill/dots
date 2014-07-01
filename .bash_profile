@@ -49,7 +49,7 @@ alias gitpp='git pull ; git push'
 stty werase undef
 bind '\C-w:unix-filename-rubout'
 bind Space:magic-space
-set completion-ignore-case On
+bind 'set completion-ignore-case on'
 
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
