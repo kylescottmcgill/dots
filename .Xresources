@@ -12,7 +12,7 @@ Xft.dpi: 96
 
 URxvt*termName: rxvt-256color
 URxvt*loginShell: false
-URxvt*saveLines: 1024
+URxvt*saveLines: 0
 URxvt*geometry: 80x20
 URxvt*font: xft:Terminus:pixelsize=12
 URxvt*boldFont: xft:Terminus:pixelsize=12
