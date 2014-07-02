@@ -82,6 +82,9 @@ URxvt-white*colorIT: #666666
 URxvt-white*colorBD: #aaaaaa
 URxvt-white*colorUL: #000000
 
+Skype*background: #eeeeee
+Skype*foreground: #888888
+
 ! URxvt*termName:                       string
 ! URxvt*geometry:                       geometry
 ! URxvt*chdir:                          string
