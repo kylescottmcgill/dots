@@ -4,5 +4,5 @@ if [[ $1 == *nyaa* ]]
 then
     cd ~/downloads/rtorrent/watch && { curl --silent -O -J -L $1 ; cd - ; }
 else
-    firefox $1 2>/dev/null &
+    $BROWSER $1 2>/dev/null &
 fi
