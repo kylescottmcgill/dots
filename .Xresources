@@ -49,13 +49,13 @@ URxvt*color5: #b217d1
 URxvt*color13: #d11793
 URxvt*color6: #93d1b2
 URxvt*color14: #17d1b2
-URxvt*color7: #eeeeee
+URxvt*color7: #f6f6f6
 URxvt*color15: #ffffff
 
-URxvt-white*background: #eeeeee
+URxvt-white*background: #f6f6f6
 URxvt-white*foreground: #888888
 
-URxvt-white*color0: #eeeeee
+URxvt-white*color0: #f6f6f6
 URxvt-white*color1: #666666
 URxvt-white*color2: #666666
 URxvt-white*color3: #666666
@@ -82,7 +82,7 @@ URxvt-white*colorIT: #666666
 URxvt-white*colorBD: #aaaaaa
 URxvt-white*colorUL: #000000
 
-Skype*background: #eeeeee
+Skype*background: #f6f6f6
 Skype*foreground: #888888
 
 ! URxvt*termName:                       string
