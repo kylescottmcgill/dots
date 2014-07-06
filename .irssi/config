@@ -31,17 +31,17 @@ servers = (
 chatnets = {
   geekshed = {
     type = "IRC";
-    nick = "turtil";
+    nick = "turtil-kun";
     # autosendcmd = "/msg nickserv IDENTIFY";
   };
   freenode = {
     type = "IRC";
-    nick = "turtil";
+    nick = "turtil-kun";
     # autosendcmd = "/msg nickserv IDENTIFY";
   };
   nixers = {
     type = "IRC";
-    nick = "turtil";
+    nick = "turtil-kun";
     # autosendcmd = "/msg nickserv IDENTIFY";
   };
 };
@@ -49,10 +49,6 @@ chatnets = {
 channels = (
   { name = "#cirrus"; chatnet = "geekshed"; autojoin = "yes"; },
   { name = "##kaizen"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "##darkfox"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "##hackerhaven"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#go-nuts"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#nixers"; chatnet = "nixers"; autojoin = "yes"; }
 );
 
@@ -224,8 +220,8 @@ statusbar = {
 settings = {
   core = {
     real_name = "Kyle Mcgill";
-    user_name = "turtil";
-    nick = "turtil";
+    user_name = "turtil-kun";
+    nick = "turtil-kun";
   };
   "fe-text" = { actlist_sort = "refnum"; autostick_split_windows = "no"; };
   "fe-common/core" = { theme = "simple"; show_names_on_join = "no"; };
