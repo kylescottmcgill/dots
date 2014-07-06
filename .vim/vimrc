@@ -81,17 +81,12 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 
 Bundle 'twerth/ir_black'
-Bundle 'nanotech/jellybeans.vim'
 
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
-Bundle 'junegunn/goyo.vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
 Bundle 'fatih/vim-go'
 
 
@@ -175,9 +170,6 @@ nnoremap <silent> <C-Down> <c-w>j
 
 " Plugin bindings and functionality
 
-" Tagbar
-nmap <F8> :TagbarToggle<CR>
-
 " NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>i
@@ -191,27 +183,7 @@ let g:syntastic_always_populate_loc_list=1
 " PHPUnit
 com! -nargs=* Phpunit make -c app <q-args> | cw
 
-" Goyo
-nnoremap <Leader><Space> :Goyo<CR>
-
-" gist-vim
-let g:gist_post_private = 1
-let g:gist_open_browser_after_post = 1
-let g:gist_show_privates = 1
-let g:gist_get_multiplefile = 1
-nnoremap <silent> <Leader>g :Gist<CR>
-
 " Vim-go
 let g:go_bin_path = expand("~/.go/bin")
-
-" Unite PT
-nnoremap <silent> ,g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-if executable('pt')
-    let g:unite_source_grep_command = 'pt'
-    let g:unite_source_grep_default_opts = '--nogroup --nocolor'
-    let g:unite_source_grep_recursive_opt = ''
-    let g:unite_source_grep_encoding = 'utf-8'
-endif
-
 
 "vim: set ft=vim ts=8 sw=4 tw=100 et :
