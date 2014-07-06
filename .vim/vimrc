@@ -104,16 +104,15 @@ set runtimepath+=$GOROOT/misc/vim
 
 filetype plugin indent on     " required!
 
-set background=dark
 colorscheme jellybeans
 
 set cursorline
 set cursorcolumn
-highlight cursorline cterm=none ctermfg=none ctermbg=black
-highlight cursorcolumn cterm=none ctermfg=none ctermbg=black
+" highlight cursorline cterm=none ctermfg=none ctermbg=black
+" highlight cursorcolumn cterm=none ctermfg=none ctermbg=black
 highlight statusline cterm=none ctermfg=white ctermbg=black
-highlight signcolumn cterm=none ctermfg=grey ctermbg=black
-highlight colorcolumn cterm=none ctermfg=none ctermbg=black
+" highlight signcolumn cterm=none ctermfg=grey ctermbg=black
+" highlight colorcolumn cterm=none ctermfg=none ctermbg=black
 
 set laststatus=2
 set statusline=\ %f%m%r%h%w\ %{fugitive#statusline()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
