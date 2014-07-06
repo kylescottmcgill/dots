@@ -8,9 +8,12 @@ download-path 		~/downloads
 confirm-exit        	no
 show-read-articles  	yes
 show-read-feeds     	yes
+cleanup-on-quit         no
+delete-read-articles-on-quit yes
+
 
 #max-items           	500
-#notify-program      	"/usr/bin/notify-send"
+notify-program      	"/usr/bin/notify-send"
 
 #The default color configuration of newsbeuter looks like this:
 
