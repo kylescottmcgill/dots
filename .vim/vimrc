@@ -86,17 +86,13 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'gorodinskiy/vim-coloresque'
-Bundle 'elixir-lang/vim-elixir'
 Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'junegunn/goyo.vim'
-" Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'fatih/vim-go'
-Bundle 'Shougo/unite.vim'
 
 
 " Go Native Plugin
@@ -104,7 +100,8 @@ set runtimepath+=$GOROOT/misc/vim
 
 filetype plugin indent on     " required!
 
-colorscheme jellybeans
+" set background=dark
+colorscheme ir_black
 
 set cursorline
 set cursorcolumn
