@@ -2,10 +2,10 @@
 #define MODKEY          Mod1Mask
 #define MONKEY          Mod4Mask
 #define TAGKEYS(KEY,TAG) \
-    { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-    { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-    { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-    { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+    { MONKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+    { MONKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+    { MONKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+    { MONKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 static const unsigned int tagspacing = 3;       /* space between tags */
 static const unsigned int tagpadding = 25;      /* inner padding of tags */
@@ -51,7 +51,7 @@ static const Tag tags[] = {
     /* name     layout          mfact   nmaster */
     { "web",    &layouts[0],    -1,     -1 },
     { "chat",   &layouts[0],    -1,     -1 },
-    { "term",   &layouts[3],    -1,     -1 },
+    { "term",   &layouts[0],    -1,     -1 },
     { "code",   &layouts[0],    -1,     -1 },
     { "media",  &layouts[0],    -1,     -1 },
     { "misc",   &layouts[0],    -1,     -1 },
@@ -97,8 +97,8 @@ static Key keys[] = {
     { MODKEY,           XK_b,       setlayout,      {.v = &layouts[1] } },
     { MODKEY,           XK_m,       setlayout,      {.v = &layouts[2] } },
     { MODKEY,           XK_f,       setlayout,      {.v = &layouts[3] } },
-    { MODKEY,           XK_Right,   focusstack,     {.i = +1 } },
-    { MODKEY,           XK_Left,    focusstack,     {.i = -1 } },
+    { MODKEY,           XK_j,       focusstack,     {.i = +1 } },
+    { MODKEY,           XK_k,       focusstack,     {.i = -1 } },
     { MODKEY,           XK_h,       setmfact,       {.f = -0.05 } },
     { MODKEY,           XK_l,       setmfact,       {.f = +0.05 } },
     { MODKEY,           XK_equal,   incnmaster,     {.i = +1 } },
