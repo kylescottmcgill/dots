@@ -1,0 +1,59 @@
+# Maintained by Kyle Mcgill (turtil) [email@kylescottmcgill.com]
+pkgname=dwm
+pkgver=6.0
+pkgrel=2
+pkgdesc="A dynamic window manager for X"
+url="https://github.com/kylescottmcgill/dwm.git"
+arch=('i686' 'x86_64' 'armv7h')
+arch=('i686' 'x86_64')
+license=('MIT/X')
+groups=('modified')
+options=(zipman)
+makedepends=('git')
+depends=('libx11' 'libxinerama')
+conflicts=('dwm-git')
+install=dwm.install
+md5sums=('')
+
+_gitroot="git://github.com/kylescottmcgill/dwm.git"
+_gitname="dwm"
+_gitbranch="master"
+
+prepare() {
+    if [[ -f $SRCDEST/config.h ]]; then
+        cp $SRCDEST/config.h $srcdir/dwm/config.h
+    fi
+}
+
+
+build() {
+    cd "${srcdir}"
+    msg "Connecting to GIT server...."
+    if [ -d ${_gitname} ] ; then
+        cd ${_gitname} && git pull
+        msg "The local files are updated."
+    else
+        git clone ${_gitroot} ${_gitname} -b ${_gitbranch}
+    fi
+
+    msg "GIT checkout done or server timeout"
+    rm -rf "${srcdir}/${_gitname}-build"
+    git clone "${srcdir}/${_gitname}" "${srcdir}/${_gitname}-build"
+    cd "${srcdir}/${_gitname}-build"
+
+    if [ -e ${srcdir}/${_gitname}/config.h ]
+    then
+        msg "use custom config.h"
+        cp ${srcdir}/${_gitname}/config.h .
+    else
+        msg "use default config.h"
+    fi
+}
+
+package() {
+    cd "${srcdir}/${_gitname}-build"
+    make PREFIX=/usr DESTDIR="${pkgdir}" install
+    install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
+
+#vim: set ts=8 sw=4 tw=100 et :
