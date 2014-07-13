@@ -20,7 +20,7 @@ sleep 1; xset -dpms             # Do not turn off the screen
 xset s off                      # Do not allow the screensaver to start
 xset m 1/1 0                    # No Mouse Acceleration
 
-mpd                             # Start MPD
+#mpd                             # Start MPD
 
 #export RADEON_HYPERZ=1          # Sets Radeon Drivers to use HyperZ for vdpau
 #export LIBVA_DRIVER_NAME=vdpau  # Use vdpau
