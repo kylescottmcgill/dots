@@ -19,12 +19,11 @@ _gitroot="git://github.com/kylescottmcgill/dwm.git"
 _gitname="dwm"
 _gitbranch="master"
 
-prepare() {
-    if [[ -f $SRCDEST/config.h ]]; then
-        cp $SRCDEST/config.h $srcdir/dwm/config.h
-    fi
-}
-
+#prepare() {
+#    if [[ -f $SRCDEST/config.h ]]; then
+#        cp $SRCDEST/config.h $srcdir/dwm/config.h
+#    fi
+#}
 
 build() {
     cd "${srcdir}"
