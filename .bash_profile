@@ -42,10 +42,10 @@ alias less='less -F -g -i -M -R -S -w -X -z -4'
 alias saidar='saidar -c'
 alias packer='packer --noconfirm --noedit --auronly'
 alias ll='ls -lh'
-alias mpv='DISPLAY=:0 mpv -vo vdpau:fps=60 -ao=alsa'
+#alias mpv='DISPLAY=:0 mpv -vo vdpau:fps=60 -ao=alsa'
 alias rm='rm -f'
 alias tmux='tmux -2'
-alias mpd='sudo -E mpd ~/.mpd/mpd.conf'
+#alias mpd='sudo -E mpd ~/.mpd/mpd.conf'
 alias gitpp='git pull ; git push'
 
 stty werase undef
@@ -75,3 +75,4 @@ man() {
 if [[ ! ${DISPLAY} && ${XDG_VTNR} == 1 ]] ; then
     exec startx
 fi
+eval $(dircolors -b $HOME/.dircolors)
