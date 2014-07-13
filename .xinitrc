@@ -37,8 +37,8 @@ nitrogen --restore &
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
-    "ouroboros") exec dwm ;; # Main PC
-    "kuro") exec dwm ;;   # Chromebook
+    "ouroboros") exec dwm ;;    # Main PC
+    "kuro") exec dwm ;;         # Chromebook
     "tsuchinoko") exec dwm ;;   # Work PC
     *) exec dwm ;;
 esac

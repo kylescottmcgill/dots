@@ -75,3 +75,4 @@ man() {
 if [[ ! ${DISPLAY} && ${XDG_VTNR} == 1 ]] ; then
     exec startx
 fi
+eval $(dircolors -b $HOME/.dircolors)
