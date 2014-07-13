@@ -45,7 +45,7 @@ alias ll='ls -lh'
 #alias mpv='DISPLAY=:0 mpv -vo vdpau:fps=60 -ao=alsa'
 alias rm='rm -f'
 alias tmux='tmux -2'
-alias mpd='sudo -E mpd ~/.mpd/mpd.conf'
+#alias mpd='sudo -E mpd ~/.mpd/mpd.conf'
 alias gitpp='git pull ; git push'
 
 stty werase undef
