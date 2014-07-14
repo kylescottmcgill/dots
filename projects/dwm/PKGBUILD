@@ -15,7 +15,7 @@ conflicts=('dwm-git')
 install=dwm.install
 md5sums=('')
 
-_gitroot="git://github.com/kylescottmcgill/dwm.git"
+_gitroot="git@github.com:kylescottmcgill/dwm.git"
 _gitname="dwm"
 _gitbranch="master"
 
@@ -36,16 +36,19 @@ build() {
     fi
 
     msg "GIT checkout done or server timeout"
+
     rm -rf "${srcdir}/${_gitname}-build"
+
     git clone "${srcdir}/${_gitname}" "${srcdir}/${_gitname}-build"
+
     cd "${srcdir}/${_gitname}-build"
 
-    if [ -e ${srcdir}/${_gitname}/config.h ]
+    if [ -e ${srcdir}/config.h ]
     then
-        msg "use custom config.h"
-        cp ${srcdir}/${_gitname}/config.h .
+        msg "using custom config.h"
+        cp ${srcdir}/config.h .
     else
-        msg "use default config.h"
+        msg "using default config.h"
     fi
 }
 
@@ -53,6 +56,7 @@ package() {
     cd "${srcdir}/${_gitname}-build"
     make PREFIX=/usr DESTDIR="${pkgdir}" install
     install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    rm -rvf "pkg"
 }
 
 #vim: set ts=8 sw=4 tw=100 et :
