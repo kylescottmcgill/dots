@@ -16,8 +16,8 @@ xset fp rehash                  # Something else for the fonts
 xset -b                         # disable bell
 xrdb $HOME/.Xresources   # Merge Xresources
 
-sleep 1; xset -dpms             # Do not turn off the screen
-xset s off                      # Do not allow the screensaver to start
+#sleep 1; xset -dpms             # Do not turn off the screen
+#xset s off                      # Do not allow the screensaver to start
 xset m 1/1 0                    # No Mouse Acceleration
 
 #mpd                             # Start MPD
