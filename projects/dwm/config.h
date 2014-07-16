@@ -59,7 +59,7 @@ static const Tag tags[] = {
 
 static const Rule rules[] = {
     /* class                instance    title       tags mask       isfloating      iscentred       monitor */
-    { "Skype",              NULL,       NULL,       1 << 1,         False,          False,          -1 }
+    { "dummy",              NULL,       NULL,       1 << 1,         False,          False,          -1 }
 };
 
 static const char *menu[] = { "dmenu_run", "-i", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[9][ColFG], NULL };
@@ -107,10 +107,10 @@ static Key keys[] = {
     { MODKEY,           XK_Up,      focusstack,     {.i = -1 } },
     { MODKEY,           XK_0,       view,           {.ui = ~0 } },
     { MODKEY|ShiftMask, XK_0,       tag,            {.ui = ~0 } },
-    { MONKEY,           XK_comma,   focusmon,       {.i = -1 } },
-    { MONKEY,           XK_period,  focusmon,       {.i = +1 } },
-    { MODKEY|ShiftMask, XK_comma,   tagmon,         {.i = -1 } },
-    { MODKEY|ShiftMask, XK_period,  tagmon,         {.i = +1 } },
+    { MONKEY,           XK_e,       focusmon,       {.i = -1 } },
+    { MONKEY,           XK_r,       focusmon,       {.i = +1 } },
+    { MODKEY|ShiftMask, XK_e,       tagmon,         {.i = -1 } },
+    { MODKEY|ShiftMask, XK_r,       tagmon,         {.i = +1 } },
     TAGKEYS(            XK_1,       0)
     TAGKEYS(            XK_2,       1)
     TAGKEYS(            XK_3,       2)
