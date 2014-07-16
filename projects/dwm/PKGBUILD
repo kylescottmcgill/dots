@@ -41,12 +41,12 @@ build() {
 
     git clone "${srcdir}/${_gitname}" "${srcdir}/${_gitname}-build"
 
-    cd "${srcdir}/${_gitname}-build"
+    # cd "${srcdir}/${_gitname}-build"
 
-    if [ -e ${srcdir}/config.h ]
+    if [ -e ./config.h ]
     then
         msg "using custom config.h"
-        cp ${srcdir}/config.h .
+        cp -f ./config.h ${srcdir}/${_gitname}-build/
     else
         msg "using default config.h"
     fi
