@@ -4,8 +4,9 @@ servers = (
     chatnet = "geekshed";
     port = "6697";
     use_ssl = "yes";
-    ssl_verify = "yes";
+    # ssl_verify = "yes";
     ssl_capath = "/etc/ssl/certs";
+    ssl_cert = "~/.irssi/turtil.pem";
     autoconnect = "yes";
   },
   {
@@ -13,7 +14,8 @@ servers = (
     chatnet = "freenode";
     port = "6697";
     use_ssl = "yes";
-    ssl_verify = "yes";
+    # ssl_verify = "yes";
+    ssl_cert = "~/.irssi/turtil.pem";
     ssl_capath = "/etc/ssl/certs";
     autoconnect = "yes";
   },
@@ -25,23 +27,32 @@ servers = (
     #ssl_verify = "no";
     #ssl_capath = "/etc/ssl/certs";
     autoconnect = "yes";
+  },
+  {
+    address = "198.199.108.230";
+    chatnet = "znc";
+    port = "49152";
+    use_ssl = "yes";
+    ssl_cert = "~/.irssi/turtil.pem";
+    ssl_capath = "/etc/ssl/cets";
+    autoconnect = "yes";
   }
 );
 
 chatnets = {
   geekshed = {
     type = "IRC";
-    nick = "turtil-kun";
+    nick = "turtil";
     # autosendcmd = "/msg nickserv IDENTIFY";
   };
   freenode = {
     type = "IRC";
-    nick = "turtil-kun";
+    nick = "turtil";
     # autosendcmd = "/msg nickserv IDENTIFY";
   };
   nixers = {
     type = "IRC";
-    nick = "turtil-kun";
+    nick = "turtil";
     # autosendcmd = "/msg nickserv IDENTIFY";
   };
 };
