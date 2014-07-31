@@ -6,7 +6,7 @@
     pager = true
     ui = true
 [user]
-    email = kylescottmcgill@gmail.com
+    email = email@kylescottmcgill.com
     name = Kyle Scott Mcgill
 [core]
     editor = vim
