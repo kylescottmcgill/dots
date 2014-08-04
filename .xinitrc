@@ -28,12 +28,15 @@ xset m 1/1 0                    # No Mouse Acceleration
 
 xsetroot -cursor_name left_ptr &  # Use a non-shit cursor
 
-#xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --mode 1920x1080 --pos 1920x0 --rotate normal
+xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --mode 1920x1080 --pos 1920x0 --rotate normal
 
 
 # This is required for some GTK2 themes to get set correctly
+
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 nitrogen --restore &
+compton -C --config ~/.compton.conf &
+conky ~/.conky/Numix/Celsius/God-Mode/Weather-Fav-Color/.conkyrc &
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
