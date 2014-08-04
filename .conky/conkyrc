@@ -14,6 +14,7 @@ own_window yes
 own_window_type override  # other options are: override/dock/desktop/panel
 own_window_transparent yes
 own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+own_window_class conky
 border_inner_margin 0
 border_outer_margin 0
 #alignment middle_middle
@@ -134,6 +135,11 @@ ${if_existing /proc/net/route wlp2s0}
 ${voffset -230}${goto 40}${color5}Up: ${color2}${upspeed wlp2s0}${color5}${goto 150}Down: ${color2}${downspeed wlp2s0}
 ${voffset 10}${goto 40}${upspeedgraph wlp2s0 26,80 d64937 d64937}${goto 150}${downspeedgraph wlp2s0 26,80 d64937 d64937}
 ${voffset 9}${goto 40}${color5}Sent: ${color2}${totalup wlp2s0}${color5}${goto 150}Received: ${color2}${totaldown wlp2s0}
+${else}
+${if_existing /proc/net/route enp2s0}
+${voffset -242}${goto 40}${color5}Up: ${color2}${upspeed enp2s0}${color5}${goto 150}Down: ${color2}${downspeed enp2s0}
+${voffset 10}${goto 40}${upspeedgraph enp2s0 26,80 d64937 d64937}${goto 150}${downspeedgraph enp2s0 26,80 d64937 d64937}
+${voffset 9}${goto 40}${color5}Sent: ${color2}${totalup enp2s0}${color5}${goto 150}Received: ${color2}${totaldown enp2s0}
 ${else}
 ${voffset -311}${goto 40}${color5}Network disconnected${color}
 ${image ~/.conky-weather/assets/Numix/God-Mode/offline.png -p 44,284 -s 16x16}
