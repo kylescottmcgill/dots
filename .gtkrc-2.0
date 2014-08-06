@@ -5,6 +5,6 @@ gtk-icon-theme-name = "numix"
 gtk-font-name = "Terminus 8"
 
 style "vimfix" {
-      bg[NORMAL] = "#242424" # this matches my gvim theme 'Normal' bg color.
+      bg[NORMAL] = "#080808" # this matches my gvim theme 'Normal' bg color.
 }
 widget "vim-main-window.*GtkForm" style "vimfix"
