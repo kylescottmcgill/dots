@@ -57,11 +57,14 @@ set showcmd             " display incomplete commands
 set cmdheight=2
 set hid                 " Abandoned buffers become hidden
 
-set guioptions-=m       "menu bar
-set guioptions-=T       "toolbar
-set guioptions-=r       "scrollbar
+set guioptions-=m       " menu bar
+set guioptions-=T       " toolbar
+set guioptions-=r       " scrollbar
+set guifont=Source\ Code\ Pro\ 8 " Source Code Pro Font
+set linespace=5
+set guiheadroom=0
 
-set lazyredraw          " Don't redraw while executing macros
+" set lazyredraw          " Don't redraw while executing macros
 
 syntax on
 filetype off            " required!
@@ -88,6 +91,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/syntastic'
 Bundle 'fatih/vim-go'
+Bundle 'godlygeek/csapprox'
 
 
 " Go Native Plugin
@@ -95,8 +99,8 @@ set runtimepath+=$GOROOT/misc/vim
 
 filetype plugin indent on     " required!
 
-" set background=dark
-colorscheme ir_black
+set background=dark
+colorscheme numix
 
 set cursorline
 set cursorcolumn
@@ -167,7 +171,6 @@ nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
-
 " Plugin bindings and functionality
 
 " NerdTree
@@ -179,9 +182,6 @@ nmap <space> zz
 let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_check_on_open=1
 let g:syntastic_always_populate_loc_list=1
-
-" PHPUnit
-com! -nargs=* Phpunit make -c app <q-args> | cw
 
 " Vim-go
 let g:go_bin_path = expand("~/.go/bin")
