@@ -11,10 +11,11 @@ gap_y 215
 minimum_size 268 620
 maximum_width 268
 own_window yes
-own_window_type override  # other options are: override/dock/desktop/panel
+own_window_type override # other options are: override/dock/desktop/panel
 own_window_transparent yes
 own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
 own_window_class conky
+own_window_name conky
 border_inner_margin 0
 border_outer_margin 0
 #alignment middle_middle
@@ -58,18 +59,18 @@ color8 2D2D2D
 TEXT
 # Various images #
 ${execi 300 curl -s "http://weather.yahooapis.com/forecastrss?w=2348079&u=c" -o ~/.cache/weather.xml}
-${image ~/.conky-weather/assets/Numix/God-Mode/top-bg.png -p 20,30 -s 228x61}\
-${image ~/.conky-weather/assets/Numix/God-Mode/bottom-bg.png -p 20,473 -s 228x119}\
-${execi 300 cp -f ~/.conky-weather/icons/weather-photos-7/$(grep "yweather:condition" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*").png ~/.cache/weather.png}${image ~/.cache/weather.png -p 20,91 -s 228x86}\
-${image ~/.conky-weather/assets/Numix/God-Mode/border.png -p 20,91 -s 228x86}\
-${image ~/.conky-weather/assets/Numix/God-Mode/bg-1.png -p 20,177 -s 228x86}\
-${image ~/.conky-weather/assets/Numix/God-Mode/bg-2.png -p 20,263 -s 228x105}\
-${image ~/.conky-weather/assets/Numix/God-Mode/bg-3.png -p 20,368 -s 228x105}\
-${image ~/.conky-weather/assets/Numix/God-Mode/bg-4.png -p 20,478 -s 228x14}\
-${image ~/.conky-weather/assets/Numix/God-Mode/separator-v.png -p 95,185 -s 1x76}\
-${image ~/.conky-weather/assets/Numix/God-Mode/separator-v.png -p 172,185 -s 1x76}\
-${image ~/.conky-weather/assets/Numix/God-Mode/separator-h.png -p 33,369 -s 202x1}\
-${image ~/.conky-weather/assets/Numix/God-Mode/separator-h.png -p 33,269 -s 202x1}\
+${image ~/.conky/assets/top-bg.png -p 20,30 -s 228x61}\
+${image ~/.conky/assets/bottom-bg.png -p 20,473 -s 228x119}\
+${execi 300 cp -f ~/.conky/icons/weather-photos-7/$(grep "yweather:condition" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*").png ~/.cache/weather.png}${image ~/.cache/weather.png -p 20,91 -s 228x86}\
+${image ~/.conky/assets/border.png -p 20,91 -s 228x86}\
+${image ~/.conky/assets/bg-1.png -p 20,177 -s 228x86}\
+${image ~/.conky/assets/bg-2.png -p 20,263 -s 228x105}\
+${image ~/.conky/assets/bg-3.png -p 20,368 -s 228x105}\
+${image ~/.conky/assets/bg-4.png -p 20,478 -s 228x14}\
+${image ~/.conky/assets/separator-v.png -p 95,185 -s 1x76}\
+${image ~/.conky/assets/separator-v.png -p 172,185 -s 1x76}\
+${image ~/.conky/assets/separator-h.png -p 33,369 -s 202x1}\
+${image ~/.conky/assets/separator-h.png -p 33,269 -s 202x1}\
 \
 # The days of the forecast #
 \
@@ -142,14 +143,14 @@ ${voffset 10}${goto 40}${upspeedgraph enp2s0 26,80 d64937 d64937}${goto 150}${do
 ${voffset 9}${goto 40}${color5}Sent: ${color2}${totalup enp2s0}${color5}${goto 150}Received: ${color2}${totaldown enp2s0}
 ${else}
 ${voffset -311}${goto 40}${color5}Network disconnected${color}
-${image ~/.conky-weather/assets/Numix/God-Mode/offline.png -p 44,284 -s 16x16}
+${image ~/.conky/assets/offline.png -p 44,284 -s 16x16}
 ${endif}
 \
 # Various images including the icons of the forecast #
 \
-${image ~/.conky-weather/assets/Numix/God-Mode/pressure.png -p 224,95 -s 16x16}\
-${image ~/.conky-weather/assets/Numix/God-Mode/humidity.png -p 224,115 -s 16x16}\
-${image ~/.conky-weather/assets/Numix/God-Mode/wind-2.png -p 224,136 -s 16x16}\
-${execi 300 cp -f ~/.conky-weather/icons/weather-icons-light2/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1').png ~/.cache/weather-1.png}${image ~/.cache/weather-1.png -p 41,207 -s 32x32}\
-${execi 300 cp -f ~/.conky-weather/icons/weather-icons-light2/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2').png ~/.cache/weather-2.png}${image ~/.cache/weather-2.png -p 119,207 -s 32x32}\
-${execi 300 cp -f ~/.conky-weather/icons/weather-icons-light2/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3').png ~/.cache/weather-3.png}${image ~/.cache/weather-3.png -p 195,207 -s 32x32}${font}${voffset -120}\
+${image ~/.conky/assets/pressure.png -p 224,95 -s 16x16}\
+${image ~/.conky/assets/humidity.png -p 224,115 -s 16x16}\
+${image ~/.conky/assets/wind-2.png -p 224,136 -s 16x16}\
+${execi 300 cp -f ~/.conky/icons/weather-icons-light2/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==1').png ~/.cache/weather-1.png}${image ~/.cache/weather-1.png -p 41,207 -s 32x32}\
+${execi 300 cp -f ~/.conky/icons/weather-icons-light2/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==2').png ~/.cache/weather-2.png}${image ~/.cache/weather-2.png -p 119,207 -s 32x32}\
+${execi 300 cp -f ~/.conky/icons/weather-icons-light2/$(grep "yweather:forecast" ~/.cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | awk 'NR==3').png ~/.cache/weather-3.png}${image ~/.cache/weather-3.png -p 195,207 -s 32x32}${font}${voffset -120}\
