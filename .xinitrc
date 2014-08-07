@@ -35,7 +35,7 @@ xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUA
 
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 nitrogen --restore &
-compton -C --config ~/.compton.conf &
+compton --opengl --vsync opengl-swc --paint-on-overlay --config ~/.compton.conf &
 conky -c ~/.conky/conkyrc &
 
 # Finally, start the correct WindowManger based on the hostname
