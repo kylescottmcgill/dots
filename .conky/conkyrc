@@ -11,10 +11,11 @@ gap_y 215
 minimum_size 268 620
 maximum_width 268
 own_window yes
-own_window_type override  # other options are: override/dock/desktop/panel
+own_window_type override # other options are: override/dock/desktop/panel
 own_window_transparent yes
 own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
 own_window_class conky
+own_window_name conky
 border_inner_margin 0
 border_outer_margin 0
 #alignment middle_middle
