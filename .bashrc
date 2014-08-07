@@ -29,10 +29,8 @@ export PATH="$HOME/.bin:HOME/.composer/vendor/bin/:$GOBIN:$PATH"
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
-export BROWSER=firefox
+export BROWSER=chrome
 export PULSE_LATENCY_MSEC=60
-#export RXVT_SOCKET=$HOME/.cache/
-#export COLUMNS=250
 
 alias sl='ls'
 alias ls='ls --color'
@@ -63,13 +61,6 @@ man() {
         LESS_TERMCAP_us=$'\E[04;38;5;146m' \
         man "$@"
 }
-
-
-
-
-
-
-
 
 # Startx Automagically.... unsure about this one
 #if [[ ! ${DISPLAY} && ${XDG_VTNR} == 1 ]] ; then
