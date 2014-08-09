@@ -1,7 +1,10 @@
+*/3 * * * * /home/kyle/.bin/crontab-update
+
 */3 * * * * /home/kyle/.bin/mailrun
 */3 * * * * /home/kyle/.bin/newsbeuter-update
+*/20 * * * * /usr/bin/modprobed-db store &> /dev/null
+
 #*/3 * * * * /home/kyle/.bin/checkip
 #*/3 * * * * /home/kyle/.bin/anime-sync
-*/3 * * * * /home/kyle/.bin/crontab-update
 
 #vim: set ft=crontab ts=8 sw=4 tw=140 et :
