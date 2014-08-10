@@ -63,7 +63,7 @@ static const Rule rules[] = {
 };
 
 static const char *menu[] = { "dmenu_run", "-i", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[9][ColFG], NULL };
-static const char *webb[] = { "firefox", NULL, "firefox" };
+static const char *webb[] = { "chrome", NULL, "chrome" };
 static const char *term[] = { "urxvtc", NULL  };
 static const char *termwhite[] = { "urxvt-white", NULL };
 static const char *play[] = { "ncmpcpp", "toggle" };

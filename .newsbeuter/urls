@@ -8,5 +8,5 @@ http://thechangelog.com/feed/
 http://www.digitaloceanstatus.com/rss
 http://pragprog.com/feed/bookshelf/a/95/221315-5a385fcd.rss
 http://stackoverflow.com/feeds/tag/go "~StackOverflow Golang"
-http://www.reddit.com/.rss?feed=f03edd72ad18c2e2d61b5e4486285ad67e084652&user=turtil "~Reddit"
+# http://www.reddit.com/.rss?feed=f03edd72ad18c2e2d61b5e4486285ad67e084652&user=turtil "~Reddit"
 http://www.reddit.com/r/unixporn/new/.rss "~UnixPorn"
