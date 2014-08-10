@@ -40,7 +40,7 @@ abstracts = {
   error = "%R$*%n";
 
   # channel name is printed
-  channel = "%b$*%n";
+  channel = "%b$*%n ";
 
   # nick is printed
   #nick = "%_$*%_";
@@ -50,7 +50,7 @@ abstracts = {
   nickhost = "%g$*";
 
   # server name is printed
-  server = "%_$*%_";
+  server = "%_$*%_ ";
 
   # some kind of comment is printed
   comment = "%n(%b\"$*\"%n);";
@@ -181,13 +181,13 @@ abstracts = {
   netjoin = "        %Knjoin %G│\012        %b\"$*\"%n";
 
   # /names list
-  names_prefix = "\012        %Y│%n ";
-  names_nick = "%_$2$0%_%n$1-\012        ";
-  names_nick_op = "{names_nick $* %R}";
-  names_nick_halfop = "{names_nick $* %C}";
-  names_nick_voice = "{names_nick $*\012        %K}";
-  names_users = "             %Y│%n $1";
-  names_channel = "\"%b$*\"%n";
+  names_prefix =        "             %Y│%n  ";
+  names_nick =          "%_$2$0%_%n$1-       ";
+  names_nick_op =       "{names_nick $* %R}";
+  names_nick_halfop =   "{names_nick $* %C}";
+  names_nick_voice =    "{names_nick $* %K}";
+  names_users =         "             %Y│%n $1";
+  names_channel =       "\"%b$*\"%n";
 
   # DCC
   dcc = "%g$*%n";
@@ -294,7 +294,7 @@ formats = {
     msg_private_query = "{privmsgnick $[-11]0}$2";
     new_topic = "       %ctopic %K│  %B'$2' %non %b$1%n%K[set by {nick %y$0}]";
 
-    endofnames = "       names %Y│%m  Total: {hilight $2} ops, {hilight $3} halfops, {hilight $4} voices,\012               {hilight $5} normal%n";
+    endofnames = "       names %Y│%m  Total: {hilight $2} ops, {hilight $3} halfops, {hilight $4} voices, {hilight $5} normal%n";
   };
   "fe-common/irc" = {
     chanmode_change = "        mode %y│ %n {channick $1}";
