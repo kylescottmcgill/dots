@@ -1,3 +1,6 @@
+/* for XF86 Media Keys */
+#include <X11/XF86keysym.h>
+
 #define NUMCOLORS       13
 #define MODKEY          Mod1Mask
 #define MONKEY          Mod4Mask
@@ -83,9 +86,9 @@ static Key keys[] = {
     { MONKEY,           XK_F6,      spawn,          {.v = stop } },
     { MONKEY,           XK_F7,      spawn,          {.v = prev } },
     { MONKEY,           XK_F8,      spawn,          {.v = next } },
-    { MONKEY,           XK_F10,     spawn,          {.v = mute } },
-    { MONKEY,           XK_F11,     spawn,          {.v = vold } },
-    { MONKEY,           XK_F12,     spawn,          {.v = volu } },
+    { 0,                XF86XK_AudioMute, spawn,    {.v = mute } },
+    { 0,                XF86XK_AudioLowerVolume, spawn, {.v = vold } },
+    { 0,                 XF86XK_AudioRaiseVolume, spawn, {.v = volu } },
     { MODKEY|ShiftMask, XK_q,       quit,           {0} },
     { MODKEY|ShiftMask, XK_b,       togglebar,      {0} },
     { MODKEY|ShiftMask, XK_c,       killclient,     {0} },
