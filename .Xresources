@@ -22,7 +22,7 @@ URxvt*internelBorder: 10
 URxvt-white*internalBorder: 20
 
 URxvt*perl-ext-common:      default,clipboard,url-select,keyboard-select,matcher
-URxvt.url-select.launcher:  firefox
+URxvt.url-select.launcher:  chrome
 URxvt.url-select.underline: true
 URxvt.matcher.button:       1
 URxvt.keysym.M-u:           perl:url-select:select_next

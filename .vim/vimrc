@@ -80,19 +80,28 @@ Bundle 'gmarik/vundle'
 "
 " original repos on GitHub
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
-
-Bundle 'twerth/ir_black'
-
 Bundle 'editorconfig/editorconfig-vim'
+
 Bundle 'scrooloose/nerdtree'
+
 Bundle 'airblade/vim-gitgutter'
+
 Bundle 'tpope/vim-eunuch'
+
 Bundle 'scrooloose/syntastic'
+
 Bundle 'fatih/vim-go'
+
 Bundle 'godlygeek/csapprox'
 
+Bundle 'Valloric/YouCompleteMe'
+
+Bundle 'majutsushi/tagbar'
+
+Bundle 'itchyny/vim-gitbranch'
+
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
@@ -110,13 +119,16 @@ highlight statusline cterm=none ctermfg=white ctermbg=black
 highlight signcolumn cterm=none ctermfg=grey ctermbg=black
 highlight colorcolumn cterm=none ctermfg=none ctermbg=black
 
+highlight YcmErrorLine guibg=#3f0000
+
 set laststatus=2
-set statusline=\ %f%m%r%h%w\ %{fugitive#statusline()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
+set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 
 au InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
 au InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
 
 autocmd BufWritePre * :%s/\s\+$//e
+
 
 " Append modeline after last line in buffer.
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
@@ -197,10 +209,16 @@ nmap <space> zz
 
 " Syntastic
 let g:syntastic_php_checkers = ['php', 'phpcs']
-let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open=0
 let g:syntastic_always_populate_loc_list=1
+
+let g:syntastic_echo_current_error=0
+let g:syntastic_enable_signs=0
 
 " Vim-go
 let g:go_bin_path = expand("~/.go/bin")
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
 
 "vim: set ft=vim ts=8 sw=4 tw=100 et :
