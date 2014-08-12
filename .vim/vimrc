@@ -2,6 +2,7 @@ set nocompatible        " be iMproved
 set shell=/bin/bash
 set encoding=utf8
 set ffs=unix,dos,mac
+set t_Co=256
 
 " General
 
