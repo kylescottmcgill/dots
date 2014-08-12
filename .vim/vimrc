@@ -61,10 +61,13 @@ set guioptions-=m       " menu bar
 set guioptions-=T       " toolbar
 set guioptions-=r       " scrollbar
 set guifont=Source\ Code\ Pro\ 8 " Source Code Pro Font
+
 set linespace=5
 set guiheadroom=0
 
-" set lazyredraw          " Don't redraw while executing macros
+set lazyredraw          " Don't redraw while executing macros
+
+let g:acp_enableAtStartup = 0 " Disable AutoComplPop
 
 syntax on
 filetype off            " required!
@@ -97,6 +100,9 @@ Bundle 'godlygeek/csapprox'
 Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'majutsushi/tagbar'
+
+Bundle 'vim-php/tagbar-phpctags.vim'
+Bundle 'StanAngeloff/php.vim'
 
 Bundle 'itchyny/vim-gitbranch'
 
@@ -219,6 +225,18 @@ let g:syntastic_enable_signs=0
 let g:go_bin_path = expand("~/.go/bin")
 
 " Tagbar
+let g:tagbar_phpctags_memory_limit = '1024M'
+let g:tagbar_phpctags_bin="~/.composer/vendor/bin/phpctags"
+let g:tagbar_type_php  = {
+  \ 'ctagstype' : 'php',
+  \ 'kinds'     : [
+      \ 'i:interfaces',
+      \ 'c:classes',
+      \ 'd:constant definitions',
+      \ 'f:functions',
+      \ 'j:javascript functions:1'
+  \ ]
+\ }
 nmap <F8> :TagbarToggle<CR>
 
 "vim: set ft=vim ts=8 sw=4 tw=100 et :
