@@ -1,7 +1,7 @@
 include "/usr/share/themes/iris-dark/gtk-2.0/gtkrc"
 
-gtk-theme-name = "iris-dark"
-gtk-icon-theme-name = "numix"
+gtk-theme-name = "Numix"
+gtk-icon-theme-name = "Numix"
 gtk-font-name = "Terminus 8"
 
 style "vimfix" {

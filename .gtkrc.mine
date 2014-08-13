@@ -1,6 +1,6 @@
 [Settings]
-gtk-theme-name=iris-dark
-gtk-icon-theme-name=numix
+gtk-theme-name=Numix
+gtk-icon-theme-name=Numix
 gtk-font-name=Terminus 8
 gtk-cursor-theme-name=DMZ-White
 gtk-cursor-theme-size=0
