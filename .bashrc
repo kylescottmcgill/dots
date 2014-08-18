@@ -25,7 +25,7 @@ export GOBIN=$GOPATH/bin
 source $BASH_IT/bash_it.sh
 
 # Custom Shiz
-export PATH="$HOME/.bin:HOME/.composer/vendor/bin:$GOBIN:$PATH"
+export PATH="$HOME/.bin:$HOME/.composer/vendor/bin:$GOBIN:$PATH"
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null

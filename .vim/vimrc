@@ -79,7 +79,7 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required!
 Bundle 'gmarik/vundle'
-
+Bundle 'godlygeek/csapprox'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'airblade/vim-gitgutter'
@@ -108,8 +108,6 @@ highlight statusline cterm=none ctermfg=white ctermbg=black
 highlight signcolumn cterm=none ctermfg=grey ctermbg=black
 highlight colorcolumn cterm=none ctermfg=none ctermbg=black
 
-" highlight YcmErrorLine guibg=#3f0000
-
 set laststatus=2
 set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 
@@ -117,7 +115,6 @@ au InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
 au InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
 
 autocmd BufWritePre * :%s/\s\+$//e
-
 
 " Append modeline after last line in buffer.
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
