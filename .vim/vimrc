@@ -56,7 +56,7 @@ let mapleader=","
 set scrolloff=20
 set showcmd             " display incomplete commands
 set cmdheight=2
-set hid                 " Abandoned buffers become hidden
+" set hid                 " Abandoned buffers become hidden
 
 set guioptions-=m       " menu bar
 set guioptions-=T       " toolbar
@@ -103,11 +103,20 @@ colorscheme numix
 
 set cursorline
 set cursorcolumn
-highlight cursorline cterm=none ctermfg=none ctermbg=black
-highlight cursorcolumn cterm=none ctermfg=none ctermbg=black
-highlight statusline cterm=none ctermfg=white ctermbg=black
-highlight signcolumn cterm=none ctermfg=grey ctermbg=black
-highlight colorcolumn cterm=none ctermfg=none ctermbg=black
+
+highlight cursorline                cterm=none ctermfg=none ctermbg=black
+highlight cursorcolumn              cterm=none ctermfg=none ctermbg=black
+highlight statusline                cterm=none ctermfg=white ctermbg=black
+highlight signcolumn                cterm=none ctermfg=grey ctermbg=black
+highlight colorcolumn               cterm=none ctermfg=none ctermbg=black
+
+" MiniBufExpl Colors
+highlight MBENormal                 cterm=none guifg=#808080 guibg=fg
+highlight MBEChanged                cterm=none guifg=#CD5907 guibg=fg
+highlight MBEVisibleNormal          cterm=none guifg=#5DC2D6 guibg=fg
+highlight MBEVisibleChanged         cterm=none guifg=#F1266F guibg=fg
+highlight MBEVisibleActiveNormal    cterm=none guifg=#A6DB29 guibg=fg
+highlight MBEVisibleActiveChanged   cterm=none guifg=#F1266F guibg=fg
 
 set laststatus=2
 set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
@@ -186,6 +195,9 @@ nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
+
+nmap <C-S-TAB> :MBEbp<CR>
+nmap <C-TAB> :MBEbn<CR>
 
 " Plugin bindings and functionality
 
