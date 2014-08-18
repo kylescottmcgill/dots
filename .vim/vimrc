@@ -80,10 +80,6 @@ call vundle#rc()
 " required!
 Bundle 'gmarik/vundle'
 
-" My bundles here:
-"
-" original repos on GitHub
-
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'airblade/vim-gitgutter'
