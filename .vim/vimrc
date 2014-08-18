@@ -98,7 +98,9 @@ Bundle 'fatih/vim-go'
 
 Bundle 'godlygeek/csapprox'
 
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
+
+Bundle 'Shougo/neocomplete.vim'
 
 Bundle 'majutsushi/tagbar'
 
@@ -107,8 +109,8 @@ Bundle 'StanAngeloff/php.vim'
 
 Bundle 'itchyny/vim-gitbranch'
 
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
+" let g:ycm_server_keep_logfiles = 1
+" let g:ycm_server_log_level = 'debug'
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
@@ -126,7 +128,7 @@ highlight statusline cterm=none ctermfg=white ctermbg=black
 highlight signcolumn cterm=none ctermfg=grey ctermbg=black
 highlight colorcolumn cterm=none ctermfg=none ctermbg=black
 
-highlight YcmErrorLine guibg=#3f0000
+" highlight YcmErrorLine guibg=#3f0000
 
 set laststatus=2
 set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
