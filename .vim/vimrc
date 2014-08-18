@@ -85,32 +85,16 @@ Bundle 'gmarik/vundle'
 " original repos on GitHub
 
 Bundle 'editorconfig/editorconfig-vim'
-
 Bundle 'scrooloose/nerdtree'
-
 Bundle 'airblade/vim-gitgutter'
-
 Bundle 'tpope/vim-eunuch'
-
 Bundle 'scrooloose/syntastic'
-
 Bundle 'fatih/vim-go'
-
-Bundle 'godlygeek/csapprox'
-
-" Bundle 'Valloric/YouCompleteMe'
-
 Bundle 'Shougo/neocomplete.vim'
-
 Bundle 'majutsushi/tagbar'
-
 Bundle 'vim-php/tagbar-phpctags.vim'
 Bundle 'StanAngeloff/php.vim'
-
 Bundle 'itchyny/vim-gitbranch'
-
-" let g:ycm_server_keep_logfiles = 1
-" let g:ycm_server_log_level = 'debug'
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
