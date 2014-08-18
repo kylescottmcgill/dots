@@ -34,16 +34,12 @@ export PULSE_LATENCY_MSEC=60
 
 alias sl='ls'
 alias ls='ls --color'
-alias ccat='highlight -O ansi'
 alias less='less -F -g -i -M -R -S -w -X -z -4'
-
 alias saidar='saidar -c'
 alias packer='packer --noconfirm --noedit --auronly'
 alias ll='ls -lh'
-#alias mpv='DISPLAY=:0 mpv -vo vdpau:fps=60 -ao=alsa'
 alias rm='rm -f'
 alias tmux='tmux -2'
-#alias mpd='sudo -E mpd ~/.mpd/mpd.conf'
 alias gitpp='git pull ; git push'
 
 stty werase undef
