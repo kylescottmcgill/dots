@@ -118,6 +118,14 @@ highlight MBEVisibleChanged         cterm=none guifg=#F1266F guibg=fg
 highlight MBEVisibleActiveNormal    cterm=none guifg=#A6DB29 guibg=fg
 highlight MBEVisibleActiveChanged   cterm=none guifg=#F1266F guibg=fg
 
+" MiniBufExpl Colors
+highlight MBENormal               cterm=none ctermfg=none ctermbg=black guifg=#808080 guibg=fg
+highlight MBEChanged              cterm=none ctermfg=none ctermbg=black guifg=#CD5907 guibg=fg
+highlight MBEVisibleNormal        cterm=none ctermfg=none ctermbg=black guifg=#5DC2D6 guibg=fg
+highlight MBEVisibleChanged       cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=fg
+highlight MBEVisibleActiveNormal  cterm=none ctermfg=none ctermbg=black guifg=#A6DB29 guibg=fg
+highlight MBEVisibleActiveChanged cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=fg
+
 set laststatus=2
 set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 
@@ -198,6 +206,16 @@ nnoremap <silent> <C-Down> <c-w>j
 
 nmap <C-S-TAB> :MBEbp<CR>
 nmap <C-TAB> :MBEbn<CR>
+
+map <M-1> :confirm :b1<CR>
+map <M-2> :confirm :b2<CR>
+map <M-3> :confirm :b3<CR>
+map <M-4> :confirm :b4<CR>
+map <M-5> :confirm :b5<CR>
+map <M-6> :confirm :b6<CR>
+map <M-7> :confirm :b7<CR>
+map <M-8> :confirm :b8<CR>
+map <M-9> :confirm :b9<CR>
 
 " Plugin bindings and functionality
 

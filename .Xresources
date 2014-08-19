@@ -20,7 +20,6 @@ URxvt*scrollBar: false
 URxvt*cursorBlink: true
 URxvt*iso14755: false
 URxvt*iso14755_52: false
-
 URxvt*internelBorder: 10
 URxvt-white*internalBorder: 20
 
