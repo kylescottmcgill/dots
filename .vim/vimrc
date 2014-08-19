@@ -91,6 +91,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'vim-php/tagbar-phpctags.vim'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'itchyny/vim-gitbranch'
+Bundle 'fholgado/minibufexpl.vim'
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
@@ -107,6 +108,14 @@ highlight cursorcolumn cterm=none ctermfg=none ctermbg=black
 highlight statusline cterm=none ctermfg=white ctermbg=black
 highlight signcolumn cterm=none ctermfg=grey ctermbg=black
 highlight colorcolumn cterm=none ctermfg=none ctermbg=black
+
+" MiniBufExpl Colors
+highlight MBENormal               cterm=none ctermfg=none ctermbg=black guifg=#808080 guibg=fg
+highlight MBEChanged              cterm=none ctermfg=none ctermbg=black guifg=#CD5907 guibg=fg
+highlight MBEVisibleNormal        cterm=none ctermfg=none ctermbg=black guifg=#5DC2D6 guibg=fg
+highlight MBEVisibleChanged       cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=fg
+highlight MBEVisibleActiveNormal  cterm=none ctermfg=none ctermbg=black guifg=#A6DB29 guibg=fg
+highlight MBEVisibleActiveChanged cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=fg
 
 set laststatus=2
 set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
@@ -185,6 +194,16 @@ nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
+
+map <M-1> :confirm :b1<CR>
+map <M-2> :confirm :b2<CR>
+map <M-3> :confirm :b3<CR>
+map <M-4> :confirm :b4<CR>
+map <M-5> :confirm :b5<CR>
+map <M-6> :confirm :b6<CR>
+map <M-7> :confirm :b7<CR>
+map <M-8> :confirm :b8<CR>
+map <M-9> :confirm :b9<CR>
 
 " Plugin bindings and functionality
 
