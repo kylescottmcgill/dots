@@ -10,7 +10,7 @@ Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 Xft.dpi: 96
 
-URxvt*termName: rxvt-256color
+URxvt*termName: xterm-256color
 URxvt*loginShell: false
 URxvt*saveLines: 0
 URxvt*geometry: 80x20
@@ -21,17 +21,28 @@ URxvt*cursorBlink: true
 URxvt*iso14755: false
 URxvt*iso14755_52: false
 URxvt*internelBorder: 10
+
 URxvt-white*internalBorder: 20
 
 URxvt*perl-ext-common:      default,clipboard,url-select,keyboard-select,matcher
-URxvt.url-select.launcher:  chrome
-URxvt.url-select.underline: true
-URxvt.matcher.button:       1
-URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-URxvt.keysym.M-s:           perl:keyboard-select:search
-URxvt.keysym.M-c:           perl:clipboard:copy
-URxvt.keysyn.M-v:           perl:clipboard:paste
+URxvt*url-select.launcher:  chrome
+URxvt*url-select.underline: true
+URxvt*matcher.button:       1
+URxvt*keysym.M-u:           perl:url-select:select_next
+URxvt*keysym.M-Escape:      perl:keyboard-select:activate
+URxvt*keysym.M-s:           perl:keyboard-select:search
+URxvt*keysym.M-c:           perl:clipboard:copy
+URxvt*keysyn.M-v:           perl:clipboard:paste
+
+URxvt*keysym.M-Down:        \033[1;3B
+URxvt*keysym.M-Up:          \033[1;3A
+URxvt*keysym.M-Left:        \033[1;3D
+URxvt*keysym.M-Right:       \033[1;3C
+
+URxvt*keysym.Control-Up:     \033[1;5A
+URxvt*keysym.Control-Down:   \033[1;5B
+URxvt*keysym.Control-Left:   \033[1;5D
+URxvt*keysym.Control-Right:  \033[1;5C
 
 URxvt*foreground: #dcdcdc
 URxvt*background: #2d2d2d

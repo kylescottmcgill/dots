@@ -14,7 +14,7 @@ set showbreak=+++       " Wrap-broken line prefix
 set textwidth=140       " Line wrap (number of cols)
 set colorcolumn=120
 set showmatch           " Highlight matching brace
-" set spell off         " Enable spell-checking
+set spell               " Enable spell-checking
 set errorbells          " Beep or flash screen on errors
 set visualbell          " Use visual bell (no beeping)
 
@@ -37,7 +37,7 @@ set smartindent         " Enable smart-indent
 set smarttab            " Enable smart-tabs
 set softtabstop=4       " Number of spaces per Tab
 
-"" Advanced
+" Advanced
 set autoread            " Auto Reads a file upon change
 set ruler               " Show row and column ruler information
 set hidden              " Show hidden files in NerdTree and :e
@@ -55,8 +55,8 @@ let mapleader=","
 
 set scrolloff=20
 set showcmd             " display incomplete commands
-set cmdheight=2
-" set hid                 " Abandoned buffers become hidden
+set cmdheight=1
+set hid                 " Abandoned buffers become hidden
 
 set guioptions-=m       " menu bar
 set guioptions-=T       " toolbar
@@ -196,6 +196,7 @@ command! -nargs=1 Bs :call BufSel("<args>")
 " Vim Bindings
 nnoremap <leader>b :buffers<CR>:buffer<Space>
 nmap <leader>w :w!<cr>
+
 map <leader>ss :setlocal spell!<cr>
 map <leader>/ :noh<cr>
 
@@ -204,18 +205,18 @@ nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
-nmap <C-S-TAB> :MBEbp<CR>
-nmap <C-TAB> :MBEbn<CR>
+map <C-S-TAB> :MBEbp<CR>
+map <C-TAB> :MBEbn<CR>
 
-map <M-1> :confirm :b1<CR>
-map <M-2> :confirm :b2<CR>
-map <M-3> :confirm :b3<CR>
-map <M-4> :confirm :b4<CR>
-map <M-5> :confirm :b5<CR>
-map <M-6> :confirm :b6<CR>
-map <M-7> :confirm :b7<CR>
-map <M-8> :confirm :b8<CR>
-map <M-9> :confirm :b9<CR>
+map <leader>1 :confirm :b1<CR>
+map <leader>2 :confirm :b2<CR>
+map <leader>3 :confirm :b3<CR>
+map <leader>4 :confirm :b4<CR>
+map <leader>5 :confirm :b5<CR>
+map <leader>6 :confirm :b6<CR>
+map <leader>7 :confirm :b7<CR>
+map <leader>8 :confirm :b8<CR>
+map <leader>9 :confirm :b9<CR>
 
 " Plugin bindings and functionality
 
