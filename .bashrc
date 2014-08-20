@@ -64,3 +64,4 @@ man() {
 #fi
 
 eval $(dircolors -b $HOME/.dircolors)
+source /usr/share/doc/pkgfile/command-not-found.bash
