@@ -1,3 +1,4 @@
 #!/bin/bash
+DISPLAY=:1
 source /etc/chromium/default
 exec chromium --disk-cache-dir=/tmp/cache $1
