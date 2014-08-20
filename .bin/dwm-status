@@ -19,19 +19,19 @@ colour_mag="\x0B" # colour_magenta on darkgrey
 colour_cyn="\x0C" # cyan on darkgrey
 
 # Icon glyphs from font xbmicons.pcf
-glyph_msc="\uE00E"
-glyph_cpu="\uE00F"
-glyph_mem="\uE010"
-glyph_dl="\uE011"
-glyph_ul="\uE012"
-glyph_com="\uE013"
-glyph_eml="\uE014"
-glyph_vol="\uE015"
-glyph_tim="\uE016"
-glyph_tor="\uE017"
-sep_solid="\uE01A"
-sep_line="\uE01B"
-sep_bar="\uE020"
+glyph_msc="\u00EA"
+glyph_cpu="\u00D1"
+glyph_mem="\u00CE"
+glyph_dl="\u00DF"
+glyph_ul="\u00DE"
+glyph_com="\u00B4"
+glyph_eml="\u00CA"
+glyph_vol="\u00E0"
+glyph_tim="\u00B7"
+glyph_tor="\u00B3"
+sep_solid="\u007C"
+sep_line="\u007C"
+sep_bar="\u007C"
 
 print_song_info() {
   song_info="$(ncmpcpp --now-playing '{{{{%a \uE01B }%t}}|{%f}}' | head -c 75)"
