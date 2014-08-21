@@ -23,6 +23,10 @@ Urxvt.depth: 32
 URxvt.transparent: true
 URxvt.shading: 15
 
+Urxvt.depth: 32
+URxvt-white.transparent: false
+URxvt.shading: 15
+
 URxvt-white*internalBorder: 20
 
 URxvt*perl-ext-common:      default,clipboard,url-select,keyboard-select,matcher
