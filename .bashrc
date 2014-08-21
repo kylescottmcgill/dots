@@ -39,8 +39,10 @@ alias saidar='saidar -c'
 alias packer='packer --noconfirm --noedit --auronly'
 alias ll='ls -lh'
 alias rm='rm -f'
-alias tmux='tmux -2'
+alias tmux='tmux -2 -f ~/.tmux/tmux.conf'
+
 alias gitpp='git pull ; git push'
+alias gits='git status -s'
 
 stty werase undef
 bind '\C-w:unix-filename-rubout'
