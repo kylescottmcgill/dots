@@ -195,7 +195,9 @@ command! -nargs=1 Bs :call BufSel("<args>")
 
 " Vim Bindings
 nnoremap <leader>b :buffers<CR>:buffer<Space>
-nmap <leader>w :w!<cr>
+nnoremap <leader>w :w!<cr>
+nnoremap <leader>e :edit $MYVIMRC<cr>
+nnoremap <leader>s :source $MYVIMRC<cr>
 
 map <leader>ss :setlocal spell!<cr>
 map <leader>/ :noh<cr>
