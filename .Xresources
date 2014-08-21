@@ -22,7 +22,7 @@ URxvt*internelBorder: 10
 Urxvt*depth: 32
 URxvt*transparent: true
 ! URxvt*tintColor: Grey
-URxvt*shading: 5
+URxvt*shading: 15
 
 URxvt-white*internalBorder: 20
 
