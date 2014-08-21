@@ -92,6 +92,8 @@ Bundle 'vim-php/tagbar-phpctags.vim'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'itchyny/vim-gitbranch'
 Bundle 'fholgado/minibufexpl.vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'toritori0318/vim-redmine'
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
@@ -209,6 +211,7 @@ nnoremap <silent> <C-Down> <c-w>j
 
 map <C-S-TAB> :MBEbp<CR>
 map <C-TAB> :MBEbn<CR>
+nmap <space> zz
 
 map <leader>1 :confirm :b1<CR>
 map <leader>2 :confirm :b2<CR>
@@ -225,7 +228,6 @@ map <leader>9 :confirm :b9<CR>
 " NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>i
-nmap <space> zz
 
 " Syntastic
 let g:syntastic_php_checkers = ['php', 'phpcs']
@@ -252,5 +254,12 @@ let g:tagbar_type_php  = {
   \ ]
 \ }
 nmap <F8> :TagbarToggle<CR>
+
+" vim-redmine
+
+let g:redmine_auth_site = 'http://redmine.xmdevelopments.com'
+let g:redmine_auth_key  = '08a26ffcb5cb6df2651a4cf38eeb4a995d2b32ce'
+let g:redmine_author_id = '11'
+let g:redmine_project_id = '1'
 
 "vim: set ft=vim ts=8 sw=4 tw=100 et :
