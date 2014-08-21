@@ -19,10 +19,9 @@ URxvt*cursorBlink: true
 URxvt*iso14755: false
 URxvt*iso14755_52: false
 URxvt*internelBorder: 10
-Urxvt*depth: 32
-URxvt*transparent: true
-! URxvt*tintColor: Grey
-URxvt*shading: 15
+Urxvt.depth: 32
+URxvt.transparent: true
+URxvt.shading: 15
 
 URxvt-white*internalBorder: 20
 
@@ -46,9 +45,9 @@ URxvt*keysym.Control-Down:   \033[1;5B
 URxvt*keysym.Control-Left:   \033[1;5D
 URxvt*keysym.Control-Right:  \033[1;5C
 
-URxvt*foreground: #dcdcdc
-URxvt*background: #2d2d2d
-URxvt*cursor: #e6e1dc
+URxvt.foreground: #dcdcdc
+URxvt.background: #2d2d2d
+URxvt.cursor: #e6e1dc
 
 URxvt*color0: #333333
 URxvt*color8: #666666
