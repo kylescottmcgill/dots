@@ -39,6 +39,8 @@ nitrogen --restore &
 compton --opengl --vsync opengl-swc --paint-on-overlay --config ~/.compton.conf &
 conky -c ~/.conky/conkyrc &
 
+dwm-status &
+
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
     "ouroboros") exec dwm ;;    # Main PC
