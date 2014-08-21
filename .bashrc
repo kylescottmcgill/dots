@@ -43,6 +43,7 @@ alias tmux='tmux -2 -f ~/.tmux/tmux.conf'
 
 alias gitpp='git pull ; git push'
 alias gits='git status -s'
+alias gs='git status -s'
 
 stty werase undef
 bind '\C-w:unix-filename-rubout'
