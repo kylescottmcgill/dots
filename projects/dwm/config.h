@@ -88,7 +88,7 @@ static Key keys[] = {
     { MONKEY,           XK_F8,      spawn,          {.v = next } },
     { 0,                XF86XK_AudioMute, spawn,    {.v = mute } },
     { 0,                XF86XK_AudioLowerVolume, spawn, {.v = vold } },
-    { 0,                 XF86XK_AudioRaiseVolume, spawn, {.v = volu } },
+    { 0,                XF86XK_AudioRaiseVolume, spawn, {.v = volu } },
     { MODKEY|ShiftMask, XK_q,       quit,           {0} },
     { MODKEY|ShiftMask, XK_b,       togglebar,      {0} },
     { MODKEY|ShiftMask, XK_c,       killclient,     {0} },

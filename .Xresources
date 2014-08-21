@@ -1,6 +1,4 @@
 ! General -----------------------------------------
-xterm*termName: xterm-256color
-xterm*locale: true
 
 Xft.autohint: true
 Xft.antialias: true
@@ -15,7 +13,7 @@ URxvt*loginShell: false
 URxvt*saveLines: 0
 URxvt*geometry: 80x20
 URxvt*font: xft:Ohsnap:pixelsize=12:antialias=true:hinting=true
-URxvt*boldfont: xft:Ohsnap:pixelsize=12:antialias=true:hinting=true
+URxvt*boldfont: xft:Ohsnapi:bold:pixelsize=12:antialias=true:hinting=true
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
 URxvt*iso14755: false
