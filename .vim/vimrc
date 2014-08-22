@@ -36,6 +36,8 @@ set shiftwidth=4        " Number of auto-indent spaces
 set smartindent         " Enable smart-indent
 set smarttab            " Enable smart-tabs
 set softtabstop=4       " Number of spaces per Tab
+set foldmethod=syntax   " Depending on Syntax, fold
+set foldlevelstart=20   " Only fold after 20 levels on open
 
 " Advanced
 set autoread            " Auto Reads a file upon change
@@ -69,6 +71,7 @@ set guiheadroom=0
 set lazyredraw          " Don't redraw while executing macros
 
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
+let g:php_folding=2     " Fold PHP bitch
 
 syntax on
 filetype off            " required!
@@ -223,6 +226,7 @@ map <leader>7 :confirm :b7<CR>
 map <leader>8 :confirm :b8<CR>
 map <leader>9 :confirm :b9<CR>
 
+
 " Plugin bindings and functionality
 
 " NerdTree
@@ -261,5 +265,9 @@ let g:redmine_auth_site = 'http://redmine.xmdevelopments.com'
 let g:redmine_auth_key  = '08a26ffcb5cb6df2651a4cf38eeb4a995d2b32ce'
 let g:redmine_author_id = '11'
 let g:redmine_project_id = '1'
+
+" NeoComplete
+
+let g:neocomplete#enable_at_startup = 1
 
 "vim: set ft=vim ts=8 sw=4 tw=100 et :
