@@ -23,6 +23,8 @@ Urxvt.depth: 32
 URxvt.transparent: true
 URxvt.shading: 15
 
+URxvt-trans.shading: 15
+
 Urxvt.depth: 32
 URxvt-white.transparent: false
 URxvt.shading: 15
