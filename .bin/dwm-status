@@ -96,8 +96,6 @@ while true; do
   # calculate the rate (K) and total (M)
   let rx_rate=($rx_now-$rx_old)/1024
   let tx_rate=($tx_now-$tx_old)/1024
-  #  let rx_total=$rx_now/1048576
-  #  let tx_total=$tx_now/1048576
 
   # output vars
   print_cpu_used() {
@@ -111,7 +109,7 @@ while true; do
   }
 
   # Pipe to status bar, not indented due to printing extra spaces/tabs
-  xsetroot -name "$(print_song_info)$(print_cpu_used)$(print_mem_used)$(print_rx_rate)$(print_volume)$(print_datetime)"
+  xsetroot -name "$(print_song_info)$(print_cpu_used)$(print_mem_used)$(print_rx_rate)$(print_tx_rate)$(print_volume)$(print_datetime)"
 
   # reset old rates
   rx_old=$rx_now
