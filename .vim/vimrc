@@ -181,16 +181,19 @@ function! DmenuOpen(cmd)
     if empty(fname)
         return
     endif
-    execute a:cmd . " " . fname
+    execute "e " . fname
 endfunction
 
-map <c-t> :call DmenuOpen("tabe")<cr>
-map <c-f> :call DmenuOpen("e")<cr>
+map <leader>o :call DmenuOpen("open")<cr>
 
 "Bind the BufSel() function to a user-command
 command! -nargs=1 Bs :call BufSel("<args>")
 
 " Vim Bindings
+nmap <leader>p :MBEbp<CR>
+nmap <leader>n :MBEbn<CR>
+nmap <leader>d :MBEbd<CR>
+
 nnoremap <leader>b :buffers<CR>:buffer<Space>
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>e :edit $MYVIMRC<cr>
@@ -204,9 +207,6 @@ nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
-nmap <leader>p :MBEbp<CR>
-nmap <leader>n :MBEbn<CR>
-nmap <leader>d :MBEbd<CR>
 nmap <space> zz
 
 map <leader>1 :confirm :b1<CR>
