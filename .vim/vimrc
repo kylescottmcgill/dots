@@ -116,14 +116,6 @@ highlight signcolumn                cterm=none ctermfg=grey ctermbg=black
 highlight colorcolumn               cterm=none ctermfg=none ctermbg=black
 
 " MiniBufExpl Colors
-highlight MBENormal                 cterm=none guifg=#808080 guibg=fg
-highlight MBEChanged                cterm=none guifg=#CD5907 guibg=fg
-highlight MBEVisibleNormal          cterm=none guifg=#5DC2D6 guibg=fg
-highlight MBEVisibleChanged         cterm=none guifg=#F1266F guibg=fg
-highlight MBEVisibleActiveNormal    cterm=none guifg=#A6DB29 guibg=fg
-highlight MBEVisibleActiveChanged   cterm=none guifg=#F1266F guibg=fg
-
-" MiniBufExpl Colors
 highlight MBENormal               cterm=none ctermfg=none ctermbg=black guifg=#808080 guibg=fg
 highlight MBEChanged              cterm=none ctermfg=none ctermbg=black guifg=#CD5907 guibg=fg
 highlight MBEVisibleNormal        cterm=none ctermfg=none ctermbg=black guifg=#5DC2D6 guibg=fg
@@ -212,8 +204,9 @@ nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
-map <C-S-TAB> :MBEbp<CR>
-map <C-TAB> :MBEbn<CR>
+nmap <C-S-TAB> :MBEbp<CR>
+nmap <C-TAB> :MBEbn<CR>
+nmap <C-w>c :MBEbd<CR>
 nmap <space> zz
 
 map <leader>1 :confirm :b1<CR>

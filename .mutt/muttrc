@@ -28,6 +28,7 @@ unset mark_old                        # read/new is good enough for me
 set beep_new                          # bell on new mails
 set pipe_decode                       # strip headers and eval mimes when piping
 set thorough_search                   # strip headers and eval mimes before searching
+set help              = no
 
 # index options
 set sort              = threads                     # like gmail
@@ -88,7 +89,7 @@ mailboxes +XM/sent
 
 # always sourced
 source $alias_file             # required for functionality
-source ~/.mutt/themes/blah   # source colors file
+source ~/.mutt/colors   # source colors file
 #source ~/.mutt/sidebar.muttrc  # any muttng options are here
 source ~/.mutt/kyle.muttrc    # source gmail as default
 #source ~/.mutt/XM.muttrc    # source gmail as default

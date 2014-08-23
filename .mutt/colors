@@ -6,55 +6,57 @@
 # magenta - brightmagenta
 # blue    -    brightblue
 # green   -   brightgreen
-# black   -   brightblack
+# color232   -   color232
 
 color normal      white color232
-color attachment  brightblack black
-color bold        brightwhite black
-color underline   black brightblue
-color error       white black
-color indicator   blue black
-color message     white black
-color status      black blue
-color quoted      brightcyan black
-color quoted1     cyan black
-color quoted2     brightblue black
-color quoted3     blue black
-color quoted4     brightblack black
-color quoted5     brightblack black
-color signature   brightblack black
-color tilde       brightblack black
-color tree        brightblack black
-color hdrdefault  black brightblue
-color header      brightcyan black  "^date: *"
-color header      cyan black  "^from: *"
-color header      brightblue black  "^subject: *"
-color header      blue black  "^to: *"
-color header      brightblack black  "^delivered-to: *"
-color header      brightblue black  "^cc: *"
-color header      brightblue black  "^bcc: *"
-color header      cyan black  "^reply-to: *"
-color header      cyan black  "^mail-followup-to: *"
-color header      cyan black  "^old-return-path: *"
-color header      brightblack black  "^x-mailer: *"
-color header      brightblack black  "^user-agent: *"
-color header      brightblack black  "^x-operating-system: *"
-color header      cyan black  "^x-mailing-list: *"
-color header      brightblue black  "^in-reply-to: *"
-color body        black brightblue  "[^ <]*:\/\/[^ >]*" #for URLs
-color body        black brightblue  "[A-Za-z0-9_\.\-]+@[A-Za-z0-9_\.\-]*[A-Za-z0-9_\.\-]+"
-color index       brightblue black '~O'   # Unread
-color index       cyan black '~N'   # New
-color index       brightcyan black '~g'   # gpg signed
-color index       white black '~G'   # gpg encrypted
-color index       brightwhite black '~F'   # Flagged
-color index       brightwhite black '~T'   # Tagged
-color index       brightwhite black '~f MAILER-DAEMON@*'
-color index       brightwhite black '~f Mailer-Daemon@*'
-color index       brightblack black '~D'   # Deleted
+color attachment  brightblue color232
+color bold        brightblue color232
+color underline   brightblue color232
+color error       white color232
+color indicator   brightblue color232
+color message     white color232
+color status      color232 brightblue
+color quoted      brightcyan color232
+color quoted1     cyan color232
+color quoted2     brightblue color232
+color quoted3     blue color232
+color quoted4     brightblue color232
+color quoted5     brightblue color232
+color signature   brightblue color232
+color tilde       brightblue color232
+color tree        brightblue color232
+color hdrdefault  brightblue brightblue
+
+color header      brightcyan color232  "^date: *"
+color header      cyan color232  "^from: *"
+color header      brightblue color232  "^subject: *"
+color header      blue color232  "^to: *"
+color header      brightblue color232  "^delivered-to: *"
+color header      brightblue color232  "^cc: *"
+color header      brightblue color232  "^bcc: *"
+color header      cyan color232  "^reply-to: *"
+color header      cyan color232  "^mail-followup-to: *"
+color header      cyan color232  "^old-return-path: *"
+color header      brightblue color232  "^x-mailer: *"
+color header      brightblue color232  "^user-agent: *"
+color header      brightblue color232  "^x-operating-system: *"
+color header      cyan color232  "^x-mailing-list: *"
+color header      brightblue color232  "^in-reply-to: *"
+
+color index       brightblue color232 '~O'   # Unread
+color index       cyan color232 '~N'   # New
+color index       brightcyan color232 '~g'   # gpg signed
+color index       white color232 '~G'   # gpg encrypted
+color index       brightwhite color232 '~F'   # Flagged
+color index       brightwhite color232 '~T'   # Tagged
+color index       brightwhite color232 '~f MAILER-DAEMON@*'
+color index       brightwhite color232 '~f Mailer-Daemon@*'
+color index       brightblue color232 '~D'   # Deleted
 
 # Color URLs
-color body brightblue brightblack "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
-color body brightblue black "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-color body brightblue black "news:[^ \">\t\r\n]*"
+color body brightblue color232 "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
+color body brightblue color232 "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body brightblue color232 "news:[^ \">\t\r\n]*"
+color body        color232 brightblue  "[^ <]*:\/\/[^ >]*" #for URLs
+color body        brightblue color232  "[A-Za-z0-9_\.\-]+@[A-Za-z0-9_\.\-]*[A-Za-z0-9_\.\-]+"
 
