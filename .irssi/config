@@ -41,22 +41,10 @@ servers = (
 );
 
 chatnets = {
-  geekshed = {
-    type = "IRC";
-    nick = "turtil";
-  };
-  freenode = {
-    type = "IRC";
-    nick = "turtil";
-  };
-  nixers = {
-    type = "IRC";
-    nick = "turtil";
-  };
-  znc = {
-    type = "IRC";
-    nick = "turtil";
-  };
+  geekshed = { type = "IRC"; nick = "turtil"; };
+  freenode = { type = "IRC"; nick = "turtil"; };
+  nixers = { type = "IRC"; nick = "turtil"; };
+  znc = { type = "IRC"; nick = "turtil"; };
 };
 
 channels = (
@@ -239,7 +227,7 @@ settings = {
   "fe-text" = { actlist_sort = "refnum"; autostick_split_windows = "no"; };
   "fe-common/core" = { theme = "simple"; show_names_on_join = "no"; };
 };
-ignores = ( { level = "PARTS"; } );
+ignores = ( { level = "JOINS PARTS QUITS MODES"; } );
 
 # vim: set ft=conf ts=8 sw=4 tw=140 et :#
 windows = {

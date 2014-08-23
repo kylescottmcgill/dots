@@ -19,15 +19,13 @@ URxvt*cursorBlink: true
 URxvt*iso14755: false
 URxvt*iso14755_52: false
 URxvt*internelBorder: 10
-Urxvt.depth: 32
+URxvt.depth: 32
 URxvt.transparent: true
 URxvt.shading: 15
 
-URxvt-trans.shading: 15
+URxvt-trans.shading: 110
 
-Urxvt.depth: 32
 URxvt-white.transparent: false
-URxvt.shading: 15
 
 URxvt-white*internalBorder: 20
 
