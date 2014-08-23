@@ -1,4 +1,3 @@
-#
 # Colors you can use:
 #
 # white   -   brightwhite
@@ -9,7 +8,7 @@
 # green   -   brightgreen
 # black   -   brightblack
 
-color normal      white black
+color normal      white color232
 color attachment  brightblack black
 color bold        brightwhite black
 color underline   black brightblue
@@ -55,7 +54,7 @@ color index       brightwhite black '~f Mailer-Daemon@*'
 color index       brightblack black '~D'   # Deleted
 
 # Color URLs
-color body brightblue black "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
+color body brightblue brightblack "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
 color body brightblue black "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
 color body brightblue black "news:[^ \">\t\r\n]*"
 
