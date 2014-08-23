@@ -204,9 +204,9 @@ nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
-nmap <C-S-TAB> :MBEbp<CR>
-nmap <C-TAB> :MBEbn<CR>
-nmap <C-w>c :MBEbd<CR>
+nmap <leader>p :MBEbp<CR>
+nmap <leader>n :MBEbn<CR>
+nmap <leader>d :MBEbd<CR>
 nmap <space> zz
 
 map <leader>1 :confirm :b1<CR>
