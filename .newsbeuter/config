@@ -17,14 +17,14 @@ delete-read-articles-on-quit yes
 
 #The default color configuration of newsbeuter looks like this:
 
-color background        white       black
-color listnormal        white       black
+color background        white       color232
+color listnormal        white       color232
 color listfocus         white       red
-color info              white       black
-color article           white       black
-color listnormal        white       black
+color info              white       color232
+color article           white       color232
+color listnormal        white       color232
 color listfocus_unread  white       red
-color listnormal_unread white       black
+color listnormal_unread white       color232
 
 articlelist-format "%-4i %D %f %t"
 feedlist-format "%t %> %u"
