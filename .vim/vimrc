@@ -53,6 +53,7 @@ set wildchar=<Tab>
 set wildmode=longest,list
 " make tab completion for files/buffers act like bash
 set wildmenu
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let mapleader=","
 
 set scrolloff=20
@@ -60,13 +61,14 @@ set showcmd             " display incomplete commands
 set cmdheight=1
 set hid                 " Abandoned buffers become hidden
 
-set guioptions-=m       " menu bar
-set guioptions-=T       " toolbar
-set guioptions-=r       " scrollbar
-set guifont=Source\ Code\ Pro\ 8 " Source Code Pro Font
-
-set linespace=5
-set guiheadroom=0
+if has("gui_running")
+    set guioptions-=m       " menu bar
+    set guioptions-=T       " toolbar
+    set guioptions-=r       " scrollbar
+    set guifont=Source\ Code\ Pro\ 8 " Source Code Pro Font
+    set linespace=5
+    set guiheadroom=0
+end
 
 set lazyredraw          " Don't redraw while executing macros
 
@@ -99,6 +101,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'toritori0318/vim-redmine'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
+Bundle 'rking/ag.vim'
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
@@ -172,22 +175,6 @@ function! BufSel(pattern)
     endif
 endfunction
 
-" Strip the newline from the end of a string
-function! Chomp(str)
-    return substitute(a:str, '\n$', '', '')
-endfunction
-
-" Find a file and pass it to cmd
-function! DmenuOpen(cmd)
-    let fname = Chomp(system("git ls-files | dmenu -i -sf '#D64937' -sb '#2D2D2D' -l 10 -q -p " . a:cmd))
-    if empty(fname)
-        return
-    endif
-    execute "e " . fname
-endfunction
-
-map <leader>o :call DmenuOpen("open")<cr>
-
 "Bind the BufSel() function to a user-command
 command! -nargs=1 Bs :call BufSel("<args>")
 
@@ -197,6 +184,7 @@ nmap <leader>n :MBEbn<CR>
 nmap <leader>d :MBEbd<CR>
 
 nnoremap <leader>b :buffers<CR>:buffer<Space>
+map <leader>o <C-p>
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>e :edit $MYVIMRC<cr>
 nnoremap <leader>s :source $MYVIMRC<cr>
@@ -267,14 +255,22 @@ let g:redmine_project_id = '1'
 
 let g:neocomplete#enable_at_startup = 1
 
-" Ctrl-p
+" Ctrl-p && Ag
 
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 if executable('ag')
+    map <leader>f :Ag<Space>
     " Use Ag over Grep
-    set grepprg=ag\ --nogroup\ --nocolor
+    set grepprg = "ag -i --nogroup\ --nocolor"
+
+    " Use Ag over Ack
+    let g:ackprg = 'ag -i --nogroup --nocolor --column'
 
     " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_user_command = 'ag -i %s -l --nocolor -g ""'
 endif
+
+
 
 "vim: set ft=vim ts=8 sw=4 tw=140 et :
