@@ -98,6 +98,7 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'toritori0318/vim-redmine'
 Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
@@ -244,15 +245,15 @@ let g:go_bin_path = expand("~/.go/bin")
 let g:tagbar_phpctags_memory_limit = '1024M'
 let g:tagbar_phpctags_bin="~/.composer/vendor/bin/phpctags"
 let g:tagbar_type_php  = {
-  \ 'ctagstype' : 'php',
-  \ 'kinds'     : [
-      \ 'i:interfaces',
-      \ 'c:classes',
-      \ 'd:constant definitions',
-      \ 'f:functions',
-      \ 'j:javascript functions:1'
-  \ ]
-\ }
+            \ 'ctagstype' : 'php',
+            \ 'kinds'     : [
+            \ 'i:interfaces',
+            \ 'c:classes',
+            \ 'd:constant definitions',
+            \ 'f:functions',
+            \ 'j:javascript functions:1'
+            \ ]
+            \ }
 nmap <F8> :TagbarToggle<CR>
 
 " vim-redmine
@@ -266,4 +267,14 @@ let g:redmine_project_id = '1'
 
 let g:neocomplete#enable_at_startup = 1
 
-"vim: set ft=vim ts=8 sw=4 tw=100 et :
+" Ctrl-p
+
+if executable('ag')
+    " Use Ag over Grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+"vim: set ft=vim ts=8 sw=4 tw=140 et :
