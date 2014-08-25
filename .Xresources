@@ -8,7 +8,6 @@ Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 Xft.dpi: 96
 
-URxvt*termName: xterm-256color
 URxvt*loginShell: false
 URxvt*saveLines: 0
 URxvt*geometry: 80x20

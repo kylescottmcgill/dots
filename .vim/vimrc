@@ -202,6 +202,7 @@ nnoremap <leader>s :source $MYVIMRC<cr>
 
 map <leader>ss :setlocal spell!<cr>
 map <leader>/ :noh<cr>
+map <HOME> ^
 
 nnoremap <silent> <c-w>d :MBEbd<CR>
 nnoremap <silent> <C-Right> <c-w>l
