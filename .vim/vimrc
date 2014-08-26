@@ -56,7 +56,7 @@ set wildmenu
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let mapleader=","
 
-set scrolloff=20
+set scrolloff=10
 set showcmd             " display incomplete commands
 set cmdheight=1
 set hid                 " Abandoned buffers become hidden
