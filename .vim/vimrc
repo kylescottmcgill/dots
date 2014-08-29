@@ -182,16 +182,12 @@ command! -nargs=1 Bs :call BufSel("<args>")
 nmap <leader>p :MBEbp<CR>
 nmap <leader>n :MBEbn<CR>
 nmap <leader>d :MBEbd<CR>
+nmap <space> zz
 
 nnoremap <leader>b :buffers<CR>:buffer<Space>
-map <leader>o <C-p>
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>e :edit $MYVIMRC<cr>
 nnoremap <leader>s :source $MYVIMRC<cr>
-
-map <leader>ss :setlocal spell!<cr>
-map <leader>/ :noh<cr>
-map <HOME> ^
 
 nnoremap <silent> <c-w>d :MBEbd<CR>
 nnoremap <silent> <C-Right> <c-w>l
@@ -199,8 +195,10 @@ nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
-nmap <space> zz
-
+map <leader>ss :setlocal spell!<cr>
+map <leader>/ :noh<cr>
+map <HOME> ^
+map <leader>o <C-p>
 map <leader>1 :confirm :b1<CR>
 map <leader>2 :confirm :b2<CR>
 map <leader>3 :confirm :b3<CR>
