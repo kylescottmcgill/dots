@@ -256,7 +256,10 @@ let g:neocomplete#enable_at_startup = 1
 " Ctrl-p && Ag
 
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+            \ "dir": '\v[\/]\.(git|hg|svn)$',
+            \ "file": '\v\.(exe|so|dll|jpeg|png|gif)'
+            \ }
 if executable('ag')
     map <leader>f :Ag<Space>
     " Use Ag over Grep
