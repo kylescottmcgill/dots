@@ -69,3 +69,6 @@ man() {
 
 eval $(dircolors -b $HOME/.dircolors)
 source /usr/share/doc/pkgfile/command-not-found.bash
+
+source /usr/share/chruby/chruby.sh
+source /usr/share/chruby/auto.sh
