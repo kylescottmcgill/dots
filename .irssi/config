@@ -17,7 +17,7 @@ servers = (
     # ssl_verify = "yes";
     ssl_cert = "~/.irssi/turtil.pem";
     ssl_capath = "/etc/ssl/certs";
-    autoconnect = "no";
+    autoconnect = "yes";
   },
   {
     address = "irc.nixers.net";
@@ -49,7 +49,9 @@ chatnets = {
 
 channels = (
   { name = "#cirrus"; chatnet = "geekshed"; autojoin = "yes"; },
-  # { name = "##kaizen"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##kaizen"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##devsnull"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "##darkfox"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#nixers"; chatnet = "nixers"; autojoin = "yes"; }
 );
 
