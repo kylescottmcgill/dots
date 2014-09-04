@@ -12,14 +12,11 @@ URxvt*loginShell: false
 URxvt*saveLines: 0
 URxvt*geometry: 80x20
 
-!URxvt*font: xft:tamsyn:pixelsize=8:antialias=true:hinting=true
-!URxvt*boldfont: xft:tamsyn:bold:pixelsize=8:antialias=true:hinting=true
+!URxvt*font: xft:terminus:pixelsize=12:antialias=true:hinting=true
+!URxvt*boldfont: xft:terminus:bold:pixelsize=12:antialias=true:hinting=true
 
-urxvt.font: -misc-tamsyn-medium-r-normal--14-101-100-100-c-70-iso8859-1
-urxvt.boldFont: -misc-tamsyn-bold-r-normal--14-101-100-100-c-70-iso8859-1
-
-!URxvt*font: xft:Ohsnap:pixelsize=12:antialias=true:hinting=true
-!URxvt*boldfont: xft:Ohsnapi:bold:pixelsize=12:antialias=true:hinting=true
+URxvt*font: xft:Ohsnap:pixelsize=12:antialias=true:hinting=true
+URxvt*boldfont: xft:Ohsnapi:bold:pixelsize=12:antialias=true:hinting=true
 
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
