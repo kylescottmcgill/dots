@@ -11,7 +11,7 @@ mpd_port = "6600"
 mpd_music_dir = "~/music"
 mpd_connection_timeout = "5"
 mpd_crossfade_time = "1"
-mpd_communication_mode = "notifications" (polling/notifications)
+#mpd_communication_mode = "notifications" (polling/notifications)
 ##### music visualizer #####
 ##
 ## Note: In order to make music visualizer work you'll
@@ -47,7 +47,7 @@ visualizer_sync_interval = "1"
 ## Note: To enable spectrum frequency visualization
 ## you need to compile ncmpcpp with fftw3 support.
 ##
-visualizer_type = "spectrum" (spectrum/wave)
+#visualizer_type = "spectrum" (spectrum/wave)
 ##### system encoding #####
 ##
 ## ncmpcpp should detect your charset encoding
@@ -219,24 +219,24 @@ seek_time = "1"
 autocenter_mode = "yes"
 centered_cursor = "yes"
 progressbar_look = "─╼╌"
-default_place_to_search_in = "database" (database/playlist)
+#default_place_to_search_in = "database" (database/playlist)
 user_interface = "classic" (classic/alternative)
-media_library_left_column = "a" (possible values: a,y,g,c,p, legend above)
+#media_library_left_column = "a" (possible values: a,y,g,c,p, legend above)
 default_find_mode = "wrapped" (wrapped/normal)
 default_space_mode = "add" (add/select)
-default_tag_editor_left_col = "dirs" (albums/dirs)
+#default_tag_editor_left_col = "dirs" (albums/dirs)
 default_tag_editor_pattern = "%n - %t"
 header_visibility = "no"
 statusbar_visibility = "no"
 titles_visibility = "yes"
 header_text_scrolling = "yes"
-fancy_scrolling = "yes"
+#fancy_scrolling = "yes"
 cyclic_scrolling = "no"
 lines_scrolled = "2"
 follow_now_playing_lyrics = "yes"
-ncmpc_like_songs_adding = "yes" (enabled - add/remove, disabled - always add)
+#ncmpc_like_songs_adding = "yes" (enabled - add/remove, disabled - always add)
 show_hidden_files_in_local_browser = "no"
-display_screens_numbers_on_start = "no"
+#display_screens_numbers_on_start = "no"
 ##
 ## How shall key_screen_switcher work?
 ##
@@ -259,14 +259,14 @@ display_screens_numbers_on_start = "no"
 ## As you can see, above example will switch between
 ## playlist, visualizer and media library screens.
 ##
-screen_switcher_mode = "sequence: 2 -> 5 -> 9"
+#screen_switcher_mode = "sequence: 2 -> 5 -> 9"
 ##
 ## Note: You can define startup screen for ncmpcpp
 ## by choosing screen number from the list above.
 ##
-startup_screen = "2"
+#startup_screen = "2"
 jump_to_now_playing_song_at_start = "yes"
-ask_before_clearing_main_playlist = "no"
+#ask_before_clearing_main_playlist = "no"
 clock_display_seconds = "no"
 display_volume_level = "yes"
 display_bitrate = "yes"
@@ -283,8 +283,8 @@ mouse_support = "yes"
 mouse_list_scroll_whole_page = "yes"
 empty_tag_marker = "<empty>"
 tag_editor_extended_numeration = "no"
-media_library_display_date = "yes"
-media_library_disable_two_column_mode = "no"
+#media_library_display_date = "yes"
+#media_library_disable_two_column_mode = "no"
 enable_window_title = "no"
 ##
 ## Note: You can choose default search mode for search
@@ -305,19 +305,19 @@ enable_window_title = "no"
 ## remove files and directories from your hdd using
 ## ncmpcpp's browser screen.
 ##
-allow_physical_files_deletion = "no"
-allow_physical_directories_deletion = "no"
+#allow_physical_files_deletion = "no"
+#allow_physical_directories_deletion = "no"
 ##### lyrics support #####
 ##
 ## supported lyrics databases:
 ##
 ## - 1 - lyricsplugin.com
 ##
-lyrics_database = "1"
+#lyrics_database = "1"
 external_editor = "vim"
 use_console_editor = "yes" (set to yes, if your editor is console app)
 ##### colors definitions #####
-discard_colors_if_item_is_selected = "yes"
+#discard_colors_if_item_is_selected = "yes"
 colors_enabled = "yes"
 empty_tag_color = "white"
 header_window_color = "black"
