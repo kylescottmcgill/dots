@@ -18,9 +18,6 @@ URxvt*boldfont: xft:terminus:bold:pixelsize=12:antialias=true:hinting=true
 URxvt-white*font: xft:Ohsnap:pixelsize=12:antialias=true:hinting=true
 URxvt-white*boldfont: xft:Ohsnapi:bold:pixelsize=12:antialias=true:hinting=true
 
-URxvt-trans.font: xft:Tewi:regular:size=11
-URxvt-trans.boldFont: xft:Tewi:regular:size=11
-
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
 URxvt*iso14755: false
