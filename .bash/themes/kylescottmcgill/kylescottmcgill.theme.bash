@@ -16,7 +16,7 @@ function git_status() {
 
 function prompt_command() {
     STATUS=$(rt=$?; [[ $rt = 0 ]] && echo ${bold_blue} || echo ${bold_red})
-    if [[ $COLORSCHEME == "minimal" || $(tput cols) > 60 ]]; then
+    if [[ $COLORSCHEME == "minimal" || `tput cols` -le 60 ]]; then
         PS1="${normal}─── "
     else
         PS1="${STATUS}\h${bold_black} \w${normal} ${bold_white}\$(git_status)${normal}» "
