@@ -3,12 +3,12 @@
 
 #define NUMCOLORS       13
 #define MODKEY          Mod1Mask
-#define MONKEY          Mod4Mask
+#define SKEY          Mod4Mask
 #define TAGKEYS(KEY,TAG) \
-    { MONKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-    { MONKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-    { MONKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-    { MONKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+    { SKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+    { SKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+    { SKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+    { SKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 static const unsigned int tagspacing = 3;       /* space between tags */
 static const unsigned int tagpadding = 25;      /* inner padding of tags */
@@ -78,14 +78,14 @@ static const char *volu[] = { "amixer", "-q", "set", "PCM", "5%+", "unmute", NUL
 static const char *vold[] = { "amixer", "-q", "set", "PCM", "5%-", "unmute", NULL };
 
 static Key keys[] = {
-    { MONKEY,           XK_grave,   spawn,          {.v = menu } },
-    { MONKEY,           XK_w,       runorraise,     {.v = webb } },
-    { MONKEY,           XK_Return,  spawn,          {.v = term } },
-    { MONKEY|ShiftMask, XK_Return,  spawn,          {.v = termwhite } },
-    { MONKEY,           XK_F5,      spawn,          {.v = play } },
-    { MONKEY,           XK_F6,      spawn,          {.v = stop } },
-    { MONKEY,           XK_F7,      spawn,          {.v = prev } },
-    { MONKEY,           XK_F8,      spawn,          {.v = next } },
+    { SKEY,             XK_grave,   spawn,          {.v = menu } },
+    { SKEY,             XK_w,       runorraise,     {.v = webb } },
+    { SKEY,             XK_Return,  spawn,          {.v = term } },
+    { SKEY|ShiftMask,   XK_Return,  spawn,          {.v = termwhite } },
+    { SKEY,             XK_F5,      spawn,          {.v = play } },
+    { SKEY,             XK_F6,      spawn,          {.v = stop } },
+    { SKEY,             XK_F7,      spawn,          {.v = prev } },
+    { SKEY,             XK_F8,      spawn,          {.v = next } },
     { 0,                XF86XK_AudioMute, spawn,    {.v = mute } },
     { 0,                XF86XK_AudioLowerVolume, spawn, {.v = vold } },
     { 0,                XF86XK_AudioRaiseVolume, spawn, {.v = volu } },
@@ -110,10 +110,10 @@ static Key keys[] = {
     { MODKEY,           XK_Up,      focusstack,     {.i = -1 } },
     { MODKEY,           XK_0,       view,           {.ui = ~0 } },
     { MODKEY|ShiftMask, XK_0,       tag,            {.ui = ~0 } },
-    { MONKEY,           XK_e,       focusmon,       {.i = -1 } },
-    { MONKEY,           XK_r,       focusmon,       {.i = +1 } },
-    { MODKEY|ShiftMask, XK_e,       tagmon,         {.i = -1 } },
-    { MODKEY|ShiftMask, XK_r,       tagmon,         {.i = +1 } },
+    { SKEY,             XK_e,       focusmon,       {.i = -1 } },
+    { SKEY,             XK_r,       focusmon,       {.i = +1 } },
+    { SKEY|ShiftMask,   XK_e,       tagmon,         {.i = -1 } },
+    { SKEY|ShiftMask,   XK_r,       tagmon,         {.i = +1 } },
     TAGKEYS(            XK_1,       0)
     TAGKEYS(            XK_2,       1)
     TAGKEYS(            XK_3,       2)
