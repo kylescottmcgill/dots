@@ -181,13 +181,13 @@ abstracts = {
   netjoin = "        %Knjoin %G│\012        %b\"$*\"%n";
 
   # /names list
-  names_prefix =        "             %Y│%n  ";
-  names_nick =          "%_$2$0%_%n$1-       ";
-  names_nick_op =       "{names_nick $* %R}";
-  names_nick_halfop =   "{names_nick $* %C}";
-  names_nick_voice =    "{names_nick $* %K}";
-  names_users =         "             %Y│%n $1";
-  names_channel =       "\"%b$*\"%n";
+  names_prefix = "             %Y│%n  ";
+  names_nick = "%_$2$0%_%n$1-       ";
+  names_nick_op = "{names_nick $* %R}";
+  names_nick_halfop = "{names_nick $* %C}";
+  names_nick_voice = "{names_nick $* %K}";
+  names_users = "             %Y│%n $1";
+  names_channel = "\"%b$*\"%n";
 
   # DCC
   dcc = "%g$*%n";

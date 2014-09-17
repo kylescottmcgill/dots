@@ -178,6 +178,7 @@ endfunction
 
 "Bind the BufSel() function to a user-command
 command! -nargs=1 Bs :call BufSel("<args>")
+autocmd filetype css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
 
 " Vim Bindings
 nmap <leader>p :MBEbp<CR>
@@ -242,6 +243,9 @@ let g:tagbar_type_php  = {
             \ ]
             \ }
 nmap <F8> :TagbarToggle<CR>
+
+" vim-gitgutter
+let g:gitgutter_max_signs = 50  " default value: 500
 
 " vim-redmine
 
