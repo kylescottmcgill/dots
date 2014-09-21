@@ -1,10 +1,13 @@
+" Vim Compat {{{
+
 set nocompatible        " be iMproved
 set shell=/bin/bash
 set encoding=utf8
 set ffs=unix,dos,mac
 set t_Co=256
 
-" General
+" }}}
+" General {{{
 
 set number              " Show line numbers
 set wrap
@@ -36,14 +39,20 @@ set shiftwidth=4        " Number of auto-indent spaces
 set smartindent         " Enable smart-indent
 set smarttab            " Enable smart-tabs
 set softtabstop=4       " Number of spaces per Tab
+
+set foldenable          " Enable Folds
 set foldmethod=syntax   " Depending on Syntax, fold
 set foldlevelstart=20   " Only fold after 20 levels on open
+set foldnestmax=10      " Nest Folds
 
-" Advanced
+" }}}
+" Advanced {{{
+
 set autoread            " Auto Reads a file upon change
 set ruler               " Show row and column ruler information
 set hidden              " Show hidden files in NerdTree and :e
 set autowriteall        " Auto-write all file changes
+set modelines=1
 
 set undolevels=1000     " Number of undo levels
 set backspace=indent,eol,start  " Backspace behaviour
@@ -72,9 +81,11 @@ if has("gui_running")
 end
 
 set lazyredraw          " Don't redraw while executing macros
-
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
 let g:php_folding=2     " Fold PHP bitch
+
+" }}}
+" Vundle Packages {{{
 
 syntax on
 filetype off            " required!
@@ -109,6 +120,9 @@ set runtimepath+=$GOROOT/misc/vim
 
 filetype plugin indent on     " required!
 
+" }}}
+" Colors & Statusline {{{
+
 set background=dark
 colorscheme numix
 
@@ -132,17 +146,54 @@ highlight MBEVisibleActiveChanged cterm=none ctermfg=none ctermbg=black guifg=#F
 set laststatus=2
 set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 
-au InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
-au InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
+" }}}
+" Autogroups {{{
 
-autocmd BufWritePre * :%s/\s\+$//e
+augroup configgroup
+    autocmd!
+    autocmd VimEnter * highlight clear SignColumn
+    autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
+    autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
+
+    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
+                \:call <SID>StripTrailingWhitespaces()
+    autocmd FileType java setlocal noexpandtab
+    autocmd FileType java setlocal list
+    autocmd FileType java setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType java setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType php setlocal expandtab
+    autocmd FileType php setlocal list
+    autocmd FileType php setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType ruby setlocal tabstop=2
+    autocmd FileType ruby setlocal shiftwidth=2
+    autocmd FileType ruby setlocal softtabstop=2
+    autocmd FileType ruby setlocal commentstring=#\ %s
+    autocmd FileType python setlocal commentstring=#\ %s
+    autocmd BufEnter *.cls setlocal filetype=java
+    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+    autocmd BufEnter Makefile setlocal noexpandtab
+    autocmd BufEnter *.sh setlocal tabstop=2
+    autocmd BufEnter *.sh setlocal shiftwidth=2
+    autocmd BufEnter *.sh setlocal softtabstop=2
+    autocmd filetype css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
+augroup END
+
+augroup vimrc
+    au BufReadPre * setlocal foldmethod=marker
+    au BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
+    au BufReadPre * setlocal foldlevel=0
+augroup END
+
+" }}}
+" Custom Functions {{{
 
 " Append modeline after last line in buffer.
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
 " files.
 function! AppendModeline()
-    let l:modeline = printf("vim: set ft=%s ts=%d sw=%d tw=%d %set :",
-                \ &filetype, &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+    let l:modeline = printf("vim: set ft=%s ts=%d sw=%d tw=%d fdm=%s foldlevel=%d %set :",
+                \ &filetype, &tabstop, &shiftwidth, &textwidth, &expandtab, &foldmethod, &fdl ? '' : 'no')
     let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
     call append(line("$"), l:modeline)
 endfunction
@@ -176,21 +227,34 @@ function! BufSel(pattern)
     endif
 endfunction
 
+" strips trailing whitespace at the end of files. this
+" is called on buffer write in the autogroup above.
+function! <SID>StripTrailingWhitespaces()
+    " save last search & cursor position
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
 "Bind the BufSel() function to a user-command
 command! -nargs=1 Bs :call BufSel("<args>")
-autocmd filetype css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
 
-" Vim Bindings
+" }}}
+" Vim Bindings {{{
+
 nmap <leader>p :MBEbp<CR>
 nmap <leader>n :MBEbn<CR>
 nmap <leader>d :MBEbd<CR>
-nmap <space> zz
 
 nnoremap <leader>b :buffers<CR>:buffer<Space>
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>e :edit $MYVIMRC<cr>
 nnoremap <leader>s :source $MYVIMRC<cr>
 
+nnoremap <silent> <space> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
 nnoremap <silent> <c-w>d :MBEbd<CR>
 nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
@@ -211,8 +275,8 @@ map <leader>7 :confirm :b7<CR>
 map <leader>8 :confirm :b8<CR>
 map <leader>9 :confirm :b9<CR>
 
-
-" Plugin bindings and functionality
+" }}}
+" Plugin bindings and functionality {{{
 
 " NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -275,8 +339,7 @@ if executable('ag')
 
     " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
     let g:ctrlp_user_command = 'ag -i %s -l --nocolor -g ""'
-endif
+endif 
 
-
-
-"vim: set ft=vim ts=8 sw=4 tw=140 et :
+" }}}
+"vim: set ft=vim ts=8 sw=4 tw=140 fdm=1 foldlevel=0 noet :
