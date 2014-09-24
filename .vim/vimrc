@@ -154,9 +154,6 @@ augroup configgroup
     autocmd VimEnter * highlight clear SignColumn
     autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
     autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
-
-    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
-                \:call <SID>StripTrailingWhitespaces()
     autocmd FileType java setlocal noexpandtab
     autocmd FileType java setlocal list
     autocmd FileType java setlocal listchars=tab:+\ ,eol:-
