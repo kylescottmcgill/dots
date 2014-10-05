@@ -307,13 +307,6 @@ nmap <F8> :TagbarToggle<CR>
 " vim-gitgutter
 let g:gitgutter_max_signs = 50  " default value: 500
 
-" vim-redmine
-
-let g:redmine_auth_site = 'http://redmine.xmdevelopments.com'
-let g:redmine_auth_key  = '08a26ffcb5cb6df2651a4cf38eeb4a995d2b32ce'
-let g:redmine_author_id = '11'
-let g:redmine_project_id = '1'
-
 " NeoComplete
 
 let g:neocomplete#enable_at_startup = 1
@@ -338,4 +331,5 @@ if executable('ag')
 endif 
 
 " }}}
+
 "vim: set ft=vim ts=8 sw=4 tw=140 fdm=1 foldlevel=0 noet :
