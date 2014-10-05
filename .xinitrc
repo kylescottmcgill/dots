@@ -29,7 +29,11 @@ xset m 1/1 0                    # No Mouse Acceleration
 
 xsetroot -cursor_name left_ptr &  # Use a non-shit cursor
 
-xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --mode 1920x1080 --pos 1920x0 --rotate normal
+
+if [[ -d ~/.screenlayout ]]; then
+    #xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --mode 1920x1080 --pos 1920x0 --rotate normal
+    ~/.screenlayout/nvidia.sh
+fi
 
 
 # This is required for some GTK2 themes to get set correctly
