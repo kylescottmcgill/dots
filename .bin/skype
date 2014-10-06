@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-docker run
+docker run -d -p 55555:22 tomparys/skype
 ssh skype skype-pulseaudio
