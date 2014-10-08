@@ -291,7 +291,7 @@ let g:go_bin_path = expand("~/.go/bin")
 
 " Tagbar
 let g:tagbar_phpctags_memory_limit = '1024M'
-let g:tagbar_phpctags_bin="~/.composer/vendor/bin/phpctags"
+let g:tagbar_phpctags_bin="~/.bin/phpctags"
 let g:tagbar_type_php  = {
             \ 'ctagstype' : 'php',
             \ 'kinds'     : [
