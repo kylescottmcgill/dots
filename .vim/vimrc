@@ -135,7 +135,7 @@ set cursorcolumn
 highlight cursorline                cterm=none ctermfg=none ctermbg=black
 highlight cursorcolumn              cterm=none ctermfg=none ctermbg=black
 highlight statusline                cterm=none ctermfg=white ctermbg=black
-highlight signcolumn                cterm=none ctermfg=grey ctermbg=black
+highlight signcolumn                cterm=none ctermfg=grey ctermbg=none
 highlight colorcolumn               cterm=none ctermfg=none ctermbg=black
 
 " MiniBufExpl Colors
@@ -156,12 +156,12 @@ augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
 
-    " autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
-    " autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
+    autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
+    autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
 
-    autocmd FileType php setlocal expandtab
-    autocmd FileType php setlocal list
-    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+    " autocmd FileType php setlocal expandtab
+    " autocmd FileType php setlocal list
+    " autocmd FileType php setlocal formatprg=par\ -w80\ -T4
     autocmd FileType ruby setlocal tabstop=2
     autocmd FileType ruby setlocal shiftwidth=2
     autocmd FileType ruby setlocal softtabstop=2
@@ -173,7 +173,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
 
-    autocmd BufEnter *.php colorscheme 256-grayvim
+    autocmd BufEnter *.php colorscheme flatlandia
     autocmd BufEnter *.go colorscheme 256-grayvim
 augroup END
 
