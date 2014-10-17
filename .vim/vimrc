@@ -97,8 +97,10 @@ call vundle#begin()
 " required!
 
 Plugin 'gmarik/Vundle.vim'
-Bundle 'twerth/ir_black'
-Bundle 'nanotech/jellybeans.vim'
+
+Bundle 'flazz/vim-colorschemes'
+Bundle 'reedes/vim-colors-pencil'
+
 Bundle 'godlygeek/csapprox'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'scrooloose/nerdtree'
@@ -120,44 +122,6 @@ set runtimepath+=$GOROOT/misc/vim
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" }}}
-" Autogroups {{{
-
-augroup configgroup
-    autocmd!
-    autocmd VimEnter * highlight clear SignColumn
-
-    autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
-    autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
-
-    autocmd FileType php setlocal expandtab
-    autocmd FileType php setlocal list
-    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
-    autocmd FileType ruby setlocal tabstop=2
-    autocmd FileType ruby setlocal shiftwidth=2
-    autocmd FileType ruby setlocal softtabstop=2
-    autocmd FileType ruby setlocal commentstring=#\ %s
-    autocmd FileType python setlocal commentstring=#\ %s
-    autocmd FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
-
-    autocmd BufEnter *.cls setlocal filetype=java
-    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
-    autocmd BufEnter Makefile setlocal noexpandtab
-    autocmd BufEnter *.sh setlocal tabstop=2
-    autocmd BufEnter *.sh setlocal shiftwidth=2
-    autocmd BufEnter *.sh setlocal softtabstop=2
-
-    autocmd BufEnter * colorscheme default
-    autocmd BufEnter * colorscheme numix
-    autocmd BufEnter *.php colorscheme ir_black
-augroup END
-
-augroup vimrc
-    au BufReadPre * setlocal foldmethod=marker
-    au BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
-    au BufReadPre * setlocal foldlevel=0
-augroup END
 
 " }}}
 " Colors & Statusline {{{
@@ -184,6 +148,40 @@ highlight MBEVisibleActiveChanged cterm=none ctermfg=none ctermbg=black guifg=#F
 
 set laststatus=2
 set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
+
+" }}}
+" Autogroups {{{
+
+augroup configgroup
+    autocmd!
+    autocmd VimEnter * highlight clear SignColumn
+
+    " autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
+    " autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
+
+    autocmd FileType php setlocal expandtab
+    autocmd FileType php setlocal list
+    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType ruby setlocal tabstop=2
+    autocmd FileType ruby setlocal shiftwidth=2
+    autocmd FileType ruby setlocal softtabstop=2
+    autocmd FileType ruby setlocal commentstring=#\ %s
+    autocmd FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
+
+    autocmd BufEnter Makefile setlocal noexpandtab
+    autocmd BufEnter *.sh setlocal tabstop=2
+    autocmd BufEnter *.sh setlocal shiftwidth=2
+    autocmd BufEnter *.sh setlocal softtabstop=2
+
+    autocmd BufEnter *.php colorscheme 256-grayvim
+    autocmd BufEnter *.go colorscheme 256-grayvim
+augroup END
+
+augroup vimrc
+    au BufReadPre * setlocal foldmethod=marker
+    au BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
+    au BufReadPre * setlocal foldlevel=0
+augroup END
 
 " }}}
 " Custom Functions {{{
