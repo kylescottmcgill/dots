@@ -75,7 +75,8 @@ if has("gui_running")
     set guioptions-=m       " menu bar
     set guioptions-=T       " toolbar
     set guioptions-=r       " scrollbar
-    set guifont=Source\ Code\ Pro\ 8 " Source Code Pro Font
+    " set guifont=Source\ Code\ Pro\ 8 " Source Code Pro Font
+    set guifont=Terminus 8 " Source Code Pro Font
     set linespace=5
     set guiheadroom=0
 end
@@ -159,9 +160,6 @@ augroup configgroup
     autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
     autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
 
-    " autocmd FileType php setlocal expandtab
-    " autocmd FileType php setlocal list
-    " autocmd FileType php setlocal formatprg=par\ -w80\ -T4
     autocmd FileType ruby setlocal tabstop=2
     autocmd FileType ruby setlocal shiftwidth=2
     autocmd FileType ruby setlocal softtabstop=2
@@ -174,7 +172,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal softtabstop=2
 
     autocmd BufEnter *.php colorscheme flatlandia
-    autocmd BufEnter *.go colorscheme 256-grayvim
+    autocmd BufEnter *.go colorscheme flatlandia
 augroup END
 
 augroup vimrc
