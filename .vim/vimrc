@@ -173,6 +173,7 @@ augroup configgroup
 
     autocmd BufEnter *.php colorscheme flatlandia
     autocmd BufEnter *.go colorscheme flatlandia
+    autocmd BufEnter *.js colorscheme grb256
 augroup END
 
 augroup vimrc
