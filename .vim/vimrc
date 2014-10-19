@@ -17,7 +17,6 @@ set showbreak=+++       " Wrap-broken line prefix
 set textwidth=140       " Line wrap (number of cols)
 set colorcolumn=120
 set showmatch           " Highlight matching brace
-set spell               " Enable spell-checking
 set errorbells          " Beep or flash screen on errors
 set visualbell          " Use visual bell (no beeping)
 
@@ -165,6 +164,7 @@ augroup configgroup
     autocmd FileType ruby setlocal softtabstop=2
     autocmd FileType ruby setlocal commentstring=#\ %s
     autocmd FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
+    autocmd FileType mail setlocal spell
 
     autocmd BufEnter Makefile setlocal noexpandtab
     autocmd BufEnter *.sh setlocal tabstop=2
