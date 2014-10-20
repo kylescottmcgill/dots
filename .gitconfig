@@ -11,6 +11,9 @@
 [core]
     editor = vim
     whitespace = trailing-space,space-before-tab,indent-with-non-tab
+    autocrlf = false
+    eol = lf
+    filemode = false
 [push]
     default = simple
 [help]
@@ -18,4 +21,4 @@
 [merge]
     renormalize = true
 [github]
-	user = kylescottmcgill
+    user = kylescottmcgill
