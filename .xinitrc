@@ -31,12 +31,12 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 sh ~/.fehbg &
 compton --opengl --vsync opengl-swc --paint-on-overlay --config ~/.compton.conf &
 
-dwm-status &
+#dwm-status &
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
-    "ouroboros") exec dwm ;;    # Main PC
-    "kuro") exec dwm ;;         # Chromebook
+    "ouroboros") sxhkd & exec bspwm ;;    # Main PC
+    "kuro") exec dwm ;;         # Dell
     "tsuchinoko") exec dwm ;;   # Work PC
     *) exec dwm ;;
 esac
