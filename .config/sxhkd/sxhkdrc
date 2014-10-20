@@ -1,5 +1,16 @@
+~button1
+    bspc pointer -g focus
+
 super + Return 
     urxvtc
 
 super + w
     chrome
+
+super + grave
+    dmenu -i -1 5
+
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# vim: set ft=sxhkdrc:
