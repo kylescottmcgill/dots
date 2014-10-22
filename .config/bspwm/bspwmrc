@@ -1,17 +1,31 @@
-#!/bin/sh
+#!/bin/bash
 
 bspc config border_width        1
 bspc config window_gap          2
 
+
+case "$(hostname)" in
+    "ouroboros") 
+        bspc monitor -d I II III IV V VI VII VIII IX X ;;      # Main PC
+    "kuro") 
+        bspc monitor -d I II III IV V VI VII VIII IX X ;;           # Dell
+    "tsuchinoko") 
+        DesktopSetup ;;                                       # Work PC
+    *) 
+        bspc monitor -d I II III IV V VI VII VIII IX X ;;
+esac
+
+function DesktopSetup {
 i=1
 for monitor in $(bspc query -M); do
-bspc monitor $monitor \
+    bspc monitor $monitor \
         -n "$i" \
         -d $i/{i,ii,iii,iv,v,vi,vii,viii,ix,x}
     let i++
 done
 NMON=$i
 unset i
+}
 
 bspc config top_padding 14 
 
