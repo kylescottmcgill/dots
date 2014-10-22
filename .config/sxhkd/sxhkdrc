@@ -13,8 +13,8 @@ super + b
 super + {s,f}
     bspc window -t {floating,fullscreen}
 
-# super + {grave,Tab}
-#    bspc {window,desktop} -f last
+super + shift + {grave,Tab}
+    bspc {window,desktop} -f last
 
 super + apostrophe
     bspc window -s last

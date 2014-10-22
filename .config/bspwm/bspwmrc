@@ -1,18 +1,19 @@
 #!/bin/bash
 
-bspc config border_width        1
-bspc config window_gap          10
-
-
 case "$(hostname)" in
     "ouroboros") 
-        bspc monitor -d I II III IV V VI VII VIII IX X ;;      # Main PC
+        bspc desktop -n ◻ 
+        bspc monitor -d ◻ ◻ ◻ ◻ ◻ ◻ ◻ ◻ ◻
+        ;;
     "kuro") 
-        bspc monitor -d I II III IV V VI VII VIII IX X ;;      # Dell
+        bspc monitor -d ◻ ◻ ◻ ◻ ◻ ◻ ◻ ◻ ◻
+        ;;
     "tsuchinoko") 
         DesktopSetup ;;                                        # Work PC
     *) 
-        bspc monitor -d I II III IV V VI VII VIII IX X ;;
+        bspc desktop -n ◻
+        bspc monitor -d ◻ ◻ ◻ ◻ ◻ ◻ ◻ ◻ ◻
+        ;;
 esac
 
 function DesktopSetup {
@@ -26,6 +27,9 @@ done
 NMON=$i
 unset i
 }
+
+bspc config border_width        1
+bspc config window_gap          10
 
 bspc config top_padding 20
 bspc config bottom_padding 20
