@@ -114,8 +114,11 @@ Bundle 'vim-php/tagbar-phpctags.vim'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'itchyny/vim-gitbranch'
 Bundle 'fholgado/minibufexpl.vim'
+Bundle 'msanders/snipmate.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
+
+Bundle 'ekalinin/Dockerfile.vim'
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
