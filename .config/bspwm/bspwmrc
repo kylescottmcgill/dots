@@ -8,7 +8,7 @@ case "$(hostname)" in
     "kuro") 
         bspc monitor -d ◻ ◻ ◻ ◻ ◻ ◻ ◻ ◻ ◻
         ;;
-    "tsuchinoko") 
+    "xm-dev") 
         DesktopSetup ;;                                        # Work PC
     *) 
         bspc desktop -n ◻

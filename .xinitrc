@@ -34,7 +34,7 @@ compton --opengl --vsync opengl-swc --paint-on-overlay --config ~/.compton.conf 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
     "ouroboros") sxhkd & exec bspwm ;;    # Main PC
-    "kuro") sxhkd & exec bspwm ;;    # Main PC
-    "tsuchinoko") exec dwm ;;   # Work PC
+    "kuro") sxhkd & exec bspwm ;;    # Laptop
+    "xm-dev") sxhkd & exec bspwm ;;    # Work PC
     *) exec dwm ;;
 esac
