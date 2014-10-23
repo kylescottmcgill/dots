@@ -175,6 +175,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal softtabstop=2
 
     autocmd BufEnter *.php colorscheme flatlandia
+    autocmd BufEnter *.php setlocal foldmethod=indent
     autocmd BufEnter *.go colorscheme flatlandia
     autocmd BufEnter *.js colorscheme grb256
 augroup END
