@@ -313,9 +313,10 @@ enable_window_title = "no"
 ##
 ## - 1 - lyricsplugin.com
 ##
-#lyrics_database = "1"
+#lyrics_database = "0"
 external_editor = "vim"
-use_console_editor = "yes" (set to yes, if your editor is console app)
+use_console_editor = "yes" #(set to yes, if your editor is console app)
+lyrics_directory = "~/.cache/lyrics"
 ##### colors definitions #####
 #discard_colors_if_item_is_selected = "yes"
 colors_enabled = "yes"
