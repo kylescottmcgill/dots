@@ -1,8 +1,10 @@
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 && $TERM=linux ]] && exec startx
+
 source ~/.bashrc
 
-#if [[ ! S{DISPLAY} && ${XDG_VTNR} == 1 ]]; then
-#    exec startx &> ~/.cache/x.log
-#fi
+if [[ ! S{DISPLAY} && ${XDG_VTNR} == 1 ]]; then
+    exec startx &> ~/.cache/x.log
+fi
 
 
 
