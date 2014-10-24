@@ -63,4 +63,4 @@ bspc rule -a Conky sticky=on manage=off lower=on
 bspc rule -a astime sticky=on
 bspc rule -a feh floating=on manage=off
 
-./panel/panel &
+~/.config/bspwm/panel/panel &
