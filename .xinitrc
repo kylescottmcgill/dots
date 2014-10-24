@@ -13,6 +13,7 @@ fi
 
 xset +fp /usr/share/fonts/local # Load some fonts... all of dem
 [[ -d $HOME/.local/share/fonts ]] && xset +fp $HOME/.local/share/fonts
+fc-cache
 xset fp rehash                  # Something else for the fonts
 xset -b                         # disable bell
 xrdb $HOME/.Xresources          # Merge Xresources
