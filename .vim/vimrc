@@ -110,13 +110,19 @@ Bundle 'scrooloose/syntastic'
 Bundle 'fatih/vim-go'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'vim-php/tagbar-phpctags.vim'
-Bundle 'StanAngeloff/php.vim'
+
+
 Bundle 'itchyny/vim-gitbranch'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
+
+" {{{ PHP 
+Bundle 'rayburgemeestre/phpfolding.vim'
+Bundle 'vim-php/tagbar-phpctags.vim'
+Bundle 'StanAngeloff/php.vim'
+" }}}
 
 Bundle 'ekalinin/Dockerfile.vim'
 
@@ -175,7 +181,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal softtabstop=2
 
     autocmd BufEnter *.php colorscheme flatlandia
-    autocmd BufEnter *.php setlocal foldmethod=indent
+    autocmd BufEnter *.php setlocal foldmethod=syntax
     autocmd BufEnter *.go colorscheme flatlandia
     autocmd BufEnter *.js colorscheme grb256
 augroup END
