@@ -111,7 +111,6 @@ Bundle 'fatih/vim-go'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'majutsushi/tagbar'
 
-
 Bundle 'itchyny/vim-gitbranch'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'msanders/snipmate.vim'
