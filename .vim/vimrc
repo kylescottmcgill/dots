@@ -377,6 +377,12 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag -i %s -l --nocolor -g ""'
 endif 
 
+" PHP Ctags
+let FILETAG=expand(".git/tags")
+if filereadable(FILETAG)
+    set tags=.git/tags
+endif
+
 " }}}
 
 "vim: set ft=vim ts=8 sw=4 tw=140 fdm=1 foldlevel=0 noet :

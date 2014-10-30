@@ -4,5 +4,14 @@ PATH="/usr/local/bin:$PATH"
 trap "rm -f .git/tags.$$" EXIT
 
 # Tell ctags to go through all the git ls-files
-git ls-files -cd | ctags -L - --tag-relative -Rf.git/tags.$$
+git ls-files -cd | ctags -L - --tag-relative --recurse --tag-relative \
+    --languages=-javascript,sql \
+    --exclude=.git \
+    --sort=yes --append \
+    --PHP-kinds=+cf \
+    --regex-PHP='/abstract class ([^ ]*)/\1/c/' \
+    --regex-PHP='/interface ([^ ]*)/\1/c/' \
+    --regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/' \
+    -f .git/tags.$$
+
 mv .git/tags.$$ .git/tags
