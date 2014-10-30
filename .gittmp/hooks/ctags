@@ -12,6 +12,7 @@ git ls-files -cd | ctags -L - --tag-relative --recurse --tag-relative \
     --regex-PHP='/abstract class ([^ ]*)/\1/c/' \
     --regex-PHP='/interface ([^ ]*)/\1/c/' \
     --regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/' \
+    --regex-PHP=/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i \
     -f .git/tags.$$
 
 mv .git/tags.$$ .git/tags

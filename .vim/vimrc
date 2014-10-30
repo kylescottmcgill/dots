@@ -121,6 +121,7 @@ Bundle 'rking/ag.vim'
 Bundle 'rayburgemeestre/phpfolding.vim'
 Bundle 'vim-php/tagbar-phpctags.vim'
 Bundle 'StanAngeloff/php.vim'
+Bundle 'joonty/vdebug.git'
 " }}}
 
 Bundle 'ekalinin/Dockerfile.vim'
@@ -382,6 +383,8 @@ let FILETAG=expand(".git/tags")
 if filereadable(FILETAG)
     set tags=.git/tags
 endif
+
+" let g:vdebug_options["break_on_open"]=0
 
 " }}}
 
