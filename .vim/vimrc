@@ -51,7 +51,7 @@ set autoread            " Auto Reads a file upon change
 set ruler               " Show row and column ruler information
 set hidden              " Show hidden files in NerdTree and :e
 set autowriteall        " Auto-write all file changes
-set modelines=1
+set modelines=5
 
 set undolevels=1000     " Number of undo levels
 set backspace=indent,eol,start  " Backspace behaviour

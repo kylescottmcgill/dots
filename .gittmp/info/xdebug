@@ -1,0 +1,8 @@
+" Vim Include file for the plugin VDebug
+
+let g:vdebug_options = {
+\ 'path_maps': {"/remote/site": "/local/site"},
+\ 'server': '0.0.0.0'
+\}
+
+"vim: set ft=vim ts=8 sw=4 tw=140 fdm=1 foldlevel=0 noet :
