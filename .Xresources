@@ -104,6 +104,34 @@ URxvt-white*colorIT: #666666
 URxvt-white*colorBD: #aaaaaa
 URxvt-white*colorUL: #000000
 
+!URxvt*foreground:    #ddeedd
+!URxvt*background:    #131D24
+
+!black
+!URxvt*color0:    #25374A
+!URxvt*color8:    #3A526B
+!red
+!URxvt*color1:    #BD4A4A
+!URxvt*color9:    #CC6666
+!green
+!URxvt*color2:    #B7CE42
+!URxvt*color10:   #BDE077
+!yellow
+!URxvt*color3:    #FEA63C
+!URxvt*color11:   #FFE863
+!blue
+!URxvt*color4:    #66AABB
+!URxvt*color12:   #AACCBB
+!magenta
+!URxvt*color5:    #F26B9E
+!URxvt*color13:   #ff5879
+!cyan
+!URxvt*color6:    #72AD8C
+!URxvt*color14:   #9FE3BC
+!white
+!URxvt*color7:    #DDEEDD
+!URxvt*color15:   #FFFFFF
+
 
 !*background:#1a1a1a
 !*foreground:#fafafa
