@@ -100,31 +100,44 @@ Plugin 'gmarik/Vundle.vim'
 
 Bundle 'flazz/vim-colorschemes'
 Bundle 'reedes/vim-colors-pencil'
-
 Bundle 'godlygeek/csapprox'
+
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/syntastic'
-Bundle 'fatih/vim-go'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'majutsushi/tagbar'
-
 Bundle 'itchyny/vim-gitbranch'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
 
+" {{{ Go
+
+Bundle 'fatih/vim-go'
+
+" }}}
+" {{{ Elixir
+
+Bundle 'elixir-lang/vim-elixir'
+
+" }}}
 " {{{ PHP 
+
 Bundle 'rayburgemeestre/phpfolding.vim'
 Bundle 'vim-php/tagbar-phpctags.vim'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'joonty/vdebug.git'
+
 " }}}
+" {{{ Docker
 
 Bundle 'ekalinin/Dockerfile.vim'
+
+" }}}
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
