@@ -2,9 +2,17 @@
 
 set nocompatible        " be iMproved
 set shell=/bin/bash
-set encoding=utf8
 set ffs=unix,dos,mac
 set t_Co=256
+set showcmd
+
+if &term =~ '256color'
+  set t_ut=
+endif
+
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
 
 " }}}
 " General {{{
@@ -44,6 +52,15 @@ set foldmethod=syntax   " Depending on Syntax, fold
 set foldlevelstart=20   " Only fold after 20 levels on open
 set foldnestmax=10      " Nest Folds
 
+
+set title
+set titleold="Terminal"
+set titlestring=%F
+
+set bomb
+set ttyfast
+set binary
+
 " }}}
 " Advanced {{{
 
@@ -51,7 +68,10 @@ set autoread            " Auto Reads a file upon change
 set ruler               " Show row and column ruler information
 set hidden              " Show hidden files in NerdTree and :e
 set autowriteall        " Auto-write all file changes
-set modelines=5
+set gcr=a:blinkon0
+set modeline
+set modelines=10
+
 
 set undolevels=1000     " Number of undo levels
 set backspace=indent,eol,start  " Backspace behaviour
@@ -81,8 +101,11 @@ if has("gui_running")
 end
 
 set lazyredraw          " Don't redraw while executing macros
+
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
 let g:php_folding=2     " Fold PHP bitch
+
+let no_buffers_menu=1
 
 " }}}
 " Vundle Packages {{{
@@ -100,14 +123,13 @@ Plugin 'gmarik/Vundle.vim'
 
 Bundle 'flazz/vim-colorschemes'
 Bundle 'reedes/vim-colors-pencil'
-
 Bundle 'godlygeek/csapprox'
+
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-eunuch'
 Bundle 'scrooloose/syntastic'
-Bundle 'fatih/vim-go'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/ZoomWin'
@@ -117,15 +139,54 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
+Bundle 'sheerun/vim-polyglot'
 
+" {{{ C
+
+Bundle 'vim-scripts/c.vim'
+
+" }}}
+" {{{ HTML
+
+Bundle 'amirh/HTML-AutoCloseTag'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'gorodinskiy/vim-coloresque'
+Bundle 'tpope/vim-haml'
+
+" }}}
+" {{{ Ruby
+"
+Bundle "tpope/vim-rails"
+Bundle "tpope/vim-rake"
+Bundle "tpope/vim-projectionist"
+Bundle "thoughtbot/vim-rspec"
+
+" }}}
+
+" {{{ Go
+
+Bundle 'fatih/vim-go'
+
+" }}}
+" {{{ Elixir
+
+Bundle 'elixir-lang/vim-elixir'
+
+" }}}
 " {{{ PHP 
+
 Bundle 'rayburgemeestre/phpfolding.vim'
 Bundle 'vim-php/tagbar-phpctags.vim'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'joonty/vdebug.git'
+Bundle 'arnaud-lb/vim-php-namespace'
+
 " }}}
+" {{{ Docker
 
 Bundle 'ekalinin/Dockerfile.vim'
+
+" }}}
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
@@ -147,6 +208,7 @@ highlight cursorcolumn              cterm=none ctermfg=none ctermbg=black
 highlight statusline                cterm=none ctermfg=white ctermbg=black
 highlight signcolumn                cterm=none ctermfg=grey ctermbg=none
 highlight colorcolumn               cterm=none ctermfg=none ctermbg=black
+highlight BadWhitespace		    ctermbg=red guibg=red
 
 " MiniBufExpl Colors
 highlight MBENormal               cterm=none ctermfg=none ctermbg=black guifg=#808080 guibg=fg
@@ -169,10 +231,13 @@ augroup configgroup
     autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
     autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
 
+    autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec set filetype=ruby
+
     autocmd FileType ruby setlocal tabstop=2
     autocmd FileType ruby setlocal shiftwidth=2
     autocmd FileType ruby setlocal softtabstop=2
     autocmd FileType ruby setlocal commentstring=#\ %s
+
     autocmd FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
     autocmd FileType mail setlocal spell
 
@@ -184,16 +249,9 @@ augroup configgroup
     autocmd BufEnter *.php colorscheme flatlandia
     autocmd BufEnter *.php setlocal foldmethod=manual
     autocmd BufEnter *.php :EnableFastPHPFolds
+
     autocmd BufEnter *.go colorscheme flatlandia
     autocmd BufEnter *.js colorscheme grb256
-
-    " Don't use the PHP syntax folding
-    " setlocal foldmethod=manual
-    "
-    " " Turn on PHP fast folds
-    " EnableFastPHPFolds
-    " map <F5> <Esc>:EnableFastPHPFolds<Cr>
-    " map <F6> <Esc>:EnablePHPFolds<Cr>
 augroup END
 
 augroup vimrc
@@ -256,7 +314,7 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-"Bind the BufSel() function to a user-command
+" Bind the BufSel() function to a user-command
 command! -nargs=1 Bs :call BufSel("<args>")
 
 " }}}
@@ -292,6 +350,17 @@ map <leader>7 :confirm :b7<CR>
 map <leader>8 :confirm :b8<CR>
 map <leader>9 :confirm :b9<CR>
 
+"" Git
+noremap <Leader>ga :!git add .<CR>
+noremap <Leader>gc :!git commit -m '<C-R>="'"<CR>
+noremap <Leader>gsh :!git push<CR>
+noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gb :Gblame<CR>
+noremap <Leader>gd :Gvdiff<CR>
+noremap <Leader>gr :Gremove<CR>
+
+noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
+
 " }}}
 " Plugin bindings and functionality {{{
 
@@ -301,12 +370,18 @@ map <C-n> :NERDTreeToggle<CR>i
 
 " Syntastic
 
-let g:syntastic_php_checkers = ['php', 'phpcs']
-let g:syntastic_check_on_open=0
 let g:syntastic_always_populate_loc_list=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠'
+let g:syntastic_auto_loc_list=1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_check_on_open=1
+let g:syntastic_echo_current_error=1
+let g:syntastic_enable_signs=1
 
-let g:syntastic_echo_current_error=0
-let g:syntastic_enable_signs=0
+let g:syntastic_php_checkers = ['php', 'phpcs']
 
 " Vim-go
 let g:go_bin_path = expand("~/.go/bin")
@@ -352,6 +427,24 @@ let g:tagbar_type_php  = {
             \ 'j:javascript functions:1'
             \ ]
             \ }
+
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
+
+let g:tagbar_autofocus = 1
+let g:javascript_enable_domhtmlcss = 1
+
 nmap <F8> :TagbarToggle<CR>
 
 " vim-gitgutter
