@@ -2,9 +2,17 @@
 
 set nocompatible        " be iMproved
 set shell=/bin/bash
-set encoding=utf8
 set ffs=unix,dos,mac
 set t_Co=256
+set showcmd
+
+if &term =~ '256color'
+  set t_ut=
+endif
+
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
 
 " }}}
 " General {{{
@@ -44,6 +52,15 @@ set foldmethod=syntax   " Depending on Syntax, fold
 set foldlevelstart=20   " Only fold after 20 levels on open
 set foldnestmax=10      " Nest Folds
 
+
+set title
+set titleold="Terminal"
+set titlestring=%F
+
+set bomb
+set ttyfast
+set binary
+
 " }}}
 " Advanced {{{
 
@@ -51,7 +68,10 @@ set autoread            " Auto Reads a file upon change
 set ruler               " Show row and column ruler information
 set hidden              " Show hidden files in NerdTree and :e
 set autowriteall        " Auto-write all file changes
-set modelines=5
+set gcr=a:blinkon0
+set modeline
+set modelines=10
+
 
 set undolevels=1000     " Number of undo levels
 set backspace=indent,eol,start  " Backspace behaviour
@@ -81,8 +101,11 @@ if has("gui_running")
 end
 
 set lazyredraw          " Don't redraw while executing macros
+
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
 let g:php_folding=2     " Fold PHP bitch
+
+let no_buffers_menu=1
 
 " }}}
 " Vundle Packages {{{
@@ -114,6 +137,29 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'rking/ag.vim'
+Bundle 'sheerun/vim-polyglot'
+
+" {{{ C
+
+Bundle 'vim-scripts/c.vim'
+
+" }}}
+" {{{ HTML
+
+Bundle 'amirh/HTML-AutoCloseTag'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'gorodinskiy/vim-coloresque'
+Bundle 'tpope/vim-haml'
+
+" }}}
+" {{{ Ruby
+"
+Bundle "tpope/vim-rails"
+Bundle "tpope/vim-rake"
+Bundle "tpope/vim-projectionist"
+Bundle "thoughtbot/vim-rspec"
+
+" }}}
 
 " {{{ Go
 
@@ -131,6 +177,7 @@ Bundle 'rayburgemeestre/phpfolding.vim'
 Bundle 'vim-php/tagbar-phpctags.vim'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'joonty/vdebug.git'
+Bundle 'arnaud-lb/vim-php-namespace'
 
 " }}}
 " {{{ Docker
@@ -159,6 +206,7 @@ highlight cursorcolumn              cterm=none ctermfg=none ctermbg=black
 highlight statusline                cterm=none ctermfg=white ctermbg=black
 highlight signcolumn                cterm=none ctermfg=grey ctermbg=none
 highlight colorcolumn               cterm=none ctermfg=none ctermbg=black
+highlight BadWhitespace		    ctermbg=red guibg=red
 
 " MiniBufExpl Colors
 highlight MBENormal               cterm=none ctermfg=none ctermbg=black guifg=#808080 guibg=fg
@@ -304,6 +352,17 @@ map <leader>7 :confirm :b7<CR>
 map <leader>8 :confirm :b8<CR>
 map <leader>9 :confirm :b9<CR>
 
+"" Git
+noremap <Leader>ga :!git add .<CR>
+noremap <Leader>gc :!git commit -m '<C-R>="'"<CR>
+noremap <Leader>gsh :!git push<CR>
+noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gb :Gblame<CR>
+noremap <Leader>gd :Gvdiff<CR>
+noremap <Leader>gr :Gremove<CR>
+
+noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
+
 " }}}
 " Plugin bindings and functionality {{{
 
@@ -312,6 +371,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 map <C-n> :NERDTreeToggle<CR>i
 
 " Syntastic
+
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠'
+let g:syntastic_auto_loc_list=1
+let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_check_on_open=0
@@ -365,6 +432,34 @@ let g:tagbar_type_php  = {
             \ ]
             \ }
 nmap <F8> :TagbarToggle<CR>
+
+
+let g:tagbar_autofocus = 1
+
+
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+
+
+au BufNewFile,BufRead *.rb,*.rbw,*.gemspec set filetype=ruby
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+
+" Tagbar
+nmap <silent> <F4> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
+
 
 " vim-gitgutter
 let g:gitgutter_max_signs = 50  " default value: 500
