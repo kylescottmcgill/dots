@@ -110,6 +110,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'fatih/vim-go'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/ZoomWin'
 
 Bundle 'itchyny/vim-gitbranch'
 Bundle 'fholgado/minibufexpl.vim'
