@@ -330,18 +330,19 @@ nnoremap <leader>e :edit $MYVIMRC<cr>
 nnoremap <leader>s :source $MYVIMRC<cr>
 
 nnoremap <silent> <space> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
-nnoremap <silent> <c-w>d :MBEbd<CR>
+nnoremap <silent> <C-w>d :MBEbd<CR>
 nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
-nnoremap <C-W>w :ZoomWin<CR>
+nnoremap <C-w>w :ZoomWin<CR>
 
 map <leader>ss :setlocal spell!<cr>
 map <leader>/ :noh<cr>
 map <HOME> ^
 map <leader>o <C-p>
+
 map <leader>1 :confirm :b1<CR>
 map <leader>2 :confirm :b2<CR>
 map <leader>3 :confirm :b3<CR>
@@ -356,12 +357,12 @@ map <leader>9 :confirm :b9<CR>
 noremap <Leader>ga :!git add .<CR>
 noremap <Leader>gc :!git commit -m '<C-R>="'"<CR>
 noremap <Leader>gsh :!git push<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gb :Gblame<CR>
-noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
+" noremap <Leader>gs :Gstatus<CR>
+" noremap <Leader>gb :Gblame<CR>
+" noremap <Leader>gd :Gvdiff<CR>
+" noremap <Leader>gr :Gremove<CR>
 
-noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
+" noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
 
 " }}}
 " Plugin bindings and functionality {{{
