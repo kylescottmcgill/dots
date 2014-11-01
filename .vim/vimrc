@@ -460,6 +460,8 @@ let g:tagbar_type_ruby = {
     \ ]
 \ }
 
+let g:javascript_enable_domhtmlcss = 1
+
 
 " vim-gitgutter
 let g:gitgutter_max_signs = 50  " default value: 500
