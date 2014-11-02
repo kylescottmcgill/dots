@@ -483,6 +483,9 @@ if filereadable(FILETAG)
     set tags=.git/tags
 endif
 
+" PHP Vdebug
+g:vdebug_options["break_on_open"]=0
+
 " }}}
 
 "vim: set ft=vim ts=8 sw=4 tw=140 fdm=1 foldlevel=0 noet :
