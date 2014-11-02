@@ -31,11 +31,7 @@ export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
 export BROWSER=chrome
 export PULSE_LATENCY_MSEC=60
-
-# BSPWM
-export XDG_CONFIG_HOME="/home/kyle/.config"
-export BSPWM_SOCKET="/tmp/bspwm-socket"
-export PANEL_FIFO="/tmp/panel-fifo"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 alias sl='ls'
 alias ls='ls --color'
@@ -82,3 +78,5 @@ then
     source /usr/share/chruby/auto.sh
 fi
 
+export NVM_DIR="/home/kyle/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

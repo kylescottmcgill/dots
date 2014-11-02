@@ -63,4 +63,7 @@ bspc rule -a Conky sticky=on manage=off lower=on
 bspc rule -a astime sticky=on
 bspc rule -a feh floating=on manage=off
 
+export BSPWM_SOCKET="/tmp/bspwm-socket"
+export PANEL_FIFO="/tmp/panel-fifo"
+
 ~/.config/bspwm/panel/panel &
