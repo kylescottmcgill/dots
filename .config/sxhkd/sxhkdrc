@@ -13,7 +13,7 @@ super + b
 super + {s,f}
     bspc window -t {floating,fullscreen}
 
-super + shift + {grave,Tab}
+super + {k,l}
     bspc {window,desktop} -f last
 
 super + apostrophe
@@ -83,10 +83,10 @@ super + shift + Return
     urxvt-white
 
 super + b
-    chrome
+    ~/.bin/chrome
 
 super + grave
-    dmenu_run 
+    dmenu_run -i -nb "#2D2D2D" -nf "#FFFFFF" -sb "#D64937" -sf "#FFFFFF" -l 5
 
 super + Escape
     pkill -USR1 -x sxhkd
