@@ -32,6 +32,11 @@ export BZR_LOG=/dev/null
 export BROWSER=chrome
 export PULSE_LATENCY_MSEC=60
 
+# BSPWM
+export XDG_CONFIG_HOME="/home/kyle/.config"
+export BSPWM_SOCKET="/tmp/bspwm-socket"
+export PANEL_FIFO="/tmp/panel-fifo"
+
 alias sl='ls'
 alias ls='ls --color'
 alias less='less -F -g -i -M -R -S -w -X -z -4'
