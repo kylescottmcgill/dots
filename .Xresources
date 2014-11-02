@@ -72,43 +72,43 @@ URxvt*cursorColor: #ffffff
 URxvt.colorIT: #cacaca
 URxvt.colorBD: #ede265
 URxvt.colorUL: #ffffff
-!URxvt*color0: #333333
-!URxvt*color8: #666666
-!URxvt*color1: #d15517
-!URxvt*color9: #d11723
-!URxvt*color2: #36b217
-!URxvt*color10: #00d56a
-!URxvt*color3: #d1b217
-!URxvt*color11: #ffea55
-!URxvt*color4: #55aaff
-!URxvt*color12: #1793d1
-!URxvt*color5: #b217d1
-!URxvt*color13: #d11793
-!URxvt*color6: #93d1b2
-!URxvt*color14: #17d1b2
-!URxvt*color7: #f6f6f6
-!URxvt*color15: #ffffff
+URxvt*color0: #333333
+URxvt*color8: #666666
+URxvt*color1: #d15517
+URxvt*color9: #d11723
+URxvt*color2: #36b217
+URxvt*color10: #00d56a
+URxvt*color3: #d1b217
+URxvt*color11: #ffea55
+URxvt*color4: #55aaff
+URxvt*color12: #1793d1
+URxvt*color5: #b217d1
+URxvt*color13: #d11793
+URxvt*color6: #93d1b2
+URxvt*color14: #17d1b2
+URxvt*color7: #f6f6f6
+URxvt*color15: #ffffff
 
 ! }}}
 ! Test Colors {{{
   
-URxvt*color0:    #1d1d1d
-URxvt*color1:    #784742
-URxvt*color2:    #427363
-URxvt*color3:    #665847
-URxvt*color4:    #6a708b
-URxvt*color5:    #7a378b
-URxvt*color6:    #52707b
-URxvt*color7:    #b3b3b3
+!URxvt*color0:    #1d1d1d
+!URxvt*color1:    #784742
+!URxvt*color2:    #427363
+!URxvt*color3:    #665847
+!URxvt*color4:    #6a708b
+!URxvt*color5:    #7a378b
+!URxvt*color6:    #52707b
+!URxvt*color7:    #b3b3b3
 
-URxvt*color8:    #4c4c4c
-URxvt*color9:    #d43f10
-URxvt*color10:   #cef318
-URxvt*color11:   #ede265
-URxvt*color12:   #6ac0fd
-URxvt*color13:   #ef79ae
-URxvt*color14:   #49d4dd
-URxvt*color15:   #ffffff
+!URxvt*color8:    #4c4c4c
+!URxvt*color9:    #d43f10
+!URxvt*color10:   #cef318
+!URxvt*color11:   #ede265
+!URxvt*color12:   #6ac0fd
+!URxvt*color13:   #ef79ae
+!URxvt*color14:   #49d4dd
+!URxvt*color15:   #ffffff
 
 ! }}}
 ! White Terminal {{{
