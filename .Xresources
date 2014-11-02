@@ -1,5 +1,5 @@
-! General -----------------------------------------
-
+! XFT Settings {{{
+  
 Xft.autohint: true
 Xft.antialias: true
 Xft.hinting: true
@@ -8,9 +8,13 @@ Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 Xft.dpi: 96
 
+! }}}
+! URxvt Settings {{{
+  
 URxvt*loginShell: false
 URxvt*saveLines: 0
 URxvt*geometry: 80x20
+URxvt*termName: rxvt-256color
 
 !URxvt*font: xft:terminus:pixelsize=12:antialias=true:hinting=true
 !URxvt*boldfont: xft:terminus:bold:pixelsize=12:antialias=true:hinting=true
@@ -53,10 +57,21 @@ URxvt*keysym.Control-Down:   \033[1;5B
 URxvt*keysym.Control-Left:   \033[1;5D
 URxvt*keysym.Control-Right:  \033[1;5C
 
+! }}}
+! Normal Colors {{{
+  
 URxvt.foreground: #dcdcdc
 URxvt.background: #2d2d2d
 URxvt.cursor: #e6e1dc
 
+URxvt*highlightColor: #333333
+URxvt*highlightTextColor: #cef318
+
+URxvt*cursorColor: #ffffff
+
+URxvt.colorIT: #cacaca
+URxvt.colorBD: #ede265
+URxvt.colorUL: #ffffff
 !URxvt*color0: #333333
 !URxvt*color8: #666666
 !URxvt*color1: #d15517
@@ -74,11 +89,9 @@ URxvt.cursor: #e6e1dc
 !URxvt*color7: #f6f6f6
 !URxvt*color15: #ffffff
 
-
-
-!URxvt*background:#171717
-!URxvt*foreground:#b3b4b1
-
+! }}}
+! Test Colors {{{
+  
 URxvt*color0:    #1d1d1d
 URxvt*color1:    #784742
 URxvt*color2:    #427363
@@ -97,18 +110,9 @@ URxvt*color13:   #ef79ae
 URxvt*color14:   #49d4dd
 URxvt*color15:   #ffffff
 
-*highlightColor:            #333333
-*highlightTextColor:        #cef318
-
-URxvt*cursorColor:          #ffffff
-
-!Colored man pages
-URxvt.colorIT:              #cacaca
-URxvt.colorBD:              #ede265
-URxvt.colorUL:              #ffffff
-
-
-
+! }}}
+! White Terminal {{{
+   
 URxvt-white*background: #f6f6f6
 URxvt-white*foreground: #888888
 
@@ -139,74 +143,15 @@ URxvt-white*colorIT: #666666
 URxvt-white*colorBD: #aaaaaa
 URxvt-white*colorUL: #000000
 
-!URxvt*foreground:    #ddeedd
-!URxvt*background:    #131D24
-
-!black
-!URxvt*color0:    #25374A
-!URxvt*color8:    #3A526B
-!red
-!URxvt*color1:    #BD4A4A
-!URxvt*color9:    #CC6666
-!green
-!URxvt*color2:    #B7CE42
-!URxvt*color10:   #BDE077
-!yellow
-!URxvt*color3:    #FEA63C
-!URxvt*color11:   #FFE863
-!blue
-!URxvt*color4:    #66AABB
-!URxvt*color12:   #AACCBB
-!magenta
-!URxvt*color5:    #F26B9E
-!URxvt*color13:   #ff5879
-!cyan
-!URxvt*color6:    #72AD8C
-!URxvt*color14:   #9FE3BC
-!white
-!URxvt*color7:    #DDEEDD
-!URxvt*color15:   #FFFFFF
-
-
-!*background:#1a1a1a
-!*foreground:#fafafa
-!*highlightColor:#444444
-
-! Black
-!*color0:#666666
-!*color8:#eeeeee
-
-! White
-!*color7:#cccccc
-!*color15:#fafafa
-
-! Red
-!*color1:#A7646A
-!*color9:#C69195
-
-! Green
-!*color2:#637F53
-!*color10:#93A77F
-
-! Yellow
-!*color3:#F4E477
-!*color11:#FBEFA1
-
-! Blue
-!*color4:#648EA7
-!*color12:#91B6C6
-
-! Purple
-!*color5:#555584
-!*color13:#7D7DA8
-
-! Cyan
-!*color6:#64A794
-!*color14:#96C3B6
+! }}}
+! Misc Applications {{{
 
 Skype*background: #f6f6f6
 Skype*foreground: #888888
 
+! }}}
+! Defaults for URxvt {{{
+  
 ! URxvt*termName:                       string
 ! URxvt*geometry:                       geometry
 ! URxvt*chdir:                          string
@@ -337,5 +282,6 @@ Skype*foreground: #888888
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
 ! URxvt*url-launcher:                   string
-!
+
+! }}}
 ! vim: et sw=2 syn=xdefaults
