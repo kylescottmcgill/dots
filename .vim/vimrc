@@ -247,7 +247,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
 
-    autocmd BufEnter *.php colorscheme flatlandia
+    " autocmd BufEnter *.php colorscheme flatlandia
     autocmd BufEnter *.php setlocal foldmethod=manual
     autocmd BufEnter *.php :EnableFastPHPFolds
 
@@ -386,6 +386,7 @@ let g:syntastic_echo_current_error=1
 let g:syntastic_enable_signs=1
 
 let g:syntastic_php_checkers = ['php', 'phpcs']
+let g:syntastic_php_phpcs_args="--standard PSR2"
 
 " Vim-go
 let g:go_bin_path = expand("~/.go/bin")
