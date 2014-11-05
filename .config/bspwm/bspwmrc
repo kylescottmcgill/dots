@@ -21,7 +21,7 @@ i=1
 for monitor in $(bspc query -M); do
     bspc monitor $monitor \
         -n "$i" \
-        -d $i/{i,ii,iii,iv,v,vi,vii,viii,ix,x}
+        -d $i/{i,ii,iii}
     let i++
 done
 NMON=$i
@@ -66,4 +66,4 @@ bspc rule -a feh floating=on manage=off
 export BSPWM_SOCKET="/tmp/bspwm-socket"
 export PANEL_FIFO="/tmp/panel-fifo"
 
-~/.config/bspwm/panel/panel &
+#~/.config/bspwm/panel/panel &
