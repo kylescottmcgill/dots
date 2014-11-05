@@ -47,6 +47,8 @@ alias gitpp='git pull ; git push'
 alias gits='git status -s'
 alias gs='git status -s'
 
+alias mysql='mysql --auto-rehash'
+
 stty werase undef
 bind '\C-w:unix-filename-rubout'
 bind Space:magic-space
