@@ -37,15 +37,20 @@ URxvt-white.transparent: false
 
 URxvt-white*internalBorder: 20
 
-URxvt*perl-ext-common:      default,clipboard,url-select,keyboard-select,matcher
-URxvt*url-select.launcher:  ~/.bin/chrome
-URxvt*url-select.underline: true
-URxvt*matcher.button:       1
-URxvt*keysym.M-u:           perl:url-select:select_next
-URxvt*keysym.M-Escape:      perl:keyboard-select:activate
-URxvt*keysym.M-s:           perl:keyboard-select:search
-URxvt*keysym.M-c:           perl:clipboard:copy
-URxvt*keysyn.M-v:           perl:clipboard:paste
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,matcher
+URxvt.url-select.launcher:  chromium
+URxvt.url-select.underline: true
+URxvt.matcher.button:       1
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+
+!URxvt*url-select.launcher:  ~/.bin/chrome
+!URxvt*keysym.M-u:           perl:url-select:select_next
+!URxvt*keysym.M-Escape:      perl:keyboard-select:activate
+!URxvt*keysym.M-s:           perl:keyboard-select:search
+!URxvt*keysym.M-c:           perl:clipboard:copy
+!URxvt*keysyn.M-v:           perl:clipboard:paste
 
 URxvt*keysym.M-Down:        \033[1;3B
 URxvt*keysym.M-Up:          \033[1;3A
