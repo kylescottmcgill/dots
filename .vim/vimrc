@@ -133,7 +133,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/ZoomWin'
-Bundle 'jaxbot/github-issues.vim'
+" Bundle 'jaxbot/github-issues.vim' " Until i have sorted out the private
+" repos, this is staying commented out
 
 Bundle 'itchyny/vim-gitbranch'
 Bundle 'fholgado/minibufexpl.vim'
