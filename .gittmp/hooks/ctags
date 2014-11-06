@@ -6,6 +6,9 @@ trap "rm -f .git/tags.$$" EXIT
 # Tell ctags to go through all the git ls-files
 git ls-files -cd | ctags -L - --tag-relative --recurse --tag-relative \
     --languages=-javascript,sql \
+    --exclude=*.html \
+    --exclude=*.js \
+    --exclude=*.sql \
     --exclude=.git \
     --sort=yes --append \
     --PHP-kinds=+cf \
@@ -13,6 +16,7 @@ git ls-files -cd | ctags -L - --tag-relative --recurse --tag-relative \
     --regex-PHP='/interface ([^ ]*)/\1/c/' \
     --regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/' \
     --regex-PHP='/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i' \
+    --links=no \
     -f .git/tags.$$
 
 mv .git/tags.$$ .git/tags

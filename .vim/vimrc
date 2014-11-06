@@ -250,7 +250,7 @@ augroup configgroup
 
     " autocmd BufEnter *.php colorscheme flatlandia
     autocmd BufEnter *.php setlocal foldmethod=manual
-    autocmd BufEnter *.php :EnableFastPHPFolds
+    autocmd FileType *.php :EnableFastPHPFolds
 
     autocmd BufEnter *.go colorscheme flatlandia
     autocmd BufEnter *.js colorscheme grb256
