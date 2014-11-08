@@ -228,6 +228,11 @@ set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&e
 
 augroup configgroup
     autocmd!
+
+    autocmd BufReadPost *
+	 \ if line("'\"") > 0 && line("'\"") <= line("$") |
+	 \   exe "normal! g`\"" |
+	 \ endif
     autocmd VimEnter * highlight clear SignColumn
 
     autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
