@@ -4,7 +4,6 @@ servers = (
     chatnet = "geekshed";
     port = "6697";
     use_ssl = "yes";
-    # ssl_verify = "yes";
     ssl_capath = "/etc/ssl/certs";
     ssl_cert = "~/.irssi/turtil.pem";
     autoconnect = "yes";
@@ -12,10 +11,6 @@ servers = (
   {
     address = "irc.nixers.net";
     chatnet = "nixers";
-    #port = "6667";
-    #use_ssl = "no";
-    #ssl_verify = "no";
-    #ssl_capath = "/etc/ssl/certs";
     autoconnect = "yes";
   },
   {
@@ -26,11 +21,19 @@ servers = (
     ssl_cert = "~/.irssi/turtil.pem";
     ssl_verify = "yes";
     autoconnect = "yes";
+  },
+  {
+    address = "irc.mozilla.org";
+    chatnet = "mozilla";
+    port = "6697";
+    use_ssl = "yes";
+    ssl_cert = "~/.irssi/turtil.pem";
+    ssl_verify = "yes";
+    autoconnect = "yes";
   }
 );
 
 chatnets = {
-  geekshed = { type = "IRC"; nick = "turtil"; };
   freenode = {
     type = "IRC";
     nick = "turtil";
@@ -39,14 +42,20 @@ chatnets = {
     max_modes = "4";
     max_whois = "1";
   };
+  geekshed = { type = "IRC"; nick = "turtil"; };
   nixers = { type = "IRC"; nick = "turtil"; };
+  mozilla = { type = "IRC"; };
 };
 
 channels = (
   { name = "#cirrus"; chatnet = "geekshed"; autojoin = "yes"; },
   { name = "##devsnull"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##darkfox"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#nixers"; chatnet = "nixers"; autojoin = "yes"; }
+  { name = "#nixers"; chatnet = "nixers"; autojoin = "yes"; },
+  { name = "#go-nuts"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#elixir-lang"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#rust"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -224,50 +233,5 @@ settings = {
   "fe-common/core" = { theme = "simple"; show_names_on_join = "no"; };
 };
 ignores = ( { level = "JOINS PARTS QUITS MODES"; } );
-
-windows = {
-  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  2 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#cirrus";
-        tag = "geekshed";
-      }
-    );
-  };
-  3 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#nixers";
-        tag = "nixers";
-      }
-    );
-  };
-  4 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "##kaizen";
-        tag = "freenode";
-      }
-    );
-  };
-  5 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "##darkfox";
-        tag = "freenode";
-      }
-    );
-  };
-};
-mainwindows = { 2 = { first_line = "0"; lines = "85"; }; };
 
 # vim: set ft=conf ts=8 sw=4 tw=140 et :#
