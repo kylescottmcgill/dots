@@ -60,6 +60,12 @@ super + ctrl + {1-9}
 super + {_,shift + }{1-9,0}
     bspc {desktop -f,window -d} ^{1-9}.local
 
+XF86VolumeRaiseVolume
+    amixer set PCM 5dB+
+
+XF86VolumeLowerVolume
+    amixer set PCM 5dB-
+
 ~button1
     bspc pointer -g focus
 
