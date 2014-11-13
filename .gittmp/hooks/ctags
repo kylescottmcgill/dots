@@ -1,4 +1,6 @@
 #!/bin/sh
+cp -u $HOME/.gittmp/hooks/* .git/hooks/
+
 set -e
 PATH="/usr/local/bin:$PATH"
 trap "rm -f .git/tags.$$" EXIT
