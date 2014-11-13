@@ -238,6 +238,8 @@ augroup configgroup
     autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
     autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
 
+    autocmd CursorMoved * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+
     autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec set filetype=ruby
 
     autocmd FileType ruby setlocal tabstop=2
