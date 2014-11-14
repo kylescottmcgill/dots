@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd ~/music/monstercat/ && youtube-dl https://soundcloud.com/monstercat/sets/monstercat-podcast ;
+cd ~/music/soundcloud/ && youtube-dl https://soundcloud.com/kylescottmcgill/sets/work ;
+echo -e "please update mpd";
