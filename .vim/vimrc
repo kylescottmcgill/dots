@@ -5,6 +5,7 @@ set shell=/bin/bash
 set ffs=unix,dos,mac
 set t_Co=256
 set showcmd
+set ttyfast
 
 if &term =~ '256color'
   set t_ut=
@@ -52,13 +53,11 @@ set foldmethod=syntax   " Depending on Syntax, fold
 set foldlevelstart=20   " Only fold after 20 levels on open
 set foldnestmax=10      " Nest Folds
 
-
 set title
 set titleold="Terminal"
 set titlestring=%F
 
 set bomb
-set ttyfast
 set binary
 
 " }}}
@@ -71,7 +70,9 @@ set autowriteall        " Auto-write all file changes
 set gcr=a:blinkon0
 set modeline
 set modelines=10
-
+set updatetime=1000
+set synmaxcol=200
+set ttyscroll=20
 
 set undolevels=1000     " Number of undo levels
 set backspace=indent,eol,start  " Backspace behaviour
@@ -84,6 +85,7 @@ set wildmenu
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let mapleader=","
 
+set scrolljump=10
 set scrolloff=10
 set sidescrolloff=12
 set showcmd             " display incomplete commands
@@ -111,6 +113,8 @@ let no_buffers_menu=1
 " Vundle Packages {{{
 
 syntax on
+syntax sync minlines=256
+
 filetype off            " required!
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -169,6 +173,9 @@ Bundle "thoughtbot/vim-rspec"
 
 Bundle 'fatih/vim-go'
 
+" }}}
+" {{{ Rust
+Bundle 'wting/rust.vim'
 " }}}
 " {{{ Elixir
 
@@ -238,7 +245,7 @@ augroup configgroup
     autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
     autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
 
-    autocmd CursorMoved * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+    autocmd CursorHold * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
     autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec set filetype=ruby
 
