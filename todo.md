@@ -6,6 +6,8 @@
  - [ ] Auto Switch when external cable is plugged in
  - [ ] Play with the Layouts a little more
  - [ ] Create some new layouts for bspwm
+ - [ ] Notifications from IRSSI to dunst
+ - [ ] Notifications from mutt to dunst
 
 ## RSS ##
  - [ ] Setup RSS -> Email for Torrents and put that on the server instead
