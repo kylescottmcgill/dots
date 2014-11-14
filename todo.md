@@ -11,5 +11,6 @@
  - [ ] Setup RSS -> Email for Torrents and put that on the server instead
 
 ## Utility ##
+ - [ ] Setup Profiles for colors based on the terminal class name, for things like newsbeuter etc
  - [ ] Rewrite scripts to sync anime across the network from the laptop to the desktop
  - [ ] Setup Home Page/Start Page for Chrome and dwb with all my things
