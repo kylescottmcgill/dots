@@ -85,8 +85,8 @@ URxvt.color9: #c60001
 !URxvt.color9: #d11723
 
 ! green
-URxvt.color2: #447241
-URxvt.color10: #27a343
+URxvt.color2: #6D878D
+URxvt.color10: #42717B
 !URxvt.color2: #36b217
 !URxvt.color10: #00d56a
 

@@ -10,29 +10,26 @@ show-read-articles  	yes
 show-read-feeds     	yes
 cleanup-on-quit         no
 delete-read-articles-on-quit yes
-
+notify-program      	"/usr/bin/notify-send"
 
 #max-items           	500
-#notify-program      	"/usr/bin/notify-send"
 
 #The default color configuration of newsbeuter looks like this:
 
-color background        white       color232
-color listnormal        white       color232
-color listfocus         white       red
-color info              white       color232
-color article           white       color232
-color listnormal        white       color232
-color listfocus_unread  white       red
-color listnormal_unread white       color232
+color background        color255       color232
+color listnormal        color255       color232
+color listfocus         color255       red
+color info              color255       color232
+color article           color255       color232
+color listnormal        color255       color232
+color listfocus_unread  color255       red
+color listnormal_unread color255       color232
 
 articlelist-format "%-4i %D %f %t"
 feedlist-format "%t %> %u"
 #feedlist-title-format "%N %V %> %u feeds with new articles"
 #articlelist-title-format "%T"
 #html-renderer "w3m -dump -T text/HTML -cols 72"
-#highlight article "^(Feed|Title|Author|Link|Date):.*" white default bold
-
-
+#highlight article "^(Feed|Title|Author|Link|Date):.*" color255 default bold
 
 # vim: set ft=dosini ts=8 sw=4 tw=140 et
