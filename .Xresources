@@ -28,7 +28,7 @@ URxvt*iso14755: false
 URxvt*iso14755_52: false
 URxvt*internelBorder: 10
 URxvt.depth: 32
-URxvt.transparent: true
+URxvt.transparent: false
 URxvt.shading: 5
 
 URxvt-white.transparent: false
@@ -36,19 +36,14 @@ URxvt-white.transparent: false
 URxvt-white*internalBorder: 20
 
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,matcher
-URxvt.url-select.launcher:  ~/.bin/chrome
+URxvt.url-select.launcher:  chromium
 URxvt.url-select.underline: true
 URxvt.matcher.button:       1
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
-
-!URxvt*url-select.launcher:  ~/.bin/chrome
-!URxvt*keysym.M-u:           perl:url-select:select_next
-!URxvt*keysym.M-Escape:      perl:keyboard-select:activate
-!URxvt*keysym.M-s:           perl:keyboard-select:search
-!URxvt*keysym.M-c:           perl:clipboard:copy
-!URxvt*keysyn.M-v:           perl:clipboard:paste
+URxvt*keysym.M-c:           perl:clipboard:copy
+URxvt*keysyn.M-v:           perl:clipboard:paste
 
 URxvt*keysym.M-Down:        \033[1;3B
 URxvt*keysym.M-Up:          \033[1;3A
@@ -63,73 +58,67 @@ URxvt*keysym.Control-Right:  \033[1;5C
 ! }}}
 ! Normal Colors {{{
   
-URxvt.foreground: #dcdcdc
-URxvt.background: #2d2d2d
+URxvt.foreground: #ffffff
+URxvt.background: #111111
 URxvt.cursor: #e6e1dc
-
-URxvt*highlightColor: #333333
-URxvt*highlightTextColor: #cef318
-
-URxvt*cursorColor: #ffffff
-
+URxvt.cursorColor: #ffffff
+URxvt.highlightColor: #333333
+URxvt.highlightTextColor: #cef318
 URxvt.colorIT: #cacaca
 URxvt.colorBD: #ede265
 URxvt.colorUL: #ffffff
 
-!URxvt*color0: #333333
-!URxvt*color8: #666666
-!URxvt*color1: #d15517
-!URxvt*color9: #d11723
-!URxvt*color2: #36b217
-!URxvt*color10: #00d56a
-!URxvt*color3: #d1b217
-!URxvt*color11: #ffea55
-!URxvt*color4: #55aaff
-!URxvt*color12: #1793d1
-!URxvt*color5: #b217d1
-!URxvt*color13: #d11793
-!URxvt*color6: #93d1b2
-!URxvt*color14: #17d1b2
-!URxvt*color7: #f6f6f6
-!URxvt*color15: #ffffff
+! Color
+! New
+! Old
 
-URxvt*color0: #343434
-URxvt*color1: #802828
-URxvt*color2: #909737
-URxvt*color3: #b27d12
-URxvt*color4: #1e5673
-URxvt*color5: #642337
-URxvt*color6: #196271
-URxvt*color7: #b3b3b3
-URxvt*color8: #424242
-URxvt*color9: #8a3232
-URxvt*color10: #9ca554
-URxvt*color11: #ddb62b
-URxvt*color12: #1e6a9a
-URxvt*color13: #7d2d41
-URxvt*color14: #197885
-URxvt*color15: #b3b3b3
+! black
+URxvt.color0: #2e3436
+URxvt.color8: #555753
+!URxvt.color0: #333333
+!URxvt.color8: #666666
 
-! }}}
-! Test Colors {{{
-  
-!URxvt*color0:    #1d1d1d
-!URxvt*color1:    #784742
-!URxvt*color2:    #427363
-!URxvt*color3:    #665847
-!URxvt*color4:    #6a708b
-!URxvt*color5:    #7a378b
-!URxvt*color6:    #52707b
-!URxvt*color7:    #b3b3b3
+! red
+URxvt.color1: #a31604
+URxvt.color9: #c60001
+!URxvt.color1: #d15517
+!URxvt.color9: #d11723
 
-!URxvt*color8:    #4c4c4c
-!URxvt*color9:    #d43f10
-!URxvt*color10:   #cef318
-!URxvt*color11:   #ede265
-!URxvt*color12:   #6ac0fd
-!URxvt*color13:   #ef79ae
-!URxvt*color14:   #49d4dd
-!URxvt*color15:   #ffffff
+! green
+URxvt.color2: #447241
+URxvt.color10: #27a343
+!URxvt.color2: #36b217
+!URxvt.color10: #00d56a
+
+! yellow
+URxvt.color3: #c1951a
+URxvt.color11: #d5a30e
+!URxvt.color3: #d1b217
+!URxvt.color11: #ffea55
+
+! blue
+!URxvt.color4: #425387
+!URxvt.color12: #4a5a8d
+URxvt.color4: #55aaff
+URxvt.color12: #1793d1
+
+! magenta
+URxvt.color5: #965d98
+URxvt.color13: #893c8c
+!URxvt.color5: #b217d1
+!URxvt.color13: #d11793
+
+! cyan
+URxvt.color6: #06989a
+URxvt.color14: #12bccb
+!URxvt.color6: #93d1b2
+!URxvt.color14: #17d1b2
+
+! white
+URxvt.color7: #d3d7cf
+URxvt.color15: #eeeeec
+!URxvt.color7: #f6f6f6
+!URxvt.color15: #ffffff
 
 ! }}}
 ! White Terminal {{{
