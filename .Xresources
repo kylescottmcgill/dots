@@ -29,16 +29,14 @@ URxvt*iso14755_52: false
 URxvt*internelBorder: 10
 URxvt.depth: 32
 URxvt.transparent: true
-URxvt.shading: 15
-
-URxvt-trans.shading: 110
+URxvt.shading: 5
 
 URxvt-white.transparent: false
 
 URxvt-white*internalBorder: 20
 
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,matcher
-URxvt.url-select.launcher:  chromium
+URxvt.url-select.launcher:  ~/.bin/chrome
 URxvt.url-select.underline: true
 URxvt.matcher.button:       1
 URxvt.keysym.M-u:           perl:url-select:select_next
