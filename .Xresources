@@ -68,6 +68,7 @@ URxvt.colorIT: #cacaca
 URxvt.colorBD: #ede265
 URxvt.colorUL: #ffffff
 
+
 ! Color
 ! New
 ! Old
@@ -152,6 +153,41 @@ URxvt-white*cursorColor: #333333
 URxvt-white*colorIT: #666666
 URxvt-white*colorBD: #aaaaaa
 URxvt-white*colorUL: #000000
+
+! }}}
+! Test Terminal {{{
+
+! black
+!*.color0:       #112233
+!*.color8:       #445566
+
+! red
+!*.color1:       #aa4444
+!*.color9:       #dd7777
+
+! green
+!*.color2:       #88aa55
+!*.color10:      #bbdd88
+
+! yellow
+!*.color3:       #cc9933
+!*.color11:      #ffdd77
+
+! blue
+!*.color4:       #446688
+!*.color12:      #7799bb
+
+! magenta
+!*.color5:       #886688
+!*.color13:      #bb99bb
+
+! cyan
+!*.color6:       #558888
+!*.color14:      #88bbbb
+
+! white
+!*.color7:       #aabbcc
+!*.color15:      #ddeeff
 
 ! }}}
 ! Misc Applications {{{
