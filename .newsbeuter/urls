@@ -5,7 +5,6 @@ http://www.reddit.com/r/unixporn/new/.rss "~UnixPorn"
 # Development Stuff
 https://news.ycombinator.com/rss dev news
 http://thechangelog.com/feed/ dev news
-http://pragprog.com/feed/bookshelf/a/95/221315-5a385fcd.rss dev news
 
 # StackOverflow
 http://stackoverflow.com/feeds/tag/go "~StackOverflow Golang" stackoverflow dev
