@@ -21,11 +21,24 @@ export IRC_CLIENT='irssi'
 export GOPATH=~/.go
 export GOBIN=$GOPATH/bin
 
+# PIP Path
+export PIPPATH=~/.local/bin
+
+# PHP Path
+export PHPPATH=~/.composer/vendor/bin
+
+# Ruby Path
+# See below, but i wanna move it here and not be so harsh
+
+# Node Path
+# See below, but i wanna move it here and not be so harsh
+
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
 # Custom Shiz
-export PATH="$HOME/.bin:$HOME/.composer/vendor/bin:$GOBIN:$PATH"
+export PATH="$HOME/.bin:$PHPPATH:$PIPPATH:$GOBIN:$PATH"
+
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
