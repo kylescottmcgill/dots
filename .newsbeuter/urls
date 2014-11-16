@@ -13,7 +13,7 @@ http://stackoverflow.com/feeds/tag/elixir "~StackOverflow Elixir" stackoverflow 
 http://stackoverflow.com/feeds/tag/docker "~StackOverflow Docker" stackoverflow dev
 
 # Anime
-http://www.nyaa.eu/?page=rss&cats=1_37&term=%5BHorribleSubs%5D "~HorribleSubs" anime
+# http://www.nyaa.eu/?page=rss&cats=1_37&term=%5BHorribleSubs%5D "~HorribleSubs" anime
 http://bakabt.me/rss.php?uid=1227970&pass=b2eaf9ca53feca8b4ed15557a611a8b6 "~BakaBT" anime
 http://www.reddit.com/r/anime/new/.rss "~Reddit Anime" anime
 http://konachan.com/post/atom "~Konachan" anime

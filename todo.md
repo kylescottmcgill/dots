@@ -8,7 +8,7 @@
  - [ ] Notifications from mutt to dunst
 
 ## RSS ##
- - [ ] Setup RSS -> Email for Torrents and put that on the server instead
+ - [x] Setup RSS -> Email for Torrents and put that on the server instead __Its on the turtil server__
 
 ## Utility ##
  - [ ] Setup Profiles for colors based on the terminal class name, for things like newsbeuter etc
@@ -25,4 +25,10 @@
  - [ ] Find our Build Suitable Replacement to htop
  - [ ] Maybe Replace newsbeuter with something else
 
-
+## Skins ##
+ - [ ] Newsbeuter
+ - [ ] ncmpcpp
+ - [ ] mutt
+ - [ ] rtorrent
+ - [ ] bash line
+ - [ ] vim status line
