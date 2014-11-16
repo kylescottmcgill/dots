@@ -83,9 +83,9 @@ mailboxes +Kyle/INBOX.Completed
 mailboxes +Kyle/INBOX.Sent
 
 # boxes
-mailboxes +XM/inbox
-mailboxes +XM/completed
-mailboxes +XM/sent
+#mailboxes +XM/inbox
+#mailboxes +XM/completed
+#mailboxes +XM/sent
 
 # always sourced
 source $alias_file             # required for functionality

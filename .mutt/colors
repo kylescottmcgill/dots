@@ -8,13 +8,13 @@
 # green   -   brightgreen
 # color232   -   color232
 
-color normal      white color232
+color normal      color255 color232
 color attachment  brightblue color232
 color bold        brightblue color232
 color underline   brightblue color232
-color error       white color232
+color error       color255 color232
 color indicator   brightblue color232
-color message     white color232
+color message     brightwhite color232
 color status      color232 brightblue
 color quoted      brightcyan color232
 color quoted1     cyan color232
@@ -54,9 +54,9 @@ color index       brightwhite color232 '~f Mailer-Daemon@*'
 color index       brightblue color232 '~D'   # Deleted
 
 # Color URLs
-color body brightblue color232 "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
-color body brightblue color232 "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-color body brightblue color232 "news:[^ \">\t\r\n]*"
+color body	  brightblue color232 "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
+color body	  brightblue color232 "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body	  brightblue color232 "news:[^ \">\t\r\n]*"
 color body        color232 brightblue  "[^ <]*:\/\/[^ >]*" #for URLs
 color body        brightblue color232  "[A-Za-z0-9_\.\-]+@[A-Za-z0-9_\.\-]*[A-Za-z0-9_\.\-]+"
 
