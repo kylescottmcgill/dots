@@ -18,6 +18,7 @@
  - [ ] Auto Switch when external cable is plugged in
  - [ ] Disable Beep and Screen time out when in External Screen
  - [ ] Disable Sleep when laptop lid is shut and im connected to external screen
+ - [ ] Sort out Exports and NodeJS and Ruby bins
 
 ## Replacement ##
  - [ ] Chrome i want to replace with dwb
