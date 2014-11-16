@@ -468,7 +468,7 @@ let g:javascript_enable_domhtmlcss = 1
 nmap <F8> :TagbarToggle<CR>
 
 " vim-gitgutter
-let g:gitgutter_max_signs = 50  " default value: 500
+let g:gitgutter_max_signs = 250 " default value: 500
 
 " NeoComplete
 
