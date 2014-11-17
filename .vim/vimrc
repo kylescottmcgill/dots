@@ -127,6 +127,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Bundle 'flazz/vim-colorschemes'
 Bundle 'reedes/vim-colors-pencil'
+Bundle 'chriskempson/base16-vim'
 Bundle 'godlygeek/csapprox'
 
 Bundle 'editorconfig/editorconfig-vim'
@@ -209,6 +210,8 @@ filetype plugin indent on    " required
 set background=dark
 colorscheme numix
 
+let base16colorspace=256
+
 set cursorline
 set cursorcolumn
 
@@ -262,7 +265,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
 
-    " autocmd BufEnter *.php colorscheme flatlandia
+    " autocmd BufEnter *.php colorscheme getfresh
     autocmd BufEnter *.php setlocal foldmethod=manual
     autocmd FileType *.php :EnableFastPHPFolds
 
