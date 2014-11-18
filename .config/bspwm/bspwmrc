@@ -58,13 +58,9 @@ bspc config focused_frame_opacity 0.1
 
 # Rules
 bspc rule -a Skype pseudo_tiled=on
-bspc rule -a URxvt pseudo_tiled=on
-bspc rule -a Spotify pseudo_tiled=on
-bspc rule -a Thunar pseudo_tiled=on
-bspc rule -a File-roller pseudo_tiled=on
-bspc rule -a Transmission-gtk pseudo_tiled=on
-bspc rule -a Conky sticky=on manage=off lower=on
-bspc rule -a astime sticky=on
+bspc rule -a URxvt pseudo_tiled=off
+bspc rule -a Chromium border=off
+bspc rule -a Gvim border=off
 bspc rule -a feh floating=on manage=off
 
 export BSPWM_SOCKET="/tmp/bspwm-socket"
