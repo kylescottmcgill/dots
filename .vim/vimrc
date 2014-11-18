@@ -93,13 +93,15 @@ set cmdheight=1
 set hid                 " Abandoned buffers become hidden
 
 if has("gui_running")
-    set guioptions-=m       " menu bar
+    "set guioptions-=m      " menu bar - for the feels
     set guioptions-=T       " toolbar
     set guioptions-=r       " scrollbar
-    " set guifont=Source\ Code\ Pro\ 8 " Source Code Pro Font
-    set guifont=Terminus 8 " Source Code Pro Font
+    set guioptions-=L	    " Left Scroll bar
+    set guifont=tewi	    " Source Code Pro Font
     set linespace=5
     set guiheadroom=0
+    set noerrorbells
+    set novisualbell
 end
 
 set lazyredraw          " Don't redraw while executing macros

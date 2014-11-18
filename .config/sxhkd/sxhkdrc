@@ -86,7 +86,7 @@ super + Return
     urxvtc
 
 super + shift + Return 
-    urxvt-white
+    gvim
 
 super + b
     ~/.bin/chrome
