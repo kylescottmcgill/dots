@@ -93,13 +93,16 @@ set cmdheight=1
 set hid                 " Abandoned buffers become hidden
 
 if has("gui_running")
-    set guioptions-=m       " menu bar
+    " set guioptions-=m     " menu bar
     set guioptions-=T       " toolbar
     set guioptions-=r       " scrollbar
-    " set guifont=Source\ Code\ Pro\ 8 " Source Code Pro Font
-    set guifont=Terminus 8 " Source Code Pro Font
+    set guioptions-=L	    " Left Menu
+
+    set guifont=tewi	    " Source Code Pro Font
     set linespace=5
+
     set guiheadroom=0
+    set novisualbell
 end
 
 set lazyredraw          " Don't redraw while executing macros
@@ -212,23 +215,24 @@ colorscheme numix
 
 let base16colorspace=256
 
-set cursorline
-set cursorcolumn
+" set cursorline
+" set cursorcolumn
 
-highlight cursorline                cterm=none ctermfg=none ctermbg=black
-highlight cursorcolumn              cterm=none ctermfg=none ctermbg=black
-highlight statusline                cterm=none ctermfg=white ctermbg=black
-highlight signcolumn                cterm=none ctermfg=grey ctermbg=none
-highlight colorcolumn               cterm=none ctermfg=none ctermbg=black
+" highlight cursorline                cterm=none ctermfg=white ctermbg=black guibg=#000000
+" highlight cursorcolumn              cterm=none ctermfg=white ctermbg=black guibg=#000000
+
+highlight statusline                cterm=none ctermfg=white ctermbg=black guifg=#ffffff guibg=#000000
+highlight signcolumn                cterm=none ctermfg=grey ctermbg=none guifg=#666666 
+highlight colorcolumn               cterm=none ctermfg=none ctermbg=black guibg=#000000
 highlight BadWhitespace		    ctermbg=red guibg=red
 
 " MiniBufExpl Colors
-highlight MBENormal               cterm=none ctermfg=none ctermbg=black guifg=#808080 guibg=fg
-highlight MBEChanged              cterm=none ctermfg=none ctermbg=black guifg=#CD5907 guibg=fg
-highlight MBEVisibleNormal        cterm=none ctermfg=none ctermbg=black guifg=#5DC2D6 guibg=fg
-highlight MBEVisibleChanged       cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=fg
-highlight MBEVisibleActiveNormal  cterm=none ctermfg=none ctermbg=black guifg=#A6DB29 guibg=fg
-highlight MBEVisibleActiveChanged cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=fg
+highlight MBENormal               cterm=none ctermfg=none ctermbg=black guifg=#808080 
+highlight MBEChanged              cterm=none ctermfg=none ctermbg=black guifg=#CD5907 
+highlight MBEVisibleNormal        cterm=none ctermfg=none ctermbg=black guifg=#5DC2D6 
+highlight MBEVisibleChanged       cterm=none ctermfg=none ctermbg=black guifg=red 
+highlight MBEVisibleActiveNormal  cterm=none ctermfg=none ctermbg=black guifg=#A6DB29 
+highlight MBEVisibleActiveChanged cterm=none ctermfg=none ctermbg=black guifg=red
 
 set laststatus=2
 set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
@@ -245,8 +249,8 @@ augroup configgroup
 	 \ endif
     autocmd VimEnter * highlight clear SignColumn
 
-    autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
-    autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
+    autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black guifg=#ffffff guibg=#000000
+    autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred guifg=#ffffff guibg=darkred
 
     autocmd CursorHold * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 

@@ -4,9 +4,11 @@ super + alt + Escape
 super + w
     bspc window -c
 
+# Increase the size ???
 super + t
     bspc desktop -l next
 
+# Reset Desktop
 super + b
     bspc desktop -B
 
@@ -15,6 +17,9 @@ super + {s,f}
 
 super + {k,l}
     bspc {window,desktop} -f last
+
+super + Tab
+    bspc window -f next
 
 super + apostrophe
     bspc window -s last
@@ -86,7 +91,7 @@ super + Return
     urxvtc
 
 super + shift + Return 
-    urxvt-white
+    gvim
 
 super + b
     ~/.bin/chrome
