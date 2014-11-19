@@ -71,7 +71,7 @@ set gcr=a:blinkon0
 set modeline
 set modelines=10
 set updatetime=1000
-set synmaxcol=200
+set synmaxcol=500
 set ttyscroll=20
 
 set undolevels=1000     " Number of undo levels
