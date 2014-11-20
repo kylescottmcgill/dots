@@ -1,8 +1,8 @@
 #!/bin/bash
 
-REMOTE_HOST="192.168.1.10"
+REMOTE_HOST="ouroboros"
 
-# ping -c 1 -t 1 $REMOTE_HOST;
+ping -c 1 -t 1 $REMOTE_HOST;
 if [ $? -eq 0 ]; then
     if ps aux | grep "[r]sync" > /dev/null
     then
