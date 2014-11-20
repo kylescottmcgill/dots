@@ -24,7 +24,7 @@ set linebreak           " Break lines at word (requires Wrap lines)
 set nolist
 set showbreak=+++       " Wrap-broken line prefix
 set textwidth=140       " Line wrap (number of cols)
-set colorcolumn=120
+set colorcolumn=0
 set showmatch           " Highlight matching brace
 set errorbells          " Beep or flash screen on errors
 set visualbell          " Use visual bell (no beeping)
@@ -273,6 +273,9 @@ augroup configgroup
 
     autocmd BufEnter *.go colorscheme flatlandia
     autocmd BufEnter *.js colorscheme grb256
+
+    " Limit Quick Fix
+    autocmd FileType qf call AdjustWindowHeight(3, 10)
 augroup END
 
 augroup vimrc
@@ -337,6 +340,11 @@ endfunction
 
 " Bind the BufSel() function to a user-command
 command! -nargs=1 Bs :call BufSel("<args>")
+
+" Limit Quickfix Window Height
+function! AdjustWindowHeight(minheight, maxheight)
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
 
 " }}}
 " Vim Bindings {{{
