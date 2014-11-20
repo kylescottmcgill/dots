@@ -2,7 +2,6 @@
 
 */3 * * * * /home/kyle/.bin/mailrun
 */3 * * * * /home/kyle/.bin/newsbeuter-update
-*/20 * * * * /usr/bin/modprobed-db store &> /dev/null
 
 #*/3 * * * * /home/kyle/.bin/checkip
 #*/3 * * * * /home/kyle/.bin/anime-sync
