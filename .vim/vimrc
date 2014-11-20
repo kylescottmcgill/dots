@@ -504,6 +504,17 @@ if filereadable(FILETAG)
     set tags=.git/tags
 endif
 
+" PHP.vim - vim-polyglot
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
 " PHP Vdebug
 " let g:vdebug_options["break_on_open"] = 0
 
