@@ -10,4 +10,4 @@ bind index,pager \CN sidebar-next
 bind index,pager \CO sidebar-open
 
 #set sidebar_sort = yes
-color sidebar_new red default
+color sidebar_new brightred default
