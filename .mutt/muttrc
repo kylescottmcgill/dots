@@ -80,7 +80,10 @@ hdr_order from: to: cc: date: subject:   # and in this order
 # boxes
 mailboxes +Kyle/INBOX
 mailboxes +Kyle/INBOX.Completed
+mailboxes +Kyle/INBOX.nyaa
+mailboxes +Kyle/INBOX.konachan
 mailboxes +Kyle/INBOX.Sent
+
 
 # boxes
 #mailboxes +XM/inbox
@@ -90,7 +93,7 @@ mailboxes +Kyle/INBOX.Sent
 # always sourced
 source $alias_file             # required for functionality
 source ~/.mutt/colors   # source colors file
-#source ~/.mutt/sidebar.muttrc  # any muttng options are here
+source ~/.mutt/sidebar.muttrc  # any muttng options are here
 source ~/.mutt/kyle.muttrc    # source gmail as default
 #source ~/.mutt/XM.muttrc    # source gmail as default
 
