@@ -166,6 +166,7 @@ URxvt-white*colorUL: #000000
 !rofi.padding: 3
 !rofi.lines: 5
 !rofi.borderwidth: 3
+rofi.terminal: urxvtc
 
 Skype*background: #f6f6f6
 Skype*foreground: #888888
