@@ -96,8 +96,9 @@ super + shift + Return
 super + b
     ~/.bin/chrome
 
+# dmenu_run -i -nb "#2D2D2D" -nf "#FFFFFF" -sb "#D64937" -sf "#FFFFFF" -l 5
 super + grave
-    dmenu_run -i -nb "#2D2D2D" -nf "#FFFFFF" -sb "#D64937" -sf "#FFFFFF" -l 5
+    rofi -now -font "tewi 10" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85
 
 super + Escape
     pkill -USR1 -x sxhkd
