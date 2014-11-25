@@ -1,0 +1,4 @@
+REGEXP (((http|https|ftp|gopher)|mailto)[.:][^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
+COMMAND ~/.bin/grab-torrent %s 2>/dev/null
+
+# QUITONLAUNCH
