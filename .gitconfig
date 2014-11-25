@@ -45,3 +45,4 @@
     browse = !hub browse
     hub = !hub
     ctags = !.git/hooks/ctags
+    hooks = !cp -rf ~/.gittmp/hooks/* .git/hooks/
