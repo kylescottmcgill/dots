@@ -157,16 +157,17 @@ URxvt-white*colorUL: #000000
 ! }}}
 ! Misc Applications {{{
 
-!rofi.background: #333
-!rofi.foreground: #1aa
-!rofi.highlightbg: #1aa
-!rofi.highlightfg: #111
-!rofi.bordercolor: #277
-!rofi.font: times 10
-!rofi.padding: 3
-!rofi.lines: 5
-!rofi.borderwidth: 3
+rofi.background: #000000
+rofi.foreground: #505050
+rofi.highlightbg: #000000
+rofi.highlightfg: #c1951a
+rofi.bordercolor: #333333
+rofi.font: tewi 10
+rofi.padding: 5
+rofi.lines: 5
+rofi.borderwidth: 1
 rofi.terminal: urxvtc
+rofi.opacity: 85
 
 Skype*background: #f6f6f6
 Skype*foreground: #888888
