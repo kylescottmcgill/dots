@@ -127,76 +127,76 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Bundle 'flazz/vim-colorschemes'
-Bundle 'reedes/vim-colors-pencil'
-Bundle 'chriskempson/base16-vim'
-Bundle 'godlygeek/csapprox'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'reedes/vim-colors-pencil'
+Plugin 'chriskempson/base16-vim'
+Plugin 'godlygeek/csapprox'
 
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'tpope/vim-eunuch'
-Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/neocomplete.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'vim-scripts/ZoomWin'
-" Bundle 'jaxbot/github-issues.vim' " Until i have sorted out the private
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-eunuch'
+Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/ZoomWin'
+" Plugin 'jaxbot/github-issues.vim' " Until i have sorted out the private
 " repos, this is staying commented out
 
-Bundle 'itchyny/vim-gitbranch'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'rking/ag.vim'
-Bundle 'sheerun/vim-polyglot'
+Plugin 'itchyny/vim-gitbranch'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'msanders/snipmate.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'
+Plugin 'sheerun/vim-polyglot'
 
 " {{{ C
 
-Bundle 'vim-scripts/c.vim'
+Plugin 'vim-scripts/c.vim'
 
 " }}}
 " {{{ HTML
 
-Bundle 'amirh/HTML-AutoCloseTag'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'gorodinskiy/vim-coloresque'
-Bundle 'tpope/vim-haml'
+Plugin 'amirh/HTML-AutoCloseTag'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'gorodinskiy/vim-coloresque'
+Plugin 'tpope/vim-haml'
 
 " }}}
 " {{{ Ruby
-"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-rake"
-Bundle "tpope/vim-projectionist"
-Bundle "thoughtbot/vim-rspec"
+
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-projectionist'
+Plugin 'thoughtbot/vim-rspec'
 
 " }}}
 
 " {{{ Go
 
-Bundle 'fatih/vim-go'
+Plugin 'fatih/vim-go'
 
 " }}}
 " {{{ Rust
-Bundle 'wting/rust.vim'
+Plugin 'wting/rust.vim'
 " }}}
 " {{{ Elixir
 
-Bundle 'elixir-lang/vim-elixir'
+Plugin 'elixir-lang/vim-elixir'
 
 " }}}
 " {{{ PHP 
 
-Bundle 'rayburgemeestre/phpfolding.vim'
-Bundle 'vim-php/tagbar-phpctags.vim'
-Bundle 'StanAngeloff/php.vim'
-Bundle 'joonty/vdebug.git'
-Bundle 'arnaud-lb/vim-php-namespace'
+" Plugin 'rayburgemeestre/phpfolding.vim'
+Plugin 'vim-php/tagbar-phpctags.vim'
+Plugin 'joonty/vdebug.git'
+" Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'shawncplus/phpcomplete.vim'
 
 " }}}
 " {{{ Docker
 
-Bundle 'ekalinin/Dockerfile.vim'
+Plugin 'ekalinin/Dockerfile.vim'
 
 " }}}
 
@@ -247,8 +247,8 @@ augroup configgroup
 	 \ endif
     autocmd VimEnter * highlight clear SignColumn
 
-    autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black
-    autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred
+    autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black guifg=white guibg=black
+    autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred guifg=white guibg=darkred
 
     autocmd CursorHold * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
@@ -267,13 +267,9 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
 
-    " autocmd BufEnter *.php colorscheme getfresh
-    autocmd BufEnter *.php setlocal foldmethod=manual
-    autocmd FileType *.php :EnableFastPHPFolds
-
-    autocmd BufEnter *.go colorscheme flatlandia
-    autocmd BufEnter *.js colorscheme grb256
-
+    " autocmd BufEnter *.php setlocal foldmethod=manual
+    " autocmd FileType *.php :EnableFastPHPFolds
+   
     " Limit Quick Fix
     autocmd FileType qf call AdjustWindowHeight(3, 10)
 augroup END
@@ -513,18 +509,19 @@ if filereadable(FILETAG)
 endif
 
 " PHP.vim - vim-polyglot
-function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
-endfunction
+"function! PhpSyntaxOverride()
+"  hi! def link phpDocTags  phpDefine
+"  hi! def link phpDocParam phpType
+"endfunction
 
-augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType php call PhpSyntaxOverride()
-augroup END
+"augroup phpSyntaxOverride
+"  autocmd!
+"  autocmd FileType php call PhpSyntaxOverride()
+"augroup END
 
 " PHP Vdebug
 " let g:vdebug_options["break_on_open"] = 0
+" let g:php_syntax_extension_enabled
 
 " }}}
 
