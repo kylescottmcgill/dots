@@ -10,9 +10,6 @@ case "$(hostname)" in
         ;;
     "xm-dev") 
 	bspc monitor DVI-D-1 -d I II III
-	bspc monitor DVI-D-0 -d IV V VI
-	bspc monitor HDMI-0 -d VII VIII IX
-        #DesktopSetup ;;                                        # Work PC
 	;;
     *) 
         bspc desktop -n 1
@@ -41,7 +38,7 @@ bspc config right_padding 20
 bspc config left_padding 20
 
 # Visual options
-bspc config split_ratio         0.52
+bspc config split_ratio         0.3
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 bspc config focus_follows_pointer true
@@ -61,7 +58,7 @@ bspc rule -a Skype pseudo_tiled=on
 bspc rule -a URxvt pseudo_tiled=off
 bspc rule -a Chromium border=off
 bspc rule -a Gvim border=off
-bspc rule -a feh floating=on manage=off
+bspc rule -a feh floating=on manage=on
 
 export BSPWM_SOCKET="/tmp/bspwm-socket"
 export PANEL_FIFO="/tmp/panel-fifo"
