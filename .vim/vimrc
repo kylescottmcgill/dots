@@ -267,7 +267,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
 
-    autocmd BufEnter *.php setlocal foldmethod=syntax
+    autocmd FileType *.php setlocal foldmethod=syntax
     " autocmd FileType *.php :EnableFastPHPFolds
    
     " Limit Quick Fix
