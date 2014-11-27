@@ -9,8 +9,8 @@ case "$(hostname)" in
         bspc monitor -d 1 2 3 4 5 6 7 8 9
         ;;
     "xm-dev") 
-	bspc monitor DVI-D-1 -d I II III
-	bspc monitor HDMI-0 -d IV
+	bspc monitor DVI-D-0 -d I II III && \
+	bspc monitor HDMI-0 -d IV && \
 	bspc monitor DVI-D-1 -d V
 	;;
     *) 
