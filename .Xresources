@@ -98,10 +98,10 @@ URxvt.color11: #d5a30e
 !URxvt.color11: #ffea55
 
 ! blue
-!URxvt.color4: #425387
-!URxvt.color12: #4a5a8d
 URxvt.color4: #55aaff
 URxvt.color12: #1793d1
+!URxvt.color4: #425387
+!URxvt.color12: #4a5a8d
 
 ! magenta
 URxvt.color5: #965d98
