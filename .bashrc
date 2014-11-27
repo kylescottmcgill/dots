@@ -36,6 +36,9 @@ export PHPPATH=~/.composer/vendor/bin
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
+# Sources Private Settings like auth tokens etc
+source $HOME/.bash_private
+
 # Custom Shiz
 export PATH="$HOME/.bin:$PHPPATH:$PIPPATH:$GOBIN:$PATH"
 
