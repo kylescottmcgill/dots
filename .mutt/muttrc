@@ -135,4 +135,4 @@ macro index P   "<pipe-message>cat > ~/"    "save message as"
 # quick-sync ~/Mail immediately with offlineimap
 macro index Z   "<shell-escape>/usr/bin/offlineimap -q -o<enter>" "sync IMAP"
 
-macro pager \co <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+macro pager \cf <pipe-entry>'urlview'<enter> 'Follow links with urlview'
