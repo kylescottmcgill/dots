@@ -94,7 +94,7 @@ super + shift + Return
     gvim
 
 super + b
-    ~/.bin/chrome
+    ~/.bin/fire
 
 # dmenu_run -i -nb "#2D2D2D" -nf "#FFFFFF" -sb "#D64937" -sf "#FFFFFF" -l 5
 # rofi -rnow -font "tewi 10" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85
