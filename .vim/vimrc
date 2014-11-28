@@ -267,7 +267,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
 
-    autocmd FileType php setlocal foldmethod=syntax
+    autocmd BufNewFile,BufRead,FileType php setlocal foldmethod=syntax
    
     " Limit Quick Fix
     autocmd FileType qf call AdjustWindowHeight(3, 10)
