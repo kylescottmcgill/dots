@@ -79,6 +79,9 @@ hdr_order from: to: cc: date: subject:   # and in this order
 
 # boxes
 mailboxes +Kyle/INBOX
+mailboxes +XM/inbox
+mailboxes +XM/completed
+mailboxes +XM/bak.important
 mailboxes +Kyle/INBOX.github
 mailboxes +Kyle/INBOX.nyaa
 mailboxes +Kyle/INBOX.konachan
@@ -88,9 +91,6 @@ mailboxes +Kyle/INBOX.changelog
 mailboxes +Kyle/INBOX.Completed
 mailboxes +Kyle/INBOX.Sent
 
-mailboxes +XM/inbox
-mailboxes +XM/completed
-mailboxes +XM/bak.important
 
 # boxes
 #mailboxes +XM/inbox
