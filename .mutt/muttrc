@@ -88,6 +88,10 @@ mailboxes +Kyle/INBOX.changelog
 mailboxes +Kyle/INBOX.Completed
 mailboxes +Kyle/INBOX.Sent
 
+mailboxes +XM/inbox
+mailboxes +XM/completed
+mailboxes +XM/bak.important
+
 # boxes
 #mailboxes +XM/inbox
 #mailboxes +XM/completed
