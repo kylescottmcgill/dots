@@ -140,8 +140,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/ZoomWin'
-" Plugin 'jaxbot/github-issues.vim' " Until i have sorted out the private
-" repos, this is staying commented out
 
 Plugin 'itchyny/vim-gitbranch'
 Plugin 'fholgado/minibufexpl.vim'
@@ -187,10 +185,8 @@ Plugin 'elixir-lang/vim-elixir'
 " }}}
 " {{{ PHP 
 
-" Plugin 'rayburgemeestre/phpfolding.vim'
 Plugin 'vim-php/tagbar-phpctags.vim'
 Plugin 'joonty/vdebug.git'
-" Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'shawncplus/phpcomplete.vim'
 
 " }}}
