@@ -1,12 +1,22 @@
 #!/bin/bash
 
+function DesktopSetup {
+    i=1
+    for monitor in $(bspc query -M); do
+	bspc monitor $monitor -n "$i" -d {I,II,III}
+	let i++
+    done
+    NMON=$i
+    unset i
+}
+
 case "$(hostname)" in
     "ouroboros") 
         bspc desktop -n 1
         bspc monitor -d 1 2 3 4 5 6 7 8 9
         ;;
-    "kuro") 
-        bspc monitor -d 1 2 3 4 5 6 7 8 9
+    "turtil") 
+	DesktopSetup
         ;;
     "xm-dev") 
 	bspc monitor DVI-D-0 -d I II III && \
@@ -19,15 +29,6 @@ case "$(hostname)" in
         ;;
 esac
 
-function DesktopSetup {
-i=1
-for monitor in $(bspc query -M); do
-    bspc monitor $monitor -n "$i" -d {term,web,img,mail,irc,music,down,bin,null,foo}
-    let i++
-done
-NMON=$i
-unset i
-}
 
 bspc config border_width        1
 bspc config window_gap          10
