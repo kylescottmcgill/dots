@@ -189,6 +189,9 @@
     #status-bar, #statusbar-display, statuspanel { 
 	display: none !important; 
     }
+    #main-window {
+	margin-bottom: var(--url-height);
+    }
     /* PRIVATE BROWSING ICON HIDE */
     #main-window[privatebrowsingmode=temporary] #private-browsing-indicator,
     #main-window[privatebrowsingmode=temporary] #private-browsing-indicator-titlebar { 
