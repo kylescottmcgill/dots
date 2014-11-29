@@ -1,3 +1,5 @@
+# Default Keys {{{
+
 super + alt + Escape
     bspc quit
 
@@ -65,12 +67,6 @@ super + ctrl + {1-9}
 super + {_,shift + }{1-9,0}
     bspc {desktop -f,window -d} ^{1-9}.local
 
-XF86VolumeRaiseVolume
-    amixer set PCM 5dB+
-
-XF86VolumeLowerVolume
-    amixer set PCM 5dB-
-
 ~button1
     bspc pointer -g focus
 
@@ -82,11 +78,33 @@ super + !button{1-3}
 
 super + @button{1-3}
     bspc pointer -u
+# }}}
+# Media Keys {{{
+XF86MonBrightnessDown
+    xbacklight -dec 25
 
-#
-#   My Config
-#
+XF86MonBrightnessUp
+    xbacklight -inc 25
 
+XF86AudioPrev
+    mpc prev
+
+XF86AudioNext
+    mpc next
+
+XF86AudioPlay
+    mpc toggle
+
+XF86AudioRaiseVolume
+    amixer set PCM 5dB+
+
+XF86AudioLowerVolume
+    amixer set PCM 5dB-
+
+XF86AudioMute
+    amixer set Master toggle
+# }}}
+# Applications {{{
 super + Return 
     urxvtc
 
@@ -96,12 +114,11 @@ super + shift + Return
 super + b
     ~/.bin/fire
 
-# dmenu_run -i -nb "#2D2D2D" -nf "#FFFFFF" -sb "#D64937" -sf "#FFFFFF" -l 5
-# rofi -rnow -font "tewi 10" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85
 super + grave
     rofi -rnow
 
 super + Escape
     pkill -USR1 -x sxhkd
+# }}}
 
 # vim: set ft=sxhkdrc:
