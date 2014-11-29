@@ -4,12 +4,12 @@
     /* TAB VARIABLES */
     --bg-light: #17181A; --bg-dark: #222326;
     --fg-light: #EBECEE; --fg-dark: #AAABAD;
-    --tab-height: 24px; --tab-icon-size: 16px; --tab-strip-margin: -12px;
+    --tab-height: 22px; --tab-icon-size: 16px; --tab-strip-margin: -12px;
     --tab-fonts: "tewi", monospace,"Dejavu Sans"; --tab-font-size: 10pt;
     --tab-triangle: block; /* block | none */
     /* URL VARIABLES */
     --url-background: #EBECEE; --url-color: var(--fg-dark);
-    --url-height: 24px; --url-right-margin: 5px;
+    --url-height: 22px; --url-right-margin: 5px;
     --url-fonts: "tewi", "Lemon",monospace,"Dejavu Sans"; --url-font-size: 10pt;
     --url-text-align: center; /* left | center | right */
     --url-position: fixed; /* absolute == top (under tabs) || fixed == bottom of browser */
@@ -197,14 +197,19 @@
     #main-window[privatebrowsingmode=temporary] #private-browsing-indicator-titlebar { 
 	display: none !important; 
     }
+    #ac-url-wrapper {
+	margin-left: 200px;
+    }
+    #autohide-context { display:none!important; } /* hide context menuitem "Exit Full Screen Mode" */
+    #window-controls  { display:none!important; } /* hide window controls in full screen mode */
 }
 
 /* AGENT_SHEET */
+/*
 @-moz-document url-prefix(http://), url-prefix(https://), url-prefix(chrome://liberator/) {
-    /* SCROLLBAR */
     scrollbar[orient="vertical"], scrollbar thumb[orient="vertical"],
     scrollbar[orient="horizontal"], scrollbar thumb[orient="horizontal"] {
-        display: none !important; /* none = hide || block = show */
+        display: none !important;
     }
     scrollbar > slider { 
 	-moz-appearance: none !important; 
@@ -249,6 +254,7 @@
 	min-width: 0 !important; 
     }
 }
+*/
 /* background color around/behind pictures opened in firefox */
 @-moz-document regexp("(https?://|file:///)(.*).?(jpeg|jpg|gif|png|apng|svg|bmp|webm|webp)") {
     body { 
