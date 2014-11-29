@@ -3,7 +3,7 @@
 function DesktopSetup {
     i=1
     for monitor in $(bspc query -M); do
-	bspc monitor $monitor -n "$i" -d {I,II,III}
+	bspc monitor $monitor -n "$i" -d {I,II,III,IV,V,VI,VII,VIII,IX}
 	let i++
     done
     NMON=$i
