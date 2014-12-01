@@ -91,6 +91,7 @@ set sidescrolloff=12
 set showcmd             " display incomplete commands
 set cmdheight=1
 set hid                 " Abandoned buffers become hidden
+set formatoptions=c,q,r,t
 
 if has("gui_running")
     "set guioptions-=m      " menu bar - for the feels
