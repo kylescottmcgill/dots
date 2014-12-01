@@ -83,7 +83,7 @@ set wildchar=<Tab>
 set wildmode=longest,list
 " make tab completion for files/buffers act like bash
 set wildmenu
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png,*.ico,*.gif,*.ttf,*.eot,*.sql,*.woff,*.svg
 let mapleader=","
 
 set scrolljump=10
@@ -147,6 +147,7 @@ Plugin 'itchyny/vim-gitbranch'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'msanders/snipmate.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'wincent/command-t'
 Plugin 'rking/ag.vim'
 Plugin 'sheerun/vim-polyglot'
 
@@ -498,6 +499,12 @@ if executable('ag')
     " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
     let g:ctrlp_user_command = 'ag -i %s -l --nocolor -g ""'
 endif 
+
+" Command-T
+let g:CommandTFileScanner = "git"
+let g:CommandTTraverseSCM = "dir"
+let g:CommandTMinHeight = 20
+let g:CommandTCancelMap=['<C-x>', '<C-c>']
 
 " PHP Ctags
 let FILETAG=expand(".git/tags")
