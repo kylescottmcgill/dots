@@ -234,6 +234,12 @@ set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&e
 " }}}
 " Autogroups {{{
 
+augroup vimrc
+    au BufReadPre * setlocal foldmethod=marker
+    au BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
+    au BufReadPre * setlocal foldlevel=0
+augroup END
+
 augroup configgroup
     autocmd!
 
@@ -267,12 +273,6 @@ augroup configgroup
    
     " Limit Quick Fix
     autocmd FileType qf call AdjustWindowHeight(3, 10)
-augroup END
-
-augroup vimrc
-    au BufReadPre * setlocal foldmethod=marker
-    au BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
-    au BufReadPre * setlocal foldlevel=0
 augroup END
 
 " }}}
