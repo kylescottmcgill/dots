@@ -12,7 +12,7 @@ Xft.dpi: 96
 ! URxvt Settings {{{
   
 URxvt*loginShell: false
-URxvt*saveLines: 0
+URxvt*saveLines: 1000
 URxvt*geometry: 80x20
 URxvt*termName: rxvt-256color
 
