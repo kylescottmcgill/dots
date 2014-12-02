@@ -45,8 +45,8 @@ bspc config gapless_monocle     true
 bspc config focus_follows_pointer true
 bspc config auto_alternate true
 bspc config auto_cancel true
-bspc config focus_follows_focus true
-bspc config history_aware_focus true
+bspc config focus_follows_focus false
+bspc config history_aware_focus false
 bspc config apply_floating_atom true
 bspc config ignore_ewmh_focus true
 bspc config normal_border_color "#332d29"
