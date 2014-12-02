@@ -23,6 +23,7 @@ set wrap
 set linebreak           " Break lines at word (requires Wrap lines)
 set nolist
 set showbreak=+++       " Wrap-broken line prefix
+set breakindent		" Break and indent based on current indent
 set textwidth=140       " Line wrap (number of cols)
 set colorcolumn=0
 set showmatch           " Highlight matching brace
@@ -491,7 +492,7 @@ let g:ctrlp_custom_ignore = {
 if executable('ag')
     map <leader>f :Ag<Space>
     " Use Ag over Grep
-    set grepprg = "ag -i --nogroup\ --nocolor"
+    set grepprg = "ag -i --nogroup --nocolor"
 
     " Use Ag over Ack
     let g:ackprg = 'ag -i --nogroup --nocolor --column'
@@ -525,8 +526,7 @@ endif
 
 " PHP Vdebug
 " let g:vdebug_options["break_on_open"] = 0
-
-let g:php_syntax_extension_enabled
+" let g:php_syntax_extension_enabled
 
 " }}}
 
