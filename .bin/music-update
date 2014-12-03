@@ -2,4 +2,5 @@
 
 cd ~/music/monstercat/ && youtube-dl https://soundcloud.com/monstercat/sets/monstercat-podcast ;
 cd ~/music/soundcloud/ && youtube-dl https://soundcloud.com/kylescottmcgill/sets/work ;
+cd ~/music/youtube/ && youtube-dl https://www.youtube.com/playlist?list=PLiFU_tw8Vf8ywowHoXcvRI_wdm3gQVC0X --extract-audio --audio-format=mp3 ; 
 echo -e "please update mpd";
