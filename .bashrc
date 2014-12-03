@@ -65,6 +65,7 @@ alias gits='git status -s'
 alias gs='git status -s'
 
 alias mysql='mysql --auto-rehash'
+alias top='vtop --theme alias'
 
 stty werase undef
 bind '\C-w:unix-filename-rubout'
