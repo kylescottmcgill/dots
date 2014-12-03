@@ -1,49 +1,54 @@
+# ObliviousGmn
+# Ncmpcpp Config
 
 
+ # MPD Settings
 
-song_columns_list_format = (4f)[cyan]{} (3f)[cyan]{NE} (65)[white]{t|f:Title} (20)[cyan]{ar} (10)[cyan]{br} (1f)[cyan]{}
-song_list_format = "{$5 %a$9 $1│$9 $8%t$9 }|{ $8%f$9}$R{$5%b $7}"
+mpd_crossfade_time = "3"
+mpd_music_dir = "~/music"
 
-playlist_disable_highlight_delay = 0
-song_status_format = $8%t$0
-alternative_header_first_line_format = $8{%t}|{%f}$4{ (%y)$9}|{%D}$0
-alternative_header_second_line_format = $7{%a}
-now_playing_prefix = $4 >>
-now_playing_suffix = 
-browser_playlist_prefix = $4 playlist $9
-selected_item_prefix = $3 >
-selected_item_suffix = $9
-modified_item_prefix = $2
-playlist_display_mode = classic
-browser_display_mode = classic
-discard_colors_if_item_is_selected = no
-autocenter_mode = yes
-progressbar_look = "───"
-progressbar_boldness = yes
-default_tag_editor_pattern = %t
-header_visibility = no
-titles_visibility = no
-display_bitrate = yes
-mouse_support = no
-empty_tag_marker = empty
+# Format
 
-##### colors definitions #####
+#song_list_format = " $0%n $1• $8%t $R$0%A "
+#song_status_format = " $3%t $0 "
 
-colors_enabled = yes
-empty_tag_color = red
-header_window_color = default
-volume_color = default
-state_line_color = red
-state_flags_color = default
-main_window_color = cyan
-color1 = default
-color2 = green
-main_window_highlight_color = red
-progressbar_color = black
-progressbar_elapsed_color = cyan
-statusbar_color = default
-alternative_ui_separator_color = cyan
-active_column_color = red
-visualizer_color = red
-window_border_color = cyan
-active_window_border = red
+song_list_format = "{ $8%a $1>> $2}{%t}$8"
+song_status_format = "$8%a $1>> $2%t $1>> $1%b$8 (%y)$1"
+playlist_display_mode = "classic"
+
+song_window_title_format = "%t"
+now_playing_prefix = "$2>>"
+now_playing_suffix = ""
+progressbar_look = "── "
+browser_playlist_prefix = " $2 ♥ $0 "
+
+# Colors
+
+colors_enabled = "yes"
+color1 = "red"
+color2 = "black"
+statusbar_color = "black"
+empty_tag_color = "red"
+main_window_color = "white" 
+main_window_highlight_color = "red"
+
+# Misc
+
+display_bitrate = "yes"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+titles_visibility = "yes"
+statusbar_visibility = "yes"
+empty_tag_marker=""
+# ---   
+mouse_support = "no"
+header_visibility = "no"
+display_remaining_time = "no"
+discard_colors_if_item_is_selected = "yes"
+
+# Visualizer
+
+visualizer_sync_interval = "1"
+visualizer_output_name = "Visualizer"
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_type = "wave" (spectrum/wave)
