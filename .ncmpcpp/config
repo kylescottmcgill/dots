@@ -9,12 +9,8 @@ mpd_music_dir = "~/music"
 
 # Format
 
-#song_list_format = " $0%n $1• $8%t $R$0%A "
-#song_status_format = " $3%t $0 "
-
 song_list_format = "{ $8%a $1>> $2}{%t}$8"
 song_status_format = "$8%a $1>> $2%t $1>> $1%b$8 (%y)$1"
-playlist_display_mode = "classic"
 
 song_window_title_format = "%t"
 now_playing_prefix = "$2>>"
@@ -29,11 +25,12 @@ color1 = "red"
 color2 = "black"
 statusbar_color = "black"
 empty_tag_color = "red"
-main_window_color = "white" 
+main_window_color = "black" 
 main_window_highlight_color = "red"
 
 # Misc
 
+user_interface = "classic"
 display_bitrate = "yes"
 autocenter_mode = "yes"
 centered_cursor = "yes"
