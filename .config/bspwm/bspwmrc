@@ -19,9 +19,7 @@ case "$(hostname)" in
 	DesktopSetup
         ;;
     "xm-dev") 
-	bspc monitor DVI-D-0 -d I II III && \
-	bspc monitor HDMI-0 -d IV && \
-	bspc monitor DVI-D-1 -d V
+	DesktopSetup
 	;;
     *) 
         bspc desktop -n 1
