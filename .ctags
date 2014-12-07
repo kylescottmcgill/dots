@@ -26,10 +26,8 @@
 --regex-Rust=/^[ \t]*(pub[ \t]+)?impl([ \t\n]*<[^>]*>)?[ \t]+(([a-zA-Z0-9_:]+)[ \t]*(<[^>]*>)?[ \t]+(for)[ \t]+)?([a-zA-Z0-9_]+)/\4 \6 \7/i,impls,trait implementations/
 --regex-Rust=/^[ \t]*macro_rules![ \t]+([a-zA-Z0-9_]+)/\1/d,macros,macro definitions/
 
---langdef=PHP
---langmap=PHP:.php
 --PHP-kinds=+cf 
---regex-PHP='/abstract class ([^ ]*)/\1/c/'
---regex-PHP='/interface ([^ ]*)/\1/c/'
---regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/'
---regex-PHP='/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i'
+--regex-PHP=/abstract class ([^ ]*)/\1/c/
+--regex-PHP=/interface ([^ ]*)/\1/c/
+--regex-PHP=/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/
+--regex-PHP=/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i
