@@ -411,6 +411,8 @@ let g:syntastic_enable_signs=1
 let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_php_phpcs_args="--standard PSR2"
 
+let g:syntastic_rust_rustc_args = "-L ./target/deps"
+
 " Vim-go
 let g:go_bin_path = expand("~/.go/bin")
 
