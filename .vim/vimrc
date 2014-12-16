@@ -100,6 +100,7 @@ if has("gui_running")
     set guioptions-=T       " toolbar
     set guioptions-=r       " scrollbar
     set guioptions-=L	    " Left Scroll bar
+    set guioptions-=e	    " disable tabs
     set guifont=tewi	    " Source Code Pro Font
     set linespace=5
     set guiheadroom=0
