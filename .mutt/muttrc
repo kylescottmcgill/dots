@@ -82,16 +82,14 @@ mailboxes +Kyle/INBOX
 mailboxes +Kyle/INBOX.Completed
 mailboxes +Kyle/INBOX.Sent
 
-mailboxes +Kyle/INBOX.DesignerWebsites.systems
+mailboxes +Kyle/INBOX.designerwebsites
 
 # RSS Feeds/Mailman
 mailboxes +Kyle/INBOX.github
 mailboxes +Kyle/INBOX.nyaa
 mailboxes +Kyle/INBOX.konachan
 mailboxes +Kyle/INBOX.unixporn
-mailboxes +Kyle/INBOX.redditanime
 mailboxes +Kyle/INBOX.redditrust
-mailboxes +Kyle/INBOX.changelog
 
 # boxes
 #mailboxes +XM/inbox
