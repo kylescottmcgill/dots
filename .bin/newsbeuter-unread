@@ -1,3 +1,0 @@
-#!/bin/bash
-
-newsbeuter -x print-unread | awk '{print $1}'
