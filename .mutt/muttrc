@@ -87,9 +87,6 @@ mailboxes +Kyle/INBOX.designerwebsites
 # RSS Feeds/Mailman
 mailboxes +Kyle/INBOX.github
 mailboxes +Kyle/INBOX.nyaa
-mailboxes +Kyle/INBOX.konachan
-mailboxes +Kyle/INBOX.unixporn
-mailboxes +Kyle/INBOX.redditrust
 
 # boxes
 #mailboxes +XM/inbox
