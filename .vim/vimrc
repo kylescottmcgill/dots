@@ -135,6 +135,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'chriskempson/base16-vim'
 Plugin 'godlygeek/csapprox'
+Plugin 'ajh17/Spacegray.vim'
 
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/nerdtree'
@@ -211,7 +212,7 @@ filetype plugin indent on    " required
 " Colors & Statusline {{{
 
 set background=dark
-colorscheme numix
+colorscheme spacegray
 
 let base16colorspace=256
 
