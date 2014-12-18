@@ -59,7 +59,8 @@ URxvt*keysym.Control-Right:  \033[1;5C
 ! Colors {{{
 
 ! URxvt 
-#include ".colors/base16-grayscale.dark.256.xresources"
+!#include ".colors/base16-grayscale.dark.256.xresources"
+#include ".colors/TomorrowNight.xresources"
 
 ! URxvt-white
 #include ".colors/z-brah-white.xresources"
