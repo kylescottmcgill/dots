@@ -56,103 +56,13 @@ URxvt*keysym.Control-Left:   \033[1;5D
 URxvt*keysym.Control-Right:  \033[1;5C
 
 ! }}}
-! Normal Colors {{{
-  
-URxvt.foreground: #ffffff
-URxvt.background: #111111
-URxvt.cursor: #e6e1dc
-URxvt.cursorColor: #ffffff
-URxvt.highlightColor: #333333
-URxvt.highlightTextColor: #cef318
-URxvt.colorIT: #cacaca
-URxvt.colorBD: #ede265
-URxvt.colorUL: #ffffff
+! Colors {{{
 
+! URxvt 
+#include ".colors/base16-grayscale.dark.256.xresources"
 
-! Color
-! New
-! Old
-
-! black
-URxvt.color0: #2e3436
-URxvt.color8: #555753
-!URxvt.color0: #333333
-!URxvt.color8: #666666
-
-! red
-URxvt.color1: #a31604
-URxvt.color9: #c60001
-!URxvt.color1: #d15517
-!URxvt.color9: #d11723
-
-! green
-URxvt.color2: #6D878D
-URxvt.color10: #42717B
-!URxvt.color2: #36b217
-!URxvt.color10: #00d56a
-
-! yellow
-URxvt.color3: #c1951a
-URxvt.color11: #d5a30e
-!URxvt.color3: #d1b217
-!URxvt.color11: #ffea55
-
-! blue
-URxvt.color4: #55aaff
-URxvt.color12: #1793d1
-!URxvt.color4: #425387
-!URxvt.color12: #4a5a8d
-
-! magenta
-URxvt.color5: #965d98
-URxvt.color13: #893c8c
-!URxvt.color5: #b217d1
-!URxvt.color13: #d11793
-
-! cyan
-URxvt.color6: #06989a
-URxvt.color14: #12bccb
-!URxvt.color6: #93d1b2
-!URxvt.color14: #17d1b2
-
-! white
-URxvt.color7: #d3d7cf
-URxvt.color15: #eeeeec
-!URxvt.color7: #f6f6f6
-!URxvt.color15: #ffffff
-
-! }}}
-! White Terminal {{{
-   
-URxvt-white*background: #f6f6f6
-URxvt-white*foreground: #888888
-
-URxvt-white*color0: #f6f6f6
-URxvt-white*color1: #666666
-URxvt-white*color2: #666666
-URxvt-white*color3: #666666
-URxvt-white*color4: #666666
-URxvt-white*color5: #666666
-URxvt-white*color6: #666666
-URxvt-white*color7: #888888
-
-URxvt-white*color8: #bbbbbb
-URxvt-white*color9: #6688bb
-URxvt-white*color10: #6688bb
-URxvt-white*color11: #6688bb
-URxvt-white*color12: #6688bb
-URxvt-white*color13: #6688bb
-URxvt-white*color14: #6688bb
-URxvt-white*color15: #111111
-
-URxvt-white*highlightColor: #aaaaaa
-URxvt-white*highlightTextColor: #000000
-
-URxvt-white*cursorColor: #333333
-
-URxvt-white*colorIT: #666666
-URxvt-white*colorBD: #aaaaaa
-URxvt-white*colorUL: #000000
+! URxvt-white
+#include ".colors/z-brah-white.xresources"
 
 ! }}}
 ! Misc Applications {{{

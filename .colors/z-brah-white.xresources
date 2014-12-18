@@ -1,0 +1,30 @@
+
+URxvt-white*background: #f6f6f6
+URxvt-white*foreground: #888888
+
+URxvt-white*color0: #f6f6f6
+URxvt-white*color1: #666666
+URxvt-white*color2: #666666
+URxvt-white*color3: #666666
+URxvt-white*color4: #666666
+URxvt-white*color5: #666666
+URxvt-white*color6: #666666
+URxvt-white*color7: #888888
+
+URxvt-white*color8: #bbbbbb
+URxvt-white*color9: #6688bb
+URxvt-white*color10: #6688bb
+URxvt-white*color11: #6688bb
+URxvt-white*color12: #6688bb
+URxvt-white*color13: #6688bb
+URxvt-white*color14: #6688bb
+URxvt-white*color15: #111111
+
+URxvt-white*highlightColor: #aaaaaa
+URxvt-white*highlightTextColor: #000000
+
+URxvt-white*cursorColor: #333333
+
+URxvt-white*colorIT: #666666
+URxvt-white*colorBD: #aaaaaa
+URxvt-white*colorUL: #000000
