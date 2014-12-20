@@ -98,10 +98,10 @@ XF86AudioPlay
     mpc toggle
 
 XF86AudioRaiseVolume
-    amixer set PCM 5dB+
+    amixer set Master 5dB+
 
 XF86AudioLowerVolume
-    amixer set PCM 5dB-
+    amixer set Master 5dB-
 
 XF86AudioMute
     amixer set Master toggle
