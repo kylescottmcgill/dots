@@ -42,6 +42,7 @@ mouse_support = "no"
 header_visibility = "no"
 display_remaining_time = "no"
 discard_colors_if_item_is_selected = "yes"
+lyrics_directory = "~/.cache/"
 
 # Visualizer
 
