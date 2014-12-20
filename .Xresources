@@ -73,6 +73,9 @@ URxvt*keysym.Control-Right:  \033[1;5C
 
 ! }}}
 ! Misc Applications {{{
+  
+Xcursor*theme: Simple-and-Soft 
+Xcursor.size:   22
 
 rofi.background: #000000
 rofi.foreground: #505050
