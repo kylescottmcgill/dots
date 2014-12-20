@@ -33,8 +33,8 @@ bspc config window_gap          10
 
 bspc config top_padding 40
 bspc config bottom_padding 40
-bspc config right_padding 20
-bspc config left_padding 20
+bspc config right_padding 40
+bspc config left_padding 40
 
 # Visual options
 bspc config split_ratio         0.75
