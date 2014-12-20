@@ -8,7 +8,7 @@
 # green   -   brightgreen
 # color232   -   color232
 
-color normal      color255 color232
+color normal      color255 default
 color attachment  brightblue color232
 color bold        brightblue color232
 color underline   brightblue color232
