@@ -20,8 +20,20 @@ vol() {
     amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | sed -e 's/%//g'
 }
 tags() {
-    # Need to do tags
-    return 0
+    SPACE_NUM=$(bspc query -D -d);
+    case "$SPACE_NUM" in
+	"I")
+	    WORKSPACE="■ □ □ □ □";;
+	"II")
+	    WORKSPACE="□ ■ □ □ □";;
+	"III")
+	    WORKSPACE="□ □ ■ □ □";;
+	"IV")
+	    WORKSPACE="□ □ □ ■ □";;
+	"V")
+	    WORKSPACE="□ □ □ □ ■";;
+    esac
+    echo -n $WORKSPACE
 }
 
 # Fill buffer, output it to stdout.
