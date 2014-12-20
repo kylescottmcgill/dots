@@ -28,13 +28,13 @@ case "$(hostname)" in
 esac
 
 
-bspc config border_width        1
-bspc config window_gap          10
+bspc config border_width 1
+bspc config window_gap 20
 
-bspc config top_padding 40
-bspc config bottom_padding 40
-bspc config right_padding 40
-bspc config left_padding 40
+bspc config top_padding 10
+bspc config bottom_padding 10
+bspc config right_padding 10
+bspc config left_padding 10
 
 # Visual options
 bspc config split_ratio         0.75
@@ -73,4 +73,4 @@ bspc rule -a mpv floating=on follow=on
 export BSPWM_SOCKET="/tmp/bspwm-socket"
 export PANEL_FIFO="/tmp/panel-fifo"
 
-~/.bin/statsbar | bar -g 1770x26+75+10 -pd &
+~/.bin/statsbar | bar -g 1770x26+75+10 -pd -f '-lucy-tewi-*-*-*-*-12-*-*-*-*-*-*-*'  &
