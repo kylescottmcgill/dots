@@ -136,6 +136,7 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'chriskempson/base16-vim'
 Plugin 'godlygeek/csapprox'
 Plugin 'ajh17/Spacegray.vim'
+Plugin 'MaxSt/FlatColor'
 
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/nerdtree'
@@ -213,8 +214,6 @@ filetype plugin indent on    " required
 
 set background=dark
 colorscheme spacegray
-
-let base16colorspace=256
 
 set cursorline
 set cursorcolumn
