@@ -73,6 +73,8 @@ set gcr=a:blinkon0
 set modeline
 set modelines=10
 set updatetime=1000
+set timeoutlen=1000
+set ttimeoutlen=0
 set synmaxcol=500
 set ttyscroll=20
 
