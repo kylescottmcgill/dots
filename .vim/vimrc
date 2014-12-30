@@ -215,7 +215,7 @@ filetype plugin indent on    " required
 " Colors & Statusline {{{
 
 set background=dark
-colorscheme spacegray
+colorscheme pencil
 
 set cursorline
 set cursorcolumn
@@ -259,7 +259,7 @@ augroup configgroup
     autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black guifg=white guibg=black
     autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred guifg=white guibg=darkred
 
-    autocmd CursorHold * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+    " autocmd CursorHold * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
     autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec set filetype=ruby
 
