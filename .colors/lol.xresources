@@ -1,3 +1,11 @@
+URxvt.cursor: #e6e1dc
+URxvt.cursorColor: #ffffff
+URxvt.highlightColor: #333333
+URxvt.highlightTextColor: #cef318
+URxvt.colorIT: #cacaca
+URxvt.colorBD: #ede265
+URxvt.colorUL: #ffffff
+
 *foreground: #d2d2ca
 *background: #151B22
 !Black
