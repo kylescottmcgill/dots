@@ -133,33 +133,32 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+" Look and Feel
 Plugin 'flazz/vim-colorschemes'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'chriskempson/base16-vim'
-Plugin 'godlygeek/csapprox'
 Plugin 'ajh17/Spacegray.vim'
-Plugin 'MaxSt/FlatColor'
+Plugin 'godlygeek/csapprox'
 
-Plugin 'editorconfig/editorconfig-vim'
+" UI Improvements
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-eunuch'
-Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/neocomplete.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/ZoomWin'
-
 Plugin 'itchyny/vim-gitbranch'
 Plugin 'fholgado/minibufexpl.vim'
-Plugin 'msanders/snipmate.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'wincent/command-t'
 Plugin 'rking/ag.vim'
+Plugin 'wincent/command-t'
+
+" Programming Improvments
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/neocomplete.vim'
+
+" {{{ Languages Package
+
 Plugin 'sheerun/vim-polyglot'
-
-" {{{ C
-
-Plugin 'vim-scripts/c.vim'
 
 " }}}
 " {{{ HTML
@@ -167,41 +166,13 @@ Plugin 'vim-scripts/c.vim'
 Plugin 'amirh/HTML-AutoCloseTag'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'gorodinskiy/vim-coloresque'
-Plugin 'tpope/vim-haml'
-
-" }}}
-" {{{ Ruby
-
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-projectionist'
-Plugin 'thoughtbot/vim-rspec'
-
-" }}}
-
-" {{{ Go
-
-Plugin 'fatih/vim-go'
-
-" }}}
-" {{{ Rust
-Plugin 'wting/rust.vim'
-" }}}
-" {{{ Elixir
-
-Plugin 'elixir-lang/vim-elixir'
 
 " }}}
 " {{{ PHP 
 
 Plugin 'vim-php/tagbar-phpctags.vim'
-Plugin 'joonty/vdebug.git'
 Plugin 'shawncplus/phpcomplete.vim'
-
-" }}}
-" {{{ Docker
-
-Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'joonty/vdebug.git'
 
 " }}}
 
@@ -214,8 +185,13 @@ filetype plugin indent on    " required
 " }}}
 " Colors & Statusline {{{
 
+if has("gui_running")
+    colorscheme pencil
+else
+    colorscheme numix
+end
+
 set background=dark
-colorscheme pencil
 
 set cursorline
 set cursorcolumn
@@ -242,42 +218,27 @@ set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&e
 " Autogroups {{{
 
 augroup vimrc
-    au BufReadPre * setlocal foldmethod=marker
-    au BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
-    au BufReadPre * setlocal foldlevel=0
+    autocmd BufReadPre * setlocal foldmethod=marker
+    " autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
+    autocmd BufReadPre * setlocal foldlevel=0
 augroup END
 
 augroup configgroup
     autocmd!
-
-    autocmd BufReadPost *
-	 \ if line("'\"") > 0 && line("'\"") <= line("$") |
-	 \   exe "normal! g`\"" |
-	 \ endif
     autocmd VimEnter * highlight clear SignColumn
-
     autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black guifg=white guibg=black
     autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred guifg=white guibg=darkred
-
     " autocmd CursorHold * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
-
-    autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec set filetype=ruby
-
-    autocmd FileType ruby setlocal tabstop=2
-    autocmd FileType ruby setlocal shiftwidth=2
-    autocmd FileType ruby setlocal softtabstop=2
-    autocmd FileType ruby setlocal commentstring=#\ %s
-
-    autocmd FileType css setlocal equalprg=csstidy\ -\ --silent=true\ --preserve_css=true
     autocmd FileType mail setlocal spell
-
     autocmd BufEnter Makefile setlocal noexpandtab
     autocmd BufEnter *.sh setlocal tabstop=2
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
-
     autocmd BufNewFile,BufRead,FileType php setlocal foldmethod=syntax
-   
+    autocmd BufReadPost *
+	 \ if line("'\"") > 0 && line("'\"") <= line("$") |
+	 \   exe "normal! g`\"" |
+	 \ endif
     " Limit Quick Fix
     autocmd FileType qf call AdjustWindowHeight(3, 10)
 augroup END
@@ -296,34 +257,6 @@ function! AppendModeline()
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
-function! BufSel(pattern)
-    let bufcount = bufnr("$")
-    let currbufnr = 1
-    let nummatches = 0
-    let firstmatchingbufnr = 0
-    while currbufnr <= bufcount
-        if(bufexists(currbufnr))
-            let currbufname = bufname(currbufnr)
-            if(match(currbufname, a:pattern) > -1)
-                echo currbufnr . ": ". bufname(currbufnr)
-                let nummatches += 1
-                let firstmatchingbufnr = currbufnr
-            endif
-        endif
-        let currbufnr = currbufnr + 1
-    endwhile
-    if(nummatches == 1)
-        execute ":buffer ". firstmatchingbufnr
-    elseif(nummatches > 1)
-        let desiredbufnr = input("Enter buffer number: ")
-        if(strlen(desiredbufnr) != 0)
-            execute ":buffer ". desiredbufnr
-        endif
-    else
-        echo "No matching buffers"
-    endif
-endfunction
-
 " strips trailing whitespace at the end of files. this
 " is called on buffer write in the autogroup above.
 function! <SID>StripTrailingWhitespaces()
@@ -335,9 +268,6 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-
-" Bind the BufSel() function to a user-command
-command! -nargs=1 Bs :call BufSel("<args>")
 
 " Limit Quickfix Window Height
 function! AdjustWindowHeight(minheight, maxheight)
@@ -351,7 +281,6 @@ nmap <leader>p :MBEbp<CR>
 nmap <leader>n :MBEbn<CR>
 nmap <leader>d :MBEbd<CR>
 
-nnoremap <leader>b :buffers<CR>:buffer<Space>
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>e :edit $MYVIMRC<cr>
 nnoremap <leader>s :source $MYVIMRC<cr>
@@ -395,7 +324,6 @@ noremap <Leader>gsh :!git push<CR>
 " Plugin bindings and functionality {{{
 
 " NerdTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>i
 
 " Syntastic
@@ -418,6 +346,7 @@ let g:syntastic_rust_rustc_args = "-L ./target/deps"
 
 " Vim-go
 let g:go_bin_path = expand("~/.go/bin")
+let g:go_disable_autoinstall = 0
 
 " Tagbar
 let g:tagbar_type_go = {  
@@ -461,20 +390,6 @@ let g:tagbar_type_php  = {
             \ ]
             \ }
 
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
-let g:tagbar_type_ruby = {
-    \ 'kinds' : [
-        \ 'm:modules',
-        \ 'c:classes',
-        \ 'd:describes',
-        \ 'C:contexts',
-        \ 'f:methods',
-        \ 'F:singleton methods'
-    \ ]
-\ }
-
 let g:tagbar_autofocus = 1
 let g:javascript_enable_domhtmlcss = 1
 
@@ -484,11 +399,9 @@ nmap <F8> :TagbarToggle<CR>
 let g:gitgutter_max_signs = 250 " default value: 500
 
 " NeoComplete
-
 let g:neocomplete#enable_at_startup = 1
 
 " Ctrl-p && Ag
-
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
             \ "dir": '\v[\/]\.(git|hg|svn)$',
@@ -550,4 +463,4 @@ let g:vdebug_options= {
 
 " }}}
 
-"vim: set ft=vim ts=8 sw=4 tw=140 fdm=1 foldlevel=0 noet :
+"vim: set ft=vim ts=8 sw=4 tw=140 fdm=marker foldlevel=0 noet :
