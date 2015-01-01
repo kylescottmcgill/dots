@@ -8,7 +8,7 @@ set showcmd
 set ttyfast
 
 if &term =~ '256color'
-  set t_ut=
+    set t_ut=
 endif
 
 set encoding=utf-8
@@ -58,6 +58,7 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 set clipboard=unnamed
+set cmdheight=2
 
 set bomb
 set binary
@@ -80,7 +81,7 @@ set ttyscroll=20
 
 set undolevels=1000     " Number of undo levels
 set backspace=indent,eol,start  " Backspace behaviour
-set mouse=a
+" set mouse=a
 
 set wildchar=<Tab>
 set wildmode=longest,list
@@ -93,7 +94,7 @@ set scrolljump=10
 set scrolloff=10
 set sidescrolloff=12
 set showcmd             " display incomplete commands
-set cmdheight=1
+set cmdheight=2
 set hid                 " Abandoned buffers become hidden
 set formatoptions=c,q,r,t
 
@@ -152,16 +153,21 @@ Plugin 'wincent/command-t'
 " Programming Improvments
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'Valloric/YouCompleteMe'
 
-" {{{ Languages Package
+" {{{ Golang
 
-Plugin 'sheerun/vim-polyglot'
+Plugin 'fatih/vim-go'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+
+" }}}
+" {{{ Rust
+
+Plugin 'wting/rust.vim'
 
 " }}}
 " {{{ HTML
 
-Plugin 'amirh/HTML-AutoCloseTag'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'gorodinskiy/vim-coloresque'
 
@@ -234,9 +240,9 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal softtabstop=2
     autocmd BufNewFile,BufRead,FileType php setlocal foldmethod=syntax
     autocmd BufReadPost *
-	 \ if line("'\"") > 0 && line("'\"") <= line("$") |
-	 \   exe "normal! g`\"" |
-	 \ endif
+		\ if line("'\"") > 0 && line("'\"") <= line("$") |
+		\   exe "normal! g`\"" |
+		\ endif
     " Limit Quick Fix
     autocmd FileType qf call AdjustWindowHeight(3, 10)
 augroup END
@@ -249,7 +255,7 @@ augroup END
 " files.
 function! AppendModeline()
     let l:modeline = printf("vim: set ft=%s ts=%d sw=%d tw=%d fdm=%s foldlevel=%d %set :",
-                \ &filetype, &tabstop, &shiftwidth, &textwidth, &expandtab, &foldmethod, &fdl ? '' : 'no')
+		\ &filetype, &tabstop, &shiftwidth, &textwidth, &expandtab, &foldmethod, &fdl ? '' : 'no')
     let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
     call append(line("$"), l:modeline)
 endfunction
@@ -269,7 +275,7 @@ endfunction
 
 " Limit Quickfix Window Height
 function! AdjustWindowHeight(minheight, maxheight)
-  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+    exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 
 " }}}
@@ -307,17 +313,6 @@ map <leader>7 :confirm :b7<CR>
 map <leader>8 :confirm :b8<CR>
 map <leader>9 :confirm :b9<CR>
 
-"" Git
-noremap <Leader>ga :!git add .<CR>
-noremap <Leader>gc :!git commit -m '<C-R>="'"<CR>
-noremap <Leader>gsh :!git push<CR>
-" noremap <Leader>gs :Gstatus<CR>
-" noremap <Leader>gb :Gblame<CR>
-" noremap <Leader>gd :Gvdiff<CR>
-" noremap <Leader>gr :Gremove<CR>
-
-" noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
-
 " }}}
 " Plugin bindings and functionality {{{
 
@@ -348,45 +343,21 @@ let g:go_disable_autoinstall = 0
 
 " Tagbar
 let g:tagbar_type_go = {  
-            \ 'ctagstype' : 'go',
-            \ 'kinds'     : [
-            \ 'p:package',
-            \ 'i:imports:1',
-            \ 'c:constants',
-            \ 'v:variables',
-            \ 't:types',
-            \ 'n:interfaces',
-            \ 'w:fields',
-            \ 'e:embedded',
-            \ 'm:methods',
-            \ 'r:constructor',
-            \ 'f:functions'
-            \ ],
-            \ 'sro' : '.',
-            \ 'kind2scope' : {
-            \ 't' : 'ctype',
-            \ 'n' : 'ntype'
-            \ },
-            \ 'scope2kind' : {
-            \ 'ctype' : 't',
-            \ 'ntype' : 'n'
-            \ },
-            \ 'ctagsbin'  : 'gotags',
-            \ 'ctagsargs' : '-sort -silent'
-            \ }
+	    \ 'ctagstype' : 'go',
+	    \ 'kinds'     : ['p:package', 'i:imports:1', 'c:constants', 'v:variables', 't:types', 'n:interfaces', 'w:fields', 'e:embedded', 'm:methods', 'r:constructor', 'f:functions'],
+	    \ 'sro' : '.',
+	    \ 'kind2scope' : {'t' : 'ctype', 'n' : 'ntype'},
+	    \ 'scope2kind' : {'ctype' : 't', 'ntype' : 'n'},
+	    \ 'ctagsbin'  : 'gotags',
+	    \ 'ctagsargs' : '-sort -silent'
+	    \ }
 
 let g:tagbar_phpctags_memory_limit = '1024M'
 let g:tagbar_phpctags_bin="~/.bin/phpctags"
 let g:tagbar_type_php  = {
-            \ 'ctagstype' : 'php',
-            \ 'kinds'     : [
-            \ 'i:interfaces',
-            \ 'c:classes',
-            \ 'd:constant definitions',
-            \ 'f:functions',
-            \ 'j:javascript functions:1'
-            \ ]
-            \ }
+	    \ 'ctagstype' : 'php',
+	    \ 'kinds'     : ['i:interfaces', 'c:classes', 'd:constant definitions', 'f:functions', 'j:javascript functions:1']
+	    \ }
 
 let g:tagbar_autofocus = 1
 let g:javascript_enable_domhtmlcss = 1
@@ -396,31 +367,43 @@ nmap <F8> :TagbarToggle<CR>
 " vim-gitgutter
 let g:gitgutter_max_signs = 250 " default value: 500
 
-" NeoComplete
-let g:neocomplete#enable_at_startup = 1
-
 " Ctrl-p && Ag
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
-            \ "dir": '\v[\/]\.(git|hg|svn)$',
-            \ "file": '\v\.(exe|so|dll|jpeg|png|gif)'
-            \ }
+	    \ "dir": '\v[\/]\.(git|hg|svn)$',
+	    \ "file": '\v\.(exe|so|dll|jpeg|png|gif)'
+	    \ }
+
 if executable('ag')
     map <leader>f :Ag<Space>
     " Use Ag over Grep
-    set grepprg = "ag -i --nogroup --nocolor"
+    set grepprg="ag -i --nogroup --nocolor"
 
     " Use Ag over Ack
-    let g:ackprg = 'ag -i --nogroup --nocolor --column'
+    let g:ackprg='ag -i --nogroup --nocolor --column'
 
     " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag -i %s -l --nocolor -g ""'
+    let g:ctrlp_user_command='ag -i %s -l --nocolor -g ""'
 endif 
 
+" YouCompleteMe
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'qf' : 1,
+      \ 'notes' : 1,
+      \ 'markdown' : 1,
+      \ 'unite' : 1,
+      \ 'text' : 1,
+      \ 'vimwiki' : 1,
+      \ 'pandoc' : 1,
+      \ 'infolog' : 1,
+      \ 'mail' : 1
+      \}
+
 " Command-T
-let g:CommandTFileScanner = "git"
-let g:CommandTTraverseSCM = "dir"
-let g:CommandTMinHeight = 20
+let g:CommandTFileScanner="git"
+let g:CommandTTraverseSCM="dir"
+let g:CommandTMinHeight=20
 let g:CommandTCancelMap=['<C-x>', '<C-c>']
 
 " PHP Ctags
@@ -429,35 +412,22 @@ if filereadable(FILETAG)
     set tags=.git/tags
 endif
 
-" PHP.vim - vim-polyglot
-"function! PhpSyntaxOverride()
-"  hi! def link phpDocTags  phpDefine
-"  hi! def link phpDocParam phpType
-"endfunction
-
-"augroup phpSyntaxOverride
-"  autocmd!
-"  autocmd FileType php call PhpSyntaxOverride()
-"augroup END
-
 " PHP Vdebug
 let g:vdebug_options= {
-    \    "port" : 9000,
-    \    "server" : 'localhost',
-    \    "timeout" : 20,
-    \    "on_close" : 'detach',
-    \    "break_on_open" : 1,
-    \    "ide_key" : '',
-    \    "debug_window_level" : 0,
-    \    "debug_file_level" : 0,
-    \    "debug_file" : "",
-    \    "watch_window_style" : 'expanded',
-    \    "marker_default" : '⬦',
-    \    "marker_closed_tree" : '▸',
-    \    "marker_open_tree" : '▾'
-    \}
-" let g:vdebug_options["break_on_open"] = 0
-" let g:php_syntax_extension_enabled
+	    \    "port" : 9000,
+	    \    "server" : 'localhost',
+	    \    "timeout" : 20,
+	    \    "on_close" : 'detach',
+	    \    "break_on_open" : 1,
+	    \    "ide_key" : '',
+	    \    "debug_window_level" : 0,
+	    \    "debug_file_level" : 0,
+	    \    "debug_file" : "",
+	    \    "watch_window_style" : 'expanded',
+	    \    "marker_default" : '⬦',
+	    \    "marker_closed_tree" : '▸',
+	    \    "marker_open_tree" : '▾'
+	    \}
 
 " }}}
 
