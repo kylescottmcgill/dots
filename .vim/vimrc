@@ -134,9 +134,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Look and Feel
-Plugin 'flazz/vim-colorschemes'
 Plugin 'reedes/vim-colors-pencil'
-Plugin 'chriskempson/base16-vim'
 Plugin 'ajh17/Spacegray.vim'
 Plugin 'godlygeek/csapprox'
 
