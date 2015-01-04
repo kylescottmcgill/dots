@@ -153,7 +153,7 @@ Plugin 'wincent/command-t'
 " Programming Improvments
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " {{{ Golang
 
@@ -387,21 +387,21 @@ if executable('ag')
 endif 
 
 " YouCompleteMe
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'qf' : 1,
-      \ 'notes' : 1,
-      \ 'markdown' : 1,
-      \ 'unite' : 1,
-      \ 'text' : 1,
-      \ 'vimwiki' : 1,
-      \ 'pandoc' : 1,
-      \ 'infolog' : 1,
-      \ 'mail' : 1
-      \}
+"let g:ycm_server_keep_logfiles = 1
+"let g:ycm_server_log_level = 'debug'
+"let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+"let g:ycm_filetype_blacklist = {
+"      \ 'tagbar' : 1,
+"      \ 'qf' : 1,
+"      \ 'notes' : 1,
+"      \ 'markdown' : 1,
+"      \ 'unite' : 1,
+"      \ 'text' : 1,
+"      \ 'vimwiki' : 1,
+"      \ 'pandoc' : 1,
+"      \ 'infolog' : 1,
+"      \ 'mail' : 1
+"      \}
 
 " Command-T
 let g:CommandTFileScanner="git"
