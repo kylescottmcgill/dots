@@ -94,7 +94,7 @@ set scrolljump=10
 set scrolloff=10
 set sidescrolloff=12
 set showcmd             " display incomplete commands
-set cmdheight=2
+set cmdheight=1
 set hid                 " Abandoned buffers become hidden
 set formatoptions=c,q,r,t
 
@@ -387,6 +387,9 @@ if executable('ag')
 endif 
 
 " YouCompleteMe
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:ycm_filetype_blacklist = {
       \ 'tagbar' : 1,
       \ 'qf' : 1,

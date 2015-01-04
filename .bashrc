@@ -46,7 +46,7 @@ export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
 export BROWSER=firefox-nightly
-export PULSE_LATENCY_MSEC=60
+#export PULSE_LATENCY_MSEC=60
 export XDG_CONFIG_HOME="$HOME/.config"
 
 alias sl='ls'
