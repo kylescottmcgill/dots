@@ -48,6 +48,7 @@ export BZR_LOG=/dev/null
 export BROWSER=firefox-nightly
 #export PULSE_LATENCY_MSEC=60
 export XDG_CONFIG_HOME="$HOME/.config"
+export NIX_REMOTE=daemon
 
 alias sl='ls'
 alias ls='ls --color'
