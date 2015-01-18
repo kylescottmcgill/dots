@@ -27,7 +27,7 @@
     autocorrect = 10
 
 [push]
-    default = simple
+    default = current
 [merge]
     renormalize = true
 [difftool]
