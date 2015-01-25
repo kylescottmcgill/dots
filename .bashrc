@@ -15,23 +15,29 @@ export GIT_EDITOR='/usr/bin/vim'
 unset MAILCHECK
 
 # Change this to your console based IRC client of choice.
-export IRC_CLIENT='irssi'
+export IRC_CLIENT='weechat'
 
 # Go Path
 export GOPATH=~/.go
 export GOBIN=$GOPATH/bin
 
-# PIP Path
+# Python/PIP Path
+test -z "$VIRTUAL_ENV" && source $HOME/.python/bin/activate
 export PIPPATH=~/.local/bin
 
 # PHP Path
 export PHPPATH=~/.composer/vendor/bin
 
 # Ruby Path
-# See below, but i wanna move it here and not be so harsh
+if [[ -e /usr/share/chruby/chruby.sh ]];
+then
+    source /usr/share/chruby/chruby.sh
+    source /usr/share/chruby/auto.sh
+fi
 
 # Node Path
-# See below, but i wanna move it here and not be so harsh
+export NVM_DIR="/home/kyle/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
@@ -85,20 +91,7 @@ man() {
         man "$@"
 }
 
-# Startx Automagically.... unsure about this one
-#if [[ ! ${DISPLAY} && ${XDG_VTNR} == 1 ]] ; then
-#    exec startx
-#fi
-
 eval $(dircolors -b $HOME/.dircolors)
 
 hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
 
-if [[ -e /usr/share/chruby/chruby.sh ]];
-then
-    source /usr/share/chruby/chruby.sh
-    source /usr/share/chruby/auto.sh
-fi
-
-export NVM_DIR="/home/kyle/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
