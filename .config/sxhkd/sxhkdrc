@@ -86,7 +86,7 @@ super + {minus,equal}
 	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 5 ))
 
 # Presel window for splitting
-super + shift + {h,j,k,l}
+super + shift + {Left,Down,Up,Right}
 	bspc window -p {left,down,up,right}
 
 # }}}
