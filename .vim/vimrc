@@ -50,7 +50,7 @@ set smarttab            " Enable smart-tabs
 set softtabstop=4       " Number of spaces per Tab
 
 set foldenable          " Enable Folds
-set foldmethod=syntax   " Depending on Syntax, fold
+set foldmethod=indent   " Depending on Syntax, fold
 set foldlevelstart=20   " Only fold after 20 levels on open
 set foldnestmax=10      " Nest Folds
 
@@ -230,7 +230,7 @@ augroup configgroup
     " autocmd CursorHold * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
     autocmd FileType mail setlocal spell
     autocmd BufEnter Makefile setlocal noexpandtab
-    autocmd BufNewFile,BufReadPre,FileType php setlocal foldmethod=syntax
+    " autocmd BufNewFile,BufReadPre,FileType php setlocal foldmethod=syntax
     autocmd BufReadPost *
 		\ if line("'\"") > 0 && line("'\"") <= line("$") |
 		\   exe "normal! g`\"" |
