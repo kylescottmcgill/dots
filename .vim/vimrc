@@ -136,31 +136,25 @@ Plugin 'gmarik/Vundle.vim'
 
 " Look and Feel
 Plugin 'reedes/vim-colors-pencil'
-Plugin 'ajh17/Spacegray.vim'
+" Plugin 'ajh17/Spacegray.vim'
 Plugin 'godlygeek/csapprox'
 
 " UI Improvements
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar'
-Plugin 'vim-scripts/ZoomWin'
+" Plugin 'vim-scripts/ZoomWin'
 Plugin 'itchyny/vim-gitbranch'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
-Plugin 'wincent/command-t'
+" Plugin 'wincent/command-t'
 
 " Programming Improvments
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/syntastic'
 " Plugin 'Valloric/YouCompleteMe'
 
-" {{{ Golang
-
-Plugin 'fatih/vim-go'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
-
-" }}}
 " {{{ Rust
 
 Plugin 'wting/rust.vim'
