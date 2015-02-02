@@ -32,7 +32,7 @@ fi
 # This is required for some GTK2 themes to get set correctly
 
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-sh ~/.fehbg &
+xsetroot -solid "#1F2833"
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
