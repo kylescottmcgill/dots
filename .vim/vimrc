@@ -191,8 +191,8 @@ end
 
 set background=dark
 
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 
 highlight cursorline                cterm=none ctermfg=none ctermbg=black
 highlight cursorcolumn              cterm=none ctermfg=none ctermbg=black
@@ -216,6 +216,7 @@ set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&e
 " Autogroups {{{
 
 augroup vimrc
+    autocmd!
     autocmd BufReadPre * setlocal foldmethod=marker
     " autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
     autocmd BufReadPre * setlocal foldlevel=0
@@ -229,10 +230,7 @@ augroup configgroup
     " autocmd CursorHold * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
     autocmd FileType mail setlocal spell
     autocmd BufEnter Makefile setlocal noexpandtab
-    autocmd BufEnter *.sh setlocal tabstop=2
-    autocmd BufEnter *.sh setlocal shiftwidth=2
-    autocmd BufEnter *.sh setlocal softtabstop=2
-    autocmd BufNewFile,BufRead,FileType php setlocal foldmethod=syntax
+    autocmd BufNewFile,BufReadPre,FileType php setlocal foldmethod=syntax
     autocmd BufReadPost *
 		\ if line("'\"") > 0 && line("'\"") <= line("$") |
 		\   exe "normal! g`\"" |
@@ -331,10 +329,6 @@ let g:syntastic_php_phpcs_args="--standard PSR2"
 
 let g:syntastic_rust_rustc_args = "-L ./target/deps"
 
-" Vim-go
-let g:go_bin_path = expand("~/.go/bin")
-let g:go_disable_autoinstall = 0
-
 " Tagbar
 let g:tagbar_type_go = {  
 	    \ 'ctagstype' : 'go',
@@ -396,12 +390,6 @@ endif
 "      \ 'infolog' : 1,
 "      \ 'mail' : 1
 "      \}
-
-" Command-T
-let g:CommandTFileScanner="git"
-let g:CommandTTraverseSCM="dir"
-let g:CommandTMinHeight=20
-let g:CommandTCancelMap=['<C-x>', '<C-c>']
 
 " PHP Ctags
 let FILETAG=expand(".git/tags")
