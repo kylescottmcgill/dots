@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ $COLORSCHEME == "minimal" ]]; then
+    export COLORSCHEME=''
+else
+    export COLORSCHEME='minimal'
+fi
