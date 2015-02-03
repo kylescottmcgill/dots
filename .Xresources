@@ -26,7 +26,7 @@ URxvt*scrollBar: false
 URxvt*cursorBlink: true
 URxvt*iso14755: false
 URxvt*iso14755_52: false
-URxvt*internelBorder: 10
+URxvt*internalBorder: 10
 URxvt.depth: 0
 URxvt.transparent: false
 URxvt.shading: 5
