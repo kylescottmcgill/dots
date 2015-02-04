@@ -95,6 +95,12 @@ super + alt + BackSpace
 super + {Left,Down,Up,Right}
 	bspc window -p {left,down,up,right}
 
+super + ctrl + {Left,Down,Up,Right}
+    bspc window -e {left -10,down +10,up -10,right +10}
+
+super + ctrl + shift + {Left,Down,Up,Right}
+    bspc window -e {right -10,up +10,down -10,left +10}
+
 # }}}
 # Media Keys {{{
 

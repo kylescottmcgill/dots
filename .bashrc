@@ -66,6 +66,7 @@ alias rm='rm -f'
 alias tmux='tmux -2 -f ~/.tmux/tmux.conf'
 alias v="vim -i NONE -X"
 alias gv='gvim -X'
+alias mini='source $HOME/.bin/mini'
 
 #alias git=hub
 alias gitpp='git pull ; git push'
