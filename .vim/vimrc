@@ -191,8 +191,8 @@ end
 
 set background=dark
 
-"set cursorline
-"set cursorcolumn
+set cursorline
+set cursorcolumn
 
 highlight cursorline                cterm=none ctermfg=none ctermbg=black
 highlight cursorcolumn              cterm=none ctermfg=none ctermbg=black
