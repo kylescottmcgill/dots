@@ -140,7 +140,7 @@ super + b
     ~/.bin/fire
 
 super + grave
-    rofi -rnow
+    rofi -rnow -opacity 75 -p ">"
 
 super + Escape
     pkill -USR1 -x sxhkd
