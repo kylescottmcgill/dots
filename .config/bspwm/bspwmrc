@@ -65,7 +65,7 @@ bspc rule -a Skype pseudo_tiled=off
 bspc rule -a URxvt pseudo_tiled=off border=on
 bspc rule -a Chromium border=off
 bspc rule -a Firefox border=off fullscreen=off
-bspc rule -a Steam floating=off
+bspc rule -a Steam floating=on
 bspc rule -a Gvim border=off
 bspc rule -a feh floating=on manage=on
 bspc rule -a mpv floating=on follow=on
