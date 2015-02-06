@@ -1,6 +1,6 @@
 #!/bin/bash
 
-focused="%{U#FF377222+u}----------%{U-}"
+focused="%{U#FF924445+u}----------%{U-}"
 active="%{U#FF1b1b1b+u}----------%{U-}"
 normal="%{U#FFbbbbbb+u}----------%{U-}"
 
