@@ -137,7 +137,6 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'ajh17/Spacegray.vim'
 Plug 'noahfrederick/vim-noctu'
 Plug 'noahfrederick/vim-hemisu'
-" Plugin 'godlygeek/csapprox'
 
 " UI Improvements
 Plug 'scrooloose/nerdtree'
@@ -162,6 +161,9 @@ Plug 'honza/vim-snippets'
 Plug 'wting/rust.vim', { 'for': 'rust' }
 
 " }}}
+" {{{ Golang
+
+" }}}
 " {{{ HTML
 
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
@@ -173,6 +175,9 @@ Plug 'gorodinskiy/vim-coloresque', { 'for': ['html', 'css', 'php', 'vim'] }
 Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'joonty/vdebug', { 'for': 'php' }
+
+" }}}
+" {{{ Ruby
 
 " }}}
 
@@ -188,7 +193,8 @@ filetype plugin indent on    " required
 set background=dark
 
 if has("gui_running")
-    colorscheme pencil
+    colorscheme spacegray
+    let g:airline_theme = 'pencil'
 else
     colorscheme noctu
 end
@@ -213,14 +219,14 @@ highlight MBEVisibleActiveNormal  cterm=none ctermfg=none ctermbg=black guifg=#A
 highlight MBEVisibleActiveChanged cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=fg
 
 set laststatus=2
-set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
+" set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 
 " }}}
 " Autogroups {{{
 
 augroup vimrc
     autocmd!
-    autocmd BufReadPre * setlocal foldmethod=marker
+    " autocmd BufReadPre * setlocal foldmethod=marker
     " autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
     autocmd BufReadPre * setlocal foldlevel=0
 augroup END
@@ -228,8 +234,8 @@ augroup END
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
-    autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black guifg=white guibg=black
-    autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred guifg=white guibg=darkred
+    " autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black guifg=white guibg=black
+    " autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred guifg=white guibg=darkred
     " autocmd CursorHold * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
     autocmd FileType mail setlocal spell
     autocmd BufEnter Makefile setlocal noexpandtab
@@ -315,12 +321,10 @@ map <leader>9 :confirm :b9<CR>
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
-
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>i
 
 " Syntastic
-
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
@@ -402,14 +406,10 @@ endif
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
 
-
 " UltiSnip
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-" let g:UltiSnipsEditSplit="vertical"
 
 " PHP Ctags
 let FILETAG=expand(".git/tags")
@@ -418,7 +418,7 @@ if filereadable(FILETAG)
 endif
 
 " PHP Vdebug
-let g:vdebug_options= {
+let g:vdebug_options={
 	    \    "port" : 9000,
 	    \    "server" : 'localhost',
 	    \    "timeout" : 20,
