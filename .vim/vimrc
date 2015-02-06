@@ -136,7 +136,6 @@ Plug 'gmarik/Vundle.vim'
 Plug 'reedes/vim-colors-pencil'
 Plug 'ajh17/Spacegray.vim'
 Plug 'noahfrederick/vim-noctu'
-Plug 'noahfrederick/vim-hemisu'
 
 " UI Improvements
 Plug 'scrooloose/nerdtree'
@@ -199,7 +198,6 @@ set background=dark
 "    colorscheme noctu
 " end
 
-
 set cursorline
 set cursorcolumn
 
@@ -219,27 +217,22 @@ highlight MBEVisibleActiveNormal  cterm=none ctermfg=none ctermbg=black guifg=#A
 highlight MBEVisibleActiveChanged cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=fg
 
 set laststatus=2
-" set statusline=\ %f%m%r%h%w\ %{gitbranch#name()}\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 
 " }}}
 " Autogroups {{{
 
 augroup vimrc
     autocmd!
-    " autocmd BufReadPre * setlocal foldmethod=marker
-    " autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
+    autocmd BufReadPre * setlocal foldmethod=marker
+    autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
     autocmd BufReadPre * setlocal foldlevel=0
 augroup END
 
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
-    " autocmd InsertLeave * highlight StatusLine cterm=bold ctermfg=white ctermbg=black guifg=white guibg=black
-    " autocmd InsertEnter * highlight StatusLine cterm=bold ctermfg=white ctermbg=darkred guifg=white guibg=darkred
     " autocmd CursorHold * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
     autocmd FileType mail setlocal spell
-    autocmd BufEnter Makefile setlocal noexpandtab
-    " autocmd BufNewFile,BufReadPre,FileType php setlocal foldmethod=syntax
     autocmd BufReadPost *
 		\ if line("'\"") > 0 && line("'\"") <= line("$") |
 		\   exe "normal! g`\"" |

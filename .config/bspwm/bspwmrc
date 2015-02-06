@@ -3,7 +3,7 @@
 function DesktopSetup {
     i=1
     for monitor in $(bspc query -M); do
-	bspc monitor $monitor -n "$i" -d {I,II,III,IV,V}
+	bspc monitor $monitor -n "$i" -d {www,dev,im,games,misc}
 	let i++
     done
     NMON=$i
@@ -13,7 +13,7 @@ function DesktopSetup {
 case "$(hostname)" in
     "ouroboros") 
         bspc desktop -n 1
-        bspc monitor -d 1 2 3 4 5
+        bspc monitor -d www dev im games misc
         ;;
     "turtil") 
 	DesktopSetup 
@@ -61,12 +61,12 @@ bspc config focused_frame_opacity 0.1
 bspc config remove_unplugged_monitors true
 
 # Rules
-bspc rule -a Skype pseudo_tiled=off
+bspc rule -a Skype desktop=im pseudo_tiled=off
 bspc rule -a URxvt pseudo_tiled=off border=on
-bspc rule -a Chromium border=off
-bspc rule -a Firefox border=off fullscreen=off
-bspc rule -a Steam floating=on
-bspc rule -a Gvim border=off
+bspc rule -a Chromium desktop=www border=off
+bspc rule -a Firefox desktop=www border=off fullscreen=off
+bspc rule -a Steam desktop=games floating=on
+bspc rule -a Gvim desktop=dev border=off
 bspc rule -a feh floating=on manage=on
 bspc rule -a mpv floating=on follow=on
 
