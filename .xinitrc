@@ -38,7 +38,7 @@ hsetroot -solid "#1F2833"
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
     "ouroboros") sxhkd & exec bspwm ;;    # Main PC
-    "turtil") sxhkd & exec bspwm ;;    # Laptop
+    "turtil") sxhkd & exec bspwm && bottombar &;;    # Laptop
     "xm-dev") unclutter -grab & sxhkd & exec bspwm ;;    # Work PC
     *) exec dwm ;;
 esac
