@@ -119,77 +119,79 @@ let g:php_folding=2     " Fold PHP bitch
 let no_buffers_menu=1
 
 " }}}
-" Vundle Packages {{{
+" Plug Packages {{{
 
 syntax on
 syntax sync minlines=256
 
-filetype off            " required!
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 " let Vundle manage Vundle
 " required!
 
-Plugin 'gmarik/Vundle.vim'
+Plug 'junegunn/vim-plug'
+Plug 'gmarik/Vundle.vim'
 
 " Look and Feel
-Plugin 'reedes/vim-colors-pencil'
-" Plugin 'ajh17/Spacegray.vim'
-Plugin 'godlygeek/csapprox'
+Plug 'reedes/vim-colors-pencil'
+Plug 'ajh17/Spacegray.vim'
+Plug 'noahfrederick/vim-noctu'
+Plug 'noahfrederick/vim-hemisu'
+" Plugin 'godlygeek/csapprox'
 
 " UI Improvements
-Plugin 'scrooloose/nerdtree'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'majutsushi/tagbar'
-" Plugin 'vim-scripts/ZoomWin'
-Plugin 'itchyny/vim-gitbranch'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'
-" Plugin 'wincent/command-t'
+Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'majutsushi/tagbar'
+Plug 'itchyny/vim-gitbranch'
+Plug 'fholgado/minibufexpl.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
 
 " Programming Improvments
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'scrooloose/syntastic'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/neocomplete.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 " Plugin 'Valloric/YouCompleteMe'
 
 " {{{ Rust
 
-Plugin 'wting/rust.vim'
+Plug 'wting/rust.vim'
 
 " }}}
 " {{{ HTML
 
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'gorodinskiy/vim-coloresque'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'gorodinskiy/vim-coloresque'
 
 " }}}
 " {{{ PHP 
 
-Plugin 'vim-php/tagbar-phpctags.vim'
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'joonty/vdebug.git'
+Plug 'vim-php/tagbar-phpctags.vim'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'joonty/vdebug.git'
 
 " }}}
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
 
-call vundle#end()            " required
+call plug#end()
 filetype plugin indent on    " required
 
 " }}}
 " Colors & Statusline {{{
 
+set background=dark
+
 if has("gui_running")
     colorscheme pencil
 else
-    colorscheme numix
+    colorscheme noctu
 end
 
-set background=dark
 
 set cursorline
 set cursorcolumn
@@ -390,6 +392,18 @@ endif
 "      \ 'infolog' : 1,
 "      \ 'mail' : 1
 "      \}
+
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+
+
+" UltiSnip
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+" let g:UltiSnipsEditSplit="vertical"
 
 " PHP Ctags
 let FILETAG=expand(".git/tags")
