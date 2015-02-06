@@ -192,12 +192,12 @@ filetype plugin indent on    " required
 
 set background=dark
 
-if has("gui_running")
+" if has("gui_running")
     colorscheme spacegray
     let g:airline_theme = 'pencil'
-else
-    colorscheme noctu
-end
+" else
+"    colorscheme noctu
+" end
 
 
 set cursorline
