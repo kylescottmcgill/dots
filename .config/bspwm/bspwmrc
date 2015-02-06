@@ -3,7 +3,7 @@
 function DesktopSetup {
     i=1
     for monitor in $(bspc query -M); do
-	bspc monitor $monitor -n "$i" -d {I,II,III,IV}
+	bspc monitor $monitor -n "$i" -d {I,II,III,IV,V}
 	let i++
     done
     NMON=$i
@@ -13,7 +13,7 @@ function DesktopSetup {
 case "$(hostname)" in
     "ouroboros") 
         bspc desktop -n 1
-        bspc monitor -d 1 2 3 4
+        bspc monitor -d 1 2 3 4 5
         ;;
     "turtil") 
 	DesktopSetup 
@@ -23,7 +23,7 @@ case "$(hostname)" in
 	;;
     *) 
         bspc desktop -n 1
-        bspc monitor -d 1 2 3 4
+        bspc monitor -d 1 2 3 4 5
         ;;
 esac
 
