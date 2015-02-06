@@ -73,6 +73,6 @@ bspc rule -a mpv floating=on follow=on
 export BSPWM_SOCKET="/tmp/bspwm-socket"
 export PANEL_FIFO="/tmp/panel-fifo"
 
-~/.bin/workspaces | bar -bp -g $(xrandr --current | grep "*" | uniq | awk '{print $1}' | cut -d 'x' -f1)x18 -u 6 -F "#00000000" -B "#00000000" &
+# ~/.bin/workspaces | bar -bp -g $(xrandr --current | grep "*" | uniq | awk '{print $1}' | cut -d 'x' -f1)x18 -u 6 -F "#00000000" -B "#00000000" &
 # ~/.bin/statsbar | bar -g 1770x26+10+10 -pd -f '-lucy-tewi-*-*-*-*-12-*-*-*-*-*-*-*'  &
 # ~/.bin/statsbar | bar -g 1770x26+1960+10 -pd &
