@@ -1,8 +1,11 @@
 #!/bin/bash
 
 focused="%{U#FF924445+u}----------%{U-}"
-active="%{U#FF1b1b1b+u}----------%{U-}"
-normal="%{U#FFbbbbbb+u}----------%{U-}"
+active="%{U#FFffffff+u}----------%{U-}"
+
+#focused="%{U#FF924445+u}----------%{U-}"
+#active="%{U#FF1b1b1b+u}----------%{U-}"
+#normal="%{U#FFbbbbbb+u}----------%{U-}"
 
 desktops() {
     for desktop in `bspc query -D`
