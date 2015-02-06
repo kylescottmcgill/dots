@@ -29,7 +29,7 @@ URxvt*iso14755_52: false
 URxvt*internalBorder: 10
 URxvt.depth: 0
 URxvt.transparent: false
-URxvt.shading: 5
+!URxvt.shading: 5
 
 URxvt-white.transparent: false
 
