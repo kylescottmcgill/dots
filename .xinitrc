@@ -33,7 +33,7 @@ fi
 
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 compton &
-xsetroot -solid "#1F2833"
+hsetroot -solid "#1F2833"
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
