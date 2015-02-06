@@ -75,19 +75,20 @@ URxvt*keysym.Control-Right:  \033[1;5C
 ! Misc Applications {{{
   
 Xcursor*theme: Simple-and-Soft 
-Xcursor.size:   22
+Xcursor.size: 22
 
-rofi.background: #000000
-rofi.foreground: #505050
-rofi.highlightbg: #000000
-rofi.highlightfg: #c1951a
+rofi.background: #1F2833
+rofi.foreground: #d2d2ca
+rofi.highlightbg: #151B22
+rofi.highlightfg: #924445
 rofi.bordercolor: #333333
-rofi.font: tewi 10
-rofi.padding: 5
+rofi.font: tewi 14
+rofi.padding: 980
 rofi.lines: 5
-rofi.borderwidth: 1
+rofi.borderwidth: 0
 rofi.terminal: urxvtc
-rofi.opacity: 85
+rofi.opacity: 90
+rofi.width: 100
 
 Skype*background: #f6f6f6
 Skype*foreground: #888888
