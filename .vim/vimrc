@@ -147,6 +147,7 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'fholgado/minibufexpl.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
+Plug 'bling/vim-airline'
 
 " Programming Improvments
 Plug 'editorconfig/editorconfig-vim'
@@ -171,7 +172,7 @@ Plug 'gorodinskiy/vim-coloresque', { 'for': ['html', 'css', 'php', 'vim'] }
 
 Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
-Plug 'joonty/vdebug.git', { 'for': 'php' }
+Plug 'joonty/vdebug', { 'for': 'php' }
 
 " }}}
 
