@@ -158,20 +158,20 @@ Plug 'honza/vim-snippets'
 
 " {{{ Rust
 
-Plug 'wting/rust.vim'
+Plug 'wting/rust.vim', { 'for': 'rust' }
 
 " }}}
 " {{{ HTML
 
-Plug 'hail2u/vim-css3-syntax'
-Plug 'gorodinskiy/vim-coloresque'
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'gorodinskiy/vim-coloresque', { 'for': ['html', 'css', 'php', 'vim'] }
 
 " }}}
 " {{{ PHP 
 
-Plug 'vim-php/tagbar-phpctags.vim'
-Plug 'shawncplus/phpcomplete.vim'
-Plug 'joonty/vdebug.git'
+Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
+Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
+Plug 'joonty/vdebug.git', { 'for': 'php' }
 
 " }}}
 
