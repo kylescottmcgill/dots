@@ -150,7 +150,7 @@ Plug 'bling/vim-airline'
 " Programming Improvments
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
-Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neocomplete.vim', { 'for': 'html' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plugin 'Valloric/YouCompleteMe'
@@ -161,7 +161,9 @@ Plug 'wting/rust.vim', { 'for': 'rust' }
 
 " }}}
 " {{{ Golang
-
+Plug 'nsf/gocode', { 'for': 'go' }
+Plug 'Blackrush/vim-gocode', { 'for': 'go' }
+" Plug 'Shougo/echodoc.vim',  { 'for': 'go' }
 " }}}
 " {{{ HTML
 
@@ -397,7 +399,12 @@ endif
 "      \}
 
 " Neocomplete
+let g:neocomplete#data_directory = "~/.cache/vim/tmp/swap"
 let g:neocomplete#enable_at_startup = 1
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 
 " UltiSnip
 let g:UltiSnipsExpandTrigger="<tab>"
