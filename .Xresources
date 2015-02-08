@@ -83,7 +83,7 @@ rofi.highlightbg: #151B22
 rofi.highlightfg: #924445
 rofi.bordercolor: #333333
 rofi.font: tewi 14
-rofi.padding: 980
+rofi.padding: 700
 rofi.lines: 5
 rofi.borderwidth: 0
 rofi.terminal: urxvtc
