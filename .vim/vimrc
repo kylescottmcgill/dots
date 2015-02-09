@@ -150,7 +150,7 @@ Plug 'bling/vim-airline'
 " Programming Improvments
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
-Plug 'Shougo/neocomplete.vim', { 'for': 'html' }
+Plug 'Shougo/neocomplete.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plugin 'Valloric/YouCompleteMe'
