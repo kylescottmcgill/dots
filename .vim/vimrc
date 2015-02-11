@@ -140,6 +140,9 @@ Plug 'fholgado/minibufexpl.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'bling/vim-airline'
+" This has been edited with the NR Plugin
+
+Plug 'chrisbra/NrrwRgn'
 
 " Programming Improvments
 Plug 'editorconfig/editorconfig-vim'
@@ -195,8 +198,8 @@ set background=dark
 "    colorscheme noctu
 " end
 
-set cursorline
-set cursorcolumn
+set nocursorline
+set nocursorcolumn
 
 highlight cursorline                cterm=none ctermfg=none ctermbg=black
 highlight cursorcolumn              cterm=none ctermfg=none ctermbg=black
@@ -206,12 +209,12 @@ highlight colorcolumn               cterm=none ctermfg=none ctermbg=black
 highlight BadWhitespace		    ctermbg=red guibg=red
 
 " MiniBufExpl Colors
-highlight MBENormal               cterm=none ctermfg=none ctermbg=black guifg=#808080 guibg=fg
-highlight MBEChanged              cterm=none ctermfg=none ctermbg=black guifg=#CD5907 guibg=fg
-highlight MBEVisibleNormal        cterm=none ctermfg=none ctermbg=black guifg=#5DC2D6 guibg=fg
-highlight MBEVisibleChanged       cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=fg
-highlight MBEVisibleActiveNormal  cterm=none ctermfg=none ctermbg=black guifg=#A6DB29 guibg=fg
-highlight MBEVisibleActiveChanged cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=fg
+highlight MBENormal               cterm=none ctermfg=none ctermbg=black guifg=#808080 guibg=bg
+highlight MBEChanged              cterm=none ctermfg=none ctermbg=black guifg=#CD5907 guibg=bg
+highlight MBEVisibleNormal        cterm=none ctermfg=none ctermbg=black guifg=#5DC2D6 guibg=bg
+highlight MBEVisibleChanged       cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=bg
+highlight MBEVisibleActiveNormal  cterm=none ctermfg=none ctermbg=black guifg=#A6DB29 guibg=bg
+highlight MBEVisibleActiveChanged cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=bg
 
 set laststatus=2
 
@@ -221,15 +224,15 @@ set laststatus=2
 augroup vimrc
     autocmd!
     autocmd BufReadPre * setlocal foldmethod=marker
-    autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
+    " autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
     autocmd BufReadPre * setlocal foldlevel=0
 augroup END
 
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
-    " autocmd CursorHold * silent! exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
     autocmd FileType mail setlocal spell
+    autocmd FileType php setlocal foldmethod=syntax
     autocmd BufReadPost *
 		\ if line("'\"") > 0 && line("'\"") <= line("$") |
 		\   exe "normal! g`\"" |
@@ -291,6 +294,7 @@ nnoremap <C-w>w :ZoomWin<CR>
 
 map <leader>ss :setlocal spell!<cr>
 map <leader>/ :noh<cr>
+vnoremap <M-/> <Esc>/\%V
 map <HOME> ^
 map <leader>o <C-p>
 
