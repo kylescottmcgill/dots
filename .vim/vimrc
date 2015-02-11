@@ -132,7 +132,8 @@ Plug 'ajh17/Spacegray.vim'
 Plug 'noahfrederick/vim-noctu'
 
 " UI Improvements
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
 Plug 'itchyny/vim-gitbranch'

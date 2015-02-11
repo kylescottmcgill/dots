@@ -1,0 +1,15 @@
+# Teamocil Config for Work
+name: Symphony
+windows:
+  - name: main
+    root: ~/projects/xm-symphony/
+    layout: main-vertical
+    panes:
+      - commands:
+        - mini
+        focus: true
+      - git log
+      - tail -f logs/*
+      - commands:
+        - ls
+        - mini
