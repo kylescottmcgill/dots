@@ -151,6 +151,10 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+" Misc Plugs
+Plug 'avakhov/vim-yaml'
+Plug 'sheerun/vim-polyglot'
+
 " {{{ Rust
 
 Plug 'wting/rust.vim', { 'for': 'rust' }
