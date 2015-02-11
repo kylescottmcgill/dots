@@ -3,8 +3,14 @@ name: Symphony
 windows:
   - name: main
     root: ~/projects/xm-symphony/
-    layout: main-vertical
+    layout: even-horizontal
     panes:
+      - commands:
+        - tmux kill-pane
+      - vim
+      - commands:
+        - tmux split-window
+        - clear
       - commands:
         - mini
         focus: true
