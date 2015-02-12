@@ -10,12 +10,5 @@ windows:
       - vim
       - commands:
         - tmux split-window
-        - clear
-      - commands:
-        - mini
-        focus: true
-      - git log
-      - tail -f logs/*
-      - commands:
-        - ls
-        - mini
+        - tmux split-window
+        - tail -f logs/error_log | source-highlight -f esc -s log

@@ -76,7 +76,7 @@ alias gs='git status -s'
 alias mysql='mysql --auto-rehash'
 alias top='vtop --theme wizard'
 
-alias tm=tm_setup
+alias t=teamocil_setup
 
 stty werase undef
 bind '\C-w:unix-filename-rubout'
@@ -98,6 +98,6 @@ eval $(dircolors -b $HOME/.dircolors)
 
 hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
 
-tm_setup() {
+teamocil_setup() {
     teamocil --here --layout=$HOME/.tmux/$1.yml
 }

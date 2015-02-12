@@ -1,0 +1,11 @@
+name: irc
+windows:
+  - name: irc
+    root: ~/
+    layout: even-horizontal
+    panes:
+      - commands:
+        - tmux kill-pane
+      - weechat
+      - commands:
+        - mini
