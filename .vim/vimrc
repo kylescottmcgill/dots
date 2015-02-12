@@ -105,6 +105,7 @@ if has("gui_running")
 	set guioptions-=r		" scrollbar
 	set guioptions-=L		" Left Scroll bar
 	set guioptions-=e		" disable tabs
+	set guioptions-=m		" remove menu
 	set guifont=tewi		" Source Code Pro Font
 	set linespace=5
 	set guiheadroom=0
@@ -138,19 +139,14 @@ Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
 Plug 'itchyny/vim-gitbranch'
-Plug 'fholgado/minibufexpl.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'bling/vim-airline'
-" This has been edited with the NR Plugin
-
-Plug 'chrisbra/NrrwRgn'
 
 " Programming Improvments
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/neocomplete.vim'
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Misc Plugs
@@ -179,7 +175,6 @@ Plug 'gorodinskiy/vim-coloresque', { 'for': ['html', 'css', 'php', 'vim'] }
 
 Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
-Plug 'joonty/vdebug', { 'for': 'php' }
 
 " }}}
 " {{{ Ruby
@@ -212,15 +207,7 @@ highlight cursorcolumn				cterm=none ctermfg=none ctermbg=black
 highlight statusline				cterm=none ctermfg=white ctermbg=black
 highlight signcolumn				cterm=none ctermfg=grey ctermbg=none
 highlight colorcolumn				cterm=none ctermfg=none ctermbg=black
-highlight BadWhitespace			ctermbg=red guibg=red
-
-" MiniBufExpl Colors
-highlight MBENormal				  cterm=none ctermfg=none ctermbg=black guifg=#808080 guibg=bg
-highlight MBEChanged			  cterm=none ctermfg=none ctermbg=black guifg=#CD5907 guibg=bg
-highlight MBEVisibleNormal		  cterm=none ctermfg=none ctermbg=black guifg=#5DC2D6 guibg=bg
-highlight MBEVisibleChanged		  cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=bg
-highlight MBEVisibleActiveNormal  cterm=none ctermfg=none ctermbg=black guifg=#A6DB29 guibg=bg
-highlight MBEVisibleActiveChanged cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=bg
+highlight BadWhitespace				ctermbg=red guibg=red
 
 set laststatus=2
 
@@ -282,22 +269,22 @@ endfunction
 " }}}
 " Vim Bindings {{{
 
-nmap <leader>p :MBEbp<CR>
-nmap <leader>n :MBEbn<CR>
-nmap <leader>d :MBEbd<CR>
+nmap <leader>p :bp<CR>
+nmap <leader>n :bn<CR>
+nmap <leader>d :bd!<CR>
+nmap <leader>bs :CtrlPMRU<CR>
+nmap <leader>bb :CtrlPBuffer<CR>
+nmap <leader>bm :CtrlPMixed<CR>
 
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>e :edit $MYVIMRC<cr>
 nnoremap <leader>s :source $MYVIMRC<cr>
 
 nnoremap <silent> <space> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
-nnoremap <silent> <C-w>d :MBEbd<CR>
 nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
-
-nnoremap <C-w>w :ZoomWin<CR>
 
 map <leader>ss :setlocal spell!<cr>
 map <leader>/ :noh<cr>
@@ -322,8 +309,13 @@ map <leader>9 :confirm :b9<CR>
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 " NerdTree
-map <C-n> :NERDTreeToggle<CR>i
+" map <C-n> :NERDTreeToggle<CR>i
 
 " Syntastic
 let g:syntastic_always_populate_loc_list=1
@@ -413,32 +405,15 @@ endif
 let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 
 " UltiSnip
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " PHP Ctags
 let FILETAG=expand(".git/tags")
 if filereadable(FILETAG)
 	set tags=.git/tags
 endif
-
-" PHP Vdebug
-let g:vdebug_options={
-		\	 "port" : 9000,
-		\	 "server" : 'localhost',
-		\	 "timeout" : 20,
-		\	 "on_close" : 'detach',
-		\	 "break_on_open" : 1,
-		\	 "ide_key" : '',
-		\	 "debug_window_level" : 0,
-		\	 "debug_file_level" : 0,
-		\	 "debug_file" : "",
-		\	 "watch_window_style" : 'expanded',
-		\	 "marker_default" : '⬦',
-		\	 "marker_closed_tree" : '▸',
-		\	 "marker_open_tree" : '▾'
-		\}
 
 " }}}
 

@@ -1,5 +1,5 @@
 ! XFT Settings {{{
-  
+
 Xft.autohint: true
 Xft.antialias: true
 Xft.hinting: true
@@ -10,7 +10,7 @@ Xft.dpi: 96
 
 ! }}}
 ! URxvt Settings {{{
-  
+
 URxvt*loginShell: false
 URxvt*saveLines: 1000
 URxvt*geometry: 80x20
@@ -58,7 +58,7 @@ URxvt*keysym.Control-Right:  \033[1;5C
 ! }}}
 ! Colors {{{
 
-! URxvt 
+! URxvt
 !#include ".colors/default.xresources"
 
 #include ".colors/lol.xresources"
@@ -73,8 +73,8 @@ URxvt*keysym.Control-Right:  \033[1;5C
 
 ! }}}
 ! Misc Applications {{{
-  
-Xcursor*theme: Simple-and-Soft 
+
+Xcursor*theme: Simple-and-Soft
 Xcursor.size: 22
 
 rofi.background: #1F2833
@@ -95,7 +95,7 @@ Skype*foreground: #888888
 
 ! }}}
 ! Defaults for URxvt {{{
-  
+
 ! URxvt*termName:                       string
 ! URxvt*geometry:                       geometry
 ! URxvt*chdir:                          string
