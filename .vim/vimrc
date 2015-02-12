@@ -115,8 +115,16 @@ end
 
 set lazyredraw			" Don't redraw while executing macros
 
+set omnifunc=syntaxcomplete#Complete
+
+"let g:rubycomplete_classes_in_global = 1
+"let g:rubycomplete_buffer_loading = 1
+
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
 let g:php_folding=2		" Fold PHP bitch
+
+let g:omni_syntax_group_include_php = 'php\w\+,javaScript\w\+,html\w\+'
+let g:omni_syntax_group_include_php = 'phpFunctions,phpMethods'
 
 let no_buffers_menu=1
 
@@ -379,23 +387,6 @@ if executable('ag')
 	let g:ctrlp_user_command='ag -i %s -l --nocolor -g ""'
 endif
 
-" YouCompleteMe
-"let g:ycm_server_keep_logfiles = 1
-"let g:ycm_server_log_level = 'debug'
-"let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-"let g:ycm_filetype_blacklist = {
-"	   \ 'tagbar' : 1,
-"	   \ 'qf' : 1,
-"	   \ 'notes' : 1,
-"	   \ 'markdown' : 1,
-"	   \ 'unite' : 1,
-"	   \ 'text' : 1,
-"	   \ 'vimwiki' : 1,
-"	   \ 'pandoc' : 1,
-"	   \ 'infolog' : 1,
-"	   \ 'mail' : 1
-"	   \}
-
 " Neocomplete
 let g:neocomplete#data_directory = "~/.cache/vim/tmp/swap"
 let g:neocomplete#enable_at_startup = 1
@@ -404,12 +395,7 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 endif
 let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 
-" UltiSnip
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" PHP Ctags
+" Ctags
 let FILETAG=expand(".git/tags")
 if filereadable(FILETAG)
 	set tags=.git/tags

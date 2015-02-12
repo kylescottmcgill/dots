@@ -1,12 +1,19 @@
---tag-relative 
---recurse 
---links=no 
+--tag-relative=no
+--recurse
+--links=no
 
---languages=-javascript 
+--languages=-javascript
 --languages=-sql
 --languages=-html
 
---exclude=.git 
+--exclude=*.min.js
+--exclude=jquery.*.js
+--exclude=jquery-*.js
+--exclude=vendor
+--exclude=*.md
+
+--exclude=.git
+--exclude=log
 
 --langdef=Go
 --langmap=Go:.go
@@ -26,8 +33,25 @@
 --regex-Rust=/^[ \t]*(pub[ \t]+)?impl([ \t\n]*<[^>]*>)?[ \t]+(([a-zA-Z0-9_:]+)[ \t]*(<[^>]*>)?[ \t]+(for)[ \t]+)?([a-zA-Z0-9_]+)/\4 \6 \7/i,impls,trait implementations/
 --regex-Rust=/^[ \t]*macro_rules![ \t]+([a-zA-Z0-9_]+)/\1/d,macros,macro definitions/
 
---PHP-kinds=+cf 
+--PHP-kinds=+cf
 --regex-PHP=/abstract class ([^ ]*)/\1/c/
 --regex-PHP=/interface ([^ ]*)/\1/c/
 --regex-PHP=/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/
 --regex-PHP=/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i
+
+--regex-python=/.*grok.name\('(.[^']*)'.*/\1/v,variables/
+--regex-python=/.*grok.require\('(.[^']*)'.*/\1/v,variables/
+--regex-python=/.*grok.subscribe\((.[^,]*),.*/\1/c,classes/
+
+--langdef=ini
+--langmap=ini:.cfg.ini
+--regex-ini=/^\[(.*)\]/\1/s,section/
+
+--regex-ruby=/(^|;)[ \t]*(class|module)[ \t]+([A-Z][[:alnum:]_]+(::[A-Z][[:alnum:]_]+)+)/\3/c,class,constant/
+--regex-ruby=/(^|[:;])[ \t]*([A-Z][[:alnum:]_]+) *=/\2/c,class,constant/
+--regex-ruby=/(^|;)[ \t]*(has_many|belongs_to|has_one|has_and_belongs_to_many)\(? *:([[:alnum:]_]+)/\3/f,function,association/
+--regex-ruby=/(^|;)[ \t]*(named_)?scope\(? *:([[:alnum:]_]+)/\3/f,function,named_scope/
+--regex-ruby=/(^|;)[ \t]*expose\(? *:([[:alnum:]_]+)/\2/f,function,exposure/
+--regex-ruby=/(^|;)[ \t]*event\(? *:([[:alnum:]_]+)/\2/f,function,aasm_event/
+--regex-ruby=/(^|;)[ \t]*event\(? *:([[:alnum:]_]+)/\2!/f,function,aasm_event/
+--regex-ruby=/(^|;)[ \t]*event\(? *:([[:alnum:]_]+)/\2?/f,function,aasm_event/

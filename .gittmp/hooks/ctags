@@ -5,7 +5,19 @@ set -e
 PATH="/usr/local/bin:$PATH"
 trap "rm -f .git/tags.$$" EXIT
 
+function generate_ctags {
+	git ls-files -cd | ctags -L - -f .git/tags.$$
+}
+
+function generate_ruby {
+	git ls-files -cd | ctags -L - -f .git/tags.$$
+	bundle show --paths | ctags -L - -af .git/tags.$$
+}
+
 # Tell ctags to go through all the git ls-files
-git ls-files -cd | ctags -L - -f .git/tags.$$
+case "$1" in
+	"ruby") generate_ruby ;;
+	*)		generate_ctags ;;
+esac
 
 mv .git/tags.$$ .git/tags
