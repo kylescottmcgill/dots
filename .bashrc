@@ -57,7 +57,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export NIX_REMOTE=daemon
 
 alias sl='ls'
-alias ls='ls --color'
+alias ls='ls --color -h --group-directories-first'
 alias less='less -F -g -i -M -R -S -w -X -z -4'
 alias saidar='saidar -c'
 alias packer='packer --noconfirm --noedit --auronly'
