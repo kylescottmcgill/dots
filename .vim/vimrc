@@ -1,6 +1,6 @@
 " Vim Compat {{{
 
-set nocompatible        " be iMproved
+set nocompatible		" be iMproved
 set shell=/bin/bash
 set ffs=unix,dos,mac
 set t_Co=256
@@ -8,7 +8,7 @@ set showcmd
 set ttyfast
 
 if &term =~ '256color'
-    set t_ut=
+	set t_ut=
 endif
 
 set encoding=utf-8
@@ -18,41 +18,42 @@ set fileencodings=utf-8
 " }}}
 " General {{{
 
-set number              " Show line numbers
+set number				" Show line numbers
 set wrap
-set linebreak           " Break lines at word (requires Wrap lines)
+set linebreak			" Break lines at word (requires Wrap lines)
 set nolist
-set showbreak=+++       " Wrap-broken line prefix
+set showbreak=+++		" Wrap-broken line prefix
 set breakindent		" Break and indent based on current indent
-set textwidth=140       " Line wrap (number of cols)
+set textwidth=140		" Line wrap (number of cols)
 set colorcolumn=0
-set showmatch           " Highlight matching brace
-set errorbells          " Beep or flash screen on errors
-set visualbell          " Use visual bell (no beeping)
+set showmatch			" Highlight matching brace
+set errorbells			" Beep or flash screen on errors
+set visualbell			" Use visual bell (no beeping)
 
 set nobackup
 set noswapfile
 set nowb
 set viminfo+=n~/.vim/viminfo
 
-set hlsearch            " Highlight all search results
-set smartcase           " Enable smart-case search
-set ignorecase          " Always case-insensitive
-set incsearch           " Searches for strings incrementally
-set magic               " Magic shit, regex
+set hlsearch			" Highlight all search results
+set smartcase			" Enable smart-case search
+set ignorecase			" Always case-insensitive
+set incsearch			" Searches for strings incrementally
+set magic				" Magic shit, regex
 
-set autoindent          " Auto-indent new lines
-set cindent             " Use 'C' style program indenting
-set expandtab           " Use spaces instead of tabs
-set shiftwidth=4        " Number of auto-indent spaces
-set smartindent         " Enable smart-indent
-set smarttab            " Enable smart-tabs
-set softtabstop=4       " Number of spaces per Tab
+set autoindent			" Auto-indent new lines
+set cindent				" Use 'C' style program indenting
+set expandtab			" Use spaces instead of tabs
+set tabstop=4
+set shiftwidth=4		" Number of auto-indent spaces
+set smartindent			" Enable smart-indent
+set smarttab			" Enable smart-tabs
+set softtabstop=4		" Number of spaces per Tab
 
-set foldenable          " Enable Folds
-set foldmethod=indent   " Depending on Syntax, fold
-set foldlevelstart=20   " Only fold after 20 levels on open
-set foldnestmax=10      " Nest Folds
+set foldenable			" Enable Folds
+set foldmethod=indent	" Depending on Syntax, fold
+set foldlevelstart=20	" Only fold after 20 levels on open
+set foldnestmax=10		" Nest Folds
 
 set title
 set titleold="Terminal"
@@ -66,10 +67,10 @@ set binary
 " }}}
 " Advanced {{{
 
-set autoread            " Auto Reads a file upon change
-set ruler               " Show row and column ruler information
-set hidden              " Show hidden files in NerdTree and :e
-set autowriteall        " Auto-write all file changes
+set autoread			" Auto Reads a file upon change
+set ruler				" Show row and column ruler information
+set hidden				" Show hidden files in NerdTree and :e
+set autowriteall		" Auto-write all file changes
 set gcr=a:blinkon0
 set modeline
 set modelines=10
@@ -79,8 +80,8 @@ set ttimeoutlen=0
 set synmaxcol=500
 set ttyscroll=20
 
-set undolevels=1000     " Number of undo levels
-set backspace=indent,eol,start  " Backspace behaviour
+set undolevels=1000		" Number of undo levels
+set backspace=indent,eol,start	" Backspace behaviour
 " set mouse=a
 
 set wildchar=<Tab>
@@ -93,28 +94,28 @@ let mapleader=","
 set scrolljump=10
 set scrolloff=10
 set sidescrolloff=12
-set showcmd             " display incomplete commands
+set showcmd				" display incomplete commands
 set cmdheight=1
-set hid                 " Abandoned buffers become hidden
+set hid					" Abandoned buffers become hidden
 set formatoptions=c,q,r,t
 
 if has("gui_running")
-    "set guioptions-=m      " menu bar - for the feels
-    set guioptions-=T       " toolbar
-    set guioptions-=r       " scrollbar
-    set guioptions-=L	    " Left Scroll bar
-    set guioptions-=e	    " disable tabs
-    set guifont=tewi	    " Source Code Pro Font
-    set linespace=5
-    set guiheadroom=0
-    set noerrorbells
-    set novisualbell
+	"set guioptions-=m		" menu bar - for the feels
+	set guioptions-=T		" toolbar
+	set guioptions-=r		" scrollbar
+	set guioptions-=L		" Left Scroll bar
+	set guioptions-=e		" disable tabs
+	set guifont=tewi		" Source Code Pro Font
+	set linespace=5
+	set guiheadroom=0
+	set noerrorbells
+	set novisualbell
 end
 
-set lazyredraw          " Don't redraw while executing macros
+set lazyredraw			" Don't redraw while executing macros
 
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
-let g:php_folding=2     " Fold PHP bitch
+let g:php_folding=2		" Fold PHP bitch
 
 let no_buffers_menu=1
 
@@ -174,7 +175,7 @@ Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['html', 'css', 'php', 'vim'] }
 
 " }}}
-" {{{ PHP 
+" {{{ PHP
 
 Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
@@ -189,7 +190,7 @@ Plug 'joonty/vdebug', { 'for': 'php' }
 set runtimepath+=$GOROOT/misc/vim
 
 call plug#end()
-filetype plugin indent on    " required
+filetype plugin indent on	 " required
 
 " }}}
 " Colors & Statusline {{{
@@ -197,27 +198,27 @@ filetype plugin indent on    " required
 set background=dark
 
 " if has("gui_running")
-    colorscheme spacegray
-    let g:airline_theme = 'pencil'
+	colorscheme spacegray
+	let g:airline_theme = 'pencil'
 " else
-"    colorscheme noctu
+"	 colorscheme noctu
 " end
 
 set nocursorline
 set nocursorcolumn
 
-highlight cursorline                cterm=none ctermfg=none ctermbg=black
-highlight cursorcolumn              cterm=none ctermfg=none ctermbg=black
-highlight statusline                cterm=none ctermfg=white ctermbg=black
-highlight signcolumn                cterm=none ctermfg=grey ctermbg=none
-highlight colorcolumn               cterm=none ctermfg=none ctermbg=black
-highlight BadWhitespace		    ctermbg=red guibg=red
+highlight cursorline				cterm=none ctermfg=none ctermbg=black
+highlight cursorcolumn				cterm=none ctermfg=none ctermbg=black
+highlight statusline				cterm=none ctermfg=white ctermbg=black
+highlight signcolumn				cterm=none ctermfg=grey ctermbg=none
+highlight colorcolumn				cterm=none ctermfg=none ctermbg=black
+highlight BadWhitespace			ctermbg=red guibg=red
 
 " MiniBufExpl Colors
-highlight MBENormal               cterm=none ctermfg=none ctermbg=black guifg=#808080 guibg=bg
-highlight MBEChanged              cterm=none ctermfg=none ctermbg=black guifg=#CD5907 guibg=bg
-highlight MBEVisibleNormal        cterm=none ctermfg=none ctermbg=black guifg=#5DC2D6 guibg=bg
-highlight MBEVisibleChanged       cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=bg
+highlight MBENormal				  cterm=none ctermfg=none ctermbg=black guifg=#808080 guibg=bg
+highlight MBEChanged			  cterm=none ctermfg=none ctermbg=black guifg=#CD5907 guibg=bg
+highlight MBEVisibleNormal		  cterm=none ctermfg=none ctermbg=black guifg=#5DC2D6 guibg=bg
+highlight MBEVisibleChanged		  cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=bg
 highlight MBEVisibleActiveNormal  cterm=none ctermfg=none ctermbg=black guifg=#A6DB29 guibg=bg
 highlight MBEVisibleActiveChanged cterm=none ctermfg=none ctermbg=black guifg=#F1266F guibg=bg
 
@@ -227,23 +228,24 @@ set laststatus=2
 " Autogroups {{{
 
 augroup vimrc
-    autocmd!
-    autocmd BufReadPre * setlocal foldmethod=marker
-    " autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
-    autocmd BufReadPre * setlocal foldlevel=0
+	autocmd!
+	autocmd BufReadPre * setlocal foldmethod=marker
+	" autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
+	autocmd BufReadPre * setlocal foldlevel=0
 augroup END
 
 augroup configgroup
-    autocmd!
-    autocmd VimEnter * highlight clear SignColumn
-    autocmd FileType mail setlocal spell
-    autocmd FileType php setlocal foldmethod=syntax
-    autocmd BufReadPost *
+	autocmd!
+	autocmd VimEnter * highlight clear SignColumn
+	autocmd FileType mail setlocal spell
+	autocmd FileType php setlocal foldmethod=syntax
+	autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+	autocmd BufReadPost *
 		\ if line("'\"") > 0 && line("'\"") <= line("$") |
-		\   exe "normal! g`\"" |
+		\	exe "normal! g`\"" |
 		\ endif
-    " Limit Quick Fix
-    autocmd FileType qf call AdjustWindowHeight(3, 10)
+	" Limit Quick Fix
+	autocmd FileType qf call AdjustWindowHeight(3, 10)
 augroup END
 
 " }}}
@@ -253,28 +255,28 @@ augroup END
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
 " files.
 function! AppendModeline()
-    let l:modeline = printf("vim: set ft=%s ts=%d sw=%d tw=%d fdm=%s foldlevel=%d %set :",
+	let l:modeline = printf("vim: set ft=%s ts=%d sw=%d tw=%d fdm=%s foldlevel=%d %set :",
 		\ &filetype, &tabstop, &shiftwidth, &textwidth, &expandtab, &foldmethod, &fdl ? '' : 'no')
-    let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
-    call append(line("$"), l:modeline)
+	let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+	call append(line("$"), l:modeline)
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
 " strips trailing whitespace at the end of files. this
 " is called on buffer write in the autogroup above.
 function! <SID>StripTrailingWhitespaces()
-    " save last search & cursor position
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    let @/=_s
-    call cursor(l, c)
+	" save last search & cursor position
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+	%s/\s\+$//e
+	let @/=_s
+	call cursor(l, c)
 endfunction
 
 " Limit Quickfix Window Height
 function! AdjustWindowHeight(minheight, maxheight)
-    exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+	exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 
 " }}}
@@ -341,22 +343,22 @@ let g:syntastic_php_phpcs_args="--standard PSR2"
 let g:syntastic_rust_rustc_args = "-L ./target/deps"
 
 " Tagbar
-let g:tagbar_type_go = {  
-	    \ 'ctagstype' : 'go',
-	    \ 'kinds'     : ['p:package', 'i:imports:1', 'c:constants', 'v:variables', 't:types', 'n:interfaces', 'w:fields', 'e:embedded', 'm:methods', 'r:constructor', 'f:functions'],
-	    \ 'sro' : '.',
-	    \ 'kind2scope' : {'t' : 'ctype', 'n' : 'ntype'},
-	    \ 'scope2kind' : {'ctype' : 't', 'ntype' : 'n'},
-	    \ 'ctagsbin'  : 'gotags',
-	    \ 'ctagsargs' : '-sort -silent'
-	    \ }
+let g:tagbar_type_go = {
+		\ 'ctagstype' : 'go',
+		\ 'kinds'	  : ['p:package', 'i:imports:1', 'c:constants', 'v:variables', 't:types', 'n:interfaces', 'w:fields', 'e:embedded', 'm:methods', 'r:constructor', 'f:functions'],
+		\ 'sro' : '.',
+		\ 'kind2scope' : {'t' : 'ctype', 'n' : 'ntype'},
+		\ 'scope2kind' : {'ctype' : 't', 'ntype' : 'n'},
+		\ 'ctagsbin'  : 'gotags',
+		\ 'ctagsargs' : '-sort -silent'
+		\ }
 
 let g:tagbar_phpctags_memory_limit = '1024M'
 let g:tagbar_phpctags_bin="~/.bin/phpctags"
 let g:tagbar_type_php  = {
-	    \ 'ctagstype' : 'php',
-	    \ 'kinds'     : ['i:interfaces', 'c:classes', 'd:constant definitions', 'f:functions', 'j:javascript functions:1']
-	    \ }
+		\ 'ctagstype' : 'php',
+		\ 'kinds'	  : ['i:interfaces', 'c:classes', 'd:constant definitions', 'f:functions', 'j:javascript functions:1']
+		\ }
 
 let g:tagbar_autofocus = 1
 let g:javascript_enable_domhtmlcss = 1
@@ -369,44 +371,44 @@ let g:gitgutter_max_signs = 250 " default value: 500
 " Ctrl-p && Ag
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
-	    \ "dir": '\v[\/]\.(git|hg|svn)$',
-	    \ "file": '\v\.(exe|so|dll|jpeg|png|gif)'
-	    \ }
+		\ "dir": '\v[\/]\.(git|hg|svn)$',
+		\ "file": '\v\.(exe|so|dll|jpeg|png|gif)'
+		\ }
 
 if executable('ag')
-    map <leader>f :Ag<Space>
-    " Use Ag over Grep
-    set grepprg="ag -i --nogroup --nocolor"
+	map <leader>f :Ag<Space>
+	" Use Ag over Grep
+	set grepprg="ag -i --nogroup --nocolor"
 
-    " Use Ag over Ack
-    let g:ackprg='ag -i --nogroup --nocolor --column'
+	" Use Ag over Ack
+	let g:ackprg='ag -i --nogroup --nocolor --column'
 
-    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command='ag -i %s -l --nocolor -g ""'
-endif 
+	" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+	let g:ctrlp_user_command='ag -i %s -l --nocolor -g ""'
+endif
 
 " YouCompleteMe
 "let g:ycm_server_keep_logfiles = 1
 "let g:ycm_server_log_level = 'debug'
 "let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 "let g:ycm_filetype_blacklist = {
-"      \ 'tagbar' : 1,
-"      \ 'qf' : 1,
-"      \ 'notes' : 1,
-"      \ 'markdown' : 1,
-"      \ 'unite' : 1,
-"      \ 'text' : 1,
-"      \ 'vimwiki' : 1,
-"      \ 'pandoc' : 1,
-"      \ 'infolog' : 1,
-"      \ 'mail' : 1
-"      \}
+"	   \ 'tagbar' : 1,
+"	   \ 'qf' : 1,
+"	   \ 'notes' : 1,
+"	   \ 'markdown' : 1,
+"	   \ 'unite' : 1,
+"	   \ 'text' : 1,
+"	   \ 'vimwiki' : 1,
+"	   \ 'pandoc' : 1,
+"	   \ 'infolog' : 1,
+"	   \ 'mail' : 1
+"	   \}
 
 " Neocomplete
 let g:neocomplete#data_directory = "~/.cache/vim/tmp/swap"
 let g:neocomplete#enable_at_startup = 1
 if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
+	let g:neocomplete#sources#omni#input_patterns = {}
 endif
 let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
 
@@ -418,25 +420,25 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " PHP Ctags
 let FILETAG=expand(".git/tags")
 if filereadable(FILETAG)
-    set tags=.git/tags
+	set tags=.git/tags
 endif
 
 " PHP Vdebug
 let g:vdebug_options={
-	    \    "port" : 9000,
-	    \    "server" : 'localhost',
-	    \    "timeout" : 20,
-	    \    "on_close" : 'detach',
-	    \    "break_on_open" : 1,
-	    \    "ide_key" : '',
-	    \    "debug_window_level" : 0,
-	    \    "debug_file_level" : 0,
-	    \    "debug_file" : "",
-	    \    "watch_window_style" : 'expanded',
-	    \    "marker_default" : '⬦',
-	    \    "marker_closed_tree" : '▸',
-	    \    "marker_open_tree" : '▾'
-	    \}
+		\	 "port" : 9000,
+		\	 "server" : 'localhost',
+		\	 "timeout" : 20,
+		\	 "on_close" : 'detach',
+		\	 "break_on_open" : 1,
+		\	 "ide_key" : '',
+		\	 "debug_window_level" : 0,
+		\	 "debug_file_level" : 0,
+		\	 "debug_file" : "",
+		\	 "watch_window_style" : 'expanded',
+		\	 "marker_default" : '⬦',
+		\	 "marker_closed_tree" : '▸',
+		\	 "marker_open_tree" : '▾'
+		\}
 
 " }}}
 
