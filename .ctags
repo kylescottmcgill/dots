@@ -39,14 +39,6 @@
 --regex-PHP=/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/
 --regex-PHP=/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i
 
---regex-python=/.*grok.name\('(.[^']*)'.*/\1/v,variables/
---regex-python=/.*grok.require\('(.[^']*)'.*/\1/v,variables/
---regex-python=/.*grok.subscribe\((.[^,]*),.*/\1/c,classes/
-
---langdef=ini
---langmap=ini:.cfg.ini
---regex-ini=/^\[(.*)\]/\1/s,section/
-
 --regex-ruby=/(^|;)[ \t]*(class|module)[ \t]+([A-Z][[:alnum:]_]+(::[A-Z][[:alnum:]_]+)+)/\3/c,class,constant/
 --regex-ruby=/(^|[:;])[ \t]*([A-Z][[:alnum:]_]+) *=/\2/c,class,constant/
 --regex-ruby=/(^|;)[ \t]*(has_many|belongs_to|has_one|has_and_belongs_to_many)\(? *:([[:alnum:]_]+)/\3/f,function,association/

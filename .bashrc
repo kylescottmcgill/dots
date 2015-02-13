@@ -21,10 +21,6 @@ export IRC_CLIENT='weechat'
 export GOPATH=~/.go
 export GOBIN=$GOPATH/bin
 
-# Python/PIP Path
-test -z "$VIRTUAL_ENV" && source $HOME/.python/bin/activate
-export PIPPATH=~/.local/bin
-
 # PHP Path
 export PHPPATH=~/.composer/vendor/bin
 
@@ -35,10 +31,6 @@ then
     source /usr/share/chruby/auto.sh
 fi
 
-# Node Path
-export NVM_DIR="/home/kyle/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
@@ -46,13 +38,12 @@ source $BASH_IT/bash_it.sh
 source $HOME/.bash_private
 
 # Custom Shiz
-export PATH="$HOME/.bin:$PHPPATH:$PIPPATH:$GOBIN:$PATH"
+export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$PATH"
 
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
 export BROWSER=firefox-nightly
-#export PULSE_LATENCY_MSEC=60
 export XDG_CONFIG_HOME="$HOME/.config"
 export NIX_REMOTE=daemon
 
@@ -74,7 +65,6 @@ alias gits='git status -s'
 alias gs='git status -s'
 
 alias mysql='mysql --auto-rehash'
-alias top='vtop --theme wizard'
 
 alias t=teamocil_setup
 

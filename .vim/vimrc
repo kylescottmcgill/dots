@@ -117,9 +117,6 @@ set lazyredraw			" Don't redraw while executing macros
 
 set omnifunc=syntaxcomplete#Complete
 
-"let g:rubycomplete_classes_in_global = 1
-"let g:rubycomplete_buffer_loading = 1
-
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
 let g:php_folding=2		" Fold PHP bitch
 
@@ -234,6 +231,11 @@ augroup configgroup
 	autocmd VimEnter * highlight clear SignColumn
 	autocmd FileType mail setlocal spell
 	autocmd FileType php setlocal foldmethod=syntax
+
+	autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+    autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+    autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
 	autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 	autocmd BufReadPost *
 		\ if line("'\"") > 0 && line("'\"") <= line("$") |
