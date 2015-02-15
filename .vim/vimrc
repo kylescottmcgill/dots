@@ -82,7 +82,6 @@ set ttyscroll=20
 
 set undolevels=1000		" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
-" set mouse=a
 
 set wildchar=<Tab>
 set wildmode=longest,list
@@ -183,6 +182,9 @@ Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 
 " }}}
 " {{{ Ruby
+
+" }}}
+" {{{ Haskell
 
 " }}}
 
@@ -297,21 +299,18 @@ nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
+nnoremap <silent> <C-PageUp> :bp<cr>
+nnoremap <silent> <C-PageDown> :bn<cr>
+nnoremap <silent> <C-Delete> :bd!<cr>
+
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
+
 map <leader>ss :setlocal spell!<cr>
 map <leader>/ :noh<cr>
 vnoremap <M-/> <Esc>/\%V
 map <HOME> ^
 map <leader>o <C-p>
-
-map <leader>1 :confirm :b1<CR>
-map <leader>2 :confirm :b2<CR>
-map <leader>3 :confirm :b3<CR>
-map <leader>4 :confirm :b4<CR>
-map <leader>5 :confirm :b5<CR>
-map <leader>6 :confirm :b6<CR>
-map <leader>7 :confirm :b7<CR>
-map <leader>8 :confirm :b8<CR>
-map <leader>9 :confirm :b9<CR>
 
 " }}}
 " Plugin bindings and functionality {{{
