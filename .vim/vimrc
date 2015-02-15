@@ -260,7 +260,7 @@ function! AppendModeline()
 	let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
 	call append(line("$"), l:modeline)
 endfunction
-nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+nnoremap <silent> <Leader>ml :call AppendModeline()<cr>
 
 " strips trailing whitespace at the end of files. this
 " is called on buffer write in the autogroup above.
@@ -282,12 +282,12 @@ endfunction
 " }}}
 " Vim Bindings {{{
 
-nmap <leader>p :bp<CR>
-nmap <leader>n :bn<CR>
-nmap <leader>d :bd!<CR>
-nmap <leader>bs :CtrlPMRU<CR>
-nmap <leader>bb :CtrlPBuffer<CR>
-nmap <leader>bm :CtrlPMixed<CR>
+nmap <leader>p :bp<cr>
+nmap <leader>n :bn<cr>
+nmap <leader>d :bd!<cr>
+nmap <leader>bs :CtrlPMRU<cr>
+nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bm :CtrlPMixed<cr>
 
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>e :edit $MYVIMRC<cr>
@@ -329,7 +329,7 @@ let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 
 " NerdTree
-" map <C-n> :NERDTreeToggle<CR>i
+" map <C-n> :NERDTreeToggle<cr>i
 
 " Syntastic
 let g:syntastic_always_populate_loc_list=1
@@ -369,7 +369,7 @@ let g:tagbar_type_php  = {
 let g:tagbar_autofocus = 1
 let g:javascript_enable_domhtmlcss = 1
 
-nmap <F8> :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<cr>
 
 " vim-gitgutter
 let g:gitgutter_max_signs = 250 " default value: 500
