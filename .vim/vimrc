@@ -225,7 +225,7 @@ augroup configgroup
 	autocmd!
 	autocmd VimEnter * highlight clear SignColumn
 	autocmd FileType mail setlocal spell
-	autocmd FileType php setlocal foldmethod=syntax
+	autocmd FileType php,ruby,go,rust setlocal foldmethod=syntax
 	autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 	autocmd BufReadPost *
 		\ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -243,7 +243,7 @@ augroup END
 " files.
 function! AppendModeline()
 	let l:modeline = printf("vim: set ft=%s ts=%d sw=%d tw=%d fdm=%s foldlevel=%d %set :",
-		\ &filetype, &tabstop, &shiftwidth, &textwidth, &expandtab, &foldmethod, &fdl ? '' : 'no')
+		\ &filetype, &tabstop, &shiftwidth, &textwidth, &foldmethod, &fdl, &expandtab ? '' : 'no')
 	let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
 	call append(line("$"), l:modeline)
 endfunction
@@ -313,6 +313,10 @@ let g:airline_right_sep=''
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+let g:airline#extensions#whitespace#enabled = 1
+
+let g:airline#extensions#syntastic#enabled = 1
 
 " NerdTree
 " map <C-n> :NERDTreeToggle<CR>i
@@ -397,12 +401,31 @@ endif
 "	   \}
 
 " Neocomplete
-let g:neocomplete#data_directory = "~/.cache/vim/tmp/swap"
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+let g:neocomplete#data_directory = "~/.cache/vim/tmp/swap"
+
 if !exists('g:neocomplete#sources#omni#input_patterns')
 	let g:neocomplete#sources#omni#input_patterns = {}
 endif
+
 let g:neocomplete#sources#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 
 " UltiSnip
 " let g:UltiSnipsExpandTrigger="<tab>"
@@ -417,4 +440,4 @@ endif
 
 " }}}
 
-"vim: set ft=vim ts=8 sw=4 tw=140 fdm=marker foldlevel=0 noet :
+"vim: set ft=vim ts=4 sw=4 tw=78 fdm=marker foldlevel=0 noet :
