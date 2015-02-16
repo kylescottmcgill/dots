@@ -177,7 +177,7 @@ Plug 'gorodinskiy/vim-coloresque', { 'for': ['html', 'css', 'php', 'vim'] }
 " }}}
 " {{{ PHP
 
-Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
+" Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 
 " }}}
