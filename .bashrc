@@ -43,7 +43,7 @@ export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$PATH"
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
-export BROWSER=firefox-nightly
+export BROWSER=chromium
 export XDG_CONFIG_HOME="$HOME/.config"
 export NIX_REMOTE=daemon
 
