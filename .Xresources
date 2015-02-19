@@ -36,7 +36,7 @@ URxvt-white.transparent: false
 URxvt-white*internalBorder: 20
 
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,matcher
-URxvt.url-select.launcher:  firefox-nightly
+URxvt.url-select.launcher:  chromium
 URxvt.url-select.underline: true
 URxvt.matcher.button:       1
 URxvt.keysym.M-u:           perl:url-select:select_next

@@ -51,7 +51,7 @@ set smarttab			" Enable smart-tabs
 set softtabstop=4		" Number of spaces per Tab
 
 set foldenable			" Enable Folds
-set foldmethod=indent	" Depending on Syntax, fold
+set foldmethod=syntax	" Depending on Syntax, fold
 set foldlevel=0
 set foldlevelstart=20	" Only fold after 20 levels on open
 set foldnestmax=10		" Nest Folds
@@ -137,6 +137,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'reedes/vim-colors-pencil'
 Plug 'ajh17/Spacegray.vim'
 Plug 'noahfrederick/vim-noctu'
+" Plug 'cdmedia/itg_flat_vim'
+Plug 'kylescottmcgill/itg_flat_vim'
 
 " UI Improvements
 " Plug 'scrooloose/nerdtree'
@@ -201,7 +203,8 @@ filetype plugin indent on	 " required
 set background=dark
 
 " if has("gui_running")
-	colorscheme spacegray
+	" colorscheme spacegray
+	colorscheme itg_flat
 	let g:airline_theme = 'pencil'
 " else
 "	 colorscheme noctu
@@ -216,6 +219,7 @@ highlight statusline				cterm=none ctermfg=white ctermbg=black
 highlight signcolumn				cterm=none ctermfg=grey ctermbg=none
 highlight colorcolumn				cterm=none ctermfg=none ctermbg=black
 highlight BadWhitespace				ctermbg=red guibg=red
+highlight Pmenu						cterm=none ctermfg=white ctermbg=black
 
 set laststatus=2
 
@@ -224,20 +228,19 @@ set laststatus=2
 
 augroup vimrc
 	autocmd!
-	" autocmd BufReadPre * setlocal foldmethod=marker
-	" autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
-	" autocmd BufReadPre * setlocal foldlevel=0
+	autocmd BufReadPre * setlocal foldmethod=marker
+	autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
+	autocmd BufReadPre * setlocal foldlevel=0
 augroup END
 
 augroup configgroup
 	autocmd!
 	autocmd VimEnter * highlight clear SignColumn
-	autocmd FileType mail setlocal spell
 
+	autocmd FileType mail setlocal spell
 	autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
     autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
     autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-
 	autocmd FileType php,ruby,go,rust setlocal foldmethod=syntax
 
 	autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
