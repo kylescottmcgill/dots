@@ -137,8 +137,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'reedes/vim-colors-pencil'
 Plug 'ajh17/Spacegray.vim'
 Plug 'noahfrederick/vim-noctu'
-" Plug 'cdmedia/itg_flat_vim'
-Plug 'kylescottmcgill/itg_flat_vim'
+Plug 'cdmedia/itg_flat_vim'
 
 " UI Improvements
 " Plug 'scrooloose/nerdtree'
@@ -219,7 +218,6 @@ highlight statusline				cterm=none ctermfg=white ctermbg=black
 highlight signcolumn				cterm=none ctermfg=grey ctermbg=none
 highlight colorcolumn				cterm=none ctermfg=none ctermbg=black
 highlight BadWhitespace				ctermbg=red guibg=red
-highlight Pmenu						cterm=none ctermfg=white ctermbg=black
 
 set laststatus=2
 
