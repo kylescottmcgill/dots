@@ -137,8 +137,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'reedes/vim-colors-pencil'
 Plug 'ajh17/Spacegray.vim'
 Plug 'noahfrederick/vim-noctu'
-" Plug 'cdmedia/itg_flat_vim'
-Plug 'kylescottmcgill/itg_flat_vim'
+Plug 'cdmedia/itg_flat_vim'
 
 " UI Improvements
 " Plug 'scrooloose/nerdtree'
