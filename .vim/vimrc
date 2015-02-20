@@ -219,7 +219,6 @@ highlight statusline				cterm=none ctermfg=white ctermbg=black
 highlight signcolumn				cterm=none ctermfg=grey ctermbg=none
 highlight colorcolumn				cterm=none ctermfg=none ctermbg=black
 highlight BadWhitespace				ctermbg=red guibg=red
-highlight Pmenu						cterm=none ctermfg=white ctermbg=black
 
 set laststatus=2
 
