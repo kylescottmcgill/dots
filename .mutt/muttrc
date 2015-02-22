@@ -82,11 +82,6 @@ mailboxes +Kyle/INBOX
 mailboxes +Kyle/INBOX.Completed
 mailboxes +Kyle/INBOX.Sent
 
-mailboxes +Kyle/INBOX.designerwebsites
-
-# RSS Feeds/Mailman
-mailboxes +Kyle/INBOX.nyaa
-
 # boxes
 #mailboxes +XM/inbox
 #mailboxes +XM/completed
