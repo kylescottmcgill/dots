@@ -11,17 +11,17 @@ function DesktopSetup {
 }
 
 case "$(hostname)" in
-    "ouroboros") 
+    "ouroboros")
         bspc desktop -n 1
         bspc monitor -d www dev im games misc
         ;;
-    "turtil") 
-	DesktopSetup 
+    "turtil")
+	DesktopSetup
         ;;
-    "xm-dev") 
+    "xm-dev")
 	DesktopSetup
 	;;
-    *) 
+    *)
         bspc desktop -n 1
         bspc monitor -d 1 2 3 4 5
         ;;
@@ -33,7 +33,7 @@ bspc config window_gap 10
 bspc config top_padding 0
 bspc config bottom_padding 1
 bspc config right_padding 0
-bspc config left_padding 0 
+bspc config left_padding 0
 
 # Visual options
 bspc config split_ratio 0.50
@@ -41,7 +41,7 @@ bspc config borderless_monocle true
 bspc config gapless_monocle true
 bspc config focus_follows_pointer true
 bspc config pointer_follows_focus false
-bspc config pointer_follows_monitor true
+bspc config pointer_follows_monitor false
 bspc config auto_alternate false
 bspc config auto_cancel true
 bspc config focus_follows_focus false
