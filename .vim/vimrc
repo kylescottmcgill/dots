@@ -140,7 +140,7 @@ Plug 'noahfrederick/vim-noctu'
 Plug 'cdmedia/itg_flat_vim'
 
 " UI Improvements
-" Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
@@ -331,7 +331,7 @@ let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 
 " NerdTree
-" map <C-n> :NERDTreeToggle<cr>i
+map <C-n> :NERDTreeToggle<cr>i
 
 " Syntastic
 let g:syntastic_always_populate_loc_list=1
