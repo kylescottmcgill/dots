@@ -117,6 +117,8 @@ set lazyredraw			" Don't redraw while executing macros
 
 set omnifunc=syntaxcomplete#Complete
 
+set tags=.git/tags;,./tags;,~/.vimtags
+
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
 let g:php_folding=2		" Fold PHP bitch
 
@@ -154,6 +156,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/neocomplete.vim'
 Plug 'honza/vim-snippets'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 
 " Misc Plugs
 Plug 'avakhov/vim-yaml'
@@ -179,7 +183,7 @@ Plug 'gorodinskiy/vim-coloresque', { 'for': ['html', 'css', 'php', 'vim'] }
 " }}}
 " {{{ PHP
 
-" Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
+Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 
 " }}}
@@ -325,9 +329,8 @@ let g:airline_right_sep=''
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
-
 let g:airline#extensions#whitespace#enabled = 1
-
+let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#syntastic#enabled = 1
 
 " NerdTree
@@ -335,10 +338,10 @@ map <C-n> :NERDTreeToggle<cr>i
 
 " Syntastic
 let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = "▲"
+let g:syntastic_style_error_symbol = '✘'
+let g:syntastic_style_warning_symbol = "▲"
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_check_on_open=1
@@ -427,12 +430,16 @@ let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 " let g:UltiSnipsExpandTrigger="<tab>"
 " let g:UltiSnipsJumpForwardTrigger="<c-b>"
 " let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"
 
-" PHP Ctags
-let FILETAG=expand(".git/tags")
-if filereadable(FILETAG)
-	set tags=.git/tags
-endif
+" Easy Tags
+let g:easytags_events = ['BufReadPost', 'BufWritePost']
+let g:easytags_async = 1
+let g:easytags_dynamic_files = 2
+let g:easytags_resolve_links = 1
+let g:easytags_suppress_ctags_warning = 1
+let g:easytags_python_enabled = 1
+
 
 " }}}
 
