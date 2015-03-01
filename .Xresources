@@ -18,7 +18,6 @@ URxvt*termName: rxvt-256color
 
 !URxvt*font: xft:terminus:pixelsize=12:antialias=true:hinting=true
 !URxvt*boldfont: xft:terminus:bold:pixelsize=12:antialias=true:hinting=true
-!
 URxvt*font: -*-tewi-medium-*-*--11-*-*-*-*-*-*-1
 URxvt*boldFont: -*-tewi-medium-*-*--11-*-*-*-*-*-*-1
 

@@ -1,7 +1,7 @@
 " Vim Compat {{{
 
 set nocompatible		" be iMproved
-set shell=/bin/bash
+"set shell=/bin/bash
 set ffs=unix,dos,mac
 set t_Co=256
 set showcmd
