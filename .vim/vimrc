@@ -158,6 +158,7 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'honza/vim-snippets'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
+Plug 'godlygeek/tabular'
 
 " Misc Plugs
 Plug 'avakhov/vim-yaml'
