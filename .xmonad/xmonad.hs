@@ -157,8 +157,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 	-- ((modm .|. shiftMask , xK_h), sendMessage $ ShrinkFrom L),
 	-- ((modm .|. shiftMask , xK_j), sendMessage $ ShrinkFrom D),
 	-- ((modm .|. shiftMask , xK_k), sendMessage $ ShrinkFrom U),
-	((modm, xK_r), sendMessage Rotate),
-	((modm, xK_s), sendMessage Swap)
+	((modm, xK_Left), sendMessage Rotate),
+	((modm, xK_Up), sendMessage Swap),
+	((modm, xK_Right), sendMessage Rotate),
+	((modm, xK_Down), sendMessage Swap)
 	]
 	++
 
