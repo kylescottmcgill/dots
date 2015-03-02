@@ -21,6 +21,7 @@ import XMonad.Layout.Circle
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.Spacing
 import XMonad.Layout.BinarySpacePartition
+-- import XMonad.Layout.MouseResizableTile
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
