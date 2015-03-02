@@ -120,7 +120,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 	((modm .|. shiftMask, xK_s), sendMessage MirrorExpand),
 
 -- Push window back into tiling
-	((modm, xK_t	   ), withFocused $ windows . W.sink),
+	((modm, xK_t), withFocused $ windows . W.sink),
 
 -- Increment the number of windows in the master area
 	((modm, xK_comma ), sendMessage (IncMasterN 1)),
@@ -146,14 +146,17 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 	((0, xF86XK_AudioLowerVolume), spawn "amixer -c 0 set Master 5dB-"),
 	((0, xF86XK_AudioRaiseVolume), spawn "amixer -c 0 set Master 5dB+"),
 	((modm .|. controlMask, xK_Left), sendMessage $ MoveSplit L),
-	--((modm, xK_l), sendMessage $ ExpandTowards R),
-	--((modm, xK_h), sendMessage $ ExpandTowards L),
-	--((modm, xK_j), sendMessage $ ExpandTowards D),
-	--((modm, xK_k), sendMessage $ ExpandTowards U),
-	--((modm .|. shiftMask , xK_l), sendMessage $ ShrinkFrom R),
-	--((modm .|. shiftMask , xK_h), sendMessage $ ShrinkFrom L),
-	--((modm .|. shiftMask , xK_j), sendMessage $ ShrinkFrom D),
-	--((modm .|. shiftMask , xK_k), sendMessage $ ShrinkFrom U),
+	((modm .|. controlMask, xK_Right), sendMessage $ MoveSplit R),
+	((modm .|. controlMask, xK_Up), sendMessage $ MoveSplit U),
+	((modm .|. controlMask, xK_Down), sendMessage $ MoveSplit D),
+	-- ((modm, xK_l), sendMessage $ ExpandTowards R),
+	-- ((modm, xK_h), sendMessage $ ExpandTowards L),
+	-- ((modm, xK_j), sendMessage $ ExpandTowards D),
+	-- ((modm, xK_k), sendMessage $ ExpandTowards U),
+	-- ((modm .|. shiftMask , xK_l), sendMessage $ ShrinkFrom R),
+	-- ((modm .|. shiftMask , xK_h), sendMessage $ ShrinkFrom L),
+	-- ((modm .|. shiftMask , xK_j), sendMessage $ ShrinkFrom D),
+	-- ((modm .|. shiftMask , xK_k), sendMessage $ ShrinkFrom U),
 	((modm, xK_r), sendMessage Rotate),
 	((modm, xK_s), sendMessage Swap)
 	]
@@ -177,7 +180,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 --
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
--- mod-button1, Set the window to floating mode and move by dragging
+	-- mod-button1, Set the window to floating mode and move by dragging
 	[ ((modm, button1), (\w -> focus w >> mouseMoveWindow w >> windows W.shiftMaster))
 
 	-- mod-button2, Raise the window to the top of the stack
@@ -269,25 +272,25 @@ myStartupHook = return ()
 myBar = ""
 --
 myPP = xmobarPP {
-ppCurrent = xmobarColor "#f9f7f3" "" . wrap "<" ">",
-ppUrgent  = xmobarColor "#da4939" "",
-ppTitle   = xmobarColor "#6d9cbe" "" . shorten 100,
-ppSep	  = xmobarColor "#cc7833" "" " ~ "
+	ppCurrent = xmobarColor "#f9f7f3" "" . wrap "<" ">",
+	ppUrgent  = xmobarColor "#da4939" "",
+	ppTitle   = xmobarColor "#6d9cbe" "" . shorten 100,
+	ppSep	  = xmobarColor "#cc7833" "" " ~ "
 }
 --
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_x)
 
 mySP = defaultXPConfig {
-bgColor           = "#2b2b2b",
-fgColor           = "#f9f7f3",
-bgHLight          = "#da4939",
-fgHLight          = "#f4f1ed",
-borderColor       = "#6d9cbe",
-font              = "xft:DejaVu Sans Mono:pixelsize = 11",
-promptBorderWidth = 1,
-position          = Bottom,
-height            = 20,
-historySize       = 100
+	bgColor           = "#2b2b2b",
+	fgColor           = "#f9f7f3",
+	bgHLight          = "#da4939",
+	fgHLight          = "#f4f1ed",
+	borderColor       = "#6d9cbe",
+	font              = "-*-tewi-medium-*-*--11-*-*-*-*-*-*-1",
+	promptBorderWidth = 1,
+	position          = Bottom,
+	height            = 20,
+	historySize       = 100
 }
 
 ------------------------------------------------------------------------
@@ -304,21 +307,21 @@ main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
 -- No need to modify this.
 --
 defaults = withUrgencyHook NoUrgencyHook defaultConfig {
-terminal		   = myTerminal,
-focusFollowsMouse  = myFocusFollowsMouse,
-clickJustFocuses   = myClickJustFocuses,
-borderWidth		   = myBorderWidth,
-modMask			   = myModMask,
-workspaces		   = myWorkspaces,
-normalBorderColor  = myNormalBorderColor,
-focusedBorderColor = myFocusedBorderColor,
+	terminal		   = myTerminal,
+	focusFollowsMouse  = myFocusFollowsMouse,
+	clickJustFocuses   = myClickJustFocuses,
+	borderWidth		   = myBorderWidth,
+	modMask			   = myModMask,
+	workspaces		   = myWorkspaces,
+	normalBorderColor  = myNormalBorderColor,
+	focusedBorderColor = myFocusedBorderColor,
 
-keys			   = myKeys,
-mouseBindings	   = myMouseBindings,
+	keys			   = myKeys,
+	mouseBindings	   = myMouseBindings,
 
-layoutHook		   = myLayout,
-manageHook		   = myManageHook,
-handleEventHook    = myEventHook,
-logHook			   = myLogHook,
-startupHook		   = myStartupHook
+	layoutHook		   = myLayout,
+	manageHook		   = myManageHook,
+	handleEventHook    = myEventHook,
+	logHook			   = myLogHook,
+	startupHook		   = myStartupHook
 }
