@@ -61,7 +61,7 @@ myModMask = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces = ["term", "web", "dev"] ++ map show [4..9]
+myWorkspaces = ["term", "web", "dev", "misc", "games"] ++ map show [6..9]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -116,6 +116,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 -- Layout
 	((modm, xK_a), sendMessage Shrink),
 	((modm, xK_s), sendMessage Expand),
+
 	((modm .|. shiftMask, xK_a), sendMessage MirrorShrink),
 	((modm .|. shiftMask, xK_s), sendMessage MirrorExpand),
 
