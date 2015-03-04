@@ -179,7 +179,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " {{{ HTML
 
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'gorodinskiy/vim-coloresque', { 'for': ['html', 'css', 'php', 'vim'] }
+Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'vim'] }
 
 " }}}
 " {{{ PHP
