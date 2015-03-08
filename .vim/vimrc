@@ -51,7 +51,7 @@ set smarttab			" Enable smart-tabs
 set softtabstop=4		" Number of spaces per Tab
 
 set foldenable			" Enable Folds
-set foldmethod=syntax	" Depending on Syntax, fold
+set foldmethod=marker	" Depending on Syntax, fold
 set foldlevel=0
 set foldlevelstart=20	" Only fold after 20 levels on open
 set foldnestmax=10		" Nest Folds
@@ -217,11 +217,11 @@ set background=dark
 set nocursorline
 set nocursorcolumn
 
-highlight cursorline				cterm=none ctermfg=none ctermbg=black
-highlight cursorcolumn				cterm=none ctermfg=none ctermbg=black
-highlight statusline				cterm=none ctermfg=white ctermbg=black
-highlight signcolumn				cterm=none ctermfg=grey ctermbg=none
-highlight colorcolumn				cterm=none ctermfg=none ctermbg=black
+highlight cursorline				ctermfg=none ctermbg=black
+highlight cursorcolumn				ctermfg=none ctermbg=black
+highlight statusline				ctermfg=white ctermbg=black
+highlight signcolumn				ctermfg=grey ctermbg=none
+highlight colorcolumn				ctermfg=none ctermbg=black
 highlight BadWhitespace				ctermbg=red guibg=red
 
 set laststatus=2
@@ -229,12 +229,12 @@ set laststatus=2
 " }}}
 " Autogroups {{{
 
-augroup vimrc
-	autocmd!
-	autocmd BufReadPre * setlocal foldmethod=marker
-	autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
-	autocmd BufReadPre * setlocal foldlevel=0
-augroup END
+"augroup vimrc
+"	autocmd!
+"	autocmd BufReadPre * setlocal foldmethod=marker
+"	autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
+"	autocmd BufReadPre * setlocal foldlevel=0
+"augroup END
 
 augroup configgroup
 	autocmd!
@@ -244,7 +244,7 @@ augroup configgroup
 	autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
     autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
     autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-	autocmd FileType php,ruby,go,rust setlocal foldmethod=syntax
+	autocmd FileType php,ruby,go,rust,haskell setlocal foldmethod=syntax
 
 	autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 	autocmd BufReadPost *
