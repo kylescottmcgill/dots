@@ -45,7 +45,6 @@ export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
 export BROWSER=chromium
 export XDG_CONFIG_HOME="$HOME/.config"
-export NIX_REMOTE=daemon
 
 alias sl='ls'
 alias ls='ls --color -h --group-directories-first'
@@ -67,8 +66,6 @@ alias gs='git status -s'
 
 alias mysql='mysql --auto-rehash'
 
-alias t=teamocil_setup
-
 stty werase undef
 bind '\C-w:unix-filename-rubout'
 bind Space:magic-space
@@ -89,6 +86,3 @@ eval $(dircolors -b $HOME/.dircolors)
 
 hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
 
-teamocil_setup() {
-    teamocil --here --layout=$HOME/.tmux/$1.yml
-}
