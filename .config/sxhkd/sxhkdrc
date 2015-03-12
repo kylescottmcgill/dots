@@ -130,14 +130,14 @@ XF86AudioMute
 
 # }}}
 # Applications {{{
-super + Return 
+super + Return
     urxvtc
 
-super + shift + Return 
+super + shift + Return
     gvim
 
 super + b
-    ~/.bin/fire
+    ~/.bin/chromium
 
 super + grave
     rofi -show run
