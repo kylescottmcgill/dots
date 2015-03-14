@@ -1,2 +1,0 @@
-#!/bin/bash
-exec tmux -f ~/.tmux/white.conf

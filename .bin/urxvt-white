@@ -1,3 +1,0 @@
-#!/bin/bash
-export COLORSCHEME=minimal
-exec urxvtc -name "URxvt-white"

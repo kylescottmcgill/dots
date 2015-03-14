@@ -1,3 +1,0 @@
-#!/bin/sh
-
-echo "$(date) : $1 - Download Complete" | msmtp -a Kyle email@kylescottmcgill.com
