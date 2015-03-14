@@ -1,5 +1,5 @@
 [submodule ".bash"]
-	path = .bash
+	path = .config/bash-it
 	url = git@github.com:kylescottmcgill/bash-it.git
 [submodule "/home/kyle/.config/dircolors"]
 	path = /home/kyle/.config/dircolors
