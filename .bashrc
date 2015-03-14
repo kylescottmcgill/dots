@@ -82,7 +82,9 @@ man() {
         man "$@"
 }
 
-eval $(dircolors -b $HOME/.dircolors)
+eval $(dircolors -b $HOME/.colors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_CUSTOM#g | sed -e s#^export\ LS_COLORS##g)
+eval $(dircolors -b $HOME/.config/dircolors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_BASE#g | sed -e s#^export\ LS_COLORS##g)
+export LS_COLORS="$LS_COLORS_BASE$LS_COLORS_CUSTOM"
 
 hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
 
