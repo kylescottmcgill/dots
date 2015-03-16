@@ -107,7 +107,7 @@ if has("gui_running")
 	set guioptions-=e		" disable tabs
 	set guioptions-=m		" remove menu
 	set guifont=tewi		" Source Code Pro Font
-	set linespace=5
+	set linespace=6
 	set guiheadroom=0
 	set noerrorbells
 	set novisualbell
@@ -220,7 +220,7 @@ set nocursorcolumn
 highlight cursorline				ctermfg=none ctermbg=black
 highlight cursorcolumn				ctermfg=none ctermbg=black
 highlight statusline				ctermfg=white ctermbg=black
-highlight signcolumn				ctermfg=grey ctermbg=none
+highlight signcolumn				ctermfg=grey ctermbg=none guibg=#282A31
 highlight colorcolumn				ctermfg=none ctermbg=black
 highlight BadWhitespace				ctermbg=red guibg=red
 

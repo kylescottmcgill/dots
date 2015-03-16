@@ -1,8 +1,8 @@
 gtk-theme-name = "Numix"
 gtk-icon-theme-name = "Numix"
-gtk-font-name = "Terminus 8"
+gtk-font-name = "Tewi 8"
 
 style "vimfix" {
-      bg[NORMAL] = "#080808" # this matches my gvim theme 'Normal' bg color.
+      bg[NORMAL] = "#282A31" # this matches my gvim theme 'Normal' bg color.
 }
 widget "vim-main-window.*GtkForm" style "vimfix"
