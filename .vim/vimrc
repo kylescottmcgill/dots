@@ -145,6 +145,7 @@ Plug 'cdmedia/itg_flat_vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
+Plug 'bling/vim-bufferline'
 Plug 'majutsushi/tagbar'
 Plug 'itchyny/vim-gitbranch'
 Plug 'kien/ctrlp.vim'
@@ -194,6 +195,11 @@ Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 " {{{ Haskell
 
 " }}}
+" {{{ Elixir
+
+Plug 'mattreduce/vim-mix', { 'for': 'elixir' }
+
+" }}}
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
@@ -223,6 +229,10 @@ highlight statusline				ctermfg=white ctermbg=black
 highlight signcolumn				ctermfg=grey ctermbg=none guibg=#282A31
 highlight colorcolumn				ctermfg=none ctermbg=black
 highlight BadWhitespace				ctermbg=red guibg=red
+highlight GitGutterAdd				guibg=green guifg=white
+highlight GitGutterChange			guibg=yellow guifg=white
+highlight GitGutterDelete			guibg=red guifg=white
+highlight GitGutterChangeDelete		guibg=orange guifg=white
 
 set laststatus=2
 
@@ -327,12 +337,17 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 
 " Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
+" let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#bufferline#enabled = 1
+
+let g:bufferline_active_buffer_left = ''
+let g:bufferline_active_buffer_right = ''
+let g:bufferline_show_bufnr = 0
 
 " NerdTree
 map <C-n> :NERDTreeToggle<cr>i
@@ -378,7 +393,12 @@ let g:javascript_enable_domhtmlcss = 1
 nmap <F8> :TagbarToggle<cr>
 
 " vim-gitgutter
+let g:gitgutter_realtime = 0
 let g:gitgutter_max_signs = 250 " default value: 500
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '~'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_modified_removed = '--'
 
 " Ctrl-p && Ag
 let g:ctrlp_working_path_mode = 'ra'
