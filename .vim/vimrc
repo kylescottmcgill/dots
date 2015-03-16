@@ -120,7 +120,7 @@ set omnifunc=syntaxcomplete#Complete
 set tags=.git/tags;,./tags;,~/.vimtags
 
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
-let g:php_folding=2		" Fold PHP bitch
+let g:php_folding=2				" Fold PHP bitch
 
 let g:omni_syntax_group_include_php = 'php\w\+,javaScript\w\+,html\w\+'
 let g:omni_syntax_group_include_php = 'phpFunctions,phpMethods'
@@ -244,7 +244,7 @@ augroup configgroup
 	autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
     autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
     autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-	autocmd FileType php,ruby,go,rust,haskell setlocal foldmethod=syntax
+	" autocmd FileType php,ruby,go,rust,haskell setlocal foldmethod=syntax
 
 	autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 	autocmd BufReadPost *
@@ -403,7 +403,7 @@ endif
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 0
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
