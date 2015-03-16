@@ -5,19 +5,24 @@ set -e
 PATH="/usr/local/bin:$PATH"
 trap "rm -f .git/tags.$$" EXIT
 
-function generate_ctags {
+function ggeneric {
 	git ls-files -cd | ctags -L - -f .git/tags.$$
 }
 
-function generate_ruby {
+function gelixir {
+	ctags -R -f .git/tags.$$
+}
+
+function gruby {
 	git ls-files -cd | ctags -L - -f .git/tags.$$
 	bundle show --paths | ctags -L - -af .git/tags.$$
 }
 
 # Tell ctags to go through all the git ls-files
 case "$1" in
-	"ruby") generate_ruby ;;
-	*)		generate_ctags ;;
+	"ruby")		gruby ;;
+	"elixir")	gelixir ;;
+	*)			ggeneric ;;
 esac
 
 mv .git/tags.$$ .git/tags
