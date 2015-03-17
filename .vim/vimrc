@@ -115,7 +115,7 @@ end
 
 set lazyredraw			" Don't redraw while executing macros
 
-set omnifunc=syntaxcomplete#Complete
+" set omnifunc=syntaxcomplete#Complete
 
 set tags=.git/tags;,./tags;
 
@@ -215,9 +215,9 @@ filetype plugin indent on	 " required
 set background=dark
 
 " if has("gui_running")
-	" colorscheme spacegray
-	colorscheme itg_flat
-	let g:airline_theme = 'pencil'
+" colorscheme spacegray
+colorscheme itg_flat
+let g:airline_theme = 'pencil'
 " else
 "	 colorscheme noctu
 " end
@@ -257,9 +257,9 @@ augroup configgroup
 
 	autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 	autocmd BufReadPost *
-		\ if line("'\"") > 0 && line("'\"") <= line("$") |
-		\	exe "normal! g`\"" |
-		\ endif
+				\ if line("'\"") > 0 && line("'\"") <= line("$") |
+				\	exe "normal! g`\"" |
+				\ endif
 	" Limit Quick Fix
 	autocmd FileType qf call AdjustWindowHeight(3, 10)
 augroup END
@@ -272,7 +272,7 @@ augroup END
 " files.
 function! AppendModeline()
 	let l:modeline = printf("vim: set ft=%s ts=%d sw=%d tw=%d fdm=%s foldlevel=%d %set :",
-		\ &filetype, &tabstop, &shiftwidth, &textwidth, &foldmethod, &fdl, &expandtab ? '' : 'no')
+				\ &filetype, &tabstop, &shiftwidth, &textwidth, &foldmethod, &fdl, &expandtab ? '' : 'no')
 	let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
 	call append(line("$"), l:modeline)
 endfunction
@@ -368,24 +368,23 @@ let g:syntastic_rust_rustc_args = "-L ./target/deps"
 
 " Tagbar
 let g:tagbar_type_go = {
-		\ 'ctagstype' : 'go',
-		\ 'kinds'	  : ['p:package', 'i:imports:1', 'c:constants', 'v:variables', 't:types', 'n:interfaces', 'w:fields', 'e:embedded', 'm:methods', 'r:constructor', 'f:functions'],
-		\ 'sro' : '.',
-		\ 'kind2scope' : {'t' : 'ctype', 'n' : 'ntype'},
-		\ 'scope2kind' : {'ctype' : 't', 'ntype' : 'n'},
-		\ 'ctagsbin'  : 'gotags',
-		\ 'ctagsargs' : '-sort -silent'
-		\ }
+			\ 'ctagstype' : 'go',
+			\ 'kinds'	  : ['p:package', 'i:imports:1', 'c:constants', 'v:variables', 't:types', 'n:interfaces', 'w:fields', 'e:embedded', 'm:methods', 'r:constructor', 'f:functions'],
+			\ 'sro' : '.',
+			\ 'kind2scope' : {'t' : 'ctype', 'n' : 'ntype'},
+			\ 'scope2kind' : {'ctype' : 't', 'ntype' : 'n'},
+			\ 'ctagsbin'  : 'gotags',
+			\ 'ctagsargs' : '-sort -silent'
+			\ }
 
 let g:tagbar_phpctags_memory_limit = '1024M'
 let g:tagbar_phpctags_bin="~/.bin/phpctags"
 let g:tagbar_type_php  = {
-		\ 'ctagstype' : 'php',
-		\ 'kinds'	  : ['i:interfaces', 'c:classes', 'd:constant definitions', 'f:functions', 'j:javascript functions:1']
-		\ }
+			\ 'ctagstype' : 'php',
+			\ 'kinds'	  : ['i:interfaces', 'c:classes', 'd:constant definitions', 'f:functions', 'j:javascript functions:1']
+			\ }
 
 let g:tagbar_autofocus = 1
-let g:javascript_enable_domhtmlcss = 1
 
 nmap <F8> :TagbarToggle<cr>
 
@@ -400,9 +399,9 @@ let g:gitgutter_sign_modified_removed = '--'
 " Ctrl-p && Ag
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
-		\ "dir": '\v[\/]\.(git|hg|svn)$',
-		\ "file": '\v\.(exe|so|dll|jpeg|png|gif)'
-		\ }
+			\ "dir": '\v[\/]\.(git|hg|svn)$',
+			\ "file": '\v\.(exe|so|dll|jpeg|png|gif)'
+			\ }
 
 if executable('ag')
 	map <leader>f :Ag<Space>
@@ -416,7 +415,12 @@ if executable('ag')
 	let g:ctrlp_user_command='ag -i %s -l --nocolor -g ""'
 endif
 
+" YCM
 let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_filetype_specific_completion_to_disable = {
+			\ 'gitcommit': 1,
+			\ 'php': 1
+			\}
 
 " Easy Tags
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
