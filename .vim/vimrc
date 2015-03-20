@@ -140,6 +140,7 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'ajh17/Spacegray.vim'
 Plug 'noahfrederick/vim-noctu'
 Plug 'cdmedia/itg_flat_vim'
+Plug 'duythinht/inori'
 
 " UI Improvements
 Plug 'scrooloose/nerdtree'
