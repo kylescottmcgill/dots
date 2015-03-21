@@ -79,7 +79,7 @@ set updatetime=1000
 set timeoutlen=1000
 set ttimeoutlen=0
 set synmaxcol=500
-set ttyscroll=20
+" set ttyscroll=20
 
 set undolevels=1000		" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
