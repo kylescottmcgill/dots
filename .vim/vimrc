@@ -425,6 +425,13 @@ let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
 let g:easytags_python_enabled = 1
 
+let g:UltiSnipsExpandTrigger="<c-p>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 " }}}
 
 "vim: set ft=vim ts=4 sw=4 tw=78 fdm=marker foldlevel=0 noet :
