@@ -79,7 +79,6 @@ set updatetime=1000
 set timeoutlen=1000
 set ttimeoutlen=0
 set synmaxcol=500
-" set ttyscroll=20
 
 set undolevels=1000		" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
@@ -138,9 +137,8 @@ call plug#begin('~/.vim/plugged')
 " Look and Feel
 Plug 'reedes/vim-colors-pencil'
 Plug 'ajh17/Spacegray.vim'
-Plug 'noahfrederick/vim-noctu'
 Plug 'cdmedia/itg_flat_vim'
-Plug 'duythinht/inori'
+Plug 'w0ng/vim-hybrid'
 
 " UI Improvements
 Plug 'bling/vim-airline'
@@ -156,11 +154,9 @@ Plug 'rking/ag.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
-" Plug 'honza/vim-snippets'
-" Plug 'Shougo/neocomplete.vim'
-" Plug 'xolox/vim-misc'
-" Plug 'xolox/vim-easytags'
-" Plug 'godlygeek/tabular'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
+Plug 'godlygeek/tabular'
 
 " Misc Plugs
 Plug 'avakhov/vim-yaml'
@@ -169,6 +165,12 @@ Plug 'sheerun/vim-polyglot'
 " {{{ Rust
 
 Plug 'wting/rust.vim', { 'for': 'rust' }
+
+" }}}
+" {{{ Elixir
+
+Plug 'mattreduce/vim-mix', { 'for': 'elixir' }
+Plug 'carlosgaldino/elixir-snippets', { 'for': 'elixir' }
 
 " }}}
 " {{{ Golang
@@ -180,7 +182,6 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 " }}}
 " {{{ HTML
 
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'vim'] }
 
 " }}}
@@ -196,12 +197,6 @@ Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 " {{{ Haskell
 
 " }}}
-" {{{ Elixir
-
-Plug 'mattreduce/vim-mix', { 'for': 'elixir' }
-Plug 'carlosgaldino/elixir-snippets', { 'for': 'elixir' }
-
-" }}}
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
@@ -214,13 +209,8 @@ filetype plugin indent on	 " required
 
 set background=dark
 
-" if has("gui_running")
-" colorscheme spacegray
 colorscheme itg_flat
 let g:airline_theme = 'pencil'
-" else
-"	 colorscheme noctu
-" end
 
 set nocursorline
 set nocursorcolumn
@@ -231,22 +221,18 @@ highlight statusline				ctermfg=white ctermbg=black
 highlight signcolumn				ctermfg=grey ctermbg=none guibg=#282A31
 highlight colorcolumn				ctermfg=none ctermbg=black
 highlight BadWhitespace				ctermbg=red guibg=red
-"highlight GitGutterAdd				guibg=green guifg=white
-"highlight GitGutterChange			guibg=yellow guifg=white
-"highlight GitGutterDelete			guibg=red guifg=white
-"highlight GitGutterChangeDelete 	guibg=orange guifg=white
 
 set laststatus=2
 
 " }}}
 " Autogroups {{{
 
-"augroup vimrc
-"	autocmd!
-"	autocmd BufReadPre * setlocal foldmethod=marker
-"	autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
-"	autocmd BufReadPre * setlocal foldlevel=0
-"augroup END
+augroup vimrc
+	autocmd!
+	autocmd BufReadPre * setlocal foldmethod=marker
+	autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
+	autocmd BufReadPre * setlocal foldlevel=0
+augroup END
 
 augroup configgroup
 	autocmd!
@@ -339,7 +325,11 @@ let g:airline_right_sep=''
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = ' '
 
 let g:bufferline_active_buffer_left = ''
 let g:bufferline_active_buffer_right = ''
@@ -400,7 +390,7 @@ let g:gitgutter_sign_modified_removed = '--'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
 			\ "dir": '\v[\/]\.(git|hg|svn)$',
-			\ "file": '\v\.(exe|so|dll|jpeg|png|gif)'
+			\ "file": '\v\.(exe|so|dll|jpeg|jpg|png|gif)'
 			\ }
 
 if executable('ag')
