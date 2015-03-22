@@ -151,7 +151,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 
 " Programming Improvments
-
+Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
@@ -159,10 +159,8 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'godlygeek/tabular'
-
-" Misc Plugs
-Plug 'avakhov/vim-yaml'
-Plug 'sheerun/vim-polyglot'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 
 " {{{ Rust
 
@@ -191,6 +189,11 @@ Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'vim'] }
 
 Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
+
+" }}}
+" {{{ Yaml
+
+Plug 'avakhov/vim-yaml'
 
 " }}}
 " {{{ Ruby
