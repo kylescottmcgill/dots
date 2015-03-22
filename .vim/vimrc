@@ -143,15 +143,14 @@ Plug 'cdmedia/itg_flat_vim'
 Plug 'duythinht/inori'
 
 " UI Improvements
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-vinegar'
-Plug 'airblade/vim-gitgutter'
+Plug 'bling/vim-airline'
 Plug 'bling/vim-bufferline'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'itchyny/vim-gitbranch'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
-Plug 'bling/vim-airline'
 
 " Programming Improvments
 Plug 'editorconfig/editorconfig-vim'
