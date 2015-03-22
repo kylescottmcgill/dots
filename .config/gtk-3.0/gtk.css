@@ -2,3 +2,7 @@ VteTerminal {
     -VteTerminal-inner-border: 10px;
 }
 
+TerminalScreen {
+	-VteTerminal-inner-border: 10px 10px 10px 10px;
+}
+
