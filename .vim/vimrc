@@ -151,8 +151,10 @@ Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 
 " Programming Improvments
+
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
