@@ -32,7 +32,7 @@ pseudo_transparency = false
 #word_chars = -A-Za-z0-9,./?%&#:_=+@~
 
 [colors]
-highlight = #2f2f2f
+#highlight = #2f2f2f
 cursor = #e6e1dc
 
 foreground_dim = #888888
