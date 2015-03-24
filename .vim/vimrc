@@ -217,7 +217,7 @@ set background=dark
 colorscheme itg_flat
 let g:airline_theme = 'pencil'
 
-set nocursorline
+set cursorline
 set nocursorcolumn
 
 highlight cursorline				ctermfg=none ctermbg=black
