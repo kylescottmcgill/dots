@@ -54,8 +54,8 @@ alias search='\packer -Ss'
 alias ll='ls -lh'
 alias rm='rm -f'
 alias tmux='tmux -2 -f $HOME/.config/tmux/tmux.conf'
-alias v="vim -i NONE -X"
-alias gv='gvim -X'
+alias vim=v
+alias v="nvim -i NONE -X"
 alias mini='source $HOME/.bin/mini'
 
 #alias git=hub
