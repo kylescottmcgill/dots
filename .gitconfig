@@ -1,6 +1,6 @@
 [core]
     quotepath = false
-    editor = vim
+    editor = nvim
     whitespace = trailing-space,space-before-tab,indent-with-non-tab
     autocrlf = false
     eol = lf

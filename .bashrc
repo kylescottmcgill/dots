@@ -8,8 +8,8 @@ export BASH_IT=$HOME/.config/bash-it
 export BASH_IT_THEME='kylescottmcgill'
 
 # Set my editor and git editor
-export EDITOR="/usr/bin/vim"
-export GIT_EDITOR='/usr/bin/vim'
+export EDITOR="/usr/bin/nvim"
+export GIT_EDITOR='/usr/bin/nvim'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
@@ -54,8 +54,8 @@ alias search='\packer -Ss'
 alias ll='ls -lh'
 alias rm='rm -f'
 alias tmux='tmux -2 -f $HOME/.config/tmux/tmux.conf'
-alias vim=v
-alias v="nvim -i NONE -X"
+alias v=vim
+alias vim="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
 alias mini='source $HOME/.bin/mini'
 
 #alias git=hub

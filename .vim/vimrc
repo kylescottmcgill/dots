@@ -61,6 +61,7 @@ set titleold="Terminal"
 set titlestring=%F
 set clipboard=unnamed
 set cmdheight=2
+set mouse=a
 
 set bomb
 set binary
@@ -244,7 +245,7 @@ augroup configgroup
 	autocmd VimEnter * highlight clear SignColumn
 
 	autocmd FileType mail setlocal spell
-	autocmd FileType php,ruby,go,rust,haskell,elixir setlocal foldmethod=syntax
+	autocmd FileType php,ruby,go,rust,haskell,elixir setlocal foldmethod=indent
 
 	autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 	autocmd BufReadPost *
