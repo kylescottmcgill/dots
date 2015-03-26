@@ -27,7 +27,7 @@ case "$(hostname)" in
 		;;
 esac
 
-bspc config border_width 1
+bspc config border_width 10
 bspc config window_gap 10
 
 bspc config top_padding 0
@@ -49,8 +49,8 @@ bspc config history_aware_focus false
 bspc config apply_floating_atom true
 bspc config ignore_ewmh_focus true
 bspc config normal_border_color "#151B22"
-bspc config active_border_color "#293542"
-bspc config focused_border_color "#293542"
+bspc config active_border_color "#151B22"
+bspc config focused_border_color "#151B22"
 bspc config presel_border_color "#7394BB"
 bspc config urgent_border_color "#9f7155"
 bspc config focused_locked_border_color "#9a875f"
@@ -64,11 +64,10 @@ bspc config remove_unplugged_monitors true
 bspc rule -a Skype desktop=im pseudo_tiled=off border=off
 bspc rule -a URxvt pseudo_tiled=off border=on
 bspc rule -a Chromium border=off
-bspc rule -a Firefox border=off fullscreen=off
 bspc rule -a Steam desktop=games floating=on
-bspc rule -a Gvim border=off
 bspc rule -a feh floating=on manage=on
 bspc rule -a mpv floating=on follow=on
+bspc rule -a Termite border=on
 
 export BSPWM_SOCKET="/tmp/bspwm-socket"
 export PANEL_FIFO="/tmp/panel-fifo"
