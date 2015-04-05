@@ -31,6 +31,9 @@ then
     source /usr/share/chruby/auto.sh
 fi
 
+# Local Path
+export LOCALPATH=~/.local/bin
+
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
@@ -38,7 +41,7 @@ source $BASH_IT/bash_it.sh
 source $HOME/.bash_private
 
 # Custom Shiz
-export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$PATH"
+export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$PATH"
 
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
