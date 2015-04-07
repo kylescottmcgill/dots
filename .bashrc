@@ -58,7 +58,7 @@ alias ll='ls -lh'
 alias rm='rm -f'
 alias tmux='tmux -2 -f $HOME/.config/tmux/tmux.conf'
 alias v=vim
-alias vim="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
+alias vim="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim -i ~/.cache/nviminfo"
 alias mini='source $HOME/.bin/mini'
 
 #alias git=hub
