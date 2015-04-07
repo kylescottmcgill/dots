@@ -7,3 +7,6 @@
 [submodule "private"]
 	path = .config/private
 	url = git@github.com:kylescottmcgill/private.git
+[submodule ".config/private"]
+	path = .config/private
+	url = git@github.com:kylescottmcgill/private
