@@ -5,7 +5,6 @@ set nocompatible		" be iMproved
 set ffs=unix,dos,mac
 set t_Co=256
 set showcmd
-set ttyfast
 
 if &term =~ '256color'
 	set t_ut=
