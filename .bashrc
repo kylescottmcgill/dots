@@ -10,6 +10,7 @@ export BASH_IT_THEME='kylescottmcgill'
 # Set my editor and git editor
 export EDITOR="/usr/bin/nvim"
 export GIT_EDITOR='/usr/bin/nvim'
+export NVIM_TUI_ENABLE_TRUE_COLOR='1'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
@@ -58,7 +59,7 @@ alias ll='ls -lh'
 alias rm='rm -f'
 alias tmux='tmux -2 -f $HOME/.config/tmux/tmux.conf'
 alias v=vim
-alias vim="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim -i ~/.cache/nviminfo"
+alias vim="nvim -i ~/.cache/nviminfo"
 alias mini='source $HOME/.bin/mini'
 
 #alias git=hub
