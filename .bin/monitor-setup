@@ -10,9 +10,6 @@ function common {
     # Disable Mouse Acceleration
     xset m 1/1 0
 
-    # Set Wallpaper Again
-    sh $HOME/.fehbg
-
     # Run bspwm config to reconfigure
     $HOME/.config/bspwm/bspwmrc
 }
