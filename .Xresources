@@ -68,7 +68,7 @@ URxvt*keysym.Control-Right:  \033[1;5C
 !#include ".colors/TomorrowNight.xresources"
 
 ! URxvt-white
-#include ".colors/z-brah-white.xresources"
+!#include ".colors/z-brah-white.xresources"
 
 ! }}}
 ! Misc Applications {{{
