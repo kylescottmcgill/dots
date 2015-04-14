@@ -27,7 +27,7 @@ case "$(hostname)" in
 		;;
 esac
 
-bspc config border_width 10
+bspc config border_width 1
 bspc config window_gap 10
 
 bspc config top_padding 0
