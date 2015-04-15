@@ -48,7 +48,7 @@ set smartindent			" Enable smart-indent
 set smarttab			" Enable smart-tabs
 set softtabstop=4		" Number of spaces per Tab
 
-set foldenable			" Enable Folds
+set nofoldenable			" Enable Folds
 set foldmethod=marker	" Depending on Syntax, fold
 set foldlevel=0
 set foldlevelstart=20	" Only fold after 20 levels on open
