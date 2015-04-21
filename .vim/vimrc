@@ -160,6 +160,7 @@ Plug 'xolox/vim-easytags'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-obsession'
 
 " {{{ Rust
 
