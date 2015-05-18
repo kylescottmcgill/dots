@@ -216,7 +216,7 @@ filetype plugin indent on	 " required
 set background=dark
 
 colorscheme itg_flat
-let g:airline_theme = 'pencil'
+let g:airline_theme = 'jellybeans'
 
 set cursorline
 set nocursorcolumn
@@ -323,7 +323,12 @@ map <leader>o <C-p>
 " }}}
 " Plugin bindings and functionality {{{
 
+"
 " Vim-airline
+"
+
+" let g:airline_extensions = ['branch', 'syntastic', 'tabline', 'whitespace', 'hunks']
+
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
@@ -341,6 +346,9 @@ let g:bufferline_active_buffer_left = ''
 let g:bufferline_active_buffer_right = ''
 let g:bufferline_show_bufnr = 0
 let g:bufferline_echo = 0
+
+let g:airline#extensions#tabline#fnametruncate = 0
+let g:airline#extensions#tabline#fnamecollapse = 0
 
 " NerdTree
 map <C-n> :NERDTreeToggle<cr>i
