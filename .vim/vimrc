@@ -216,7 +216,7 @@ filetype plugin indent on	 " required
 set background=dark
 
 colorscheme itg_flat
-let g:airline_theme = 'jellybeans'
+let g:airline_theme = 'pencil'
 
 set cursorline
 set nocursorcolumn
