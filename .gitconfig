@@ -46,3 +46,7 @@
     hub = !hub
     ctags = !.git/hooks/ctags
     hooks = !cp -rf ~/.gittmp/hooks/* .git/hooks/
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
