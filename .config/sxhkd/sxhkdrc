@@ -131,10 +131,10 @@ XF86AudioMute
 # }}}
 # Applications {{{
 super + Return
-    urxvt
+    termite
 
 super + shift + Return
-    urxvt
+    termite
 
 super + b
     ~/.bin/chromium
