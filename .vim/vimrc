@@ -203,6 +203,11 @@ Plug 'avakhov/vim-yaml'
 " {{{ Haskell
 
 " }}}
+" {{{ Clojure
+
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" }}}
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
