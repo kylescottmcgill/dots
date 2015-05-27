@@ -84,6 +84,7 @@ man() {
         LESS_TERMCAP_us=$'\E[04;38;5;146m' \
         man "$@"
 }
+
 if [[ "$(uname)" -ne "Darwin" ]]; then
 	eval $(dircolors -b $HOME/.colors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_CUSTOM#g | sed -e s#^export\ LS_COLORS##g)
 	eval $(dircolors -b $HOME/.config/dircolors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_BASE#g | sed -e s#^export\ LS_COLORS##g)
@@ -91,23 +92,7 @@ if [[ "$(uname)" -ne "Darwin" ]]; then
 
 	hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
 	alias ls='ls --color -h --group-directories-first'
-
-	_complete_ssh_hosts ()
-	{
-		COMPREPLY=()
-		cur="${COMP_WORDS[COMP_CWORD]}"
-		comp_ssh_hosts=`cat ~/.ssh/known_hosts | \
-			cut -f 1 -d ' ' | \
-			sed -e s/,.*//g | \
-			grep -v ^# | \
-			uniq | \
-			grep -v "\[" ;
-			cat ~/.ssh/config | \
-			grep "^Host " | \
-			awk '{print $2}'
-		`
-		COMPREPLY=( $(compgen -W "${comp_ssh_hosts}" -- $cur))
-		return 0
-	}
-	complete -F _complete_ssh_hosts ssh
+else
+	source ~/.nix-profile/etc/profile.d/nix.sh
+	eval "$(boot2docker shellinit 2>/dev/null)"
 fi

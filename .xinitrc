@@ -11,21 +11,21 @@
 #  unset f
 #fi
 
-[[ -d $HOME/.local/share/fonts ]] && xset +fp $HOME/.local/share/fonts
-fc-cache
-xset fp rehash                  # Something else for the fonts
-xset -b                         # disable bell
-xrdb $HOME/.Xresources          # Merge Xresources
+#[[ -d $HOME/.local/share/fonts ]] && xset +fp $HOME/.local/share/fonts
+#fc-cache
+#xset fp rehash                  # Something else for the fonts
+#xset -b                         # disable bell
+#xrdb $HOME/.Xresources          # Merge Xresources
 
-xset m 1/1 0                    # No Mouse Acceleration
+#xset m 1/1 0                    # No Mouse Acceleration
 
-xsetroot -cursor_name left_ptr & # Use a non-shit cursor
+#xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 
 # This is required for some GTK2 themes to get set correctly
 
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-compton &
-hsetroot -solid "#1F2833"
+#export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+#compton &
+#hsetroot -solid "#1F2833"
 
 #bottombar &
 
