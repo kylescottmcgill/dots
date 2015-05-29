@@ -131,7 +131,7 @@ XF86AudioMute
 # }}}
 # Applications {{{
 super + Return
-    activate application "iTerm"
+	termite
 
 super + shift + Return
     termite
