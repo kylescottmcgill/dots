@@ -34,13 +34,30 @@ fi
 
 # Local Path
 export LOCALPATH=~/.local/bin
-export MACPATH="$(brew --prefix coreutils)/libexec/gunbin"
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
 # Sources Private Settings like auth tokens etc
 source $HOME/.bash_private
+
+if [[ "$(uname)" -ne "Darwin" ]]; then
+	eval $(dircolors -b $HOME/.colors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_CUSTOM#g | sed -e s#^export\ LS_COLORS##g)
+	eval $(dircolors -b $HOME/.config/dircolors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_BASE#g | sed -e s#^export\ LS_COLORS##g)
+	export LS_COLORS="$LS_COLORS_BASE$LS_COLORS_CUSTOM"
+
+	hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
+	alias ls='ls --color -h --group-directories-first'
+else
+	export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+	export MACPATH="$(brew --prefix coreutils)/libexec/gunbin"
+
+	if [ -f $(brew --prefix)/etc/bash_completion ]; then
+		. $(brew --prefix)/etc/bash_completion
+	fi
+	source ~/.nix-profile/etc/profile.d/nix.sh
+	eval "$(boot2docker shellinit 2>/dev/null)"
+fi
 
 # Custom Shiz
 export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$MACPATH:$PATH"
@@ -85,14 +102,3 @@ man() {
         man "$@"
 }
 
-if [[ "$(uname)" -ne "Darwin" ]]; then
-	eval $(dircolors -b $HOME/.colors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_CUSTOM#g | sed -e s#^export\ LS_COLORS##g)
-	eval $(dircolors -b $HOME/.config/dircolors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_BASE#g | sed -e s#^export\ LS_COLORS##g)
-	export LS_COLORS="$LS_COLORS_BASE$LS_COLORS_CUSTOM"
-
-	hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
-	alias ls='ls --color -h --group-directories-first'
-else
-	source ~/.nix-profile/etc/profile.d/nix.sh
-	eval "$(boot2docker shellinit 2>/dev/null)"
-fi
