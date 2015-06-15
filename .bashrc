@@ -56,7 +56,6 @@ else
 		. $(brew --prefix)/etc/bash_completion
 	fi
 	source ~/.nix-profile/etc/profile.d/nix.sh
-	eval "$(boot2docker shellinit 2>/dev/null)"
 fi
 
 # Custom Shiz
