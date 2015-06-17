@@ -41,7 +41,7 @@ source $BASH_IT/bash_it.sh
 # Sources Private Settings like auth tokens etc
 source $HOME/.bash_private
 
-if [[ "$(uname)" -eq "Linux" ]]; then
+if [[ "$(uname)" == "Linux" ]]; then
 	eval $(dircolors -b $HOME/.colors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_CUSTOM#g | sed -e s#^export\ LS_COLORS##g)
 	eval $(dircolors -b $HOME/.config/dircolors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_BASE#g | sed -e s#^export\ LS_COLORS##g)
 	export LS_COLORS="$LS_COLORS_BASE$LS_COLORS_CUSTOM"
