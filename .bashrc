@@ -41,7 +41,7 @@ source $BASH_IT/bash_it.sh
 # Sources Private Settings like auth tokens etc
 source $HOME/.bash_private
 
-if [[ "$(uname)" -eq "Linux" ]]; then
+if [[ "$(uname)" == "Linux" ]]; then
 	export _JAVA_AWT_WM_NONREPARENTING=1
 	eval $(dircolors -b $HOME/.colors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_CUSTOM#g | sed -e s#^export\ LS_COLORS##g)
 	eval $(dircolors -b $HOME/.config/dircolors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_BASE#g | sed -e s#^export\ LS_COLORS##g)
@@ -57,7 +57,6 @@ else
 		. $(brew --prefix)/etc/bash_completion
 	fi
 	source ~/.nix-profile/etc/profile.d/nix.sh
-	eval "$(boot2docker shellinit 2>/dev/null)"
 fi
 
 # Custom Shiz
