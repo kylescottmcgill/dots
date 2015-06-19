@@ -42,6 +42,7 @@ source $BASH_IT/bash_it.sh
 source $HOME/.bash_private
 
 if [[ "$(uname)" -eq "Linux" ]]; then
+	export _JAVA_AWT_WM_NONREPARENTING=1
 	eval $(dircolors -b $HOME/.colors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_CUSTOM#g | sed -e s#^export\ LS_COLORS##g)
 	eval $(dircolors -b $HOME/.config/dircolors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_BASE#g | sed -e s#^export\ LS_COLORS##g)
 	export LS_COLORS="$LS_COLORS_BASE$LS_COLORS_CUSTOM"
