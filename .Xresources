@@ -30,10 +30,6 @@ URxvt.depth: 0
 URxvt.transparent: false
 !URxvt.shading: 5
 
-URxvt-white.transparent: false
-
-URxvt-white*internalBorder: 20
-
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,matcher
 URxvt.url-select.launcher:  chromium
 URxvt.url-select.underline: true
