@@ -35,6 +35,9 @@ fi
 # Local Path
 export LOCALPATH=~/.local/bin
 
+# Scala Paths
+export SCALAPATH=~/bin
+
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
@@ -59,7 +62,7 @@ else
 fi
 
 # Custom Shiz
-export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$MACPATH:$PATH"
+export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$MACPATH:$SCALAPATH:$PATH"
 
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
