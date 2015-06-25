@@ -52,7 +52,7 @@ if [[ "$(uname)" == "Linux" ]]; then
 	hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
 	alias ls='ls --color -h --group-directories-first'
 else
-	export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+	export PATH="$(brew --prefix homebrew/php/php56)/bin::$HOME/Library/Python/2.7/bin:$PATH"
 	export MACPATH="$(brew --prefix coreutils)/libexec/gunbin"
 
 	if [ -f $(brew --prefix)/etc/bash_completion ]; then
