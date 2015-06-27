@@ -35,6 +35,9 @@ fi
 # Local Path
 export LOCALPATH=~/.local/bin
 
+# Scala Paths
+export SCALAPATH=~/bin
+
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
@@ -49,7 +52,7 @@ if [[ "$(uname)" == "Linux" ]]; then
 	hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
 	alias ls='ls --color -h --group-directories-first'
 else
-	export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+	export PATH="$(brew --prefix homebrew/php/php56)/bin::$HOME/Library/Python/2.7/bin:$PATH"
 	export MACPATH="$(brew --prefix coreutils)/libexec/gunbin"
 
 	if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -59,7 +62,7 @@ else
 fi
 
 # Custom Shiz
-export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$MACPATH:$PATH"
+export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$MACPATH:$SCALAPATH:$PATH"
 
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
