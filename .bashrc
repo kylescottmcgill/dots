@@ -25,13 +25,6 @@ export GOBIN=$GOPATH/bin
 # PHP Path
 export PHPPATH=~/.composer/vendor/bin
 
-# Ruby Path
-if [[ -e /usr/share/chruby/chruby.sh ]];
-then
-    source /usr/share/chruby/chruby.sh
-    source /usr/share/chruby/auto.sh
-fi
-
 # Local Path
 export LOCALPATH=~/.local/bin
 
