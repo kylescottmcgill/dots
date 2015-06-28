@@ -118,10 +118,6 @@ set lazyredraw			" Don't redraw while executing macros
 set tags=.git/tags;,./tags;
 
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
-let g:php_folding=2				" Fold PHP bitch
-
-let g:omni_syntax_group_include_php = 'php\w\+,javaScript\w\+,html\w\+'
-let g:omni_syntax_group_include_php = 'phpFunctions,phpMethods'
 
 let no_buffers_menu=1
 
@@ -154,7 +150,6 @@ Plug 'rking/ag.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
-Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
@@ -163,11 +158,6 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-obsession'
 
-" {{{ Rust
-
-Plug 'wting/rust.vim', { 'for': 'rust' }
-
-" }}}
 " {{{ Elixir
 
 Plug 'mattreduce/vim-mix', { 'for': 'elixir' }
@@ -186,26 +176,9 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'vim'] }
 
 " }}}
-" {{{ PHP
-
-Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
-Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
-
-" }}}
 " {{{ Yaml
 
 Plug 'avakhov/vim-yaml'
-
-" }}}
-" {{{ Ruby
-
-" }}}
-" {{{ Haskell
-
-" }}}
-" {{{ Clojure
-
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " }}}
 
@@ -250,7 +223,7 @@ augroup configgroup
 	autocmd VimEnter * highlight clear SignColumn
 
 	autocmd FileType mail setlocal spell
-	autocmd FileType php,ruby,go,rust,haskell,elixir setlocal foldmethod=indent
+	autocmd FileType go,elixir setlocal foldmethod=indent
 
 	autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 	autocmd BufReadPost *
@@ -370,9 +343,6 @@ let g:syntastic_check_on_open=1
 let g:syntastic_echo_current_error=1
 let g:syntastic_enable_signs=1
 
-let g:syntastic_php_checkers = ['php', 'phpcs']
-let g:syntastic_php_phpcs_args="--standard PSR2"
-
 let g:syntastic_rust_rustc_args = "-L ./target/deps"
 
 " Tagbar
@@ -384,13 +354,6 @@ let g:tagbar_type_go = {
 			\ 'scope2kind' : {'ctype' : 't', 'ntype' : 'n'},
 			\ 'ctagsbin'  : 'gotags',
 			\ 'ctagsargs' : '-sort -silent'
-			\ }
-
-let g:tagbar_phpctags_memory_limit = '1024M'
-let g:tagbar_phpctags_bin="~/.bin/phpctags"
-let g:tagbar_type_php  = {
-			\ 'ctagstype' : 'php',
-			\ 'kinds'	  : ['i:interfaces', 'c:classes', 'd:constant definitions', 'f:functions', 'j:javascript functions:1']
 			\ }
 
 let g:tagbar_autofocus = 1
@@ -427,8 +390,7 @@ endif
 " YCM
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_filetype_specific_completion_to_disable = {
-			\ 'gitcommit': 1,
-			\ 'php': 1
+			\ 'gitcommit': 1
 			\}
 
 " Easy Tags
