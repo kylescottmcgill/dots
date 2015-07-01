@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cd ~/music/monstercat/ && youtube-dl https://soundcloud.com/monstercat/ ;
-cd ~/music/eden/ && youtube-dl https://soundcloud.com/eden-mcmxcv/tracks ;
-cd ~/music/soundcloud/ && youtube-dl https://soundcloud.com/kylescottmcgill/sets/work ;
-cd ~/music/youtube/ && youtube-dl https://www.youtube.com/playlist?list=PLiFU_tw8Vf8wP4cjXBkgN8saH1-7CBVO5 --extract-audio --audio-format=mp3 ;
+cd ~/Music/monstercat/ && youtube-dl https://soundcloud.com/monstercat/ ;
+cd ~/Music/eden/ && youtube-dl https://soundcloud.com/eden-mcmxcv/tracks ;
+cd ~/Music/soundcloud/ && youtube-dl https://soundcloud.com/kylescottmcgill/sets/work ;
+cd ~/Music/youtube/ && youtube-dl https://www.youtube.com/playlist?list=PLiFU_tw8Vf8wP4cjXBkgN8saH1-7CBVO5 --extract-audio --audio-format=mp3 ;
 echo -e "please update mpd";
