@@ -37,25 +37,25 @@ source $BASH_IT/bash_it.sh
 # Sources Private Settings like auth tokens etc
 source $HOME/.bash_private
 
-if [[ "$(uname)" == "Linux" ]]; then
+#if [[ "$(uname)" == "Linux" ]]; then
 	eval $(dircolors -b $HOME/.colors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_CUSTOM#g | sed -e s#^export\ LS_COLORS##g)
 	eval $(dircolors -b $HOME/.config/dircolors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_BASE#g | sed -e s#^export\ LS_COLORS##g)
 	export LS_COLORS="$LS_COLORS_BASE$LS_COLORS_CUSTOM"
 
 	hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
 	alias ls='ls --color -h --group-directories-first'
-else
-	export PATH="$(brew --prefix homebrew/php/php56)/bin::$HOME/Library/Python/2.7/bin:$PATH"
-	export MACPATH="$(brew --prefix coreutils)/libexec/gunbin"
-
-	if [ -f $(brew --prefix)/etc/bash_completion ]; then
-		. $(brew --prefix)/etc/bash_completion
-	fi
-	source ~/.nix-profile/etc/profile.d/nix.sh
-fi
+#else
+#	export PATH="$(brew --prefix homebrew/php/php56)/bin:$HOME/Library/Python/2.7/bin:$PATH"
+#	export MACPATH="$(brew --prefix coreutils)/libexec/gunbin"
+#
+#	if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#		. $(brew --prefix)/etc/bash_completion
+#	fi
+#	source ~/.nix-profile/etc/profile.d/nix.sh
+#fi
 
 # Custom Shiz
-export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$MACPATH:$SCALAPATH:$PATH"
+export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$SCALAPATH:$PATH:./bin"
 
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
