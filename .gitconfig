@@ -1,52 +1,52 @@
 [core]
-    quotepath = false
-    editor = nvim
-    whitespace = trailing-space,space-before-tab,indent-with-non-tab
-    autocrlf = false
-    eol = lf
-    filemode = false
+	quotepath = false
+	editor = nvim
+	whitespace = trailing-space,space-before-tab,indent-with-non-tab
+	autocrlf = false
+	eol = lf
+	filemode = false
 	excludesfile = /Users/Kyle/.gitignore_global
 [color]
-    filemode = false
-    diff = auto
-    status = auto
-    branch = auto
-    pager = true
-    ui = true
+	filemode = false
+	diff = auto
+	status = auto
+	branch = auto
+	pager = true
+	ui = true
 [user]
-    email = email@kylescottmcgill.com
-    name = Kyle Scott Mcgill
+	email = email@kylescottmcgill.com
+	name = Kyle Scott Mcgill
 [github]
-    user = kylescottmcgill
+	user = kylescottmcgill
 
 [format]
-    pretty = oneline
+	pretty = oneline
 [log]
-    abbrevCommit = true
-    decorate = true
+	abbrevCommit = true
+	decorate = true
 [help]
-    autocorrect = 10
+	autocorrect = 10
 
 [push]
-    default = current
+	default = current
 [merge]
-    renormalize = true
+	renormalize = true
 [difftool]
-    prompt = false
+	prompt = false
 [mergetool]
-    prompt = false
+	prompt = false
 
 [init]
-    templatedir = ~/.gittmp
+	templatedir = ~/.gittmp
 [alias]
-    accept-ours = "!f() { files=\"$@\"; [ -z $files ] && files='.'; git checkout --ours -- $files; git add -u $files; }; f"
-    accept-theirs = "!f() { files=\"$@\"; [ -z $files ] && files='.'; git checkout --theirs -- $files; git add -u $files; }; f"
-    todo = grep --heading --break --ignore-case -e '@todo *'
-    issues = !ghi
-    browse = !hub browse
-    hub = !hub
-    ctags = !.git/hooks/ctags
-    hooks = !cp -rf ~/.gittmp/hooks/* .git/hooks/
+	accept-ours = "!f() { files=\"$@\"; [ -z $files ] && files='.'; git checkout --ours -- $files; git add -u $files; }; f"
+	accept-theirs = "!f() { files=\"$@\"; [ -z $files ] && files='.'; git checkout --theirs -- $files; git add -u $files; }; f"
+	todo = grep --heading --break --ignore-case -e '@todo *'
+	issues = !ghi
+	browse = !hub browse
+	hub = !hub
+	ctags = !.git/hooks/ctags
+	hooks = !cp -rf ~/.gittmp/hooks/* .git/hooks/
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
