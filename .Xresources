@@ -19,9 +19,6 @@ URxvt*termName: rxvt-256color
 URxvt*font: -*-tewi-medium-*-*--11-*-*-*-*-*-*-1
 URxvt*boldFont: -*-tewi-medium-*-*--11-*-*-*-*-*-*-1
 
-URxvt*font: -*-tewi-medium-*-*--11-*-*-*-*-*-*-1
-URxvt*boldFont: -*-tewi-medium-*-*--11-*-*-*-*-*-*-1
-
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
 URxvt*iso14755: false

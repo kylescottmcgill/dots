@@ -26,12 +26,13 @@ xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 export _JAVA_AWT_WM_NONREPARENTING=1
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 compton &
-hsetroot -solid "#1F2833"
+hsetroot -solid "#1F2833" &
+nitrogen --restore &
 
 #bottombar &
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
-    "turtil") sxhkd & exec bspwm ;;    # Laptop
-    "ouroboros") sxhkd & exec bspwm ;;    # Work PC
+    # "turtil") sxhkd & exec bspwm ;;    # Laptop
+    "turtil")  ~/Projects/dwm/dwm ;;    # Laptop
 esac
