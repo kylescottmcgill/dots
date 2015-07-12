@@ -80,6 +80,7 @@ hdr_order from: to: cc: date: subject:   # and in this order
 # boxes
 mailboxes +Kyle/INBOX
 mailboxes +Kyle/INBOX.Completed
+mailboxes +Kyle/INBOX.Github
 mailboxes +Kyle/INBOX.Sent
 
 # boxes

@@ -30,6 +30,10 @@ hsetroot -solid "#1F2833" &
 nitrogen --restore &
 
 #bottombar &
+while true; do
+   xsetroot -name "$( date +"%F %R" )"
+   sleep 1m    # Update time every minute
+done &
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
