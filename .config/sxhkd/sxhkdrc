@@ -131,10 +131,10 @@ XF86AudioMute
 # }}}
 # Applications {{{
 super + Return
-	termite
+	gnome-terminal
 
 super + shift + Return
-    termite
+    gnome-terminal
 
 super + b
     ~/.bin/chromium
