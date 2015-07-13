@@ -1,0 +1,47 @@
+#! /bin/bash
+
+clock() {
+        DATE=$(date "+%a %d %b, %T")
+        echo -n "$DATE"
+}
+
+battery() {
+        BAT=$(acpi -b | cut -d, -f2 | sed 's/ //g')
+        echo -n "Battery: $BAT"
+}
+
+volume() {
+	pulseaudio-ctl | grep "sink muted" | grep yes > /dev/null
+	if [ $? -eq 0 ]; then
+		VOL="MM"
+	else
+		VOL=$(pulseaudio-ctl current)
+	fi
+	echo -n "Volume: $VOL"
+}
+
+brightness() {
+	BRIGHT=$(xbacklight | awk '{printf("%1.f\n", $1)}')
+	echo -n "Brightness: $BRIGHT%"
+}
+
+desktop() {
+	DESKTOP=$(bspc query -T | grep I | grep \* | sed 's/ 1.*//' | sed 's/\t//')
+	echo -n "$DESKTOP"
+}
+
+ssid() {
+	SSID=$(sudo netctl-auto list | grep \* | sed 's/* wlp3s0-//')
+	echo -n "SSID: $SSID"
+}
+
+colortemp() {
+	TEMP=$(redshift -p | grep K | sed 's/.*: //')
+	echo -n "Redshift: $TEMP"
+}
+
+while true; do
+	#echo "%{l}$(desktop) | $(colortemp) | $(brightness)%{c}$(clock)%{r}$(ssid) | $(volume) | $(battery)"
+	echo "%{l}$(desktop) | $(brightness)%{c}$(clock)%{r}$(ssid) | $(battery)"
+	sleep 0.001;
+done

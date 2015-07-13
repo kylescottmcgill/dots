@@ -25,13 +25,22 @@ xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+source /etc/X11/xinit/xinitrc.d/30-dbus.sh
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+
+export SSH_AUTH_SOCK
+export GPG_AGENT_INFO
+export GNOME_KEYRING_CONTROL
+export GNOME_KEYRING_PID
+
 compton &
 hsetroot -solid "#1F2833" &
 nitrogen --restore &
 
 #bottombar &
 while true; do
-   xsetroot -name "$( date +"%F %R" )"
+   xsetroot -name "$( ~/.bin/dwmstatus )"
    sleep 1m    # Update time every minute
 done &
 

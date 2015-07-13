@@ -1,0 +1,4 @@
+#!/bin/bash
+
+date +"%R"
+xsetroot -name "$( date +"%R" )"
