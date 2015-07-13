@@ -40,12 +40,12 @@ nitrogen --restore &
 
 #bottombar &
 while true; do
-   xsetroot -name "$( ~/.bin/dwmstatus )"
+   xsetroot -name "$( ~/.bin/dwm-status )"
    sleep 1m    # Update time every minute
 done &
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
     # "turtil") sxhkd & exec bspwm ;;    # Laptop
-    "turtil")  dwm ;;    # Laptop
+    "turtil") dwm-watcher ;;    # Laptop
 esac
