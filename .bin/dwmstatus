@@ -1,4 +1,7 @@
 #!/bin/bash
 
-date +"%R"
-xsetroot -name "$( date +"%R" )"
+SEP=" "
+DATE=`date +"%R"`
+HOSTNAME=`hostname`
+
+echo -e $HOSTNAME$SEP$DATE
