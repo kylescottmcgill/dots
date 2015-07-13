@@ -47,5 +47,5 @@ done &
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
     # "turtil") sxhkd & exec bspwm ;;    # Laptop
-    "turtil") dwm-watcher ;;    # Laptop
+    "turtil") dwm-starter ;;    # Laptop
 esac
