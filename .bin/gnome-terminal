@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec /usr/bin/gnome-terminal --hide-menubar
+/usr/bin/gnome-terminal --hide-menubar --command "sh -c 'tmux -q has-session && exec tmux attach || exec tmux -2 -f $HOME/.config/tmux/tmux.conf'"
