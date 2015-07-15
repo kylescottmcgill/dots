@@ -1,0 +1,9 @@
+[Unit]
+Description=Music Player Daemon
+
+[Service]
+ExecStart=/usr/bin/mpd %h/.config/mpd/mpd.conf --no-daemon
+
+[Install]
+Also=mpd.socket
+WantedBy=default.target
