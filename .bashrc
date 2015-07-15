@@ -63,6 +63,8 @@ export BZR_LOG=/dev/null
 export BROWSER=chromium
 export XDG_CONFIG_HOME="$HOME/.config"
 
+export COLORSCHEME="minimal"
+
 alias sl='ls'
 alias less='less -F -g -i -M -R -S -w -X -z -4'
 alias packer='packer --noconfirm --noedit --auronly'
