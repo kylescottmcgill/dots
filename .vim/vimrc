@@ -164,13 +164,6 @@ Plug 'mattreduce/vim-mix', { 'for': 'elixir' }
 Plug 'carlosgaldino/elixir-snippets', { 'for': 'elixir' }
 
 " }}}
-" {{{ Golang
-
-Plug 'nsf/gocode', { 'for': 'go' }
-Plug 'Blackrush/vim-gocode', { 'for': 'go' }
-Plug 'fatih/vim-go', { 'for': 'go' }
-
-" }}}
 " {{{ HTML
 
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'vim'] }

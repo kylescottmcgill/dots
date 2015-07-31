@@ -35,17 +35,9 @@ export GNOME_KEYRING_CONTROL
 export GNOME_KEYRING_PID
 
 compton &
-hsetroot -solid "#1F2833" &
-nitrogen --restore &
-
-#bottombar &
-while true; do
-   xsetroot -name "$( ~/.bin/dwm-status )"
-   sleep 1m    # Update time every minute
-done &
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
-    # "turtil") sxhkd & exec bspwm ;;    # Laptop
-    "turtil") dwm-starter ;;    # Laptop
+    #"turtil") sxhkd & exec bspwm ;;    # Laptop
+    "turtil") sxhkd & startxfce4 ;;    # Laptop
 esac

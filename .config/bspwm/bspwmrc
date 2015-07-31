@@ -3,7 +3,7 @@
 function DesktopSetup {
 i=1
 for monitor in $(bspc query -M); do
-	bspc monitor $monitor -n "$i" -d {www,dev,im,games,misc}
+	bspc monitor $monitor -n "$i" -d {1,2,3,4,5,6,7,8}
 	let i++
 done
 NMON=$i
@@ -11,14 +11,7 @@ unset i
 }
 
 case "$(hostname)" in
-	"ouroboros")
-		bspc desktop -n 1
-		bspc monitor -d www dev im games misc
-		;;
 	"turtil")
-		DesktopSetup
-		;;
-	"xm-dev")
 		DesktopSetup
 		;;
 	*)
@@ -31,18 +24,18 @@ bspc config border_width 1
 bspc config window_gap 10
 
 bspc config top_padding 0
-bspc config bottom_padding 0
+bspc config bottom_padding 25
 bspc config right_padding 0
 bspc config left_padding 0
 
 # Visual options
-bspc config split_ratio 0.75
+bspc config split_ratio 0.5
 bspc config borderless_monocle true
 bspc config gapless_monocle true
-bspc config focus_follows_pointer true
+bspc config focus_follows_pointer false
 bspc config pointer_follows_focus false
 bspc config pointer_follows_monitor false
-bspc config auto_alternate false
+bspc config auto_alternate true
 bspc config auto_cancel true
 bspc config focus_follows_focus false
 bspc config history_aware_focus false
@@ -61,18 +54,15 @@ bspc config focused_frame_opacity 0.1
 bspc config remove_unplugged_monitors true
 
 # Rules
-bspc rule -a Skype desktop=im pseudo_tiled=off border=off
-bspc rule -a URxvt pseudo_tiled=off border=on
-bspc rule -a Chromium border=off
-bspc rule -a Steam desktop=games floating=on border=off
-bspc rule -a feh floating=on manage=on
-bspc rule -a mpv floating=on follow=on
-bspc rule -a Termite border=on
-
-gsettings set org.gnome.desktop.interface gtk-theme "Numix"
-gsettings set org.gnome.desktop.wm.preferences theme "Numix"
+bspc rule -r $(bspc rule -l | awk '{print $1}')
+bspc rule -a Skype pseudo_tiled=off border=off split_ratio=0.75
+bspc rule -a Steam floating=on border=off center=on
+bspc rule -a Chromium border=off center=on
+bspc rule -a mpv floating=on follow=on center=on border=off
+bspc rule -a Termite border=on follow=on split_ratio=0.75
+bspc rule -a jetbrains-idea border=off floating=on follow=off
+bspc rule -a DBeaver border=off follow=off
 
 export BSPWM_SOCKET="/tmp/bspwm-socket"
 export PANEL_FIFO="/tmp/panel-fifo"
 
-#sxhkd &
