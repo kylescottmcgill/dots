@@ -101,6 +101,9 @@ super + ctrl + {Left,Down,Up,Right}
 super + ctrl + shift + {Left,Down,Up,Right}
 	bspc window -e {right -10,up +10,down -10,left +10}
 
+super + F1
+	~/.bin/autorandr -cf
+
 # }}}
 # Media Keys {{{
 
@@ -118,15 +121,6 @@ XF86AudioNext
 
 XF86AudioPlay
 	mpc toggle
-
-#XF86AudioRaiseVolume
-#	amixer -D pulse sset Master 5dB+ unmute
-
-#XF86AudioLowerVolume
-#	amixer -D pulse sset Master 5dB- unmute
-
-#XF86AudioMute
-#	amixer -D pulse sset Master toggle
 
 # }}}
 # Applications {{{

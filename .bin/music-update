@@ -1,7 +1,20 @@
 #!/bin/bash
 
-cd ~/Music/youtube/ && youtube-dl --extract-audio --audio-format=mp3 https://www.youtube.com/playlist?list=PLiFU_tw8Vf8yFEp7Pjgul8--6XnKYYLnd ;
-#cd ~/Music/monstercat/ && youtube-dl --extract-audio --audio-format=mp3 https://soundcloud.com/monstercat/ ;
-#cd ~/Music/eden/ && youtube-dl --extract-audio --audio-format=mp3 https://soundcloud.com/eden-mcmxcv/tracks ;
-#cd ~/Music/soundcloud/ && youtube-dl --extract-audio --audio-format=mp3 https://soundcloud.com/kylescottmcgill/sets/work ;
-echo -e "please update mpd";
+cd ~/Music/youtube/ && \
+	youtube-dl --extract-audio --audio-format=mp3 -f 140 \
+		https://www.youtube.com/playlist?list=PLiFU_tw8Vf8yFEp7Pjgul8--6XnKYYLnd ;
+
+cd ~/Music/monstercat/ && \
+	youtube-dl --extract-audio --audio-format=mp3 -f 140 \
+		https://soundcloud.com/monstercat/ ;
+
+cd ~/Music/eden/ && \
+	youtube-dl --extract-audio --audio-format=mp3 -f 140 \
+		https://www.youtube.com/playlist?list=PLBjgabMkZhZNkDqf7RPFc3Fh22F3wP41q ;
+	youtube-dl --extract-audio --audio-format=mp3 \
+		https://soundcloud.com/eden-mcmxcv/tracks ;
+
+cd ~/Music/soundcloud/ && \
+	youtube-dl --extract-audio --audio-format=mp3 \
+		https://soundcloud.com/kylescottmcgill/sets/work ;
+

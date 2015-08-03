@@ -174,6 +174,11 @@ Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'vim'] }
 Plug 'avakhov/vim-yaml'
 
 " }}}
+" {{{ Clojure
+
+
+
+" }}}
 
 " Go Native Plugin
 set runtimepath+=$GOROOT/misc/vim
