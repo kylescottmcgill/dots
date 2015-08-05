@@ -28,8 +28,13 @@ export PHPPATH=~/.composer/vendor/bin
 # Local Path
 export LOCALPATH=~/.local/bin
 
-# Scala Paths
+# Scala Path
 export SCALAPATH=~/bin
+
+# RVM
+export RUBYPATH="$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
@@ -55,7 +60,7 @@ source $HOME/.bash_private
 #fi
 
 # Custom Shiz
-export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$SCALAPATH:$PATH:./bin"
+export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$SCALAPATH:$RUBYPATH:$PATH:./bin"
 
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
@@ -99,3 +104,5 @@ man() {
         man "$@"
 }
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
