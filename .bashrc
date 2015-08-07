@@ -31,11 +31,6 @@ export LOCALPATH=~/.local/bin
 # Scala Path
 export SCALAPATH=~/bin
 
-# RVM
-export RUBYPATH="$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
@@ -43,7 +38,7 @@ source $BASH_IT/bash_it.sh
 source $HOME/.bash_private
 
 #if [[ "$(uname)" == "Linux" ]]; then
-	eval $(dircolors -b $HOME/.colors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_CUSTOM#g | sed -e s#^export\ LS_COLORS##g)
+	eval $(dircolors -b $HOME/.config/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_CUSTOM#g | sed -e s#^export\ LS_COLORS##g)
 	eval $(dircolors -b $HOME/.config/dircolors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_BASE#g | sed -e s#^export\ LS_COLORS##g)
 	export LS_COLORS="$LS_COLORS_BASE$LS_COLORS_CUSTOM"
 
@@ -60,7 +55,7 @@ source $HOME/.bash_private
 #fi
 
 # Custom Shiz
-export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$SCALAPATH:$RUBYPATH:$PATH:./bin"
+export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$SCALAPATH:$PATH:./bin"
 
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null

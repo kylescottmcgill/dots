@@ -23,7 +23,6 @@ xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 
 # This is required for some GTK2 themes to get set correctly
 
-export _JAVA_AWT_WM_NONREPARENTING=1
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 source /etc/X11/xinit/xinitrc.d/30-dbus.sh
@@ -35,9 +34,10 @@ export GNOME_KEYRING_CONTROL
 export GNOME_KEYRING_PID
 
 compton &
+nitrogen --restore &
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
     #"turtil") sxhkd & exec bspwm ;;    # Laptop
-    "turtil") sxhkd & startxfce4 ;;    # Laptop
+    "turtil") sxhkd & bspwm ;;    # Laptop
 esac

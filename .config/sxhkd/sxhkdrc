@@ -128,7 +128,7 @@ super + Return
 	termite
 
 super + shift + Return
-	gnome-terminal-tmux
+	~/.bin/intellij
 
 super + b
 	~/.bin/chromium
