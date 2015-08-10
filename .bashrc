@@ -18,63 +18,46 @@ unset MAILCHECK
 # Change this to your console based IRC client of choice.
 export IRC_CLIENT='weechat'
 
-# Go Path
-export GOPATH=~/.go
-export GOBIN=$GOPATH/bin
-
 # PHP Path
-export PHPPATH=~/.composer/vendor/bin
+#export PHPPATH=~/.composer/vendor/bin
 
 # Local Path
 export LOCALPATH=~/.local/bin
 
 # Scala Path
-export SCALAPATH=~/bin
+export SCALAPATH=$LOCALPATH
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
-# Sources Private Settings like auth tokens etc
-source $HOME/.bash_private
+eval $(dircolors -b $HOME/.config/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_CUSTOM#g | sed -e s#^export\ LS_COLORS##g)
+eval $(dircolors -b $HOME/.config/dircolors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_BASE#g | sed -e s#^export\ LS_COLORS##g)
+export LS_COLORS="$LS_COLORS_BASE$LS_COLORS_CUSTOM"
 
-#if [[ "$(uname)" == "Linux" ]]; then
-	eval $(dircolors -b $HOME/.config/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_CUSTOM#g | sed -e s#^export\ LS_COLORS##g)
-	eval $(dircolors -b $HOME/.config/dircolors/LS_COLORS | sed -e s#^LS_COLORS#LS_COLORS_BASE#g | sed -e s#^export\ LS_COLORS##g)
-	export LS_COLORS="$LS_COLORS_BASE$LS_COLORS_CUSTOM"
-
-	hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
-	alias ls='ls --color -h --group-directories-first'
-#else
-#	export PATH="$(brew --prefix homebrew/php/php56)/bin:$HOME/Library/Python/2.7/bin:$PATH"
-#	export MACPATH="$(brew --prefix coreutils)/libexec/gunbin"
-#
-#	if [ -f $(brew --prefix)/etc/bash_completion ]; then
-#		. $(brew --prefix)/etc/bash_completion
-#	fi
-#	source ~/.nix-profile/etc/profile.d/nix.sh
-#fi
+hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
 
 # Custom Shiz
-export PATH="$HOME/.bin:$PHPPATH:$GOBIN:$LOCALPATH:$SCALAPATH:$PATH:./bin"
+export PATH="$LOCALPATH:$SCALAPATH:$PATH"
 
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
 export BROWSER=chromium
 export XDG_CONFIG_HOME="$HOME/.config"
+export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 
 export COLORSCHEME="minimal"
 
+alias ls='ls --color -h --group-directories-first'
 alias sl='ls'
 alias less='less -F -g -i -M -R -S -w -X -z -4'
-alias packer='packer --noconfirm --noedit --auronly'
+alias packer='apacman --noconfirm --noedit --auronly --needed --purgebuild'
 alias search='\packer -Ss'
 alias ll='ls -lh'
 alias rm='rm -f'
 alias tmux='tmux -2 -f $HOME/.config/tmux/tmux.conf'
 alias v=vim
 alias vim="nvim -i ~/.cache/nviminfo"
-alias mini='source $HOME/.bin/mini'
 
 #alias git=hub
 alias gitpp='git pull ; git push'

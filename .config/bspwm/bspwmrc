@@ -66,3 +66,4 @@ bspc rule -a DBeaver border=off follow=off
 export BSPWM_SOCKET="/tmp/bspwm-socket"
 export PANEL_FIFO="/tmp/panel-fifo"
 
+#panel &

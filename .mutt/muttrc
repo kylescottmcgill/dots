@@ -86,6 +86,9 @@ mailboxes +Kyle/INBOX.Elixir
 mailboxes +Kyle/INBOX.Github
 mailboxes +Kyle/INBOX.Sent
 
+mailboxes +Work/INBOX
+mailboxes +Work/[Gmail].Completed
+mailboxes +Work/[Gmail].Sent
 # boxes
 #mailboxes +XM/inbox
 #mailboxes +XM/completed
@@ -96,7 +99,7 @@ source $alias_file             # required for functionality
 source ~/.mutt/colors   # source colors file
 #source ~/.mutt/sidebar.muttrc  # any muttng options are here
 source ~/.mutt/kyle.muttrc    # source gmail as default
-#source ~/.mutt/XM.muttrc    # source gmail as default
+source ~/.mutt/work.muttrc    # source gmail as default
 
 # account specific sources
 folder-hook Kyle/* source ~/.mutt/kyle.muttrc
