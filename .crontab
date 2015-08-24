@@ -1,5 +1,4 @@
-*/3 * * * * /home/kyle/.bin/mailrun
-*/3 * * * * /home/kyle/.bin/crontab-update
-*/1 * * * * /home/kyle/.bin/autorandr-auto
+*/3 * * * * /home/kyle/.local/bin/mailrun
+*/3 * * * * /home/kyle/.local/bin/crontab-update
 
 #vim: set ft=crontab ts=8 sw=4 tw=140 et :

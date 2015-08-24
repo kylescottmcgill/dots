@@ -31,6 +31,7 @@
 	default = current
 [merge]
 	renormalize = true
+	renamelimit = 4170
 [difftool]
 	prompt = false
 [mergetool]

@@ -8,7 +8,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = tewi 11
+font = tewi 8
 scrollback_lines = 1000
 search_wrap = true
 #icon_name = terminal
@@ -18,7 +18,7 @@ cursor_blink = on
 # "block", "underline" or "ibeam"
 cursor_shape = ibeam
 # $BROWSER is used by default
-browser = chromium
+browser = firefox-developer
 # set size hints for the window
 #size_hints = false
 # emit escape sequences for other keys modified by Control
@@ -32,7 +32,7 @@ pseudo_transparency = false
 #word_chars = -A-Za-z0-9,./?%&#:_=+@~
 
 [colors]
-#highlight = #2f2f2f
+highlight = #2f2f2f
 cursor = #e6e1dc
 
 foreground_dim = #888888
@@ -75,8 +75,6 @@ foreground_bold = #ffffff
 #color7 = #d7d9cd
 #color15 = #f6f6f5
 
-
-
 # -- Pencil -------------------------------------------------------- {{{
 #
 #   A color scheme inspired by iA Writer
@@ -117,8 +115,6 @@ color7 = #d9d9d9
 color15 = #f1f1f1
 
 # }}}
-
-
 
 #URxvt.colorIT: #cacaca
 #URxvt.colorBD: #ede265

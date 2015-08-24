@@ -150,23 +150,23 @@ Plug 'rking/ag.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-obsession'
 
 " {{{ Elixir
 
-Plug 'mattreduce/vim-mix', { 'for': 'elixir' }
-Plug 'carlosgaldino/elixir-snippets', { 'for': 'elixir' }
+" Plug 'mattreduce/vim-mix', { 'for': 'elixir' }
+" Plug 'carlosgaldino/elixir-snippets', { 'for': 'elixir' }
 
 " }}}
 " {{{ HTML
 
-Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'vim'] }
+" Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'vim'] }
 
 " }}}
 " {{{ Yaml
@@ -174,9 +174,9 @@ Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'vim'] }
 Plug 'avakhov/vim-yaml'
 
 " }}}
-" {{{ Clojure
+" {{{ Rust
 
-
+Plug 'phildawes/racer', { 'for': 'rust', 'do': 'cargo build --release' }
 
 " }}}
 
@@ -390,6 +390,9 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_filetype_specific_completion_to_disable = {
 			\ 'gitcommit': 1
 			\}
+
+let g:racer_cmd = "~/.nvim/plugged/racer/target/release/racer"
+let $RUST_SRC_PATH="/usr/src/rust/src/"
 
 " Easy Tags
 let g:easytags_events = ['BufReadPost', 'BufWritePost']

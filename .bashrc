@@ -27,6 +27,9 @@ export LOCALPATH=~/.local/bin
 # Scala Path
 export SCALAPATH=$LOCALPATH
 
+# Rust
+export RUST_SRC_PATH=/usr/src/rust/src
+
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
@@ -42,7 +45,7 @@ export PATH="$LOCALPATH:$SCALAPATH:$PATH"
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
-export BROWSER=chromium
+export BROWSER=firefox-developer
 export XDG_CONFIG_HOME="$HOME/.config"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 
