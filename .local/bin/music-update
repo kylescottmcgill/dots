@@ -1,20 +1,20 @@
 #!/bin/bash
 
-cd ~/Music/youtube/ && \
+cd ~/Music/ && \
 	youtube-dl --extract-audio --audio-format=mp3 -f 140 \
-		https://www.youtube.com/playlist?list=PLiFU_tw8Vf8yFEp7Pjgul8--6XnKYYLnd ;
+		https://www.youtube.com/playlist?list=PLiFU_tw8Vf8xP4tbqaamdnw87dkBGkfi4 ;
 
-cd ~/Music/monstercat/ && \
+cd ~/Music/ && \
 	youtube-dl --extract-audio --audio-format=mp3 -f 140 \
 		https://soundcloud.com/monstercat/ ;
 
-cd ~/Music/eden/ && \
-	youtube-dl --extract-audio --audio-format=mp3 -f 140 \
-		https://www.youtube.com/playlist?list=PLBjgabMkZhZNkDqf7RPFc3Fh22F3wP41q ;
-	youtube-dl --extract-audio --audio-format=mp3 \
-		https://soundcloud.com/eden-mcmxcv/tracks ;
+#cd ~/Music/eden/ && \
+#	youtube-dl --extract-audio --audio-format=mp3 -f 140 \
+#		https://www.youtube.com/playlist?list=PLBjgabMkZhZNkDqf7RPFc3Fh22F3wP41q ;
+#	youtube-dl --extract-audio --audio-format=mp3 \
+#		https://soundcloud.com/eden-mcmxcv/tracks ;
 
-cd ~/Music/soundcloud/ && \
-	youtube-dl --extract-audio --audio-format=mp3 \
-		https://soundcloud.com/kylescottmcgill/sets/work ;
+#cd ~/Music/soundcloud/ && \
+#	youtube-dl --extract-audio --audio-format=mp3 \
+#		https://soundcloud.com/kylescottmcgill/sets/work ;
 

@@ -40,8 +40,8 @@ foreground_bold = #ffffff
 #active_foreground = #e68080
 #active_background = #3f3f3f
 
-#foreground = #d2d2ca
-#background = #151B22
+foreground = #d2d2ca
+background = #151B22
 
 #Black
 #color0 = #36393a
@@ -86,8 +86,8 @@ foreground_bold = #ffffff
 
 [colors]
 # Base
-background = #212121
-foreground = #d9d9d9
+#background = #212121
+#foreground = #d9d9d9
 cursorColor = #20bbfc
 # Black
 color0 = #212121

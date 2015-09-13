@@ -59,7 +59,7 @@ bspc rule -a Skype pseudo_tiled=off border=off split_ratio=0.75
 bspc rule -a Steam floating=on border=off center=on
 bspc rule -a Chromium border=off center=on
 bspc rule -a mpv floating=on follow=on center=on border=off
-bspc rule -a Termite border=on follow=on split_ratio=0.75
+bspc rule -a Termite border=on follow=on split_ratio=0.5
 bspc rule -a jetbrains-idea border=off floating=on follow=off center=on
 bspc rule -a DBeaver border=off follow=off
 

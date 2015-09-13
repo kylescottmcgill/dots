@@ -150,7 +150,7 @@ Plug 'rking/ag.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/syntastic'
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --gocode-completer' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
 Plug 'godlygeek/tabular'
@@ -158,15 +158,9 @@ Plug 'honza/vim-snippets'
 "Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-obsession'
 
-" {{{ Elixir
+" {{{ Go
 
-" Plug 'mattreduce/vim-mix', { 'for': 'elixir' }
-" Plug 'carlosgaldino/elixir-snippets', { 'for': 'elixir' }
-
-" }}}
-" {{{ HTML
-
-" Plug 'gorodinskiy/vim-coloresque', { 'for': ['css', 'vim'] }
+" Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 " }}}
 " {{{ Yaml
@@ -408,6 +402,18 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" fatih/vim-go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+
+
 
 " }}}
 

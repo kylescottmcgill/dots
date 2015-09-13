@@ -18,17 +18,16 @@ unset MAILCHECK
 # Change this to your console based IRC client of choice.
 export IRC_CLIENT='weechat'
 
-# PHP Path
-#export PHPPATH=~/.composer/vendor/bin
-
 # Local Path
 export LOCALPATH=~/.local/bin
 
-# Scala Path
-export SCALAPATH=$LOCALPATH
-
 # Rust
 export RUST_SRC_PATH=/usr/src/rust/src
+
+# Golang
+#export GOPATH=~/.go
+#export GOBIN=~/.go/bin
+[[ -s "/home/kyle/.gvm/scripts/gvm" ]] && source "/home/kyle/.gvm/scripts/gvm"
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
@@ -40,7 +39,7 @@ export LS_COLORS="$LS_COLORS_BASE$LS_COLORS_CUSTOM"
 hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
 
 # Custom Shiz
-export PATH="$LOCALPATH:$SCALAPATH:$PATH"
+export PATH="$LOCALPATH:$PATH"
 
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
@@ -85,5 +84,4 @@ man() {
         man "$@"
 }
 
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s /home/kyle/.rsvm/rsvm.sh ]] && . /home/kyle/.rsvm/rsvm.sh # This loads RSVM
