@@ -19,7 +19,8 @@ curl_format='{
  "time_redirect": %{time_redirect},
  "time_starttransfer": %{time_starttransfer},
  "time_total": %{time_total},
- "size_rquest": %{size_request}
+ "size_rquest": %{size_request},
+ "size_download": %{size_download}
 }
 '
 

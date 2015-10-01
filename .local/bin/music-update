@@ -5,7 +5,7 @@ cd ~/Music/ && \
 		https://www.youtube.com/playlist?list=PLiFU_tw8Vf8xP4tbqaamdnw87dkBGkfi4 ;
 
 cd ~/Music/ && \
-	youtube-dl --extract-audio --audio-format=mp3 -f 140 \
+	youtube-dl --extract-audio --audio-format=mp3 \
 		https://soundcloud.com/monstercat/ ;
 
 #cd ~/Music/eden/ && \

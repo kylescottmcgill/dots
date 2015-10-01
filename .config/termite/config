@@ -37,8 +37,8 @@ cursor = #e6e1dc
 
 foreground_dim = #888888
 foreground_bold = #ffffff
-#active_foreground = #e68080
-#active_background = #3f3f3f
+active_foreground = #e68080
+active_background = #3f3f3f
 
 foreground = #d2d2ca
 background = #151B22

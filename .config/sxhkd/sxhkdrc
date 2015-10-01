@@ -6,7 +6,6 @@ super + alt + Escape
 super + w
 	bspc window -c
 
-# Increase the size ???
 super + t
 	bspc desktop -l next
 
@@ -31,32 +30,14 @@ super + {o,i}
 	bspc window {older,newer} -f; \
 	bspc control --record-history on
 
-super + y
-	bspc window -w last.manual
-
 super + m
 	bspc window -s biggest
-
-#super + {_,shift + }{h,j,k,l}
-#	 bspc window -{f,s} {left,down,up,right}
-
-super + {_,shift + }c
-	bspc window -f {next,prev}
 
 super + {comma,period}
 	bspc desktop -C {backward,forward}
 
-super + bracket{left,right}
-	bspc desktop -f {prev,next}
-
-super + alt + {Left,Right,Up,Down}
-    xdo move {-x -20,-x +20,-y -20,-y +20}
-
-#super + alt + {Left,Down,Up,Right}
-#	 bspc window -p {left,down,up,right}
-
-#super + ctrl + {_,shift + }space
-#	 bspc {window -p cancel,desktop -c}
+super + alt + {Left,Down,Up,Right}
+	 bspc window -p {left,down,up,right}
 
 super + ctrl + {1-9}
 	bspc window -r 0.{1-9}
@@ -98,9 +79,6 @@ super + ctrl + {Left,Down,Up,Right}
 super + ctrl + shift + {Left,Down,Up,Right}
 	bspc window -e {right -10,up +10,down -10,left +10}
 
-super + F1
-	~/.bin/autorandr -cf
-
 # }}}
 # Media Keys {{{
 
@@ -133,17 +111,17 @@ XF86AudioPlay
 super + Return
 	termite
 
-super + shift + Return
-	~/.bin/intellij
-
 super + b
-	~/.bin/chromium
+	firefox-developer
 
 super + grave
 	rofi -show run
 
 super + Escape
 	pkill -USR1 -x sxhkd
+
+super + shift + f
+	chatr
 
 # }}}
 
