@@ -20,17 +20,17 @@ rofi.foreground: #d2d2ca
 rofi.highlightbg: #151B22
 rofi.highlightfg: #924445
 rofi.bordercolor: #333333
-rofi.font: tewi 14
+rofi.font: tewi 8
 rofi.padding: 700
 rofi.lines: 5
 rofi.borderwidth: 0
-rofi.terminal: urxvtc
+rofi.terminal: termite
 rofi.opacity: 90
 rofi.width: 100
 
 Skype*background: #f6f6f6
 Skype*foreground: #888888
 
-}}}
+! }}}
 
 ! vim: et sw=2 syn=xdefaults

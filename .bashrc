@@ -61,7 +61,8 @@ alias tmux='tmux -2 -f $HOME/.config/tmux/tmux.conf'
 alias v=vim
 alias vim="nvim -i ~/.cache/nviminfo"
 
-#alias git=hub
+alias git=hub
+
 alias gitpp='git pull ; git push'
 alias gits='git status -s'
 alias gs='git status -s'

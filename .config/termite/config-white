@@ -37,50 +37,6 @@ border = #3f3f3f
 border_width = 0.5
 roundness = 2.0
 
-[colors]
-highlight = #2f2f2f
-cursor = #e6e1dc
-
-foreground_dim = #888888
-foreground_bold = #ffffff
-active_foreground = #e68080
-active_background = #3f3f3f
-
-foreground = #d2d2ca
-background = #151B22
-
-#Black
-#color0 = #36393a
-#color8 = #627369
-
-#Red
-#color1 = #924445
-#color9 = #803536
-
-#Green
-#color2 = #456140
-#color10 = #33642A
-
-#Yellow
-#color3 = #DAB257
-#color11 = #AC8E46
-
-#Blue
-#color4 = #657386
-#color12 = #334E72
-
-#Magenta
-#color5 = #977F94
-#color13 = #7A6A78
-
-#Cyan
-#color6 = #7DB9BA
-#color14 = #5F9898
-
-#White
-#color7 = #d7d9cd
-#color15 = #f6f6f5
-
 # -- Pencil -------------------------------------------------------- {{{
 #
 #   A color scheme inspired by iA Writer
@@ -92,8 +48,8 @@ background = #151B22
 
 [colors]
 # Base
-#background = #212121
-#foreground = #d9d9d9
+background = #f1f1f1
+foreground = #424242
 cursorColor = #20bbfc
 # Black
 color0 = #212121
