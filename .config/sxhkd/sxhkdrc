@@ -112,7 +112,7 @@ super + Return
 	termite
 
 super + shift + Return
-	termite -c ~/.config/termite/config-white
+	termite -c ~/.config/termite/config-alternative
 
 super + b
 	firefox-developer
