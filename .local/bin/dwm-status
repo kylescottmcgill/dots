@@ -1,7 +1,0 @@
-#!/bin/bash
-
-SEP=" "
-DATE=`date +"%R"`
-HOSTNAME=`hostname`
-
-echo -e $HOSTNAME$SEP$DATE

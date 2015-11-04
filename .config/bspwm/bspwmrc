@@ -55,8 +55,6 @@ bspc config remove_unplugged_monitors true
 
 # Rules
 bspc rule -r $(bspc rule -l | awk '{print $1}')
-bspc rule -a Skype pseudo_tiled=off border=off split_ratio=0.75
-bspc rule -a Steam floating=on border=off center=on
 bspc rule -a Chromium border=off center=on
 bspc rule -a mpv floating=on follow=on center=on border=off
 bspc rule -a Termite border=on follow=on split_ratio=0.5
@@ -67,4 +65,3 @@ export BSPWM_SOCKET="/tmp/bspwm-socket"
 export PANEL_FIFO="/tmp/panel-fifo"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
-#panel &

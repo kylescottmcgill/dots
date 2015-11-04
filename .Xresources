@@ -1,19 +1,19 @@
 ! XFT Settings {{{
 
-Xft.autohint: true
-Xft.antialias: true
-Xft.hinting: true
-Xft.hintstyle: hintslight
-Xft.rgba: rgb
-Xft.lcdfilter: lcddefault
-Xft.dpi: 96
+!Xft.autohint: true
+!Xft.antialias: true
+!Xft.hinting: true
+!Xft.hintstyle: hintslight
+!Xft.rgba: rgb
+!Xft.lcdfilter: lcddefault
+!Xft.dpi: 96
 
 ! }}}
 
 ! Misc Applications {{{
 
-Xcursor*theme: Simple-and-Soft
-Xcursor.size: 22
+!Xcursor*theme: Simple-and-Soft
+!Xcursor.size: 22
 
 rofi.background: #1F2833
 rofi.foreground: #d2d2ca
@@ -21,12 +21,12 @@ rofi.highlightbg: #151B22
 rofi.highlightfg: #924445
 rofi.bordercolor: #333333
 rofi.font: tewi 8
-rofi.padding: 700
+rofi.padding: 5
 rofi.lines: 5
 rofi.borderwidth: 0
-rofi.terminal: termite
-rofi.opacity: 90
-rofi.width: 100
+!rofi.terminal: termite
+!rofi.opacity: 90
+!rofi.width: 50
 
 Skype*background: #f6f6f6
 Skype*foreground: #888888

@@ -66,6 +66,7 @@ alias git=hub
 alias gitpp='git pull ; git push'
 alias gits='git status -s'
 alias gs='git status -s'
+alias glog='git log --graph --decorate --pretty=oneline --abbrev-commit'
 
 alias mysql='mysql --auto-rehash'
 

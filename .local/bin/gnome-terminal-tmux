@@ -1,6 +1,0 @@
-#!/bin/bash
-HOSTNAME=`hostname`
-DATE=`date +"%H%M%S"`
-/usr/bin/gnome-terminal --hide-menubar --command "sh -c \
-	'tmux -q has-session && exec tmux new-session -s $HOSTNAME-$DATE -t $HOSTNAME \; neww \
-	|| exec tmux -2 -f $HOME/.config/tmux/tmux.conf new -s $HOSTNAME -n Main'"

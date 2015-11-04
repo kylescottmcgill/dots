@@ -1,3 +1,0 @@
-#!/bin/bash
-
-cd ~/Projects/pkgbuild/dwm-git/ && makepkg -ficC --noconfirm && killall dwm

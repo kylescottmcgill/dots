@@ -12,7 +12,8 @@ font = tewi 8
 scrollback_lines = 1000
 search_wrap = true
 #icon_name = terminal
-#geometry = 640x480
+geometry = 920x240
+#640x480
 # "system", "on" or "off"
 cursor_blink = on
 # "block", "underline" or "ibeam"

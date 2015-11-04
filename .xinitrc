@@ -18,10 +18,22 @@ xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 # This is required for some GTK2 themes to get set correctly
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
-compton &
-nitrogen --restore &
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+
+#compton &
+hsetroot -fill "$HOME/Pictures/033 - YNMDMrz.jpg" &
+sxhkd &
+
+focus_watcher.sh &
+gm &
+#pulse.sh &
+
+exec sh -c '$HOME/.local/bin/swm'
+
+#xwait
 
 # Finally, start the correct WindowManger based on the hostname
-case "$(hostname)" in
-    "turtil") sxhkd & bspwm ;;    # Laptop
-esac
+#case "$(hostname)" in
+#    "turtil") bspwm ;;    # Laptop
+#esac
