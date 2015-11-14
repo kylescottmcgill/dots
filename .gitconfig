@@ -5,7 +5,7 @@
 	autocrlf = false
 	eol = lf
 	filemode = false
-	excludesfile = /Users/Kyle/.gitignore_global
+	excludesfile = /home/kyle/.gitignore_global
 [color]
 	filemode = false
 	diff = auto
@@ -53,5 +53,5 @@
 	smudge = git lfs smudge %f
 	required = true
 
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+#[url "git@github.com:"]
+#	insteadOf = https://github.com/
