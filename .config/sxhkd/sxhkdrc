@@ -69,7 +69,7 @@ super + Return
  termite
 
 super + shift + Return
- termite -c ~/.config/termite/config-alternative
+ atom
 
 super + shift + b
  firefox-developer

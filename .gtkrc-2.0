@@ -1,5 +1,5 @@
-gtk-theme-name = "Arc"
-gtk-icon-theme-name = "Paper"
+gtk-theme-name = "Numix"
+gtk-icon-theme-name = "Flattr"
 gtk-font-name = "Tewi 8"
 
 style "vimfix" {
