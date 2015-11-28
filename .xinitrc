@@ -21,10 +21,6 @@ autocutsel -fork
 autocutsel -selection PRIMARY -fork
 
 feh --bg-fill "$HOME/Pictures/253 - NDO9v7C.jpg" --no-fehbg
-#sxhkd &
-
-#focus_watcher.sh &
-#gm &
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
