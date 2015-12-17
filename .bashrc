@@ -24,8 +24,7 @@ export LOCALPATH=~/.local/bin
 # Golang
 export GOPATH=$HOME/Projects
 export GOBIN=$HOME/Projects/bin
-#[[ -s "/home/kyle/.gvm/scripts/gvm" ]] && source "/home/kyle/.gvm/scripts/gvm"
-#gvm pkgset use personal &>/dev/null
+export PHPPATH=$HOME/.composer/vendor/bin
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
@@ -37,7 +36,7 @@ export LS_COLORS="$LS_COLORS_BASE$LS_COLORS_CUSTOM"
 hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
 
 # Custom Shiz
-export PATH="$LOCALPATH:$GOBIN:$PATH"
+export PATH="$LOCALPATH:$GOBIN:$PHPPATH:$PATH"
 
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
