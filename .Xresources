@@ -1,12 +1,12 @@
 ! XFT Settings {{{
 
-!Xft.autohint: true
-!Xft.antialias: true
-!Xft.hinting: true
-!Xft.hintstyle: hintslight
-!Xft.rgba: rgb
-!Xft.lcdfilter: lcddefault
-!Xft.dpi: 96
+Xft.autohint: true
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+Xft.dpi: 96
 
 ! }}}
 
@@ -27,9 +27,6 @@ rofi.borderwidth: 0
 !rofi.terminal: termite
 !rofi.opacity: 90
 !rofi.width: 50
-
-Skype*background: #f6f6f6
-Skype*foreground: #888888
 
 ! }}}
 

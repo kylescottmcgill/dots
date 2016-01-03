@@ -50,7 +50,7 @@ export COLORSCHEME="minimal"
 alias ls='ls --color -h --group-directories-first'
 alias sl='ls'
 alias less='less -F -g -i -M -R -S -w -X -z -4'
-alias packer='apacman --noconfirm --noedit --auronly --needed --purgebuild'
+alias packer='packer --noconfirm --noedit --auronly'
 alias search='\packer -Ss'
 alias ll='ls -lh'
 alias rm='rm -f'
@@ -83,3 +83,11 @@ man() {
         man "$@"
 }
 
+if [[ -z "$TMUX" && $TERM == "xterm-termite" ]] ;then
+    ID="`tmux ls | grep -m1 attached | cut -d: -f1`" # get the id of a deattached session
+    if [[ -z "$ID" ]] ;then # if not available create a new one
+        tmux new-session
+    else
+        tmux new-session -t "$ID" # if available attach to it
+    fi
+fi
