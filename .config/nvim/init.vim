@@ -16,7 +16,7 @@ set fileencodings=utf-8
 " }}}
 " General {{{
 
-set number				" Show line numbers
+set nonumber				" Show line numbers
 set wrap
 set linebreak			" Break lines at word (requires Wrap lines)
 set nolist

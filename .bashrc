@@ -44,6 +44,7 @@ export BZR_LOG=/dev/null
 export BROWSER=firefox-developer
 export XDG_CONFIG_HOME="$HOME/.config"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
+export WWW_HOME="$HOME/.cache"
 
 export COLORSCHEME="minimal"
 
@@ -83,11 +84,3 @@ man() {
         man "$@"
 }
 
-if [[ -z "$TMUX" && $TERM == "xterm-termite" ]] ;then
-    ID="`tmux ls | grep -m1 attached | cut -d: -f1`" # get the id of a deattached session
-    if [[ -z "$ID" ]] ;then # if not available create a new one
-        tmux new-session
-    else
-        tmux new-session -t "$ID" # if available attach to it
-    fi
-fi

@@ -1,14 +1,21 @@
 #!/bin/bash
 
-cd ~/Music/youtube && \
-	youtube-dl --no-check-certificate --extract-audio --audio-format=mp3 \
-		"https://www.youtube.com/playlist?list=PLiFU_tw8Vf8wplu6Z6ZsXNGsjBp5f_AYd" ;
+#cd ~/Music/youtube && \
+#	youtube-dl --no-check-certificate --extract-audio --audio-format=mp3 \
+#		"https://soundcloud.com/mixes/" ;
 
 #cd ~/Music/youtube && \
 #	youtube-dl --no-check-certificate --extract-audio --audio-format=mp3 \
-#		https://soundcloud.com/monstercat/ ;
+#		"https://soundcloud.com/fuzzikittenz/" ;
+
+#cd ~/Music/youtube && \
+#	youtube-dl --no-check-certificate --extract-audio --audio-format=mp3 \
+#		"https://soundcloud.com/monstercat/" ;
 
 #cd ~/Music/eden/ && \
-#	youtube-dl ---no-check-certificate -extract-audio --audio-format=mp3 \
-#		https://soundcloud.com/eden-mcmxcv/tracks ;
+#	youtube-dl --no-check-certificate --extract-audio --audio-format=mp3 \
+#		"https://soundcloud.com/eden-mcmxcv/tracks" ;
 
+cd ~/Music/youtube && \
+	youtube-dl --no-check-certificate --extract-audio --audio-format=mp3 \
+		"https://www.youtube.com/playlist?list=PLiFU_tw8Vf8wplu6Z6ZsXNGsjBp5f_AYd" ;
