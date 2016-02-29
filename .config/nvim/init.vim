@@ -21,7 +21,7 @@ set wrap
 set linebreak			" Break lines at word (requires Wrap lines)
 set nolist
 set showbreak=+++		" Wrap-broken line prefix
-set breakindent		" Break and indent based on current indent
+set breakindent			" Break and indent based on current indent
 set textwidth=140		" Line wrap (number of cols)
 set colorcolumn=0
 set showmatch			" Highlight matching brace
@@ -111,7 +111,7 @@ if has("gui_running")
 	set novisualbell
 end
 
-set lazyredraw			" Don't redraw while executing macros
+" set lazyredraw			" Don't redraw while executing macros
 
 " set omnifunc=syntaxcomplete#Complete
 
@@ -132,29 +132,32 @@ call plug#begin('~/.config/nvim/plugged')
 " Look and Feel
 Plug 'reedes/vim-colors-pencil'
 Plug 'cdmedia/itg_flat_vim'
+Plug 'whatyouhide/vim-gotham'
 
 " UI Improvements
 Plug 'bling/vim-airline'
 Plug 'bling/vim-bufferline'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
+"Plug 'scrooloose/nerdtree'
+"Plug 'majutsushi/tagbar'
 Plug 'itchyny/vim-gitbranch'
-Plug 'kien/ctrlp.vim'
-Plug 'rking/ag.vim'
+"Plug 'kien/ctrlp.vim'
+"Plug 'rking/ag.vim'
+Plug 'junegunn/goyo.vim'
 
 " Programming Improvments
 Plug 'sheerun/vim-polyglot'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --gocode-completer' }
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
+"Plug 'scrooloose/syntastic'
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --gocode-completer' }
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+"Plug 'xolox/vim-misc'
+"Plug 'xolox/vim-easytags'
 
 " {{{ Go
 
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.config/nvim/plugged/gocode/vim/symlink.sh' }
-Plug 'fatih/vim-go'
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'fatih/vim-go', {'for': 'go'}
 
 " }}}
 " {{{ Docker
@@ -245,9 +248,31 @@ function! AdjustWindowHeight(minheight, maxheight)
 	exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
+
 " }}}
 " Vim Bindings {{{
 
+nmap <leader>z :Goyo<cr>
 nmap <leader>p :bp<cr>
 nmap <leader>n :bn<cr>
 nmap <leader>d :bd!<cr>
@@ -280,6 +305,15 @@ map <leader>o <C-p>
 
 " }}}
 " Plugin bindings and functionality {{{
+
+"
+" Goyo
+"
+
+let g:goyo_width="80%"
+let g:goyo_height="80%"
+let g:goyo_linenr="2"
+
 
 "
 " Vim-airline
@@ -322,6 +356,8 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_check_on_open=1
 let g:syntastic_echo_current_error=1
 let g:syntastic_enable_signs=1
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " Tagbar
 let g:tagbar_type_go = {
@@ -366,20 +402,24 @@ if executable('ag')
 endif
 
 " YCM
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_filetype_specific_completion_to_disable = {
-			\ 'gitcommit': 1
-			\}
+"let g:ycm_collect_identifiers_from_tags_files = 1
+"let g:ycm_filetype_specific_completion_to_disable = {
+"			\ 'gitcommit': 1
+"			\}
 
 " fatih/vim-go
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
+let g:go_highlight_functions = 0
+let g:go_highlight_methods = 0
+let g:go_highlight_structs = 0
+let g:go_highlight_operators = 0
+let g:go_highlight_build_constraints = 0
 
-" let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
+let g:go_term_enabled = 0
+
+" Shougo/deoplete.nvim
+let g:deoplete#enable_at_startup = 1
 
 
 
