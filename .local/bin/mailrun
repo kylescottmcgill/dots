@@ -1,6 +1,0 @@
-#!/bin/bash
-
-PID=$(pgrep offlineimap)
-[[ -n "$PID" ]] && kill -n 9 "$PID"
-  offlineimap -o -u quiet &>/dev/null &
-exit

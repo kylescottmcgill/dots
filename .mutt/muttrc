@@ -82,8 +82,6 @@ mailboxes +Kyle/INBOX
 mailboxes +Kyle/INBOX.Completed
 mailboxes +Kyle/INBOX.Github
 mailboxes +Kyle/INBOX.Sent
-mailboxes +Kyle/INBOX.Golang
-mailboxes +Kyle/INBOX.Rust
 
 mailboxes +Work/INBOX
 mailboxes +Work/[Gmail].Completed

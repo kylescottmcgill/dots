@@ -1,8 +1,8 @@
 [Settings]
-gtk-theme-name=Numix
-gtk-icon-theme-name=Flattr
-gtk-font-name=Terminus 8
-gtk-cursor-theme-name=DMZ-White
+gtk-theme-name=Paper
+gtk-icon-theme-name=Paper
+gtk-font-name=Tewi 8
+gtk-cursor-theme-name=Paper
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_ICONS
 gtk-toolbar-icon-size=GTK_ICON_SIZE_SMALL_TOOLBAR

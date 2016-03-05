@@ -12,71 +12,79 @@ Xft.dpi: 96
 
 ! URxvt {{{
 
-urxvt*dpi:        96
-urxvt*antialias:  true
-urxvt*rgba:       vrgb
-urxvt*hinting:    true
-urxvt*hintstyle:  hintslight
+URxvt*dpi:        96
+URxvt*antialias:  true
+URxvt*rgba:       vrgb
+URxvt*hinting:    true
+URxvt*hintstyle:  hintslight
 
-urxvt*geometry:                 80x25
-urxvt*foreground:               #CCCCCC
-urxvt*depth:                    32
-urxvt*scrollBar:                false
-urxvt*font:                     xft:tewi-8
-urxvt*internalBorder:           20
-urxvt*colorBD:                  #CDCDAD
-urxvt*cursor:                   i-beam
-urxvt*cursorBlink:              true
-urxvt*cursorUnderline:          true
-urxvt*urlLauncher:              /usr/bin/firefox-developer
-urxvt*perl-lib:                 /usr/lib/urxvt/perl/
-urxvt*perl-ext-common:          default,matcher
-urxvt*matcher.button:           1
-urxvt*cutchars:                 `""()''*<>[]{|}
-!urxvt*background:              #1E231F
-!urxvt*borderLess:              true
-!urxvt*depth: 32
-!urxvt*background: rgba:0000/0000/0200/dddd
-urxvt*background: rgba:0000/0000/0200/b800
+URxvt*geometry:                 800x600
+URxvt*depth:                    32
+URxvt*scrollBar:                false
+URxvt*font:                     xft:tewi-8
+URxvt*lineSpace:				2.5
+URxvt*internalBorder:           20
+URxvt*colorBD:                  #FFFFFF
+URxvt*cursor:                   i-beam
+URxvt*cursorBlink:              true
+URxvt*cursorUnderline:          true
+URxvt*url-launcher:             /usr/bin/chromium
+URxvt*perl-lib:                 /usr/lib/urxvt/perl/
+URxvt*perl-ext-common:          default,matcher
+URxvt*matcher.button:           1
+URxvt*cutchars:                 `""()''*<>[]{|}
+URxvt*iso14755:					false
+URxvt*iso14755_52:				false
+URxvt*keysym.Control-Up:		\033[1;5A
+URxvt*keysym.Control-Down:		\033[1;5B
+URxvt*keysym.Control-Left:		\033[1;5D
+URxvt*keysym.Control-Right:		\033[1;5C
+!URxvt*background:              #1E231F
+!URxvt*borderLess:              true
+!URxvt*depth: 32
+!URxvt*background: rgba:0000/0000/0200/dddd
+URxvt*foreground:               #FFFFFF
+!URxvt*background: rgba:0000/0000/0200/b800
+URxvt*background: #282A31
 
 ! #Black
-urxvt.color0: #36393a
-urxvt.tolor8: #627369
+URxvt*color0: #36393a
+URxvt*tolor8: #627369
 
 ! #Red
-urxvt.color1: #924445
-urxvt.color9: #803536
+URxvt*color1: #924445
+URxvt*color9: #803536
 
 ! #Green
-urxvt.color2: #456140
-urxvt.color10: #33642A
+URxvt*color2: #456140
+URxvt*color10: #33642A
 
 ! #Yellow
-urxvt.color3: #DAB257
-urxvt.color11: #AC8E46
+URxvt*color3: #DAB257
+URxvt*color11: #AC8E46
 
 ! #Blue
-urxvt.color4: #657386
-urxvt.color12: #334E72
+URxvt*color4: #657386
+URxvt*color12: #334E72
 
 ! #Magenta
-urxvt.color5: #977F94
-urxvt.color13: #7A6A78
+URxvt*color5: #977F94
+URxvt*color13: #7A6A78
 
 ! #Cyan
-urxvt.color6: #7DB9BA
-urxvt.color14: #5F9898
+URxvt*color6: #7DB9BA
+URxvt*color14: #5F9898
 
 ! #White
-urxvt.color7: #d7d9cd
-urxvt.color15: #f6f6f5
+URxvt*color7: #d7d9cd
+URxvt*color15: #f6f6f5
 
 ! }}}
 
 ! Misc Applications {{{
 
-!Xcursor*theme: Simple-and-Soft
-!Xcursor.size: 22
+Xcursor*theme: Paper
+Xcursor.size: 22
 
 rofi.background: #1F2833
 rofi.foreground: #d2d2ca
@@ -90,6 +98,9 @@ rofi.borderwidth: 0
 !rofi.terminal: termite
 !rofi.opacity: 90
 !rofi.width: 50
+
+Skype*background: #f6f6f6
+Skype*foreground: #888888
 
 ! }}}
 

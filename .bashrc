@@ -25,6 +25,10 @@ export LOCALPATH=~/.local/bin
 export GOPATH=$HOME/Projects
 export GOBIN=$HOME/Projects/bin
 export PHPPATH=$HOME/.composer/vendor/bin
+export NPM_PACKAGES="${HOME}/.npm-packages/bin"
+
+# Custom Shiz
+export PATH="$LOCALPATH:$GOBIN:$PHPPATH:$NPM_PACKAGES:$PATH"
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
@@ -35,13 +39,11 @@ export LS_COLORS="$LS_COLORS_BASE$LS_COLORS_CUSTOM"
 
 hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash
 
-# Custom Shiz
-export PATH="$LOCALPATH:$GOBIN:$PHPPATH:$PATH"
 
 export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
-export BROWSER=firefox-developer
+export BROWSER=chromium
 export XDG_CONFIG_HOME="$HOME/.config"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export WWW_HOME="$HOME/.cache"
@@ -55,7 +57,6 @@ alias packer='packer --noconfirm --noedit --auronly'
 alias search='\packer -Ss'
 alias ll='ls -lh'
 alias rm='rm -f'
-alias tmux='tmux -2 -f $HOME/.config/tmux/tmux.conf'
 alias v=vim
 alias vim="nvim -i ~/.cache/nviminfo"
 
@@ -67,6 +68,8 @@ alias gs='git status -s'
 alias glog='git log --graph --decorate --pretty=oneline --abbrev-commit'
 
 alias mysql='mysql --auto-rehash'
+
+alias kali="docker run -t -i kalilinux/kali-linux-docker /bin/bash"
 
 stty werase undef
 bind '\C-w:unix-filename-rubout'

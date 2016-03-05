@@ -111,15 +111,7 @@ if has("gui_running")
 	set novisualbell
 end
 
-" set lazyredraw			" Don't redraw while executing macros
-
-" set omnifunc=syntaxcomplete#Complete
-
-set tags=.git/tags;,./tags;
-
-let g:acp_enableAtStartup = 0 " Disable AutoComplPop
-
-let no_buffers_menu=1
+set lazyredraw			" Don't redraw while executing macros
 
 " }}}
 " Plug Packages {{{
@@ -158,11 +150,6 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'fatih/vim-go', {'for': 'go'}
-
-" }}}
-" {{{ Docker
-
-Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
 
 " }}}
 
@@ -401,12 +388,6 @@ if executable('ag')
 	let g:ctrlp_user_command='ag -i %s -l --nocolor -g ""'
 endif
 
-" YCM
-"let g:ycm_collect_identifiers_from_tags_files = 1
-"let g:ycm_filetype_specific_completion_to_disable = {
-"			\ 'gitcommit': 1
-"			\}
-
 " fatih/vim-go
 let g:go_highlight_functions = 0
 let g:go_highlight_methods = 0
@@ -420,8 +401,6 @@ let g:go_term_enabled = 0
 
 " Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
-
-
 
 " }}}
 
