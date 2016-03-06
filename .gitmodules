@@ -1,6 +1,3 @@
-[submodule "bash"]
-	path = .config/bash-it
-	url = git@github.com:kylescottmcgill/bash-it.git
 [submodule "dircolors"]
 	path = .config/dircolors
 	url = git@github.com:trapd00r/LS_COLORS.git
