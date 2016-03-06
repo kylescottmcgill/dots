@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 
 # Load sensible.bash
-source $HOME/Projects/src/github.com/mrzool/bash-sensible/sensible.bash
-source $HOME/.bash/colors.bash
-source $HOME/.bash/theme.bash
+if [ -f $HOME/Projects/src/github.com/kylescottmcgill/bash-sensible/sensible.bash ]; then
+	source $HOME/Projects/src/github.com/kylescottmcgill/bash-sensible/sensible.bash
+fi
+
+if [ -d $HOME/.bash ]; then
+	source $HOME/.bash/alias.bash
+	source $HOME/.bash/colors.bash
+	source $HOME/.bash/theme.bash
+fi
 
 # Set my editor and git editor
 export EDITOR="$(which nvim)"
@@ -11,9 +17,6 @@ export GIT_EDITOR=$EDITOR
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
-
-# Change this to your console based IRC client of choice.
-export IRC_CLIENT='weechat'
 
 # Golang
 export GOPATH=$HOME/Projects
@@ -36,29 +39,3 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export WWW_HOME="$HOME/.cache"
 
-alias ls='ls --color -h --group-directories-first'
-alias sl='ls'
-alias less='less -F -g -i -M -R -S -w -X -z -4'
-alias packer='packer --noconfirm --noedit --auronly'
-alias search='\packer -Ss'
-alias ll='ls -lh'
-alias rm='rm -f'
-alias v=vim
-alias vim="nvim -i ~/.cache/nviminfo"
-alias git=hub
-alias gitpp='git pull ; git push'
-alias gits='git status -s'
-alias gs='git status -s'
-alias glog='git log --graph --decorate --pretty=oneline --abbrev-commit'
-
-man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-        LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-        LESS_TERMCAP_me=$'\E[0m' \
-        LESS_TERMCAP_se=$'\E[0m' \
-        LESS_TERMCAP_so=$'\E[38;5;246m' \
-        LESS_TERMCAP_ue=$'\E[0m' \
-        LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-        man "$@"
-}
-bind Space:magic-space
