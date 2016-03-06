@@ -22,7 +22,7 @@ URxvt*geometry:                 800x600
 URxvt*depth:                    32
 URxvt*scrollBar:                false
 URxvt*font:                     xft:tewi-8
-URxvt*lineSpace:				2.5
+URxvt*lineSpace:				3.5
 URxvt*internalBorder:           20
 URxvt*colorBD:                  #FFFFFF
 URxvt*cursor:                   i-beam
