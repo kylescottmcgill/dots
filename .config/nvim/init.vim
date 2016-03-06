@@ -122,8 +122,8 @@ syntax sync minlines=256
 call plug#begin('~/.config/nvim/plugged')
 
 " Look and Feel
-Plug 'reedes/vim-colors-pencil'
-Plug 'cdmedia/itg_flat_vim'
+" Plug 'reedes/vim-colors-pencil'
+" Plug 'cdmedia/itg_flat_vim'
 Plug 'whatyouhide/vim-gotham'
 
 " UI Improvements
@@ -163,8 +163,8 @@ filetype plugin indent on	 " required
 " Colors & Statusline {{{
 
 set background=dark
-colorscheme itg_flat
-let g:airline_theme = 'pencil'
+colorscheme gotham
+let g:airline_theme = 'gotham'
 
 set cursorline
 set nocursorcolumn
