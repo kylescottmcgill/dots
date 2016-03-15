@@ -6,28 +6,20 @@
 
 xset +fp /usr/share/fonts/local
 xset fp rehash                  # Something else for the fonts
-xset s off ; xset -dpms
-xrdb $HOME/.Xresources          # Merge Xresources
 fc-cache
-
+xset s off ; xset -dpms
 xset m 1/1 0                    # No Mouse Acceleration
 
-xsetroot -cursor_name left_ptr & # Use a non-shit cursor
-
-# This is required for some GTK2 themes to get set correctly
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+xrdb $HOME/.Xresources          # Merge Xresources
 
 autocutsel -fork
 autocutsel -selection PRIMARY -fork
-
-panel &
-
-$HOME/.fehbg
-
-feh --bg-fill "$HOME/Pictures/064 - 6CDButM.jpg" --no-fehbg
+# panel &
+$HOME/.fehbg &
+xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
-	"turtil") exec 2bwm ;;
+	"kuro") exec 2bwm ;;
 	*) xwait ;;
 esac

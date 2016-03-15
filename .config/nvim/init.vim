@@ -122,34 +122,30 @@ syntax sync minlines=256
 call plug#begin('~/.config/nvim/plugged')
 
 " Look and Feel
-" Plug 'reedes/vim-colors-pencil'
+Plug 'fxn/vim-monochrome'
+Plug 'reedes/vim-colors-pencil'
 " Plug 'cdmedia/itg_flat_vim'
-Plug 'whatyouhide/vim-gotham'
+" Plug 'whatyouhide/vim-gotham'
+" Plug 'rhysd/nyaovim-popup-tooltip'
+" Plug 'chriskempson/base16-vim'
 
 " UI Improvements
 Plug 'bling/vim-airline'
 Plug 'bling/vim-bufferline'
 Plug 'airblade/vim-gitgutter'
-"Plug 'scrooloose/nerdtree'
-"Plug 'majutsushi/tagbar'
 Plug 'itchyny/vim-gitbranch'
-"Plug 'kien/ctrlp.vim'
-"Plug 'rking/ag.vim'
 Plug 'junegunn/goyo.vim'
 
 " Programming Improvments
 Plug 'sheerun/vim-polyglot'
-"Plug 'scrooloose/syntastic'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --gocode-completer' }
 Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-"Plug 'xolox/vim-misc'
-"Plug 'xolox/vim-easytags'
 
 " {{{ Go
 
-Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'garyburd/go-explorer', {'for': 'go'}
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " }}}
 
@@ -163,16 +159,16 @@ filetype plugin indent on	 " required
 " Colors & Statusline {{{
 
 set background=dark
-colorscheme gotham
-let g:airline_theme = 'gotham'
+colorscheme monochrome
+let g:airline_theme = 'pencil'
 
-set cursorline
+set nocursorline
 set nocursorcolumn
 
 highlight cursorline				ctermfg=none ctermbg=black
 highlight cursorcolumn				ctermfg=none ctermbg=black
 highlight statusline				ctermfg=white ctermbg=black
-highlight signcolumn				ctermfg=grey ctermbg=none guibg=#282A31
+highlight signcolumn				ctermfg=none ctermbg=black
 highlight colorcolumn				ctermfg=none ctermbg=black
 highlight BadWhitespace				ctermbg=red guibg=red
 
@@ -343,6 +339,7 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_check_on_open=1
 let g:syntastic_echo_current_error=1
 let g:syntastic_enable_signs=1
+
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 

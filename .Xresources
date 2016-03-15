@@ -1,5 +1,18 @@
-!
-#include ".config/colors/gotham"
+! Colors {{{
+
+!#include ".config/colors/default"
+!#include ".config/colors/base16-grayscale.dark.256.xresources"
+!#include ".config/colors/ghoul"
+#include ".config/colors/grayscale.xresources"
+!#include ".config/colors/gotham"
+!#include ".config/colors/mon"
+!#include ".config/colors/mono.xresources"
+!#include ".config/colors/rok"
+!#include ".config/colors/sami"
+!#include ".config/colors/schweitzer"
+!#include ".config/colors/smear"
+
+! }}}
 ! XFT Settings {{{
 
 Xft.autohint: true
