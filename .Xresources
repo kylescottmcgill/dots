@@ -3,7 +3,8 @@
 !#include ".config/colors/default"
 !#include ".config/colors/base16-grayscale.dark.256.xresources"
 !#include ".config/colors/ghoul"
-#include ".config/colors/grayscale.xresources"
+#include ".config/colors/grayscale-dark.xresources"
+!#include ".config/colors/grayscale-light.xresources"
 !#include ".config/colors/gotham"
 !#include ".config/colors/mon"
 !#include ".config/colors/mono.xresources"
@@ -35,8 +36,8 @@ URxvt*hintstyle: hintslight
 URxvt*geometry: 800x600
 URxvt*depth: 32
 URxvt*scrollBar: false
-URxvt*font: xft:tewi-8
-URxvt*lineSpace: 3.5
+URxvt*font: xft:Tewi-8
+URxvt*lineSpace: 4
 URxvt*internalBorder: 20
 URxvt*colorBD: #FFFFFF
 URxvt*cursor: i-beam

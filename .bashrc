@@ -37,4 +37,3 @@ export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export WWW_HOME="$HOME/.cache"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
-hash pkgfile 2>/dev/null && source /usr/share/doc/pkgfile/command-not-found.bash

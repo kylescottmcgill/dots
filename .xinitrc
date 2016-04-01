@@ -14,9 +14,11 @@ xrdb $HOME/.Xresources          # Merge Xresources
 
 autocutsel -fork
 autocutsel -selection PRIMARY -fork
-# panel &
+panel &
 $HOME/.fehbg &
 xsetroot -cursor_name left_ptr & # Use a non-shit cursor
+
+compton -CGb
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
