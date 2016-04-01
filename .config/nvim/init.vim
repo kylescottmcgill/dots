@@ -188,8 +188,8 @@ augroup configgroup
 	autocmd!
 	autocmd VimEnter * highlight clear SignColumn
 
-	autocmd FileType mail setlocal spell
 	autocmd FileType go setlocal foldmethod=indent
+	autocmd FileType gitcommit set tw=72 | set spell | set colorcolumn=50
 
 	autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 	autocmd BufReadPost *
