@@ -18,7 +18,6 @@
 	name = Kyle Scott Mcgill
 [github]
 	user = kylescottmcgill
-
 [format]
 	pretty = oneline
 [log]
@@ -26,7 +25,6 @@
 	decorate = true
 [help]
 	autocorrect = 10
-
 [push]
 	default = current
 [merge]
@@ -36,9 +34,6 @@
 	prompt = false
 [mergetool]
 	prompt = false
-
-[init]
-	templatedir = ~/.gittmp
 [alias]
 	accept-ours = "!f() { files=\"$@\"; [ -z $files ] && files='.'; git checkout --ours -- $files; git add -u $files; }; f"
 	accept-theirs = "!f() { files=\"$@\"; [ -z $files ] && files='.'; git checkout --theirs -- $files; git add -u $files; }; f"
@@ -46,8 +41,6 @@
 	issues = !ghi
 	browse = !hub browse
 	hub = !hub
-	ctags = !.git/hooks/ctags
-	hooks = !cp -rf ~/.gittmp/hooks/* .git/hooks/
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
@@ -55,3 +48,5 @@
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[commit]
+	cleanup = strip

@@ -1,6 +1,0 @@
-[submodule "dircolors"]
-	path = .config/dircolors
-	url = git@github.com:trapd00r/LS_COLORS.git
-[submodule "private"]
-	path = .private
-	url = git@github.com:kylescottmcgill/private.git
