@@ -325,9 +325,6 @@ let g:bufferline_echo = 0
 let g:airline#extensions#tabline#fnametruncate = 0
 let g:airline#extensions#tabline#fnamecollapse = 0
 
-" NerdTree
-map <C-n> :NERDTreeToggle<cr>i
-
 " Syntastic
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_error_symbol = '✘'
