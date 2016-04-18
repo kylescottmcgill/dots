@@ -302,28 +302,28 @@ let g:goyo_linenr="2"
 " Vim-airline
 "
 
-" let g:airline_extensions = ['branch', 'syntastic', 'tabline', 'whitespace', 'hunks']
+"let g:airline_extensions = ['branch', 'syntastic', 'tabline', 'whitespace', 'hunks']
 
-"let g:airline_left_sep=''
-"let g:airline_right_sep=''
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 " Enable the list of buffers
-"let g:airline#extensions#whitespace#enabled = 1
-"let g:airline#extensions#hunks#non_zero_only = 1
-"let g:airline#extensions#syntastic#enabled = 1
-"let g:airline#extensions#bufferline#enabled = 0
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#bufferline#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
 
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = ' '
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = ' '
 
-"let g:bufferline_active_buffer_left = ''
-"let g:bufferline_active_buffer_right = ''
-"let g:bufferline_show_bufnr = 0
-"let g:bufferline_echo = 0
+let g:bufferline_active_buffer_left = ''
+let g:bufferline_active_buffer_right = ''
+let g:bufferline_show_bufnr = 0
+let g:bufferline_echo = 0
 
-"let g:airline#extensions#tabline#fnametruncate = 0
-"let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline#extensions#tabline#fnametruncate = 0
+let g:airline#extensions#tabline#fnamecollapse = 0
 
 " Syntastic
 let g:syntastic_always_populate_loc_list=1
