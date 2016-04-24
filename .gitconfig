@@ -51,3 +51,4 @@
 	insteadOf = https://github.com/
 [commit]
 	cleanup = strip
+	gpgsign = true
