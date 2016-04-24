@@ -12,6 +12,8 @@ xset m 1/1 0                    # No Mouse Acceleration
 
 xrdb $HOME/.Xresources          # Merge Xresources
 
+monitor &!
+
 autocutsel -fork
 autocutsel -selection PRIMARY -fork
 panel &

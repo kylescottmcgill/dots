@@ -60,6 +60,7 @@ set titlestring=%F
 set clipboard=unnamed
 set cmdheight=2
 set mouse=a
+set noshowmode
 
 set bomb
 set binary
@@ -296,7 +297,10 @@ let g:goyo_linenr="2"
 " Lightline
 "
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'PaperColor',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"⭤":""}',
+      \ }
       \ }
 
 " Syntastic
