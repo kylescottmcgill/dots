@@ -12,6 +12,7 @@ if [ -d $HOME/.bash ]; then
 	source $HOME/.bash/alias.bash
 	source $HOME/.bash/colors.bash
 	source $HOME/.bash/theme.bash
+	source $HOME/.bash/functions.bash
 fi
 
 # Set my editor and git editor
