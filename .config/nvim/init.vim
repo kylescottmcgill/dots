@@ -126,14 +126,9 @@ Plug 'fxn/vim-monochrome'
 Plug 'reedes/vim-colors-pencil'
 " Plug 'cdmedia/itg_flat_vim'
 " Plug 'whatyouhide/vim-gotham'
-" Plug 'rhysd/nyaovim-popup-tooltip'
-" Plug 'chriskempson/base16-vim'
 
 " UI Improvements
-Plug 'bling/vim-airline'
-Plug 'bling/vim-bufferline'
-Plug 'airblade/vim-gitgutter'
-Plug 'itchyny/vim-gitbranch'
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 
 " Programming Improvments
@@ -297,33 +292,12 @@ let g:goyo_width="80%"
 let g:goyo_height="80%"
 let g:goyo_linenr="2"
 
-
 "
-" Vim-airline
+" Lightline
 "
-
-"let g:airline_extensions = ['branch', 'syntastic', 'tabline', 'whitespace', 'hunks']
-
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-
-" Enable the list of buffers
-let g:airline#extensions#whitespace#enabled = 1
-let g:airline#extensions#hunks#non_zero_only = 1
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#bufferline#enabled = 0
-let g:airline#extensions#tabline#enabled = 1
-
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = ' '
-
-let g:bufferline_active_buffer_left = ''
-let g:bufferline_active_buffer_right = ''
-let g:bufferline_show_bufnr = 0
-let g:bufferline_echo = 0
-
-let g:airline#extensions#tabline#fnametruncate = 0
-let g:airline#extensions#tabline#fnamecollapse = 0
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
 " Syntastic
 let g:syntastic_always_populate_loc_list=1

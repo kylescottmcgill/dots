@@ -16,6 +16,7 @@
 [user]
 	email = email@kylescottmcgill.com
 	name = Kyle Scott Mcgill
+	signingkey = 2DAFEFDD
 [github]
 	user = kylescottmcgill
 [format]
