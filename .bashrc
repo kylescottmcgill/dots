@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Load sensible.bash
-SENSIBLE_BASH="$HOME/Projects/src/github.com/kylescottmcgill/bash-sensible/sensible.bash"
+SENSIBLE_BASH="$HOME/Source/src/github.com/kylescottmcgill/bash-sensible/sensible.bash"
 [[ -s $SENSIBLE_BASH ]] && source $SENSIBLE_BASH
 
 # Base16 Shell
@@ -23,8 +23,8 @@ export GIT_EDITOR=$EDITOR
 unset MAILCHECK
 
 # Golang
-export GOPATH=$HOME/Projects
-export GOBIN=$HOME/Projects/bin
+export GOPATH=$HOME/Source
+export GOBIN=$HOME/Source/bin
 
 # Custom Shiz
 export PATH="$GOBIN:$PATH"
