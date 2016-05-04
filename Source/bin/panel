@@ -1,0 +1,71 @@
+#!/bin/bash
+
+MONITOR=$(xrandr -q | awk -F'current' -F',' 'NR==1 {gsub("( |current)","");print $2}' | cut -f1 -d"x")
+EXTERNAL=$(xrandr -q | grep -w "connected" | wc -l)
+PANEL_FONT="tewi-8"
+
+{
+	if [[ $EXTERNAL -eq "2" ]]; then
+		PANEL_SIZE="$MONITORx20+1960+10"
+	else
+		PANEL_SIZE="$MONITORx20+40+10"
+	fi
+}
+
+# color scheme
+FG="#E8EAEC"
+BG="#00282A31"
+BLK="#36393a"
+CUR="#924445"
+
+{
+	desk() {
+		DSK_CUR=$(xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}')
+		DSK_ALL=$(expr $(xprop -root _NET_NUMBER_OF_DESKTOPS | awk '{print $3}') - 1)
+		for D in $(seq 0 $DSK_ALL)
+		do
+			if [[ $D > 4 ]]; then
+				return
+			fi
+			if [[ $D == $DSK_CUR ]]; then
+				echo %{F$FG}%{B$BLK} ■ %{F-}%{B-}
+			else
+				echo %{F$BLK}%{B$BG} ■ %{F-}%{B-}
+			fi
+		done
+	}
+
+	music() {
+		mus=$(mpc -f %artist% current)
+		song=$(mpc -f %title% current)
+		if [[ $mus ]]; then
+			echo %{F$FG}%{R} ■ %{R} $mus %{F$CUR}$song%{F-}
+		else
+			echo %{F$BLK}%{R} ■ %{R}%{F-}
+		fi
+	}
+
+	life() {
+		bat=$(cat /sys/class/power_supply/BAT0/capacity)
+		echo %{F$FG}%{R} ■ %{R} $bat %{F-}
+	}
+
+	clock() {
+		time=$(date "+%a %d %b %R")
+		echo %{F$FG}%{B$BG} ■ %{F-}%{B-}%{F$FG} $time %{F-}
+	}
+
+	tmp() {
+		echo %{F$FG} ■ %{F$BG} ■ %{F$BLK} ■ %{F$CUR} ■ %{F-}
+	}
+
+	statusbar(){
+		#echo "$(music)%{c}$(desk)%{r}$(clock)$(tmp)"
+		echo "%{c}$(desk)"
+	}
+
+	while :; do
+		echo $(statusbar)
+		sleep 0.2
+	done
+} 2> /dev/null | lemonbar -f ${PANEL_FONT} -g ${PANEL_SIZE} -B ${BG} -F ${FG}

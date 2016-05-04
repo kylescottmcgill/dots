@@ -1,0 +1,16 @@
+#!/bin/bash
+
+PID=$$
+BG="#FFFFFF"
+FG="#000000"
+
+RED="#924445"
+
+FONT="tewi-8"
+TIMER=60
+
+SCREEN_SIZE=$(expr $(xrandr -q | grep Screen | awk '{print $8}') - 80)
+PANEL_SIZE=$SCREEN_SIZE"x20+40+10"
+
+(echo "%{c} %{A:pkill $PID:} %{F$RED}$1%{F-} $2 %{A}"; sleep $TIMER) | lemonbar -d -b -B $BG -F $FG -f $FONT -g $PANEL_SIZE | exec
+
