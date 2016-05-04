@@ -61,11 +61,11 @@ URxvt*keysym.Control-Right: \033[1;5C
 Xcursor*theme: Paper
 Xcursor.size: 22
 
-rofi.background: #1F2833
-rofi.foreground: #d2d2ca
-rofi.highlightbg: #151B22
-rofi.highlightfg: #924445
-rofi.bordercolor: #333333
+rofi.color-enabled: true
+rofi.color-window: #1f2833, #1f2833, #1f2833
+rofi.color-normal: #1f2833, #d2d2ca, #1f2833, #151b22, #924445
+rofi.color-active: #1f2833, #d2d2ca, #1f2833, #151b22, #924445
+rofi.color-urgent: #1f2833, #d2d2ca, #1f2833, #151b22, #924445
 rofi.font: tewi 8
 rofi.padding: 5
 rofi.lines: 5
