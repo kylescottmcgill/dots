@@ -1,17 +1,21 @@
 ! Colors {{{
 
 !#include ".config/colors/default"
-!#include ".config/colors/base16-grayscale.dark.256.xresources"
-!#include ".config/colors/ghoul"
-#include ".config/colors/grayscale-dark.xresources"
+#include ".config/colors/monochromatic.xresources"
+
+!#include ".config/colors/dusk.xresources"
+!#include ".config/colors/dawn.xresources"
+!#include ".config/colors/ghoul.xresources"
+!#include ".config/colors/grayscale-dark.xresources"
 !#include ".config/colors/grayscale-light.xresources"
-!#include ".config/colors/gotham"
-!#include ".config/colors/mon"
+!#include ".config/colors/gotham.xresources"
+!#include ".config/colors/mon.xresources"
 !#include ".config/colors/mono.xresources"
-!#include ".config/colors/rok"
-!#include ".config/colors/sami"
-!#include ".config/colors/schweitzer"
-!#include ".config/colors/smear"
+!#include ".config/colors/monochrome.xresources"
+!#include ".config/colors/rok.xresources"
+!#include ".config/colors/sami.xresources"
+!#include ".config/colors/schweitzer.xresources"
+!#include ".config/colors/smear.xresources"
 
 ! }}}
 ! XFT Settings {{{

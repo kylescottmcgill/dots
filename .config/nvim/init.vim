@@ -31,7 +31,7 @@ set visualbell			" Use visual bell (no beeping)
 set nobackup
 set noswapfile
 set nowb
-set viminfo+=n~/.vim/viminfo
+set viminfo+=n~/.cache/viminfo
 
 set hlsearch			" Highlight all search results
 set smartcase			" Enable smart-case search
@@ -125,8 +125,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Look and Feel
 Plug 'fxn/vim-monochrome'
 Plug 'reedes/vim-colors-pencil'
-" Plug 'cdmedia/itg_flat_vim'
-" Plug 'whatyouhide/vim-gotham'
+Plug 'cdmedia/itg_flat_vim'
+Plug 'whatyouhide/vim-gotham'
 
 " UI Improvements
 Plug 'itchyny/lightline.vim'
