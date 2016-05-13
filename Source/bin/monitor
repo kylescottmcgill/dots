@@ -1,22 +1,19 @@
 #!/bin/bash
 
-CONNECTED_DISPLAY=$(xrandr -q | grep -v "eDP1\|VIRTUAL1" | grep -w "connected" | awk '{print $1}')
-echo "Init"
-if [[ $CONNECTED_DISPLAY -eq "HDMI" ]]; then
-	MODE=$(xrandr -q | grep -a1 -w "HDMI1" | tail -n 1 | awk '{print $1}')
-	xrandr --output eDP1 --off
-	xrandr --output HDMI1 --primary --mode $MODE --right-of eDP1
-elif [[ $CONNECTED_DISPLAY -eq "DP1-8" ]]; then
-	MODE=$(xrandr -q | grep -a1 -w "DP1-8" | tail -n 1 | awk '{print $1}')
-	xrandr --output eDP1 --mode 1920x1080 --left-of DP1-8
-	echo "DP1-8"
-	xrandr --output DP1-8 --primary --mode $MODE --right-of eDP1
-else
-	xrandr --auto
-fi
+for i in $(xrandr -q | grep -v "VIRTUAL1" | grep -w "disconnected" | awk '{print $1}')
+do
+	xrandr --output $i --off
+done
+
+for i in $(xrandr -q | grep -v "VIRTUAL1" | grep -w "connected" | awk '{print $1}')
+do
+	if [[ "$i" != "eDP1" ]]; then
+		ALIGNMENT="--primary --right-of eDP1"
+	fi
+	xrandr --output $i --mode $(xrandr --query | grep -a1 -w $i | tail -n 1 | awk '{print $1}') $ALIGNMENT
+done
 
 pkill panel
 panel &
 ~/.fehbg &
-
-
+# vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :

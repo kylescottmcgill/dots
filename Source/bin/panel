@@ -8,7 +8,7 @@ PANEL_FONT="tewi-8"
 	if [[ $EXTERNAL -eq "2" ]]; then
 		PANEL_SIZE="$MONITORx20+1960+10"
 	else
-		PANEL_SIZE="$MONITORx20+40+10"
+		PANEL_SIZE="$MONITORx20+0+10"
 	fi
 }
 
@@ -35,32 +35,7 @@ CUR="#924445"
 		done
 	}
 
-	music() {
-		mus=$(mpc -f %artist% current)
-		song=$(mpc -f %title% current)
-		if [[ $mus ]]; then
-			echo %{F$FG}%{R} ■ %{R} $mus %{F$CUR}$song%{F-}
-		else
-			echo %{F$BLK}%{R} ■ %{R}%{F-}
-		fi
-	}
-
-	life() {
-		bat=$(cat /sys/class/power_supply/BAT0/capacity)
-		echo %{F$FG}%{R} ■ %{R} $bat %{F-}
-	}
-
-	clock() {
-		time=$(date "+%a %d %b %R")
-		echo %{F$FG}%{B$BG} ■ %{F-}%{B-}%{F$FG} $time %{F-}
-	}
-
-	tmp() {
-		echo %{F$FG} ■ %{F$BG} ■ %{F$BLK} ■ %{F$CUR} ■ %{F-}
-	}
-
 	statusbar(){
-		#echo "$(music)%{c}$(desk)%{r}$(clock)$(tmp)"
 		echo "%{c}$(desk)"
 	}
 

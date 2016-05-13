@@ -1,6 +1,6 @@
 ! Colors {{{
 
-!#include ".config/colors/default"
+!#include ".config/colors/default.xresources"
 #include ".config/colors/monochromatic.xresources"
 
 !#include ".config/colors/dusk.xresources"

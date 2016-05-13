@@ -203,8 +203,8 @@ augroup END
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
 " files.
 function! AppendModeline()
-	let l:modeline = printf("vim: set ft=%s ts=%d sw=%d tw=%d fdm=%s foldlevel=%d %set :",
-				\ &filetype, &tabstop, &shiftwidth, &textwidth, &foldmethod, &fdl, &expandtab ? '' : 'no')
+	let l:modeline = printf(" vim: ft=%s ts=%d sw=%d tw=%d fdm=%s foldlevel=%d :",
+				\ &filetype, &tabstop, &shiftwidth, &textwidth, &foldmethod, &fdl)
 	let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
 	call append(line("$"), l:modeline)
 endfunction
