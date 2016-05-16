@@ -37,4 +37,4 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export WWW_HOME="$HOME/.cache"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-
+export _JAVA_AWT_WM_NONREPARENTING=1

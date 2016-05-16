@@ -41,6 +41,7 @@ URxvt*geometry: 800x600
 URxvt*depth: 32
 URxvt*scrollBar: false
 URxvt*font: xft:Tewi-8
+URxvt*boldFont:
 URxvt*lineSpace: 4
 URxvt*internalBorder: 20
 URxvt*colorBD: #FFFFFF
