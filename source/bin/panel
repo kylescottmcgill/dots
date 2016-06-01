@@ -6,16 +6,16 @@ PANEL_FONT="tewi-8"
 
 {
 	if [[ $EXTERNAL -eq "2" ]]; then
-		PANEL_SIZE="$MONITORx20+1960+10"
+		PANEL_SIZE="$MONITORx20+1920+10"
 	else
 		PANEL_SIZE="$MONITORx20+0+10"
 	fi
 }
 
 # color scheme
-FG="#E8EAEC"
+FG="#222222"
 BG="#00282A31"
-BLK="#36393a"
+BLK="#ffffff"
 CUR="#924445"
 
 {

@@ -16,7 +16,7 @@ set fileencodings=utf-8
 " }}}
 " General {{{
 
-set nonumber				" Show line numbers
+set number				" Show line numbers
 set wrap
 set linebreak			" Break lines at word (requires Wrap lines)
 set nolist
@@ -127,6 +127,7 @@ Plug 'fxn/vim-monochrome'
 Plug 'reedes/vim-colors-pencil'
 Plug 'cdmedia/itg_flat_vim'
 Plug 'whatyouhide/vim-gotham'
+Plug 'NLKNguyen/papercolor-theme'
 
 " UI Improvements
 Plug 'itchyny/lightline.vim'
@@ -153,10 +154,15 @@ filetype plugin indent on	 " required
 
 " }}}
 " Colors & Statusline {{{
+"
 
-set background=dark
-colorscheme monochrome
-let g:airline_theme = 'pencil'
+"
+" PaperColor
+"
+let g:PaperColor_Light_Override = { 'background' : '#ffffff', 'cursorline' : '#dfdfff', 'matchparen' : '#d6d6d6' , 'comment' : '#222222' }
+
+set background=light
+colorscheme PaperColor
 
 set nocursorline
 set nocursorcolumn
@@ -284,6 +290,8 @@ map <leader>o <C-p>
 
 " }}}
 " Plugin bindings and functionality {{{
+"
+
 
 "
 " Goyo

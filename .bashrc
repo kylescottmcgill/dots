@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
 
 # Load sensible.bash
-SENSIBLE_BASH="$HOME/Source/src/github.com/kylescottmcgill/bash-sensible/sensible.bash"
+SENSIBLE_BASH="$HOME/source/src/github.com/kylescottmcgill/bash-sensible/sensible.bash"
 [[ -s $SENSIBLE_BASH ]] && source $SENSIBLE_BASH
-
-# Base16 Shell
-#BASE16_SHELL="$HOME/.config/base16-shell/base16-grayscale.dark.sh"
-#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 if [ -d $HOME/.bash ]; then
 	source $HOME/.bash/alias.bash
@@ -23,8 +19,8 @@ export GIT_EDITOR=$EDITOR
 unset MAILCHECK
 
 # Golang
-export GOPATH=$HOME/Source
-export GOBIN=$HOME/Source/bin
+export GOPATH=$HOME/source
+export GOBIN=$HOME/source/bin
 
 # Custom Shiz
 export PATH="$GOBIN:$PATH"

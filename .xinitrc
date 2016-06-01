@@ -18,10 +18,10 @@ panel &
 $HOME/.fehbg &
 xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 
-compton -CGb
-
 monitor
 mouse
+
+compton -CGb &
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
