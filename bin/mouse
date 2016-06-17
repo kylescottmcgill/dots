@@ -1,0 +1,6 @@
+#!/bin/bash
+
+MOUSE=$(xinput --list | grep -m 1 -w MX\ Master | awk '{print $5}' | cut -d"=" -f2)
+
+xinput --set-prop $MOUSE "Device Accel Constant Deceleration" 2
+xinput --set-prop $MOUSE "Device Accel Velocity Scaling" 1
