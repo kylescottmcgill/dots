@@ -13,7 +13,7 @@ do
 	xrandr --output $i --mode $(xrandr --query | grep -a1 -w $i | tail -n 1 | awk '{print $1}') $ALIGNMENT
 done
 
-pkill panel
-panel &
-~/.fehbg
+~/.fehbg &
+compton -CGb &
+
 # vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :

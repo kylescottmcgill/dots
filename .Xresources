@@ -25,7 +25,7 @@ Xft.autohint: true
 Xft.antialias: true
 Xft.hinting: true
 Xft.hintstyle: hintslight
-Xft.rgba: rgb
+Xft.rgba: rgba
 Xft.lcdfilter: lcddefault
 Xft.dpi: 96
 
@@ -42,9 +42,10 @@ URxvt*geometry: 800x600
 URxvt*depth: 32
 URxvt*scrollBar: false
 URxvt*pointerBlank: true
-URxvt*font: xft:Tewi-8
-URxvt*boldFont:
-URxvt*lineSpace: 4
+URxvt*font: xft:Tewi:regular:size=8:antialias=false:hinting=false:autohint=false
+!URxvt*boldFont:
+URxvt*lineSpace: 5
+URxvt*letterSpace: 1.5
 URxvt*internalBorder: 20
 !URxvt*colorBD:
 URxvt*cursor: i-beam
@@ -54,13 +55,16 @@ URxvt*url-launcher: /usr/bin/chromium
 URxvt*perl-lib: /usr/lib/urxvt/perl/
 URxvt*perl-ext-common: default,matcher
 URxvt*matcher.button: 1
-URxvt*cutchars: `""()''*<>[]{|}
+URxvt*cutchars: "\\ `\"\'()*;<>[]{|}&,=?@^\:"
 URxvt*iso14755: false
 URxvt*iso14755_52: false
+URxvt*meta8: false
 URxvt*keysym.Control-Up: \033[1;5A
 URxvt*keysym.Control-Down: \033[1;5B
 URxvt*keysym.Control-Left: \033[1;5D
 URxvt*keysym.Control-Right: \033[1;5C
+URxvt*keysym.M-c: perl:clipboard:copy
+URxvt*keysym.M-v: perl:clipboard:paste
 
 ! }}}
 ! Misc Applications {{{

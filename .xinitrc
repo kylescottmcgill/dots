@@ -13,18 +13,16 @@ xset m 1/1 0                    # No Mouse Acceleration
 xrdb $HOME/.Xresources          # Merge Xresources
 
 autocutsel -fork
-autocutsel -selection PRIMARY -fork
-panel &
-$HOME/.fehbg &
+# autocutsel -selection PRIMARY -fork
 xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 
-monitor
 mouse
-
-compton -CGb &
+monitor
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
 	"kuro") exec 2bwm ;;
 	*) xwait ;;
 esac
+
+# vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :
