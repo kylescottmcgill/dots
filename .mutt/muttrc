@@ -15,7 +15,6 @@ set editor            = "nvim +8 -i ~/.cache/nviminfo"			 # use vim and skip to 
 # main options
 set mbox_type       = Maildir         # mailbox type
 set folder          = ~/mail          # mailbox location
-set spoolfile       = "+INBOX"   # GMail is default inbox
 set timeout         = 3               # idle time before scanning
 set mail_check      = 0               # minimum time between scans
 set sort_alias      = alias           # sort alias file by alias
@@ -78,13 +77,14 @@ unignore from: to: cc: date: subject:    # show only these
 hdr_order from: to: cc: date: subject:   # and in this order
 
 # boxes
-mailboxes +INBOX
+source ~/.mutt/mailboxes
+set spoolfile = "+INBOX"
 
 # always sourced
 source $alias_file             # required for functionality
 source ~/.mutt/colors   # source colors file
 #source ~/.mutt/sidebar.muttrc  # any muttng options are here
-source ~/.mutt/kyle    # source gmail as default
+#source ~/.mutt/kyle    # source gmail as default
 
 # account specific sources
 folder-hook Kyle/* source ~/.mutt/kyle

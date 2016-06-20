@@ -19,6 +19,8 @@ xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 mouse
 monitor
 
+urxvtd --quiet --opendisplay --fork
+
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
 	"kuro") exec 2bwm ;;
