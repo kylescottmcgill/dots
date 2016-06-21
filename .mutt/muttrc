@@ -42,7 +42,7 @@ set pager_context     = 5   # number of context lines to show
 set pager_stop              # don't go to next message automatically
 set menu_scroll             # scroll in menus
 set smart_wrap              # don't split words
-set tilde                   # show tildes like in vim
+#set tilde                   # show tildes like in vim
 unset markers               # no ugly plus signs
 auto_view text/html         # view html automatically
 alternative_order text/plain text/enriched text/html
@@ -68,8 +68,9 @@ set forward_decode                       # decode when forwarding
 set attribution     = "On %d, %n wrote:" # set the attribution
 set reply_to                             # reply to Reply to: field
 set reverse_name                         # reply as whomever it was to
-set include                              # include message in replies
+set include         = no                     # include message in replies
 set forward_quote                        # include message in forwards
+set postpone = no
 
 # headers to show
 ignore *                                 # ignore all headers
@@ -79,15 +80,23 @@ hdr_order from: to: cc: date: subject:   # and in this order
 # boxes
 source ~/.mutt/mailboxes
 set spoolfile = "+INBOX"
+set from      = "email@kylescottmcgill.com"
+set sendmail  = "/usr/bin/msmtp -a Kyle"
+set mbox      = "+Completed"
+unset record
+set record = "+[Gmail].Sent Mail"
+
+macro index D \
+    "<save-message>+[Gmail].Trash<enter>" \
+    "move message to the trash"
+
+macro index A \
+    "<save-message>+Completed<enter>" \
+    "move message to completed"
 
 # always sourced
 source $alias_file             # required for functionality
 source ~/.mutt/colors   # source colors file
-#source ~/.mutt/sidebar.muttrc  # any muttng options are here
-#source ~/.mutt/kyle    # source gmail as default
-
-# account specific sources
-folder-hook Kyle/* source ~/.mutt/kyle
 
 # these just give me headaches
 bind index,pager \#    noop
