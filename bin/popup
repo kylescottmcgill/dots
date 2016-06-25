@@ -1,16 +1,31 @@
 #!/bin/bash
+set +m
+
+MONITOR=$(xrandr -q | awk -F'current' -F',' 'NR==1 {gsub("( |current)","");print $2}' | cut -f1 -d"x")
+EXTERNAL=$(xrandr -q | grep -w "connected" | wc -l)
+PANEL_FONT="tewi-8"
+
+{
+	if [[ $EXTERNAL -eq "2" ]]; then
+		PANEL_SIZE="$MONITORx20+1920+10"
+	else
+		PANEL_SIZE="$MONITORx20+0+10"
+	fi
+}
+
 
 PID=$$
+PANEL_BG="#00FFFFFF"
+PANEL_FG="#000000"
+PANEL_UNDERLINE="#924445"
+
 BG="#FFFFFF"
 FG="#000000"
 
 RED="#924445"
 
 FONT="tewi-8"
-TIMER=60
+TIMER=30
 
-SCREEN_SIZE=$(expr $(xrandr -q | grep Screen | awk '{print $8}') - 80)
-PANEL_SIZE=$SCREEN_SIZE"x20+40+10"
-
-(echo "%{c} %{A:pkill $PID:} %{F$RED}$1%{F-} $2 %{A}"; sleep $TIMER) | lemonbar -d -b -B $BG -F $FG -f $FONT -g $PANEL_SIZE | exec
-
+(echo "%{B$BG}%{c} %{A:pkill -SIGKILL -P $PID:} $PID %{F$RED}$1%{F-} $2 %{A}"; sleep $TIMER) | \
+	lemonbar -d -b -f ${PANEL_FONT} -g ${PANEL_SIZE} -B ${PANEL_BG} -F ${PANEL_FG} -U ${PANEL_UNDERLINE} | sh
