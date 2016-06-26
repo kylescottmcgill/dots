@@ -1,5 +1,4 @@
 #!/bin/bash
-
 for i in $(xrandr -q | grep -v "VIRTUAL1" | grep -w "disconnected" | awk '{print $1}')
 do
 	xrandr --output $i --off
