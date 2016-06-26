@@ -25,11 +25,12 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export BASH_HOME="$HOME/.config/bash"
 
+SENSIBLE_BASH="$HOME/src/github.com/kylescottmcgill/bash-sensible/sensible.bash"
+[[ -s $SENSIBLE_BASH ]] && source $SENSIBLE_BASH
+
 if [ -d $BASH_HOME ]; then
 	for b in $BASH_HOME/* ; do
 		source $b
 	done
 fi
 
-SENSIBLE_BASH="$HOME/src/github.com/kylescottmcgill/bash-sensible/sensible.bash"
-[[ -s $SENSIBLE_BASH ]] && source $SENSIBLE_BASH

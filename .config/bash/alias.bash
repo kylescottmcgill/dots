@@ -25,6 +25,8 @@ alias vim="nvim -i ~/.cache/nviminfo"
 
 alias irc='weechat'
 
+alias mutt="mutt -F $HOME/.config/mutt/muttrc"
+
 alias repo-sync='sudo reflector -l 100 -p http --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu'
 
 man() {

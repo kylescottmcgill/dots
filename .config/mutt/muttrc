@@ -1,15 +1,15 @@
 ###
-# ~/.mutt/muttrc
+# ~/.config/mutt/muttrc
 ###
 
 # directories and commands
-set alias_file       = ~/.mutt/alias         # alias file
-set header_cache     = ~/.mutt/cache/headers # where to store headers
-set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
-set certificate_file = ~/.mutt/certificates  # where to store certs
-set mailcap_path     = ~/.mutt/mailcap       # entrys for filetypes
-set signature        = ~/.mutt/sig           # my signature file
-set tmpdir           = ~/.mutt/temp          # where to keep temp files
+set alias_file       = ~/.config/mutt/alias         # alias file
+set header_cache     = ~/.config/mutt/cache/headers # where to store headers
+set message_cachedir = ~/.config/mutt/cache/bodies  # where to store bodies
+set certificate_file = ~/.config/mutt/certificates  # where to store certs
+set mailcap_path     = ~/.config/mutt/mailcap       # entrys for filetypes
+set signature        = ~/.config/mutt/sig           # my signature file
+set tmpdir           = ~/.config/mutt/temp          # where to keep temp files
 set editor            = "nvim +8 -i ~/.cache/nviminfo"			 # use vim and skip to first blank line
 
 # main options
@@ -78,7 +78,7 @@ unignore from: to: cc: date: subject:    # show only these
 hdr_order from: to: cc: date: subject:   # and in this order
 
 # boxes
-source ~/.mutt/mailboxes
+source ~/.config/mutt/mailboxes
 set spoolfile = "+INBOX"
 set from      = "email@kylescottmcgill.com"
 set sendmail  = "/usr/bin/msmtp -a Kyle"
@@ -96,7 +96,7 @@ macro index A \
 
 # always sourced
 source $alias_file             # required for functionality
-source ~/.mutt/colors   # source colors file
+source ~/.config/mutt/colors   # source colors file
 
 # these just give me headaches
 bind index,pager \#    noop
