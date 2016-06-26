@@ -29,4 +29,4 @@ FONT="tewi-8"
 TIMER=30
 
 (echo "%{B$BG}%{c} %{A:pkill -SIGKILL -P $PID:} $PID %{F$RED}$1%{F-} $2 %{A}"; sleep $TIMER) | \
-	lemonbar -d -b -f ${PANEL_FONT} -g ${PANEL_SIZE} -B ${PANEL_BG} -F ${PANEL_FG} -U ${PANEL_UNDERLINE} | sh
+	lemonbar -d -f ${PANEL_FONT} -g ${PANEL_SIZE} -B ${PANEL_BG} -F ${PANEL_FG} -U ${PANEL_UNDERLINE} | sh 2>/dev/null
