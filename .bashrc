@@ -1,16 +1,5 @@
 #!/usr/bin/env bash
 
-# Load sensible.bash
-SENSIBLE_BASH="$HOME/src/github.com/kylescottmcgill/bash-sensible/sensible.bash"
-[[ -s $SENSIBLE_BASH ]] && source $SENSIBLE_BASH
-
-if [ -d $HOME/.bash ]; then
-	source $HOME/.bash/alias.bash
-	source $HOME/.bash/colors.bash
-	source $HOME/.bash/theme.bash
-	source $HOME/.bash/functions.bash
-fi
-
 # Set my editor and git editor
 export EDITOR="$(which nvim)"
 export GIT_EDITOR=$EDITOR
@@ -34,3 +23,13 @@ export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export WWW_HOME="$HOME/.cache"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export _JAVA_AWT_WM_NONREPARENTING=1
+export BASH_HOME="$HOME/.config/bash"
+
+if [ -d $BASH_HOME ]; then
+	for b in $BASH_HOME/* ; do
+		source $b
+	done
+fi
+
+SENSIBLE_BASH="$HOME/src/github.com/kylescottmcgill/bash-sensible/sensible.bash"
+[[ -s $SENSIBLE_BASH ]] && source $SENSIBLE_BASH
