@@ -1,16 +1,13 @@
-#!/bin/bash
-for i in $(xrandr -q | grep -v "VIRTUAL1" | grep -w "disconnected" | awk '{print $1}')
-do
-	xrandr --output $i --off
-done
+#!/bin/sh
 
-for i in $(xrandr -q | grep -v "VIRTUAL1" | grep -w "connected" | awk '{print $1}')
-do
-	if [[ "$i" != "eDP1" ]]; then
-		ALIGNMENT="--primary --right-of eDP1"
-	fi
-	xrandr --output $i --mode $(xrandr --query | grep -a1 -w $i | tail -n 1 | awk '{print $1}') $ALIGNMENT
-done
+CURRENT_COUNT=$(xrandr --query | grep -v "VIRTUAL1" | grep -w "connected" | wc -l)
+if [[ $CURRENT_COUNT == 2 ]]; then
+	SCREEN=$(xrandr --query | grep -w "connected" | grep -v "eDP1" | awk '{print $1}')
+	xrandr --output $SCREEN --mode $(xrandr --query | grep -a1 -w $SCREEN | tail -n 1 | awk '{print $1}') --right-of eDP1 --output eDP1 --off
+else
+	xrandr --auto
+	xrandr --output eDP1 --mode 1920x1080
+fi
 
 ~/.fehbg &
 compton -CGb &

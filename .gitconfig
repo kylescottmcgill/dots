@@ -5,7 +5,6 @@
 	autocrlf = false
 	eol = lf
 	filemode = false
-	excludesfile = /home/kyle/.gitignore_global
 [color]
 	filemode = false
 	diff = auto
@@ -40,7 +39,9 @@
 	accept-theirs = "!f() { files=\"$@\"; [ -z $files ] && files='.'; git checkout --theirs -- $files; git add -u $files; }; f"
 	todo = grep --heading --break --ignore-case -e '@todo *'
 	issues = !ghi
+	changelog = "!git log $@ --pretty=\"* %s%n+%n--%n%b--%n\" | asciidoctor -o changelog.html -; #"
 	browse = !hub browse
+	restore = "!git checkout $(git rev-list -n 1 HEAD -- \"$1\")^ -- \"$1\""
 	hub = !hub
 [filter "lfs"]
 	clean = git lfs clean %f

@@ -1,0 +1,106 @@
+# Default Keys {{{
+super + Return
+	urxvtc -geometry 100x25 -bg "#ffffff" -fg "#222222"
+
+super + shift + Return
+	urxvtc -geometry 100x25 -bg "#222222" -fg "#ffffff"
+
+super + b
+	chromium
+
+super + Escape
+	rofi -show run
+
+super + shift + q
+	bspc quit
+
+super + ctrl + Escape
+	pkill -USR1 -x sxhkd
+
+super + q
+	bspc node -c
+
+super + {shift,_} + Tab
+	bspc node -f {prev,next}
+
+super + r
+	bspc desktop -B
+
+super + {z,x,c}
+	bspc node -t {fullscreen,tiled,floating}
+
+super + alt + {h,j,k,l}
+	 bspc node -p {west,south,north,east}
+
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} focused:^{1-9,10}
+
+super + {equal,minus}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 5 ))
+
+super + BackSpace
+	bspc config -d focused window_gap 10
+
+super + alt + {1-9}
+	bspc config split_ratio 0.{1-9}0
+
+super + alt + BackSpace
+	bspc config split_ratio 0.50
+
+# Presel node for splitting
+super + {h,j,k,l}
+	bspc node -p {~west,~south,~north,~east}
+
+super + alt + {h,j,k,l}
+	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+super + alt + shift + {h,j,k,l}
+	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+
+~button1
+	bspc pointer -g focus
+
+super + button{1-3}
+	bspc pointer -g {move,resize_side,resize_corner}
+
+super + @button{1-3}
+	bspc pointer -u
+
+#super + t
+#	bspc desktop -l next
+#super + !button{1-3}
+#	bspc pointer -t %i %i
+#super + {z,x,c,v}
+#	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+#super + {k,l}
+#	bspc {node,desktop} -f last
+#super + apostrophe
+#	bspc node -s last
+#super + m
+#	bspc node -s biggest
+#super + {comma,period}
+#	bspc desktop -C {backward,forward}
+#super + ctrl + {1-9}
+#	bspc node -r 0.{1-9}
+# }}}
+# Media Keys {{{
+XF86AudioRaiseVolume
+	amixer sset Master 5%+ unmute
+XF86AudioLowerVolume
+	amixer sset Master 5%- unmute
+XF86AudioMute
+	amixer sset Master toggle
+
+XF86MonBrightnessDown
+	xbacklight -dec 25
+XF86MonBrightnessUp
+	xbacklight -inc 25
+
+#XF86AudioPrev
+#	mpc prev
+#XF86AudioNext
+#	mpc next
+#XF86AudioPlay
+#	mpc toggle
+# }}}
+# vim: set ft=sxhkdrc:

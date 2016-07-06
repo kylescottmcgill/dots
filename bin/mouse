@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh
+sudo rfkill unblock 0
 EXTERNAL_MOUSE=$(xinput --list | grep -w "MX Master")
 if [[ $EXTERNALMOUSE != "" ]]; then
 	MOUSE=$(xinput --list | grep -m 1 -w MX\ Master | awk '{print $5}' | cut -d"=" -f2)

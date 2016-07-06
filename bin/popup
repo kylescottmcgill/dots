@@ -5,8 +5,9 @@ trap 'exit 0' TERM SIGKILL
 set +m
 
 MONITOR=$(xrandr -q | awk -F'current' -F',' 'NR==1 {gsub("( |current)","");print $2}' | cut -f1 -d"x")
-EXTERNAL=$(xrandr -q | grep -w "connected" | wc -l)
+EXTERNAL=$(xrandr -q | grep -w "connected" | grep "+" | wc -l)
 PANEL_FONT="tewi-8"
+echo -en $EXTERNAL
 
 {
 	if [[ $EXTERNAL -eq "2" ]]; then

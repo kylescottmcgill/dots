@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Set my editor and git editor
 export EDITOR="$(which nvim)"
