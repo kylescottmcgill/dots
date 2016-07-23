@@ -8,7 +8,7 @@ else
 	xrandr --auto
 	xrandr --output eDP1 --mode 1920x1080
 fi
-
+#~/.config/bspwm/bspwmrc
 ~/.fehbg &
 compton -CGb &
 

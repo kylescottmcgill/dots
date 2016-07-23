@@ -1,4 +1,5 @@
 # Default Keys {{{
+#
 super + Return
 	urxvtc -geometry 100x25 -bg "#ffffff" -fg "#222222"
 
@@ -7,6 +8,9 @@ super + shift + Return
 
 super + b
 	chromium
+
+super + p
+	chat
 
 super + Escape
 	rofi -show run
@@ -24,13 +28,10 @@ super + {shift,_} + Tab
 	bspc node -f {prev,next}
 
 super + r
-	bspc desktop -B
+	bspc node -B
 
 super + {z,x,c}
 	bspc node -t {fullscreen,tiled,floating}
-
-super + alt + {h,j,k,l}
-	 bspc node -p {west,south,north,east}
 
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} focused:^{1-9,10}
@@ -66,6 +67,23 @@ super + button{1-3}
 super + @button{1-3}
 	bspc pointer -u
 
+super + s
+	amixer sset Master 5%- unmute
+super + d
+	amixer sset Master 5%+ unmute
+
+XF86AudioRaiseVolume
+	amixer sset Master 5%+ unmute
+XF86AudioLowerVolume
+	amixer sset Master 5%- unmute
+XF86AudioMute
+	amixer sset Master toggle
+
+XF86MonBrightnessDown
+	xbacklight -dec 25
+XF86MonBrightnessUp
+	xbacklight -inc 25
+
 #super + t
 #	bspc desktop -l next
 #super + !button{1-3}
@@ -84,18 +102,6 @@ super + @button{1-3}
 #	bspc node -r 0.{1-9}
 # }}}
 # Media Keys {{{
-XF86AudioRaiseVolume
-	amixer sset Master 5%+ unmute
-XF86AudioLowerVolume
-	amixer sset Master 5%- unmute
-XF86AudioMute
-	amixer sset Master toggle
-
-XF86MonBrightnessDown
-	xbacklight -dec 25
-XF86MonBrightnessUp
-	xbacklight -inc 25
-
 #XF86AudioPrev
 #	mpc prev
 #XF86AudioNext

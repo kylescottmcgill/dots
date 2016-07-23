@@ -281,6 +281,8 @@ nnoremap <silent> <C-Delete> :bd!<cr>
 
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-Space>
+inoremap <C-e> <Esc>A
+inoremap <C-a> <Esc>I
 
 map <leader>ss :setlocal spell!<cr>
 map <leader>/ :noh<cr>

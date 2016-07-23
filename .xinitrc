@@ -16,16 +16,13 @@ autocutsel -fork
 autocutsel -selection PRIMARY -fork
 xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 
-$HOME/bin/mouse &
-$HOME/bin/monitor &
-
-urxvtd --quiet --opendisplay --fork
+urxvtd --quiet --opendisplay --fork &
+monitor &
+mouse &
 sxhkd &
-
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
 	"kuro") exec bspwm ;;
-	*) xwait ;;
 esac
 
 # vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :
