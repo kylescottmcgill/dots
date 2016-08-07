@@ -43,16 +43,8 @@ alias update='sudo pacman -Syu --noconfirm; packer -Syu'
 alias mpv='mpv --msg-level=cplayer=fatal:ffmpeg=fatal --loop=inf --cache=no'
 alias mutt="mutt -F $HOME/.config/mutt/muttrc"
 alias repo-sync='sudo reflector -l 100 -p http --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu'
-
-steam-debug() {
-find ~/.local/share/Steam/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete
-find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete
-
-find ~/.local/share/Steam/ -name "libgpg-error.so*" -print -delete
-find ~/.steam/root/ -name "libgpg-error.so*" -print -delete
-
-steam
-}
+alias checkip='curl -s http://checkip.amazonaws.com/'
+alias digs='dig +noall +answer'
 
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \

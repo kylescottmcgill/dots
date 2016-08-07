@@ -1,21 +1,5 @@
 #!/bin/bash
 
-function generate-password {
-	openssl rand -base64 ${1:-8}
-}
-
-function checkip {
-	curl -s http://checkip.amazonaws.com/
-}
-
-function openssl-connect {
-	openssl s_client -connect $1:443 -tls1_2
-}
-
-function digs {
-	dig +noall +answer $@
-}
-
 function curlt {
 	# curl wrapper returning timing information.
 	#
