@@ -20,6 +20,7 @@ alias i='weechat'
 alias e='$EDITOR'
 alias v='$EDITOR'
 alias vim="nvim -i ~/.cache/nviminfo"
+alias code="code --user-data-dir $HOME/.config/code/ --extensionHomePath $HOME/.config/code/"
 
 # git git git
 alias git=hub

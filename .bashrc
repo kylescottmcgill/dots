@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-SENSIBLE_BASH="$HOME/src/github.com/kylescottmcgill/bash-sensible/sensible.bash"
+SENSIBLE_BASH="$HOME/src/github.com/mrzool/bash-sensible/sensible.bash"
 [[ -s $SENSIBLE_BASH ]] && source $SENSIBLE_BASH
 
 export BASH_HOME="$HOME/.config/bash"
