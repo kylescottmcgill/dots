@@ -1,29 +1,29 @@
 #include ".config/colors/shiro.xresources"
 
 ! XFT Settings {{{
-Xft.autohint: true
-Xft.antialias: true
-Xft.hinting: true
-Xft.hintstyle: hintslight
-Xft.rgba: rgba
-Xft.lcdfilter: lcddefault
-Xft.dpi: 96
+!Xft.autohint: false
+!Xft.antialias: false
+!Xft.hinting: falst
+!Xft.hintstyle: hintslight
+!Xft.rgba: rgba
+!Xft.lcdfilter: lcddefault
+!Xft.dpi: 96
 ! }}}
 ! URxvt {{{
-URxvt*dpi: 96
-URxvt*antialias: true
-URxvt*rgba: vrgb
-URxvt*hinting: true
-URxvt*hintstyle: hintslight
+!URxvt*dpi: 96
+!URxvt*antialias: true
+!URxvt*rgba: vrgb
+!URxvt*hinting: true
+!URxvt*hintstyle: hintslight
 
 URxvt*depth: 32
 URxvt*scrollBar: false
-URxvt*font: xft:Tewi:regular:size=8:antialias=false:hinting=false:autohint=false
+URxvt*font: xft:Tewi:regular:pixelsize=8:antialias=false:hinting=false:autohint=false
 URxvt*boldFont:
 URxvt*italicFont:
 URxvt*bolditalicFont:
 URxvt*lineSpace: 5
-URxvt*letterSpace: 1.5
+URxvt*letterSpace: 2
 URxvt*internalBorder: 20
 URxvt*pointerBlank: true
 URxvt*cursor: i-beam
@@ -45,8 +45,6 @@ URxvt*keysym.M-c: perl:clipboard:copy
 URxvt*keysym.M-v: perl:clipboard:paste
 ! }}}
 ! Misc Applications {{{
-Xcursor*theme: Paper
-Xcursor.size: 22
 rofi.color-enabled: true
 rofi.color-normal: #ffffff,#525d76,#f5f5f5,#df3f3f,#ffffff
 rofi.color-urgent: #ffffff,#dc322f,#f5f5f5,#df3f3f,#dc322f

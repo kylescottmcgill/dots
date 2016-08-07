@@ -19,10 +19,10 @@ xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 urxvtd --quiet --opendisplay --fork &
 monitor &
 mouse &
-sxhkd &
+#sxhkd &
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
-	"kuro") exec bspwm ;;
+	"kuro") exec 2bwm ;;
 esac
 
 # vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :
