@@ -161,7 +161,7 @@ filetype plugin indent on	 " required
 "
 let g:PaperColor_Light_Override = { 'background' : '#ffffff', 'cursorline' : '#dfdfff', 'matchparen' : '#d6d6d6' , 'comment' : '#222222' }
 
-set background=light
+map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 colorscheme PaperColor
 
 set nocursorline
