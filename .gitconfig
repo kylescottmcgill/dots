@@ -15,7 +15,7 @@
 [user]
 	email = email@kylescottmcgill.com
 	name = Kyle Scott Mcgill
-	signingkey = 4ACCA305
+	#signingkey = 4ACCA305
 [github]
 	user = kylescottmcgill
 [format]
@@ -52,4 +52,4 @@
 	insteadOf = https://github.com/
 [commit]
 	cleanup = strip
-	gpgsign = true
+	#gpgsign = true

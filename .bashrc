@@ -10,3 +10,6 @@ if [ -d $BASH_HOME ]; then
 		source $b
 	done
 fi
+
+# added by travis gem
+[ -f /home/kyle/.travis/travis.sh ] && source /home/kyle/.travis/travis.sh

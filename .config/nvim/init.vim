@@ -164,7 +164,7 @@ let g:PaperColor_Light_Override = { 'background' : '#ffffff', 'cursorline' : '#d
 let g:PaperColor_Dark_Override  = { 'background' : '#222222', 'cursorline' : '#dfdfff', 'matchparen' : '#d6d6d6' , 'comment' : '#ffffff' }
 
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-colorscheme PaperColor
+colorscheme itg_flat
 
 set nocursorline
 set nocursorcolumn
