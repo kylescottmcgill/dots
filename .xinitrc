@@ -12,8 +12,8 @@ xset m 1/1 0                    # No Mouse Acceleration
 
 xrdb $HOME/.Xresources          # Merge Xresources
 
-#autocutsel -fork &
-#autocutsel -fork -selection PRIMARY &
+autocutsel -fork &
+autocutsel -fork -selection PRIMARY &
 xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 
 urxvtd --quiet --opendisplay --fork &

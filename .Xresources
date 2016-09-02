@@ -18,7 +18,7 @@
 
 URxvt*depth: 32
 URxvt*scrollBar: false
-URxvt*font: xft:Tewi:regular:pixelsize=8:antialias=false:hinting=false:autohint=false
+URxvt*font: xft:Tewi:regular:pixelsize=6:antialias=false:hinting=false:autohint=false
 URxvt*boldFont:
 URxvt*italicFont:
 URxvt*bolditalicFont:
@@ -51,7 +51,7 @@ rofi.color-urgent: #ffffff,#dc322f,#f5f5f5,#df3f3f,#dc322f
 rofi.color-active: #ffffff,#c2cad0,#f5f5f5,#df3f3f,#c2cad0
 rofi.color-window: #ffffff,#f5f5f5
 rofi.separator-style: solid
-rofi.font: tewi 8
+rofi.font: tewi 6
 rofi.padding: 5
 rofi.lines: 5
 rofi.borderwidth: 0
