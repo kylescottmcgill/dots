@@ -45,3 +45,5 @@ alias repo-sync='sudo reflector -l 100 -p http --sort rate --save /etc/pacman.d/
 alias checkip='curl -s http://checkip.amazonaws.com/'
 alias digs='dig +noall +answer'
 alias su-code='sudo -E code --user-data-dir=/home/kyle/.config/Code/'
+
+alias coq='~/.steam/steam/steamapps/common/Caves\ of\ Qud/CoQ.x86_64 -force-opengl'

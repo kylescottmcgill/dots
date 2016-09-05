@@ -17,18 +17,18 @@
 !URxvt*hintstyle: hintslight
 
 URxvt*depth: 32
-URxvt*scrollBar: false
 URxvt*font: xft:Tewi:regular:pixelsize=6:antialias=false:hinting=false:autohint=false
 URxvt*boldFont:
 URxvt*italicFont:
 URxvt*bolditalicFont:
-URxvt*lineSpace: 5
+URxvt*lineSpace: 3
 URxvt*letterSpace: 2
 URxvt*internalBorder: 20
 URxvt*pointerBlank: true
 URxvt*cursor: i-beam
 URxvt*cursorBlink: true
 URxvt*cursorUnderline: true
+!URxvt*geometry: 95x25
 URxvt*url-launcher: /usr/bin/chromium
 URxvt*perl-lib: /usr/lib/urxvt/perl/
 URxvt*perl-ext-common: default,matcher
@@ -37,6 +37,7 @@ URxvt*cutchars: "\\ `\"\'()*;<>[]{|}&,=?@^\:"
 URxvt*iso14755: false
 URxvt*iso14755_52: false
 URxvt*meta8: false
+URxvt*scrollBar: false
 URxvt*keysym.Control-Up: \033[1;5A
 URxvt*keysym.Control-Down: \033[1;5B
 URxvt*keysym.Control-Left: \033[1;5D
