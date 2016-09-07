@@ -10,15 +10,15 @@ fc-cache
 xset s off ; xset -dpms
 xset m 1/1 0                    # No Mouse Acceleration
 
-xrdb $HOME/.Xresources          # Merge Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-autocutsel -fork &
-autocutsel -fork -selection PRIMARY &
+autocutsel -fork
+autocutsel -fork -selection PRIMARY
 xsetroot -cursor_name left_ptr & # Use a non-shit cursor
 
 urxvtd --quiet --opendisplay --fork &
 
-monitor &
+#monitor &
 mouse &
 
 # Finally, start the correct WindowManger based on the hostname

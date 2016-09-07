@@ -1,34 +1,37 @@
 #include ".config/colors/shiro.xresources"
 
+Xcursor.size: 16
+
 ! XFT Settings {{{
-!Xft.autohint: false
-!Xft.antialias: false
-!Xft.hinting: falst
-!Xft.hintstyle: hintslight
-!Xft.rgba: rgba
-!Xft.lcdfilter: lcddefault
-!Xft.dpi: 96
+Xft.antialias:  1
+Xft.autohint:   0
+Xft.dpi:        96
+Xft.hinting:    1
+Xft.hintstyle:  hintfull
+Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgb
 ! }}}
 ! URxvt {{{
-!URxvt*dpi: 96
-!URxvt*antialias: true
-!URxvt*rgba: vrgb
-!URxvt*hinting: true
-!URxvt*hintstyle: hintslight
-
+URxvt*skipBuiltinGlyphs: false
+URxvt*geometry: 132x23
+URxvt*dpi: 96
+URxvt*antialias: true
+URxvt*rgba: rgb
+URxvt*hinting: true
+URxvt*hintstyle: hintfull
 URxvt*depth: 32
-URxvt*font: xft:Tewi:regular:pixelsize=6:antialias=false:hinting=false:autohint=false
-URxvt*boldFont:
-URxvt*italicFont:
-URxvt*bolditalicFont:
+URxvt*font: xft:tewi:antialias=true:pixelsize=8
+URxvt*boldFont: xft:tewi:style=bold:antialias=true:pixelsize=8
+URxvt*italicFont: xft:tewi:style=italic:antialias=true:pixelsize=8
+URxvt*boldItalicFont: xft:tewi:style=bolditalic:antialias=true:pixelsize=8
 URxvt*lineSpace: 3
-URxvt*letterSpace: 2
+!URxvt*letterSpace: 2
 URxvt*internalBorder: 20
 URxvt*pointerBlank: true
 URxvt*cursor: i-beam
 URxvt*cursorBlink: true
 URxvt*cursorUnderline: true
-!URxvt*geometry: 95x25
+!URxvt*saveLines: 100
 URxvt*url-launcher: /usr/bin/chromium
 URxvt*perl-lib: /usr/lib/urxvt/perl/
 URxvt*perl-ext-common: default,matcher
