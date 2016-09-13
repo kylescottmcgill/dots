@@ -1,17 +1,15 @@
-! dusk by sythe
-
 ! special
-*.foreground:   #aaaaaa
-*.background:   #222222
-*.cursorColor:  #aaaaaa
+*.foreground:   #222222
+*.background:   #ffffff
+*.cursorColor:  #CF4C56
 
 ! black
 *.color0:       #4a4a4a
 *.color8:       #5c5c5c
 
 ! red
-*.color1:       #cf4c66
-*.color9:       #cf4c66
+*.color1:       #cf4c56
+*.color9:       #cf4c56
 
 ! green
 *.color2:       #41bb75
@@ -36,3 +34,4 @@
 ! white
 *.color7:       #8f8f8f
 *.color15:      #aaaaaa
+
