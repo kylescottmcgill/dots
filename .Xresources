@@ -11,29 +11,29 @@
 Xcursor.size: 16
 
 ! XFT Settings {{{
-Xft.antialias:  1
-Xft.autohint:   0
-Xft.dpi:        96
-Xft.hinting:    1
-Xft.hintstyle:  hintfull
-Xft.lcdfilter:  lcddefault
-Xft.rgba:       rgb
+!Xft.antialias:  1
+!Xft.autohint:   0
+!Xft.dpi:        96
+!Xft.hinting:    1
+!Xft.hintstyle:  hintfull
+!Xft.lcdfilter:  lcddefault
+!Xft.rgba:       rgb
 ! }}}
 ! URxvt {{{
 URxvt*skipBuiltinGlyphs: false
-URxvt*geometry: 132x23
-URxvt*dpi: 96
-URxvt*antialias: true
-URxvt*rgba: rgb
-URxvt*hinting: true
-URxvt*hintstyle: hintfull
-URxvt*depth: 32
-URxvt*font: xft:tewi:antialias=true:pixelsize=8
-URxvt*boldFont: xft:tewi:style=bold:antialias=true:pixelsize=8
-URxvt*italicFont: xft:tewi:style=italic:antialias=true:pixelsize=8
-URxvt*boldItalicFont: xft:tewi:style=bolditalic:antialias=true:pixelsize=8
-URxvt*lineSpace: 2
-URxvt*letterSpace: 1
+URxvt*geometry: 115x23
+!URxvt*dpi: 96
+!URxvt*antialias: true
+!URxvt*rgba: rgb
+!URxvt*hinting: true
+!URxvt*hintstyle: hintfull
+!URxvt*depth: 32
+URxvt*font: xft:berry:antialias=true:pixelsize=8
+URxvt*boldFont: xft:berry:style=bold:antialias=true:pixelsize=8
+URxvt*italicFont: xft:berry:style=italic:antialias=true:pixelsize=8
+URxvt*boldItalicFont: xft:berry:style=bolditalic:antialias=true:pixelsize=8
+URxvt*lineSpace: 3
+URxvt*letterSpace: 3
 URxvt*internalBorder: 20
 URxvt*pointerBlank: true
 URxvt*cursor: i-beam
@@ -63,7 +63,7 @@ rofi.color-urgent: #ffffff,#dc322f,#f5f5f5,#df3f3f,#dc322f
 rofi.color-active: #ffffff,#c2cad0,#f5f5f5,#df3f3f,#c2cad0
 rofi.color-window: #ffffff,#f5f5f5
 rofi.separator-style: solid
-rofi.font: tewi 6
+rofi.font: berry 8
 rofi.padding: 5
 rofi.lines: 5
 rofi.borderwidth: 0
