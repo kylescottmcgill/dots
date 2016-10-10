@@ -45,8 +45,3 @@ alias repo-sync='sudo reflector -l 100 -p http --sort rate --save /etc/pacman.d/
 alias checkip='curl -s http://checkip.amazonaws.com/'
 alias digs='dig +noall +answer'
 alias su-code='sudo -E code --user-data-dir=/home/kyle/.config/Code/'
-
-alias coq='~/.steam/steam/steamapps/common/Caves\ of\ Qud/CoQ.x86_64 -force-opengl'
-alias steam-depsrm='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
-alias steam-dyn="LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam"
-

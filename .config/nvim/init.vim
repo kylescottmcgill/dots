@@ -1,6 +1,6 @@
 " Vim Compat {{{
 
-"set shell=/bin/bash
+set shell=/bin/bash
 set ffs=unix,dos,mac
 set t_Co=256
 set showcmd
@@ -30,7 +30,7 @@ set visualbell			" Use visual bell (no beeping)
 
 set nobackup
 set noswapfile
-set nowb
+set nowritebackup
 set viminfo+=n~/.cache/viminfo
 
 set hlsearch			" Highlight all search results
@@ -98,21 +98,7 @@ set cmdheight=1
 set hid					" Abandoned buffers become hidden
 set formatoptions=c,q,r,t
 
-if has("gui_running")
-	"set guioptions-=m		" menu bar - for the feels
-	set guioptions-=T		" toolbar
-	set guioptions-=r		" scrollbar
-	set guioptions-=L		" Left Scroll bar
-	set guioptions-=e		" disable tabs
-	set guioptions-=m		" remove menu
-	set guifont=tewi		" Source Code Pro Font
-	set linespace=6
-	set guiheadroom=0
-	set noerrorbells
-	set novisualbell
-end
-
-set lazyredraw			" Don't redraw while executing macros
+"set lazyredraw			" Don't redraw while executing macros
 
 " }}}
 " Plug Packages {{{
@@ -124,10 +110,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Look and Feel
 Plug 'fxn/vim-monochrome'
-Plug 'reedes/vim-colors-pencil'
 Plug 'cdmedia/itg_flat_vim'
-Plug 'whatyouhide/vim-gotham'
-Plug 'NLKNguyen/papercolor-theme'
 
 " UI Improvements
 Plug 'itchyny/lightline.vim'
@@ -155,26 +138,19 @@ filetype plugin indent on	 " required
 " }}}
 " Colors & Statusline {{{
 "
+
 set background=dark
-
-"
-" PaperColor
-"
-let g:PaperColor_Light_Override = { 'background' : '#ffffff', 'cursorline' : '#dfdfff', 'matchparen' : '#d6d6d6' , 'comment' : '#222222' }
-let g:PaperColor_Dark_Override  = { 'background' : '#222222', 'cursorline' : '#dfdfff', 'matchparen' : '#d6d6d6' , 'comment' : '#ffffff' }
-
-map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-colorscheme itg_flat
+colorscheme itg_flat_transparent
 
 set nocursorline
 set nocursorcolumn
 
-highlight cursorline				ctermfg=none ctermbg=black
-highlight cursorcolumn				ctermfg=none ctermbg=black
-highlight statusline				ctermfg=white ctermbg=black
-highlight signcolumn				ctermfg=none ctermbg=black
-highlight colorcolumn				ctermfg=none ctermbg=black
-highlight BadWhitespace				ctermbg=red guibg=red
+highlight cursorline		ctermfg=none ctermbg=black
+highlight cursorcolumn		ctermfg=none ctermbg=black
+highlight statusline		ctermfg=white ctermbg=black
+highlight signcolumn		ctermfg=none ctermbg=black
+highlight colorcolumn		ctermfg=none ctermbg=black
+highlight BadWhitespace		ctermbg=red guibg=red
 
 set laststatus=2
 
@@ -296,7 +272,6 @@ map <leader>o <C-p>
 " Plugin bindings and functionality {{{
 "
 
-
 "
 " Goyo
 "
@@ -308,8 +283,9 @@ let g:goyo_linenr="2"
 "
 " Lightline
 "
+
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
+      \ 'colorscheme': 'wombat',
       \ 'component': {
       \   'readonly': '%{&readonly?"⭤":""}',
       \ }
@@ -342,8 +318,6 @@ let g:tagbar_type_go = {
 			\ }
 
 let g:tagbar_autofocus = 1
-
-nmap <F8> :TagbarToggle<cr>
 
 " vim-gitgutter
 let g:gitgutter_realtime = 0

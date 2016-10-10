@@ -14,11 +14,12 @@ xset m 1/1 0                    # No Mouse Acceleration
 
 autocutsel -fork
 autocutsel -fork -selection PRIMARY
-xsetroot -cursor_name left_ptr & # Use a non-shit cursor
+
+xsetroot -solid "#222222" -cursor_name left_ptr &
 
 urxvtd --quiet --opendisplay --fork &
 
-#monitor &
+monitor &
 mouse &
 
 # Finally, start the correct WindowManger based on the hostname

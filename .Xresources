@@ -34,7 +34,7 @@ URxvt*italicFont: xft:berry:style=italic:antialias=true:pixelsize=8
 URxvt*boldItalicFont: xft:berry:style=bolditalic:antialias=true:pixelsize=8
 URxvt*lineSpace: 3
 URxvt*letterSpace: 3
-URxvt*internalBorder: 20
+URxvt*internalBorder: 15
 URxvt*pointerBlank: true
 URxvt*cursor: i-beam
 URxvt*cursorBlink: true

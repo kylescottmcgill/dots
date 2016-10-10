@@ -7,7 +7,11 @@ export BASH_HOME="$HOME/.config/bash"
 
 if [ -d $BASH_HOME ]; then
 	for b in $BASH_HOME/* ; do
-		source $b
+		[ -f $b ] && source $b
+	done
+
+	for b in $BASH_HOME/func/* ; do
+		[ -f $b ] && source $b
 	done
 fi
 

@@ -6,9 +6,7 @@ if [[ $CURRENT_COUNT == 2 ]]; then
 	xrandr --output $SCREEN --mode $(xrandr --query | grep -a1 -w $SCREEN | tail -n 1 | awk '{print $1}') --right-of eDP1 --output eDP1 --off
 else
 	xrandr --auto
-	xrandr --output eDP1 --mode 1920x1080
+	#xrandr --output eDP1 --mode 1920x1080
 fi
-
-#~/.fehbg &
 
 # vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :
