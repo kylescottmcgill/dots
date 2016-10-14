@@ -22,7 +22,8 @@ alias v='$EDITOR'
 alias vim="nvim -i ~/.cache/nviminfo"
 
 # git git git
-alias git=hub
+#alias git=hub
+eval "$(hub alias -s)"
 alias gs='git status -s'
 alias gita='git add .'
 alias gitc='git commit -m'
