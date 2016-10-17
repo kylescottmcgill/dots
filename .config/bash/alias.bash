@@ -21,9 +21,7 @@ alias e='$EDITOR'
 alias v='$EDITOR'
 alias vim="nvim -i ~/.cache/nviminfo"
 
-# git git git
-#alias git=hub
-eval "$(hub alias -s)"
+# git
 alias gs='git status -s'
 alias gita='git add .'
 alias gitc='git commit -m'
@@ -31,6 +29,10 @@ alias gitl='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias gitp='git push -u origin master'
 alias gitpp='git pull ; git push'
 alias gitt='git add . && git commit && git push -u origin master'
+
+# Work
+alias xm='ssh -F $HOME/.ssh/xm/config'
+alias xms='scp -F $HOME/.ssh/xm/config'
 
 # misc
 alias rm='rm -f'
