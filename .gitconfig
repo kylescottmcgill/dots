@@ -42,7 +42,6 @@
 	changelog = "!git log $@ --pretty=\"* %s%n+%n--%n%b--%n\" | asciidoctor -o changelog.html -; #"
 	browse = !hub browse
 	restore = "!git checkout $(git rev-list -n 1 HEAD -- \"$1\")^ -- \"$1\""
-	hub = !hub
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
@@ -53,3 +52,5 @@
 [commit]
 	cleanup = strip
 	gpgsign = true
+[remote "origin"]
+	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*

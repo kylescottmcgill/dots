@@ -21,7 +21,7 @@ Xcursor.size: 16
 ! }}}
 ! URxvt {{{
 URxvt*skipBuiltinGlyphs: false
-URxvt*geometry: 115x23
+URxvt*geometry: 115x25
 !URxvt*dpi: 96
 !URxvt*antialias: true
 !URxvt*rgba: rgb
