@@ -3,10 +3,10 @@
 CURRENT_COUNT=$(xrandr --query | grep -v "VIRTUAL1" | grep -w "connected" | wc -l)
 if [[ $CURRENT_COUNT == 2 ]]; then
 	SCREEN=$(xrandr --query | grep -w "connected" | grep -v "eDP1" | awk '{print $1}')
-	xrandr --output $SCREEN --mode $(xrandr --query | grep -a1 -w $SCREEN | tail -n 1 | awk '{print $1}') --right-of eDP1 --output eDP1 --off
+	xrandr --output $SCREEN --mode $(xrandr --query | grep -a1 -w $SCREEN | tail -n 1 | awk '{print $1}')
+	xrandr --output eDP1 --mode 1920x1080 --pos 760x1440
 else
-	xrandr --auto
-	#xrandr --output eDP1 --mode 1920x1080
+	xrandr --output eDP1 --mode 1920x1080
 fi
 
 # vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :
