@@ -20,26 +20,26 @@ Xcursor.size: 16
 !Xft.rgba:       rgb
 ! }}}
 ! URxvt {{{
-URxvt*skipBuiltinGlyphs: false
+!URxvt*skipBuiltinGlyphs: false
 URxvt*geometry: 115x25
 !URxvt*dpi: 96
 !URxvt*antialias: true
 !URxvt*rgba: rgb
 !URxvt*hinting: true
-!URxvt*hintstyle: hintfull
+URxvt*hintstyle: hintfull
 !URxvt*depth: 32
-URxvt*font: xft:berry:antialias=true:pixelsize=8
-URxvt*boldFont: xft:berry:style=bold:antialias=true:pixelsize=8
-URxvt*italicFont: xft:berry:style=italic:antialias=true:pixelsize=8
-URxvt*boldItalicFont: xft:berry:style=bolditalic:antialias=true:pixelsize=8
+URxvt*font: xft:Operator Mono:pixelsize=10
+URxvt*boldFont: xft:Operator Mono:pixelsize=10
+URxvt*italicFont: xft:Operator Mono:pixelsize=10
+URxvt*boldItalicFont: xft:Operator Mono:pixelsize=10
 URxvt*lineSpace: 3
-URxvt*letterSpace: 3
+URxvt*letterSpace: -1
 URxvt*internalBorder: 15
 URxvt*pointerBlank: true
 URxvt*cursor: i-beam
 URxvt*cursorBlink: true
 URxvt*cursorUnderline: true
-!URxvt*saveLines: 100
+URxvt*saveLines: 65358
 URxvt*url-launcher: /usr/bin/chromium
 URxvt*perl-lib: /usr/lib/urxvt/perl/
 URxvt*perl-ext-common: default,matcher
@@ -63,7 +63,7 @@ rofi.color-urgent: #ffffff,#dc322f,#f5f5f5,#df3f3f,#dc322f
 rofi.color-active: #ffffff,#c2cad0,#f5f5f5,#df3f3f,#c2cad0
 rofi.color-window: #ffffff,#f5f5f5
 rofi.separator-style: solid
-rofi.font: berry 8
+rofi.font: Operator Mono Light 11
 rofi.padding: 5
 rofi.lines: 5
 rofi.borderwidth: 0

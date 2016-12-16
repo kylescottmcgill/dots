@@ -5,10 +5,6 @@ set ffs=unix,dos,mac
 set t_Co=256
 set showcmd
 
-if &term =~ '256color'
-	set t_ut=
-endif
-
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
@@ -111,6 +107,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Look and Feel
 Plug 'fxn/vim-monochrome'
 Plug 'cdmedia/itg_flat_vim'
+Plug 'reedes/vim-colors-pencil'
+Plug 'vim-scripts/Cleanroom'
 
 " UI Improvements
 Plug 'itchyny/lightline.vim'
@@ -119,6 +117,7 @@ Plug 'junegunn/goyo.vim'
 " Programming Improvments
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-jedi'
 
 " {{{ Go
 
@@ -139,8 +138,8 @@ filetype plugin indent on	 " required
 " Colors & Statusline {{{
 "
 
-set background=dark
-colorscheme itg_flat_transparent
+set background=light
+colorscheme cleanroom
 
 set nocursorline
 set nocursorcolumn
@@ -179,6 +178,8 @@ augroup configgroup
 	" Limit Quick Fix
 	autocmd FileType qf call AdjustWindowHeight(3, 10)
 augroup END
+
+autocmd BufNewFile,BufRead *.py set tabstop=4 | set softtabstop=4 | set shiftwidth=4 | set textwidth=79 | set expandtab | set autoindent | set fileformat=unix
 
 " }}}
 " Custom Functions {{{
@@ -248,10 +249,10 @@ nnoremap <leader>e :edit $MYVIMRC<cr>
 nnoremap <leader>s :source $MYVIMRC<cr>
 
 nnoremap <silent> <space> :exe 'silent! normal! za'.(foldlevel('.')?'':'l')<cr>
-nnoremap <silent> <C-Right> <c-w>l
-nnoremap <silent> <C-Left> <c-w>h
-nnoremap <silent> <C-Up> <c-w>k
-nnoremap <silent> <C-Down> <c-w>j
+nnoremap <silent> <C-h> <c-w>l
+nnoremap <silent> <C-l> <c-w>h
+nnoremap <silent> <C-k> <c-w>k
+nnoremap <silent> <C-j> <c-w>j
 
 nnoremap <silent> <C-PageUp> :bp<cr>
 nnoremap <silent> <C-PageDown> :bn<cr>
@@ -359,6 +360,12 @@ let g:go_term_enabled = 0
 
 " Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
+
+let g:deoplete#sources#jedi#statement_length = 50
+let g:deoplete#sources#jedi#enable_cache = 1
+let g:deoplete#sources#jedi#show_docstring = 0
+
+autocmd FileType python setlocal completeopt-=preview
 
 " }}}
 

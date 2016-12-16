@@ -44,7 +44,6 @@ alias update='sudo pacman -Syu --noconfirm; packer -Syu'
 
 alias mpv='mpv --msg-level=cplayer=fatal:ffmpeg=fatal --loop=inf --cache=no'
 alias mutt="mutt -F $HOME/.config/mutt/muttrc"
-alias repo-sync='sudo reflector -l 100 -p http --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu'
 alias checkip='curl -s http://checkip.amazonaws.com/'
 alias digs='dig +noall +answer'
 alias su-code='sudo -E code --user-data-dir=/home/kyle/.config/Code/'

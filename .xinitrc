@@ -17,8 +17,6 @@ autocutsel -fork -selection PRIMARY
 
 xsetroot -solid "#222222" -cursor_name left_ptr &
 
-urxvtd --quiet --opendisplay --fork &
-
 monitor &
 
 sudo rfkill unblock 0
