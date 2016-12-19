@@ -107,8 +107,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Look and Feel
 Plug 'fxn/vim-monochrome'
 Plug 'cdmedia/itg_flat_vim'
-Plug 'reedes/vim-colors-pencil'
-Plug 'vim-scripts/Cleanroom'
+Plug 'vyshane/cleanroom-vim-color'
+Plug 'owickstrom/vim-colors-paramount'
 
 " UI Improvements
 Plug 'itchyny/lightline.vim'
@@ -139,7 +139,7 @@ filetype plugin indent on	 " required
 "
 
 set background=light
-colorscheme cleanroom
+colorscheme paramount
 
 set nocursorline
 set nocursorcolumn

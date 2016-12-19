@@ -12,9 +12,6 @@ xset m 1/1 0                    # No Mouse Acceleration
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-autocutsel -fork
-autocutsel -fork -selection PRIMARY
-
 xsetroot -solid "#222222" -cursor_name left_ptr &
 
 monitor &
