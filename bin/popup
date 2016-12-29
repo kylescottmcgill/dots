@@ -6,7 +6,7 @@ set +m
 
 MONITOR=$(xrandr -q | awk -F'current' -F',' 'NR==1 {gsub("( |current)","");print $2}' | cut -f1 -d"x")
 EXTERNAL=$(xrandr -q | grep -w "connected" | grep "+" | wc -l)
-PANEL_FONT="Operator Mono Light 12"
+PANEL_FONT="Operator Mono:weight=Light"
 PANEL_BG="#ffffff"
 PANEL_FG="#222222"
 PANEL_UNDERLINE="#924445"
