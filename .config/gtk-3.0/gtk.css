@@ -3,3 +3,8 @@ vte-terminal,
 TerminalScreen {
 	padding: 20px 20px 20px 20px;
 }
+
+.window-frame {
+	box-shadow: none;
+	margin: 1;
+}

@@ -12,21 +12,9 @@ xset m 1/1 0                    # No Mouse Acceleration
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-xsetroot -solid "#222222" -cursor_name left_ptr &
+xsetroot -cursor_name left_ptr &
 
 monitor &
-
-sudo rfkill unblock 0
-EXTERNAL_MOUSE=$(xinput --list | grep -w "MX Master")
-if [[ $EXTERNALMOUSE != "" ]]; then
-	MOUSE=$(xinput --list | grep -m 1 -w MX\ Master | awk '{print $5}' | cut -d"=" -f2)
-
-	xinput --set-prop $MOUSE "Device Accel Constant Deceleration" 2
-	xinput --set-prop $MOUSE "Device Accel Velocity Scaling" 1
-	/usr/bin/synclient TouchpadOff=1
-else
-	/usr/bin/synclient TouchpadOff=0
-fi
 
 # Finally, start the correct WindowManger based on the hostname
 case "$(hostname)" in
