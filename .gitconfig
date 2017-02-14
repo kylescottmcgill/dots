@@ -52,3 +52,5 @@
 [commit]
 	cleanup = strip
 	gpgsign = true
+[http "https://gopkg.in"]
+	followRedirects = true

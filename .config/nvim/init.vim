@@ -141,11 +141,11 @@ filetype plugin indent on	 " required
 set background=light
 colorscheme paramount
 
-set nocursorline
+set cursorline
 set nocursorcolumn
 
-highlight cursorline		ctermfg=none ctermbg=black
-highlight cursorcolumn		ctermfg=none ctermbg=black
+" highlight cursorline		ctermfg=none ctermbg=grau
+highlight cursorcolumn		ctermfg=none ctermbg=gray
 highlight statusline		ctermfg=white ctermbg=black
 highlight signcolumn		ctermfg=none ctermbg=black
 highlight colorcolumn		ctermfg=none ctermbg=black
@@ -177,6 +177,16 @@ augroup configgroup
 				\ endif
 	" Limit Quick Fix
 	autocmd FileType qf call AdjustWindowHeight(3, 10)
+
+    autocmd FileType php setlocal expandtab
+    autocmd FileType php setlocal list
+    autocmd FileType php setlocal listchars=tab:+\ ,eol:-
+    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType python setlocal commentstring=#\ %s
+    autocmd BufEnter Makefile setlocal noexpandtab
+    autocmd BufEnter *.sh setlocal tabstop=2
+    autocmd BufEnter *.sh setlocal shiftwidth=2
+    autocmd BufEnter *.sh setlocal softtabstop=2
 augroup END
 
 autocmd BufNewFile,BufRead *.py set tabstop=4 | set softtabstop=4 | set shiftwidth=4 | set textwidth=79 | set expandtab | set autoindent | set fileformat=unix
@@ -257,6 +267,8 @@ nnoremap <silent> <C-j> <c-w>j
 nnoremap <silent> <C-PageUp> :bp<cr>
 nnoremap <silent> <C-PageDown> :bn<cr>
 nnoremap <silent> <C-Delete> :bd!<cr>
+
+nnoremap gV `[v`]
 
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-Space>
