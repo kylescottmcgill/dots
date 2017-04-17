@@ -16,4 +16,4 @@ if [ -d $BASH_HOME ]; then
 fi
 
 # added by travis gem
-[ -f /home/kyle/.travis/travis.sh ] && source /home/kyle/.travis/travis.sh
+#[ -f /home/kyle/.travis/travis.sh ] && source /home/kyle/.travis/travis.sh

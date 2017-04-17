@@ -109,6 +109,7 @@ Plug 'fxn/vim-monochrome'
 Plug 'cdmedia/itg_flat_vim'
 Plug 'vyshane/cleanroom-vim-color'
 Plug 'owickstrom/vim-colors-paramount'
+Plug 'mhartington/oceanic-next'
 
 " UI Improvements
 Plug 'itchyny/lightline.vim'
