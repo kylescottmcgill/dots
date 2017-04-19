@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ln -snf $XDG_CONFIG_HOME/termite/light $XDG_CONFIG_HOME/termite/config
+ln -snf $XDG_CONFIG_HOME/termite/default-light $XDG_CONFIG_HOME/termite/config
