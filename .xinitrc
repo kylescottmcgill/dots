@@ -7,7 +7,6 @@
 xset +fp /usr/share/fonts/local
 xset fp rehash                  # Something else for the fonts
 fc-cache
-xset s off ; #xset -dpms
 xset m 1/1 0                    # No Mouse Acceleration
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources

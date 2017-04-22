@@ -41,7 +41,7 @@ highlight = #000000
 
 # special
 foreground = #ffffff
-background = #222222
+background = #1c1c1c
 cursor = #cf4c66
 
 # black
