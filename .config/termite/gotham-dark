@@ -33,5 +33,3 @@
 
 *.color7: #98d1ce
 *.color15: #d3ebe9
-
-! vim: et sw=2 syn=xdefaults

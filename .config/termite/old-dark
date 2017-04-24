@@ -37,5 +37,3 @@ URxvt*color14: #5F9898
 ! #White
 URxvt*color7: #d7d9cd
 URxvt*color15: #f6f6f5
-
-! vim: et sw=2 syn=xdefaults
