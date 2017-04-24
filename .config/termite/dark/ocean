@@ -1,7 +1,4 @@
 [colors]
-# 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
-
 cursor_foreground = #AA2244
 foreground_bold = #222222
 highlight = #dddddd
