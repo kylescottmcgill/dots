@@ -17,9 +17,9 @@ monitor &
 
 # Finally, start the correct WindowManger based on the hostname
 
-sxhkd &
-exec bspwm
+#sxhkd &
+#exec bspwm
 
-#exec 2bwm
+exec 2bwm
 
 # vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :

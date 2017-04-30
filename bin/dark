@@ -1,4 +1,0 @@
-#!/bin/bash
-
-ln -snf $XDG_CONFIG_HOME/termite/default-dark $XDG_CONFIG_HOME/termite/config
-
