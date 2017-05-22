@@ -1,12 +1,12 @@
 [colors]
-cursor_foreground = #AA2244
+cursor_foreground = #222222
 foreground_bold = #222222
 highlight = #dddddd
 
 # special
 foreground = #2a2c32
 background = #ffffff
-cursor = #ffffff
+cursor = #222222
 
 # black
 color0 = #090909

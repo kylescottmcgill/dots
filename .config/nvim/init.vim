@@ -141,7 +141,7 @@ filetype plugin indent on	 " required
 "
 
 set background=light
-colorscheme itg_flat
+colorscheme paramount
 
 set cursorline
 set nocursorcolumn
