@@ -31,8 +31,8 @@ alias gitpp='git pull ; git push'
 alias gitt='git add . && git commit && git push -u origin master'
 
 # Work
-alias xm='ssh -F $HOME/.ssh/xm/config'
-alias xms='scp -F $HOME/.ssh/xm/config'
+alias xm-ssh='ssh -F $HOME/.ssh/xm/config'
+alias xms-ssh='scp -F $HOME/.ssh/xm/config'
 
 # misc
 alias rm='rm -f'
@@ -43,7 +43,7 @@ alias search='\packer -Ss'
 alias update='sudo pacman -Syu --noconfirm; packer -Syu'
 
 alias mpv='mpv --msg-level=cplayer=fatal:ffmpeg=fatal --loop=inf --cache=no'
-alias mutt="mutt -F $HOME/.config/mutt/muttrc"
 alias checkip='curl -s http://checkip.amazonaws.com/'
 alias digs='dig +noall +answer'
 alias su-code='sudo -E code --user-data-dir=/home/kyle/.config/Code/'
+alias scrot="scrot '%Y-%m-%d_\$p_\$wx\$h.png'"
