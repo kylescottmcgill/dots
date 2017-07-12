@@ -3,11 +3,8 @@
 SENSIBLE_BASH="$HOME/src/github.com/mrzool/bash-sensible/sensible.bash"
 [[ -s $SENSIBLE_BASH ]] && source $SENSIBLE_BASH
 
-source /opt/google-cloud-sdk/completion.bash.inc
-source /opt/google-cloud-sdk/path.bash.inc
-
 export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye &>/dev/null
+/usr/bin/gpg-connect-agent updatestartuptty /bye &>/dev/null
 
 # Set my editor and git editor
 export EDITOR="$(which nvim)"
@@ -64,21 +61,13 @@ alias ....='cd ../../..'
 alias .....='cd ../../..'
 
 # shorteners
-alias c='clear'
-alias p="pwd | sed \"s:$HOME:~:g\""
 alias i='weechat'
-alias e='$EDITOR'
-alias v='$EDITOR'
 alias vim="nvim -i ~/.cache/nviminfo"
 
 # git
 alias gs='git status -s'
-alias gita='git add .'
-alias gitc='git commit -m'
 alias gitl='git log --graph --decorate --pretty=oneline --abbrev-commit'
-alias gitp='git push -u origin master'
 alias gitpp='git pull ; git push'
-alias gitt='git add . && git commit && git push -u origin master'
 
 # Work
 alias xm-ssh='ssh -F $HOME/.ssh/xm/config'

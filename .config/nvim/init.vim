@@ -94,6 +94,8 @@ set cmdheight=1
 set hid					" Abandoned buffers become hidden
 set formatoptions=c,q,r,t
 
+set guicursor=
+
 "set lazyredraw			" Don't redraw while executing macros
 
 " }}}
@@ -379,7 +381,7 @@ let g:deoplete#sources#jedi#statement_length = 50
 let g:deoplete#sources#jedi#enable_cache = 1
 let g:deoplete#sources#jedi#show_docstring = 0
 
-autocmd FileType python setlocal completeopt-=preview
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " }}}
 

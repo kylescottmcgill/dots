@@ -6,6 +6,8 @@
 
 xset +fp /usr/share/fonts/local
 xset fp rehash                  # Something else for the fonts
+#xset dpms force on
+xset s 300 300
 fc-cache
 xset m 1/1 0                    # No Mouse Acceleration
 
