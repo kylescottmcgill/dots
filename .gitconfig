@@ -54,5 +54,6 @@
 [commit]
 	cleanup = strip
 	gpgsign = true
+	template = /home/kyle/.gitmessage
 [http "https://gopkg.in"]
 	followRedirects = true

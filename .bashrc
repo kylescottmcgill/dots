@@ -3,8 +3,8 @@
 SENSIBLE_BASH="$HOME/src/github.com/mrzool/bash-sensible/sensible.bash"
 [[ -s $SENSIBLE_BASH ]] && source $SENSIBLE_BASH
 
-export GPG_TTY=$(tty)
-/usr/bin/gpg-connect-agent updatestartuptty /bye &>/dev/null
+#export GPG_TTY=$(tty)
+#/usr/bin/gpg-connect-agent updatestartuptty /bye &>/dev/null
 
 # Set my editor and git editor
 export EDITOR="$(which nvim)"
@@ -63,6 +63,7 @@ alias .....='cd ../../..'
 # shorteners
 alias i='weechat'
 alias vim="nvim -i ~/.cache/nviminfo"
+alias vimdiff="vim -d"
 
 # git
 alias gs='git status -s'
@@ -92,3 +93,4 @@ function prompt_command() {
 }
 
 PROMPT_COMMAND=prompt_command;
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

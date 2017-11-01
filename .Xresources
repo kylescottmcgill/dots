@@ -6,10 +6,12 @@ rofi.color-normal: #ffffff,#525d76,#f5f5f5,#df3f3f,#ffffff
 rofi.color-urgent: #ffffff,#dc322f,#f5f5f5,#df3f3f,#dc322f
 rofi.color-active: #ffffff,#c2cad0,#f5f5f5,#df3f3f,#c2cad0
 rofi.color-window: #ffffff,#f5f5f5
-rofi.separator-style: solid
+rofi.separator-style: none
+rofi.fullscreen: false
+rofi.hide-scrollbar: true
 rofi.font: Operator Mono Light 11
 rofi.padding: 5
-rofi.lines: 5
+rofi.lines: 10
 rofi.borderwidth: 0
 ! }}}
 ! vim: et sw=2 syn=xdefaults

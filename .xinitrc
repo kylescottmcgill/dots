@@ -14,6 +14,10 @@ xset m 1/1 0                    # No Mouse Acceleration
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 xsetroot -cursor_name left_ptr &
+xmodmap ~/.xmodmap &
+
+export GPG_TTY=$(tty)
+/usr/bin/gpg-connect-agent updatestartuptty /bye &>/dev/null
 
 monitor &
 
