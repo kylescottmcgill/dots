@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-openssl s_client -connect $1:443 -tls1_2

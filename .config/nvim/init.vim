@@ -115,14 +115,18 @@ Plug 'mhartington/oceanic-next'
 
 " UI Improvements
 Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
 Plug 'junegunn/goyo.vim'
 
 " Programming Improvments
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-jedi'
+Plug 'w0rp/ale'
 Plug 'chr4/nginx.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'hashivim/vim-terraform'
 
 " {{{ Go
@@ -188,6 +192,10 @@ augroup configgroup
     autocmd FileType php setlocal list
     autocmd FileType php setlocal listchars=tab:+\ ,eol:-
     autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+	autocmd FileType go setlocal noexpandtab
+	autocmd FileType go setlocal shiftwidth=4
+	autocmd FileType go setlocal softtabstop=4
+	autocmd FileType go setlocal tabstop=4
     autocmd FileType python setlocal commentstring=#\ %s
     autocmd BufEnter Makefile setlocal noexpandtab
     autocmd BufEnter *.sh setlocal tabstop=2
@@ -196,6 +204,7 @@ augroup configgroup
 augroup END
 
 autocmd BufNewFile,BufRead *.py set tabstop=4 | set softtabstop=4 | set shiftwidth=4 | set textwidth=79 | set expandtab | set autoindent | set fileformat=unix
+autocmd VimLeave * set guicursor=a:hor10
 
 " }}}
 " Custom Functions {{{
@@ -258,9 +267,7 @@ nmap <leader>z :Goyo<cr>
 nmap <leader>p :bp<cr>
 nmap <leader>n :bn<cr>
 nmap <leader>d :bd!<cr>
-nmap <leader>bs :CtrlPMRU<cr>
-nmap <leader>bb :CtrlPBuffer<cr>
-nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>t :Files<cr>
 
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>e :edit $MYVIMRC<cr>
@@ -312,20 +319,22 @@ let g:lightline = {
       \ }
       \ }
 
-" Syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = "▲"
-let g:syntastic_style_error_symbol = '✘'
-let g:syntastic_style_warning_symbol = "▲"
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_check_on_open=1
-let g:syntastic_echo_current_error=1
-let g:syntastic_enable_signs=1
+let g:lightline.component_expand = {
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
 
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:lightline.component_type = {
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \ }
+
+let g:lightline.active = { 'right': [[ 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
+
+" Ale
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
 
 " Tagbar
 let g:tagbar_type_go = {
@@ -368,15 +377,22 @@ if executable('ag')
 endif
 
 " fatih/vim-go
-let g:go_highlight_functions = 0
-let g:go_highlight_methods = 0
-let g:go_highlight_structs = 0
-let g:go_highlight_operators = 0
-let g:go_highlight_build_constraints = 0
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+
+let g:go_auto_sameids = 1
 
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
 let g:go_term_enabled = 0
+
+let g:go_auto_type_info = 1
 
 " Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1

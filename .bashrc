@@ -66,6 +66,7 @@ alias vim="nvim -i ~/.cache/nviminfo"
 alias vimdiff="vim -d"
 
 # git
+alias git='hub'
 alias gs='git status -s'
 alias gitl='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias gitpp='git pull ; git push'
@@ -87,6 +88,20 @@ alias checkip='curl -s http://checkip.amazonaws.com/'
 alias digs='dig +noall +answer'
 alias su-code='sudo -E code --user-data-dir=/home/kyle/.config/Code/'
 alias scrot="scrot '%Y-%m-%d_\$p_\$wx\$h.png'"
+
+function g {
+    if [[ $# > 0 ]]; then
+        git "$@"
+    else
+        echo "Last commit: $(time_since_last_commit) ago"
+        git status --short --branch
+    fi
+}
+
+function time_since_last_commit() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  git log -1 --pretty=format:"%ar" | sed 's/\([0-9]*\) \(.\).*/\1\2/'
+}
 
 function prompt_command() {
 	PS1=" ${normal}\W$(rt=$?; [[ $rt = 0 ]] && echo ${black} || echo ${red}) »${normal} "

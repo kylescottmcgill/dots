@@ -4,10 +4,10 @@ TerminalScreen {
 	padding: 20px 20px 20px 20px;
 }
 
-.window-frame {
+//.window-frame {
 	//box-shadow: none;
 	//margin: 1;
-}
+//}
 
 //@define-color selected_bg_color #dddddd;
 //@define-color theme_selected_bg_color @selected_bg_color;

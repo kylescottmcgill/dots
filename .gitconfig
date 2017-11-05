@@ -42,6 +42,31 @@
 	changelog = "!git log $@ --pretty=\"* %s%n+%n--%n%b--%n\" | asciidoctor -o changelog.html -; #"
 	browse = !hub browse
 	restore = "!git checkout $(git rev-list -n 1 HEAD -- \"$1\")^ -- \"$1\""
+	# show all branches, even across remotes
+	branches = branch -a --color -v
+
+	# Get short SHA-1 for object
+	hash = rev-parse --short HEAD
+
+	# Show the log with stats, but without merges
+	lc = log ORIG_HEAD.. --stat --no-merges
+
+	# See a tree graph of your git history
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	# List files known to Git
+	ls = ls-files
+
+	# Show the branches I've been working on and when they were created
+	mybranches = "!f() { if test $# = 0 ; then set -- refs/remotes ; fi ; git for-each-ref --format='%(authordate:relative)\t%(refname:short)\t%(authoremail)' --sort=authordate \"$@\" | sed -ne \"s/\t<$(git config user.email)>//p\" | column -s '\t' -t ; } ; f"
+
+	# update all submodules in a project
+	subs = submodule foreach git pull origin master
+
+	# Pull all branches from the remote that can be merged with fast-forward
+	up = "!git remote update -p; git merge --ff-only @{u}"
+
+	# Open all modified files in my editor
+	wip = "!$EDITOR $(git ls-files -m)"
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
