@@ -3,7 +3,8 @@
 SENSIBLE_BASH="$HOME/src/github.com/mrzool/bash-sensible/sensible.bash"
 [[ -s $SENSIBLE_BASH ]] && source $SENSIBLE_BASH
 
-#export GPG_TTY=$(tty)
+export GPG_TTY=$(tty)
+export PINENTRY_USER_DATA="USE_CURSES=1"
 #/usr/bin/gpg-connect-agent updatestartuptty /bye &>/dev/null
 
 # Set my editor and git editor

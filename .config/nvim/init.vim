@@ -148,7 +148,7 @@ filetype plugin indent on	 " required
 " Colors & Statusline {{{
 "
 
-set background=dark
+set background=light
 colorscheme paramount
 
 set cursorline
