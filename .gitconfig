@@ -44,6 +44,7 @@
 	restore = "!git checkout $(git rev-list -n 1 HEAD -- \"$1\")^ -- \"$1\""
 	# show all branches, even across remotes
 	branches = branch -a --color -v
+	logf = log --pretty=full
 
 	# Get short SHA-1 for object
 	hash = rev-parse --short HEAD

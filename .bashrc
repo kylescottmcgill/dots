@@ -19,6 +19,7 @@ unset MAILCHECK
 export GOPATH=$HOME
 export GOBIN=$HOME/bin
 
+# Rust
 export PATH="$GOBIN:$PATH"
 
 # History
@@ -36,6 +37,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export WWW_HOME="$HOME/.cache"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export GTK_THEME="Paper"
 
 man() {
 	export LESS_TERMCAP_mb=$'\e'"[1;31m"
@@ -71,10 +73,6 @@ alias git='hub'
 alias gs='git status -s'
 alias gitl='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias gitpp='git pull ; git push'
-
-# Work
-alias xm-ssh='ssh -F $HOME/.ssh/xm/config'
-alias xms-ssh='scp -F $HOME/.ssh/xm/config'
 
 # misc
 alias rm='rm -f'

@@ -19,7 +19,7 @@ set nolist
 set showbreak=+++		" Wrap-broken line prefix
 set breakindent			" Break and indent based on current indent
 set textwidth=140		" Line wrap (number of cols)
-set colorcolumn=0
+set colorcolumn=
 set showmatch			" Highlight matching brace
 set errorbells			" Beep or flash screen on errors
 set visualbell			" Use visual bell (no beeping)
@@ -112,6 +112,7 @@ Plug 'cdmedia/itg_flat_vim'
 Plug 'vyshane/cleanroom-vim-color'
 Plug 'owickstrom/vim-colors-paramount'
 Plug 'mhartington/oceanic-next'
+Plug 'reedes/vim-colors-pencil'
 
 " UI Improvements
 Plug 'itchyny/lightline.vim'
@@ -158,8 +159,12 @@ set nocursorcolumn
 highlight cursorcolumn		ctermfg=none ctermbg=gray
 highlight statusline		ctermfg=white ctermbg=black
 highlight signcolumn		ctermfg=none ctermbg=black
-highlight colorcolumn		ctermfg=none ctermbg=black
-highlight BadWhitespace		ctermbg=red guibg=red
+highlight colorcolumn		ctermfg=none ctermbg=none
+highlight BadWhitespace		ctermfg=none ctermbg=red
+" highlight OverLength		ctermfg=248 ctermbg=none
+highlight Search			ctermfg=248 ctermbg=none
+
+" match OverLength /\%>100v.\+/
 
 set laststatus=2
 
@@ -178,7 +183,7 @@ augroup configgroup
 	autocmd VimEnter * highlight clear SignColumn
 
 	autocmd FileType go setlocal foldmethod=indent
-	autocmd FileType gitcommit set tw=72 | set spell | set colorcolumn=50
+	autocmd FileType gitcommit set tw=72 | set spell
 
 	autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 	autocmd BufReadPost *
@@ -197,10 +202,12 @@ augroup configgroup
 	autocmd FileType go setlocal softtabstop=4
 	autocmd FileType go setlocal tabstop=4
     autocmd FileType python setlocal commentstring=#\ %s
-    autocmd BufEnter Makefile setlocal noexpandtab
-    autocmd BufEnter *.sh setlocal tabstop=2
-    autocmd BufEnter *.sh setlocal shiftwidth=2
-    autocmd BufEnter *.sh setlocal softtabstop=2
+    autocmd FileType Makefile setlocal noexpandtab
+
+	autocmd FileType * setlocal expandtab
+	autocmd FileType * setlocal shiftwidth=4
+	autocmd FileType * setlocal softtabstop=4
+	autocmd FileType * setlocal tabstop=4
 augroup END
 
 autocmd BufNewFile,BufRead *.py set tabstop=4 | set softtabstop=4 | set shiftwidth=4 | set textwidth=79 | set expandtab | set autoindent | set fileformat=unix
