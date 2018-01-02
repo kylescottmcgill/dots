@@ -81,5 +81,6 @@
 	cleanup = strip
 	gpgsign = true
 	template = /home/kyle/.gitmessage
+	verbose = true
 [http "https://gopkg.in"]
 	followRedirects = true

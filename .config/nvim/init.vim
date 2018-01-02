@@ -113,6 +113,7 @@ Plug 'vyshane/cleanroom-vim-color'
 Plug 'owickstrom/vim-colors-paramount'
 Plug 'mhartington/oceanic-next'
 Plug 'reedes/vim-colors-pencil'
+Plug 'rainglow/vim'
 
 " UI Improvements
 Plug 'itchyny/lightline.vim'
@@ -149,7 +150,7 @@ filetype plugin indent on	 " required
 " Colors & Statusline {{{
 "
 
-set background=light
+set background=dark
 colorscheme paramount
 
 set cursorline

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 CURRENT_COUNT=$(xrandr --query | grep -v "VIRTUAL1" | grep -w "connected" | wc -l)
 if [[ "${CURRENT_COUNT}" == 2 ]]; then

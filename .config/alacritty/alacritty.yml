@@ -100,51 +100,6 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: true
 
-# Colors (Tomorrow Night Bright)
-colors:
-  # Default colors
-  primary:
-    background: '0xffffff'
-    foreground: '0x222222'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text:   '0x000000'
-    cursor: '0xcf4c56'
-
-  # Normal colors
-  normal:
-    black:   '0x4a4a4a'
-    red:     '0xcf4c56'
-    green:   '0x41bb75'
-    yellow:  '0xe28436'
-    blue:    '0x5d8aa8'
-    magenta: '0x8268c4'
-    cyan:    '0x17b8a3'
-    white:   '0x8f8f8f'
-
-  # Bright colors
-  bright:
-    black:   '0x5c5c5c'
-    red:     '0xcf4c56'
-    green:   '0x41bb75'
-    yellow:  '0xe28436'
-    blue:    '0x5d8aa8'
-    magenta: '0x8268c4'
-    cyan:    '0x17b8a3'
-    white:   '0x8f8f8f'
-
-  # Dim colors (Optional)
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
-
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
@@ -362,3 +317,29 @@ key_bindings:
   - { key: F10,      mods: Super,   chars: "\x1b[21;3~"                  }
   - { key: F11,      mods: Super,   chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Super,   chars: "\x1b[24;3~"                  }
+# Colors (Pencil Dark)
+colors:
+ # Default Colors
+ primary:
+   background: '0x212121'
+   foreground: '0xf1f1f1'
+ # Normal colors
+ normal:
+   black:   '0x212121'
+   red:     '0xc30771'
+   green:   '0x10a778'
+   yellow:  '0xa89c14'
+   blue:    '0x008ec4'
+   magenta: '0x523c79'
+   cyan:    '0x20a5ba'
+   white:   '0xe0e0e0'
+ # Bright colors
+ bright:
+   black:   '0x212121'
+   red:     '0xfb007a'
+   green:   '0x5fd7af'
+   yellow:  '0xf3e430'
+   blue:    '0x20bbfc'
+   magenta: '0x6855de'
+   cyan:    '0x4fb8cc'
+   white:   '0xf1f1f1'
