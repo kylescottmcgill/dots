@@ -17,9 +17,9 @@ env:
 # Window dimensions in character columns and lines
 # Falls back to size specified by window manager if set to 0x0.
 # (changes require restart)
-dimensions:
-  columns: 114
-  lines: 26
+# dimensions:
+#  columns: 114
+#  lines: 26
 
 # Adds this many blank pixels of padding around the window
 # Units are physical pixels; this is not DPI aware.
@@ -29,7 +29,7 @@ padding:
   y: 20
 
 # Display tabs using this many cells (changes require restart)
-tabspaces: 8
+tabspaces: 4
 
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
