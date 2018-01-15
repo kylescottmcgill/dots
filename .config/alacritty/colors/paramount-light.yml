@@ -1,0 +1,33 @@
+# Colors Custom Paramount based off base16 Grayscale Light
+colors:
+  # Default colors
+  primary:
+    background: '0xf7f7f7'
+    foreground: '0x464646'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text:   '0x000000'
+    cursor: '0xcf4c56'
+
+  # Normal colors
+  normal:
+    black:   '0x101010'
+    red:     '0x7c7c7c'
+    green:   '0xa790d5'
+    yellow:  '0xa0a0a0'
+    blue:    '0x686868'
+    magenta: '0xa790d5'
+    cyan:    '0x868686'
+    white:   '0xb9b9b9'
+
+  # Bright colors
+  bright:
+    black:   '0x525252'
+    red:     '0x7c7c7c'
+    green:   '0xa790d5'
+    yellow:  '0xa0a0a0'
+    blue:    '0x686868'
+    magenta: '0xa790d5'
+    cyan:    '0x868686'
+    white:   '0xf7f7f7'
