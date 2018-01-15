@@ -17,9 +17,9 @@ env:
 # Window dimensions in character columns and lines
 # Falls back to size specified by window manager if set to 0x0.
 # (changes require restart)
-# dimensions:
-#  columns: 114
-#  lines: 26
+dimensions:
+  columns: 114
+  lines: 26
 
 # Adds this many blank pixels of padding around the window
 # Units are physical pixels; this is not DPI aware.
@@ -91,7 +91,7 @@ font:
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
-  use_thin_strokes: true
+  use_thin_strokes: false
 
 # Should display the render timer
 render_timer: false
@@ -317,29 +317,36 @@ key_bindings:
   - { key: F10,      mods: Super,   chars: "\x1b[21;3~"                  }
   - { key: F11,      mods: Super,   chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Super,   chars: "\x1b[24;3~"                  }
-# Colors (Pencil Dark)
+# Colors Custom Paramount based off base16 Grayscale Light
 colors:
- # Default Colors
- primary:
-   background: '0x212121'
-   foreground: '0xf1f1f1'
- # Normal colors
- normal:
-   black:   '0x212121'
-   red:     '0xc30771'
-   green:   '0x10a778'
-   yellow:  '0xa89c14'
-   blue:    '0x008ec4'
-   magenta: '0x523c79'
-   cyan:    '0x20a5ba'
-   white:   '0xe0e0e0'
- # Bright colors
- bright:
-   black:   '0x212121'
-   red:     '0xfb007a'
-   green:   '0x5fd7af'
-   yellow:  '0xf3e430'
-   blue:    '0x20bbfc'
-   magenta: '0x6855de'
-   cyan:    '0x4fb8cc'
-   white:   '0xf1f1f1'
+  # Default colors
+  primary:
+    background: '0xf7f7f7'
+    foreground: '0x464646'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text:   '0x000000'
+    cursor: '0xcf4c56'
+
+  # Normal colors
+  normal:
+    black:   '0x101010'
+    red:     '0x7c7c7c'
+    green:   '0xa790d5'
+    yellow:  '0xa0a0a0'
+    blue:    '0x686868'
+    magenta: '0xa790d5'
+    cyan:    '0x868686'
+    white:   '0xb9b9b9'
+
+  # Bright colors
+  bright:
+    black:   '0x525252'
+    red:     '0x7c7c7c'
+    green:   '0xa790d5'
+    yellow:  '0xa0a0a0'
+    blue:    '0x686868'
+    magenta: '0xa790d5'
+    cyan:    '0x868686'
+    white:   '0xf7f7f7'
