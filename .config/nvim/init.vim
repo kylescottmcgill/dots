@@ -202,6 +202,12 @@ augroup configgroup
 	autocmd FileType go setlocal shiftwidth=4
 	autocmd FileType go setlocal softtabstop=4
 	autocmd FileType go setlocal tabstop=4
+    autocmd FileType ansible setlocal tabstop=2
+    autocmd FileType ansible setlocal shiftwidth=2
+    autocmd FileType ansible setlocal softtabstop=2
+    autocmd FileType yaml setlocal tabstop=2
+    autocmd FileType yaml setlocal shiftwidth=2
+    autocmd FileType yaml setlocal softtabstop=2
     autocmd FileType python setlocal commentstring=#\ %s
     autocmd FileType Makefile setlocal noexpandtab
 
@@ -211,7 +217,7 @@ augroup configgroup
 	autocmd FileType * setlocal tabstop=4
 augroup END
 
-autocmd BufNewFile,BufRead *.py set tabstop=4 | set softtabstop=4 | set shiftwidth=4 | set textwidth=79 | set expandtab | set autoindent | set fileformat=unix
+autocmd BufNewFile,BufRead *.py set tabstop=2 | set softtabstop=2 | set shiftwidth=2 | set textwidth=79 | set expandtab | set autoindent | set fileformat=unix
 
 " }}}
 " Custom Functions {{{

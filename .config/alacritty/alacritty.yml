@@ -18,8 +18,8 @@ env:
 # Falls back to size specified by window manager if set to 0x0.
 # (changes require restart)
 dimensions:
-  columns: 114
-  lines: 26
+  columns: 100
+  lines: 23
 
 # Adds this many blank pixels of padding around the window
 # Units are physical pixels; this is not DPI aware.
@@ -73,7 +73,7 @@ font:
     # style: Italic
 
   # Point size of the font
-  size: 10.0
+  size: 11.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -317,7 +317,7 @@ key_bindings:
   - { key: F10,      mods: Super,   chars: "\x1b[21;3~"                  }
   - { key: F11,      mods: Super,   chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Super,   chars: "\x1b[24;3~"                  }
-# Colors Custom Paramount based off base16 Grayscale Light
+# Colors Base16 Grayscale Light
 colors:
   # Default colors
   primary:
@@ -326,27 +326,28 @@ colors:
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text:   '0x000000'
+    text:   '0xf7f7f7'
     cursor: '0xcf4c56'
 
   # Normal colors
   normal:
-    black:   '0x101010'
+    black:   '0xf7f7f7'
     red:     '0x7c7c7c'
-    green:   '0xa790d5'
+    green:   '0x8e8e8e'
     yellow:  '0xa0a0a0'
     blue:    '0x686868'
-    magenta: '0xa790d5'
+    magenta: '0x747474'
     cyan:    '0x868686'
-    white:   '0xb9b9b9'
+    white:   '0x464646'
 
   # Bright colors
   bright:
-    black:   '0x525252'
+    black:   '0xababab'
     red:     '0x7c7c7c'
-    green:   '0xa790d5'
+    green:   '0x8e8e8e'
     yellow:  '0xa0a0a0'
     blue:    '0x686868'
-    magenta: '0xa790d5'
+    magenta: '0x747474'
     cyan:    '0x868686'
-    white:   '0xf7f7f7'
+    white:   '0x101010'
+

@@ -3,17 +3,16 @@
 CURRENT_COUNT=$(xrandr --query | grep -v "VIRTUAL1" | grep -w "connected" | wc -l)
 if [[ "${CURRENT_COUNT}" == 2 ]]; then
 	SCREEN=$(xrandr --query | grep -w "connected" | grep -v "eDP1" | awk '{print $1}')
-	xrandr --output $SCREEN --mode $(xrandr --query | grep -a1 -w "${SCREEN} connected" | tail -n 1 | awk '{print $1}') --primary --output eDP1 --off
+	xrandr --output $SCREEN --mode $(xrandr --query | grep -a1 -w "${SCREEN} connected" | tail -n 1 | awk '{print $1}') --primary --output eDP1 --mode 1920x1080 --pos 720x1440
 
-    xinput disable $(xinput | grep 'Touch' | grep -Po 'id=\d+' | cut -d'=' -f2)
     xinput disable $(xinput | grep 's3203' | grep -Po 'id=\d+' | cut -d'=' -f2)
 else
 	xrandr --auto
 
-    xinput enable $(xinput | grep 'Touch' | grep -Po 'id=\d+' | cut -d'=' -f2)
     xinput enable $(xinput | grep 's3203' | grep -Po 'id=\d+' | cut -d'=' -f2)
 fi
 
+xmodmap ~/.xmodmap
 nitrogen --restore 2>/dev/null
 
 # vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :

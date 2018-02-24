@@ -19,12 +19,8 @@ export GPG_TTY=$(tty)
 /usr/bin/gpg-connect-agent updatestartuptty /bye &>/dev/null
 
 monitor &
+xinput disable $(xinput | grep 'Touch' | grep -Po 'id=\d+' | cut -d'=' -f2) &
 xmodmap ~/.xmodmap &
-
-# Finally, start the correct WindowManger based on the hostname
-
-#sxhkd &
-#exec bspwm
 
 exec 2bwm
 

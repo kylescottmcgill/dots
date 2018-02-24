@@ -69,14 +69,16 @@ alias .....='cd ../../..'
 
 # shorteners
 alias i='weechat'
+alias g='git'
+alias v='vim'
+alias t='td'
 alias vim="nvim -i ~/.cache/nviminfo"
 alias vimdiff="vim -d"
 
 # git
 alias git='hub'
-alias gs='git status -s'
 alias gitl='git log --graph --decorate --pretty=oneline --abbrev-commit'
-alias gitpp='git pull ; git push'
+alias gitpp='git pull && git push'
 
 # misc
 alias rm='rm -f'
@@ -89,10 +91,9 @@ alias update='sudo pacman -Syu --noconfirm; packer -Syu'
 alias mpv='mpv --msg-level=cplayer=fatal:ffmpeg=fatal --loop=inf --cache=no'
 alias checkip='curl -s http://checkip.amazonaws.com/'
 alias digs='dig +noall +answer'
-alias su-code='sudo -E code --user-data-dir=/home/kyle/.config/Code/'
 alias scrot="scrot '%Y-%m-%d_\$p_\$wx\$h.png'"
 
-function g {
+function gs {
     if [[ $# > 0 ]]; then
         git "$@"
     else
