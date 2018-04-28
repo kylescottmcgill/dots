@@ -15,7 +15,7 @@
 [user]
 	email = email@kylescottmcgill.com
 	name = Kyle Scott Mcgill
-	signingkey = 32C9083E7691D6D7
+	signingkey = B57E94C05BBE586F
 [github]
 	user = kylescottmcgill
 [format]
@@ -67,7 +67,8 @@
 	up = "!git remote update -p; git merge --ff-only @{u}"
 
 	# Open all modified files in my editor
-	wip = "!$EDITOR $(git ls-files -m)"
+    wip = "!$EDITOR $(git ls-files -m)"
+    open = "!$EDITOR $(git-open.sh)"
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f

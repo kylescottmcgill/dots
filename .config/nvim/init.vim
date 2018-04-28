@@ -55,7 +55,7 @@ set titleold="Terminal"
 set titlestring=%F
 set clipboard=unnamed
 set cmdheight=2
-set mouse=a
+set mouse-=a
 set noshowmode
 
 set bomb
@@ -150,8 +150,8 @@ filetype plugin indent on	 " required
 " Colors & Statusline {{{
 "
 
-set background=light
-colorscheme paramount
+set background=dark
+colorscheme itg_flat_transparent
 
 set cursorline
 set nocursorcolumn

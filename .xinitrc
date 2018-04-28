@@ -19,7 +19,7 @@ export GPG_TTY=$(tty)
 /usr/bin/gpg-connect-agent updatestartuptty /bye &>/dev/null
 
 monitor &
-xinput disable $(xinput | grep 'Touch' | grep -Po 'id=\d+' | cut -d'=' -f2) &
+#xinput disable $(xinput | grep 'Touch' | grep -Po 'id=\d+' | cut -d'=' -f2) &
 xmodmap ~/.xmodmap &
 
 exec 2bwm

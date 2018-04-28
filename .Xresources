@@ -1,6 +1,15 @@
-Xcursor.size: 16
+! Xcursor.size: 32
+
+Xft.dpi: 192
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
 
 ! Misc Applications {{{
+rofi.dpi: 192
 rofi.color-enabled: true
 rofi.color-normal: #ffffff,#525d76,#f5f5f5,#df3f3f,#ffffff
 rofi.color-urgent: #ffffff,#dc322f,#f5f5f5,#df3f3f,#dc322f
