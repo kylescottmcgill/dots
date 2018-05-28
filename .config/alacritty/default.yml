@@ -19,19 +19,19 @@ window:
   # Falls back to size specified by window manager if set to 0x0.
   # (changes require restart)
   dimensions:
-    columns: 0
-    lines: 0
+    columns: 234
+    lines: 59
 
   # Adds this many blank pixels of padding around the window
   # Units are physical pixels; this is not DPI aware.
   # (change requires restart)
   padding:
-    x: 40
-    y: 40
+    x: 25
+    y: 25
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: false
+  decorations: true
 
 scrolling:
   # How many lines of scrollback to keep,
@@ -101,7 +101,7 @@ font:
     # style: Italic
 
   # Point size of the font
-  size: 13.0
+  size: 11.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.

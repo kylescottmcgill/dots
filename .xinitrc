@@ -23,5 +23,6 @@ monitor &
 xmodmap ~/.xmodmap &
 
 exec 2bwm
+#exec dwm
 
 # vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :

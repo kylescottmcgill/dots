@@ -113,8 +113,11 @@ unset MAILCHECK
 export GOPATH=$HOME
 export GOBIN=$HOME/bin
 
+# Google Cloud SDK
+export GOOGLE_CLOUD_SDK=/opt/google-cloud-sdk/bin
+
 # Rust
-export PATH="$GOBIN:$PATH"
+export PATH="$GOBIN:$GOOGLE_CLOUD_SDK:$PATH"
 
 # History
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
