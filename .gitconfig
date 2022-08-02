@@ -15,7 +15,7 @@
 [user]
 	email = email@kylescottmcgill.com
 	name = Kyle Scott Mcgill
-	signingkey = B57E94C05BBE586F
+  #signingkey = B57E94C05BBE586F
 [github]
 	user = kylescottmcgill
 [format]
@@ -80,7 +80,7 @@
 	insteadOf = https://bitbucket.org/
 [commit]
 	cleanup = strip
-	gpgsign = true
+  #gpgsign = true
 	template = /home/kyle/.gitmessage
 	verbose = true
 [http "https://gopkg.in"]

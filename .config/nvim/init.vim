@@ -50,6 +50,8 @@ set foldlevel=0
 set foldlevelstart=20	" Only fold after 20 levels on open
 set foldnestmax=10		" Nest Folds
 
+set termguicolors     " enable true colors support
+
 set title
 set titleold="Terminal"
 set titlestring=%F
@@ -87,14 +89,16 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png,*.ico,*.gif,*.ttf,*.eot,*.s
 let mapleader=","
 
 set scrolljump=10
-set scrolloff=10
+set scrolloff=999
 set sidescrolloff=12
+set fillchars=eob:\ " Requires this comment
 set showcmd				" display incomplete commands
+set completeopt-=preview
 set cmdheight=1
 set hid					" Abandoned buffers become hidden
 set formatoptions=c,q,r,t
 
-set guicursor=
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
 
 "set lazyredraw			" Don't redraw while executing macros
 
@@ -107,18 +111,20 @@ syntax sync minlines=256
 call plug#begin('~/.config/nvim/plugged')
 
 " Look and Feel
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'fxn/vim-monochrome'
-Plug 'cdmedia/itg_flat_vim'
-Plug 'vyshane/cleanroom-vim-color'
 Plug 'owickstrom/vim-colors-paramount'
-Plug 'mhartington/oceanic-next'
 Plug 'reedes/vim-colors-pencil'
-Plug 'rainglow/vim'
+Plug 'axvr/photon.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'fneu/breezy'
+Plug 'preservim/nerdtree'
 
 " UI Improvements
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 " Programming Improvments
 Plug 'sheerun/vim-polyglot'
@@ -126,16 +132,18 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-jedi'
 Plug 'w0rp/ale'
 Plug 'chr4/nginx.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'hashivim/vim-terraform'
+Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
+Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
+Plug 'hashivim/vim-vagrant'
 
 " {{{ Go
 
-Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-Plug 'garyburd/go-explorer', {'for': 'go'}
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " }}}
@@ -148,22 +156,25 @@ filetype plugin indent on	 " required
 
 " }}}
 " Colors & Statusline {{{
-"
 
 set background=dark
-colorscheme itg_flat_transparent
+" colorscheme pencil
+" colorscheme PaperColor
+set background=light
+colorscheme breezy
 
-set cursorline
+set nocursorline
 set nocursorcolumn
 
-" highlight cursorline		ctermfg=none ctermbg=grau
-highlight cursorcolumn		ctermfg=none ctermbg=gray
-highlight statusline		ctermfg=white ctermbg=black
-highlight signcolumn		ctermfg=none ctermbg=black
+highlight cursorline		ctermfg=none ctermbg=none
+highlight cursorcolumn	ctermfg=none ctermbg=none
+highlight statusline		ctermfg=none ctermbg=none
+highlight signcolumn		ctermfg=none ctermbg=none
 highlight colorcolumn		ctermfg=none ctermbg=none
-highlight BadWhitespace		ctermfg=none ctermbg=red
-" highlight OverLength		ctermfg=248 ctermbg=none
-highlight Search			ctermfg=248 ctermbg=none
+highlight BadWhitespace	ctermfg=none ctermbg=red
+" highlight OverLength	ctermfg=248 ctermbg=none
+highlight Search		    ctermfg=none ctermbg=none
+highlight NonText       ctermfg=none ctermbg=none
 
 " match OverLength /\%>100v.\+/
 
@@ -177,6 +188,7 @@ augroup vimrc
 	autocmd BufReadPre * setlocal foldmethod=marker
 	autocmd BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=marker | endif
 	autocmd BufReadPre * setlocal foldlevel=0
+  autocmd InsertEnter,InsertLeave * set cul!
 augroup END
 
 augroup configgroup
@@ -194,30 +206,45 @@ augroup configgroup
 	" Limit Quick Fix
 	autocmd FileType qf call AdjustWindowHeight(3, 10)
 
-    autocmd FileType php setlocal expandtab
-    autocmd FileType php setlocal list
-    autocmd FileType php setlocal listchars=tab:+\ ,eol:-
-    autocmd FileType php setlocal formatprg=par\ -w80\ -T4
-	autocmd FileType go setlocal noexpandtab
-	autocmd FileType go setlocal shiftwidth=4
-	autocmd FileType go setlocal softtabstop=4
-	autocmd FileType go setlocal tabstop=4
-    autocmd FileType ansible setlocal tabstop=2
-    autocmd FileType ansible setlocal shiftwidth=2
-    autocmd FileType ansible setlocal softtabstop=2
-    autocmd FileType yaml setlocal tabstop=2
-    autocmd FileType yaml setlocal shiftwidth=2
-    autocmd FileType yaml setlocal softtabstop=2
-    autocmd FileType python setlocal commentstring=#\ %s
-    autocmd FileType Makefile setlocal noexpandtab
+  autocmd FileType php setlocal expandtab
+  autocmd FileType php setlocal list
+  autocmd FileType php setlocal listchars=tab:+\ ,eol:-
+  autocmd FileType php setlocal formatprg=par\ -w80\ -T4
+  autocmd FileType go setlocal noexpandtab
+  autocmd FileType go setlocal shiftwidth=4
+  autocmd FileType go setlocal softtabstop=4
+  autocmd FileType go setlocal tabstop=4
 
-	autocmd FileType * setlocal expandtab
-	autocmd FileType * setlocal shiftwidth=4
-	autocmd FileType * setlocal softtabstop=4
-	autocmd FileType * setlocal tabstop=4
+  autocmd FileType tf setlocal noexpandtab
+  autocmd FileType tf setlocal shiftwidth=4
+  autocmd FileType tf setlocal softtabstop=4
+  autocmd FileType tf setlocal tabstop=4
+
+  autocmd BufNewFile,BufRead /*.rasi setf css
+
+  autocmd FileType ansible setlocal tabstop=2
+  autocmd FileType ansible setlocal shiftwidth=2
+  autocmd FileType ansible setlocal softtabstop=2
+  autocmd FileType yaml setlocal tabstop=2
+  autocmd FileType yaml setlocal shiftwidth=2
+  autocmd FileType yaml setlocal softtabstop=2
+  autocmd FileType yaml setlocal expandtab
+  autocmd FileType python setlocal commentstring=#\ %s
+  autocmd FileType Makefile setlocal noexpandtab
+
+  autocmd FileType sh let g:sh_fold_enabled=5
+  autocmd FileType sh let g:is_bash=1
+  autocmd FileType sh set foldmethod=syntax
+
+  autocmd FileType * setlocal expandtab
+  autocmd FileType * setlocal shiftwidth=2
+  autocmd FileType * setlocal softtabstop=2
+  autocmd FileType * setlocal tabstop=2
 augroup END
 
 autocmd BufNewFile,BufRead *.py set tabstop=2 | set softtabstop=2 | set shiftwidth=2 | set textwidth=79 | set expandtab | set autoindent | set fileformat=unix
+
+autocmd VimLeave * set guicursor=a:hor100-blinkon0
 
 " }}}
 " Custom Functions {{{
@@ -281,6 +308,7 @@ nmap <leader>p :bp<cr>
 nmap <leader>n :bn<cr>
 nmap <leader>d :bd!<cr>
 nmap <leader>t :Files<cr>
+nmap <leader>r :Rg<cr>
 
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>e :edit $MYVIMRC<cr>
@@ -317,16 +345,32 @@ map <leader>o <C-p>
 " Goyo
 "
 
-let g:goyo_width="80%"
-let g:goyo_height="80%"
-let g:goyo_linenr="2"
+let g:goyo_width="65%"
+let g:goyo_height="90%"
+let g:goyo_linenr="1"
+
+function! GoyoBefore()
+  augroup clear_airline
+    autocmd!
+    autocmd BufWinEnter * setlocal nonu nornu statusline=
+  augroup END
+endfunction
+
+function! GoyoAfter()
+  augroup clear_airline
+    autocmd!
+  augroup END
+  augroup! clear_airline
+endfunction
+
+let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
 
 "
 " Lightline
 "
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'breezy',
       \ 'component': {
       \   'readonly': '%{&readonly?"⭤":""}',
       \ }
@@ -390,25 +434,31 @@ if executable('ag')
 endif
 
 " fatih/vim-go
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_types = 1
+let g:go_highlight_build_constraints = 0
+let g:go_highlight_extra_types = 0
+let g:go_highlight_fields = 0
+let g:go_highlight_functions = 0
+let g:go_highlight_methods = 0
+let g:go_highlight_operators = 0
+let g:go_highlight_structs = 0
+let g:go_highlight_types = 0
 
 let g:go_auto_sameids = 1
 
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
 let g:go_term_enabled = 0
+let g:go_metalinter_autosave = 0
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 
 let g:go_auto_type_info = 1
 
+let g:go_doc_keywordprg_enabled = 0
+
 " Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
+
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 let g:deoplete#sources#jedi#statement_length = 50
 let g:deoplete#sources#jedi#enable_cache = 1
@@ -417,5 +467,12 @@ let g:deoplete#sources#jedi#show_docstring = 0
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " }}}
+"
+" {{ vim-shfmt
+
+let g:shfmt_extra_args = '-i 2'
+let g:shfmt_fmt_on_save = 0
+
+" }}
 
 "vim: set ft=vim ts=4 sw=4 tw=78 fdm=marker foldlevel=0 noet :
