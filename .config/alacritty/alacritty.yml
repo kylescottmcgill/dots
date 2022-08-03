@@ -1,4 +1,4 @@
 import:
-  - .config/alacritty/base.yaml
-  - .config/alacritty/font.yaml
-  - .config/alacritty/themes/breeze.yaml
+  - ~/.config/alacritty/base.yaml
+  - ~/.config/alacritty/font.yaml
+  - ~/.config/alacritty/themes/breeze.yaml
