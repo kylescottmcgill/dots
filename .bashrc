@@ -93,13 +93,10 @@ shopt -s cdable_vars
 # export documents="$HOME/Documents"
 # export dropbox="$HOME/Dropbox"
 
-if [ -d /etc/bash_completion.d ]
-then
-	for file in /etc/bash_completion.d/* ; do
+for file in /etc/bash_completion.d/* ; do
 	# shellcheck source=/dev/null
-		source "$file"
-	done
-fi
+	source "$file"
+done
 
 export GPG_TTY=$(tty)
 export PINENTRY_USER_DATA="USE_CURSES=1"
@@ -111,7 +108,6 @@ export GIT_EDITOR=$EDITOR
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
-export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Golang
 export GOPATH=$HOME
@@ -154,7 +150,7 @@ man() {
 }
 
 # ls shorteners
-#alias ls='ls --color -h --group-directories-first --quoting-style=literal'
+alias ls='ls --color -h --group-directories-first --quoting-style=literal'
 alias l='ls'
 alias la='ls -A'
 alias ll='ls -lh'
@@ -207,34 +203,15 @@ function prompt_command() {
 PROMPT_COMMAND=prompt_command;
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-if type gpg-agent &>/dev/null
-then
-	if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-		gpg-connect-agent /bye >/dev/null 2>&1
-		gpg-connect-agent updatestartuptty /bye >/dev/null
-	fi
+if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+	gpg-connect-agent /bye >/dev/null 2>&1
+	gpg-connect-agent updatestartuptty /bye >/dev/null
 fi
 
 # Set SSH to use gpg-agent
-# unset SSH_AGENT_PID
-# if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-# 	export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-# fi
-# # add alias for ssh to update the tty
-# alias ssh="gpg-connect-agent updatestartuptty /bye >/dev/null; ssh"
-
-export PATH=/opt/homebrew/bin:$PATH
-
-if type brew &>/dev/null
-then
-  HOMEBREW_PREFIX="$(brew --prefix)"
-  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
-  then
-    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-  else
-    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
-    do
-      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
-    done
-  fi
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+	export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
 fi
+# add alias for ssh to update the tty
+alias ssh="gpg-connect-agent updatestartuptty /bye >/dev/null; ssh"

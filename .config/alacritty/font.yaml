@@ -48,7 +48,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 12
+  size: 9
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -67,7 +67,7 @@ font:
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`.
-  use_thin_strokes: true
+  #use_thin_strokes: true
 
 # Display the time it takes to redraw each frame.
 # render_timer: false
