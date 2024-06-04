@@ -1,0 +1,2 @@
+unalias ls
+unalias vim
