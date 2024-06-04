@@ -13,16 +13,20 @@ xset m 1/1 0                    # No Mouse Acceleration
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-xsetroot -cursor_name left_ptr &
+xsetroot -cursor_name left_ptr
 
 export GPG_TTY=$(tty)
 /usr/bin/gpg-connect-agent updatestartuptty /bye &>/dev/null
 
-monitor &
-#xinput disable $(xinput | grep 'Touch' | grep -Po 'id=\d+' | cut -d'=' -f2) &
-xmodmap ~/.xmodmap &
+export WINIT_X11_SCALE_FACTOR=1
+#monitor &
 
-exec 2bwm
-#exec dwm
+#xmodmap ~/.xmodmap &
+#xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 1
+#setxkbmap -option altwin:swap_lalt_lwin
+
+#sxhkd &
+#exec bspwm
+exec 2bwm >| .cache/2bwm.log
 
 # vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :

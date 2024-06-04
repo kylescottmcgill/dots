@@ -92,11 +92,13 @@ shopt -s cdable_vars
 # export projects="$HOME/projects"
 # export documents="$HOME/Documents"
 # export dropbox="$HOME/Dropbox"
-
-for file in /etc/bash_completion.d/* ; do
-	# shellcheck source=/dev/null
-	source "$file"
-done
+if [[ -e /etc/bash_completion.d/ ]];
+then
+  for file in /etc/bash_completion.d/* ; do
+    # shellcheck source=/dev/null
+    source "$file"
+  done
+fi
 
 export GPG_TTY=$(tty)
 export PINENTRY_USER_DATA="USE_CURSES=1"
@@ -129,12 +131,20 @@ export MYSQL_HISTFILE=/dev/null
 export LESSHISTFILE=/dev/null
 export BZR_LOG=/dev/null
 
-export BROWSER=chromium
+export BROWSER=google-chrome-stable
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CURRENT_DESKTOP="gtk"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export WWW_HOME="$HOME/.cache"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export GTK_THEME="Paper"
+
+# Sway hacks
+export WLR_NO_HARDWARE_CURSORS=1
+export WLR_RENDERER=vulkan
+export XWAYLAND_NO_GLAMOR=1
+export LIBVA_DRIVER_NAME=nvidia
+export VDPAU_DRIVER=nvidia
 
 #export GDK_SCALE=2
 
@@ -182,6 +192,8 @@ alias update='sudo pacman -Syu --noconfirm; packer -Syu'
 
 alias scrot="scrot '%Y-%m-%d_\$p_\$wx\$h.png'"
 
+alias bt-restart="sudo modprobe -r btusb; sudo modprobe btusb"
+
 function gs {
     if [[ $# > 0 ]]; then
         git "$@"
@@ -196,8 +208,15 @@ function time_since_last_commit() {
   git log -1 --pretty=format:"%ar" | sed 's/\([0-9]*\) \(.\).*/\1\2/'
 }
 
+function is_ssh() {
+  if [[ $SSH_CONNECTION != "" ]]
+  then
+    echo "${HOSTNAME} "
+  fi
+}
+
 function prompt_command() {
-	PS1=" ${normal}\W$(rt=$?; [[ $rt = 0 ]] && echo ${black} || echo ${red}) »${normal} "
+  PS1=" $(is_ssh)${normal}\W$(rt=$?; [[ $rt = 0 ]] && echo ${black} || echo ${red}) »${normal} "
 }
 
 PROMPT_COMMAND=prompt_command;

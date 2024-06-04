@@ -1,0 +1,28 @@
+live_config_reload = true
+
+[bell]
+animation = "EaseOutExpo"
+color = "#ffffff"
+duration = 0
+
+[cursor]
+style = "Underline"
+unfocused_hollow = true
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+dynamic_padding = true
+
+[window.dimensions]
+columns = 101
+lines = 17
+
+[window.padding]
+x = 6
+y = 3

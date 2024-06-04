@@ -2,25 +2,10 @@ Xcursor.size: 16
 
 ! Xft.dpi: 92
 Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-! Misc Applications {{{
-! rofi.dpi: 92
-rofi.color-enabled: true
-rofi.color-normal: #ffffff,#525d76,#f5f5f5,#df3f3f,#ffffff
-rofi.color-urgent: #ffffff,#dc322f,#f5f5f5,#df3f3f,#dc322f
-rofi.color-active: #ffffff,#c2cad0,#f5f5f5,#df3f3f,#c2cad0
-rofi.color-window: #ffffff,#f5f5f5
-rofi.separator-style: none
-rofi.fullscreen: false
-rofi.hide-scrollbar: true
-rofi.font: Operator Mono Light 11
-rofi.padding: 5
-rofi.lines: 10
-rofi.borderwidth: 0
-! }}}
 ! vim: et sw=2 syn=xdefaults
