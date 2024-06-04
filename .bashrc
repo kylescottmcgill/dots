@@ -222,20 +222,9 @@ function prompt_command() {
 PROMPT_COMMAND=prompt_command;
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-	gpg-connect-agent /bye >/dev/null 2>&1
-	gpg-connect-agent updatestartuptty /bye >/dev/null
-fi
-
-# Set SSH to use gpg-agent
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-	export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-fi
-# add alias for ssh to update the tty
-alias ssh="gpg-connect-agent updatestartuptty /bye >/dev/null; ssh"
-
-if [[ "$(uname)" == "Darwin" ]]
-then
-	source ~/.bash/mac.sh
-fi
+case "$(uname)" in
+  "Darwin")
+    source $HOME/.bash/mac.sh;;
+  "Linux")
+    source $HOME/.bash/linux.sh;;
+esac
