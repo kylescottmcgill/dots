@@ -1,9 +1,9 @@
-import = [
-	"/home/turtil/.config/alacritty/base.toml", 
-	"/home/turtil/.config/alacritty/font.toml", 
-	"/home/turtil/.config/alacritty/themes/breeze.toml", 
+general.import = [
+	"/home/turtil/.config/alacritty/base.toml",
+	"/home/turtil/.config/alacritty/font.toml",
+	"/home/turtil/.config/alacritty/themes/breeze.toml",
 
-	"/Users/kyle/.config/alacritty/base.toml", 
-	"/Users/kyle/.config/alacritty/font.toml", 
+	"/Users/kyle/.config/alacritty/base.toml",
+	"/Users/kyle/.config/alacritty/font.toml",
 	"/Users/kyle/.config/alacritty/themes/breeze.toml"
 ]

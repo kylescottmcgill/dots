@@ -27,6 +27,11 @@ export WINIT_X11_SCALE_FACTOR=1
 
 #sxhkd &
 #exec bspwm
-exec 2bwm >| .cache/2bwm.log
+if [[ $REASON == "steam" ]]
+then
+    exec openbox
+else
+    exec 2bwm >| .cache/2bwm.log
+fi
 
 # vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :
