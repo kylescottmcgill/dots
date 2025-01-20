@@ -160,8 +160,8 @@ filetype plugin indent on	 " required
 set background=dark
 " colorscheme pencil
 " colorscheme PaperColor
-set background=light
-colorscheme breezy
+"set background=light
+colorscheme paramount
 
 set nocursorline
 set nocursorcolumn

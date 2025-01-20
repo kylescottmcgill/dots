@@ -211,7 +211,7 @@ function time_since_last_commit() {
 function is_ssh() {
   if [[ $SSH_CONNECTION != "" ]]
   then
-    echo "${HOSTNAME} "
+    echo "${HOSTNAME} :: "
   fi
 }
 
