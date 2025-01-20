@@ -146,6 +146,8 @@ export XWAYLAND_NO_GLAMOR=1
 export LIBVA_DRIVER_NAME=nvidia
 export VDPAU_DRIVER=nvidia
 
+export MANGOHUD=1
+
 #export GDK_SCALE=2
 
 man() {
@@ -188,7 +190,7 @@ alias less='less -F -g -i -M -R -S -w -X -z -4'
 
 alias packer='packer --noconfirm --noedit --auronly'
 alias search='\packer -Ss'
-alias update='sudo pacman -Syu --noconfirm; packer -Syu'
+alias update='sudo pacman -Syu --noconfirm; yay -Syu'
 
 alias scrot="scrot '%Y-%m-%d_\$p_\$wx\$h.png'"
 

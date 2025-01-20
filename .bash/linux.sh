@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+# Needs a better place, but for now, we will just put this here
+export OLLAMA_HOST="ollama.kuro.lan:80"
+
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
 	gpg-connect-agent /bye >/dev/null 2>&1
 	gpg-connect-agent updatestartuptty /bye >/dev/null
