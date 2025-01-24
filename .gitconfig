@@ -5,6 +5,7 @@
 	autocrlf = false
 	eol = lf
 	filemode = false
+	excludesFile = /Users/kyle/.gitignore-global
 [color]
 	filemode = false
 	diff = auto
