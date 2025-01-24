@@ -119,7 +119,9 @@ export GOBIN=$HOME/bin
 export GOOGLE_CLOUD_SDK=/opt/google-cloud-sdk/bin
 
 # Rust
-export PATH="$GOBIN:$GOOGLE_CLOUD_SDK:$PATH"
+export RUSTBIN="$HOME/.cargo/bin"
+
+export PATH="$RUSTBIN:$GOBIN:$GOOGLE_CLOUD_SDK:$PATH"
 
 # History
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries

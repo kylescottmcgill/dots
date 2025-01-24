@@ -128,8 +128,11 @@ Plug 'junegunn/limelight.vim'
 
 " Programming Improvments
 Plug 'sheerun/vim-polyglot'
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-jedi'
+Plug 'vim-denops/denops.vim'
+Plug 'Shougo/ddc.vim'
+Plug 'Shougo/ddu.vim'
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'zchee/deoplete-jedi'
 Plug 'w0rp/ale'
 Plug 'chr4/nginx.vim'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -144,7 +147,7 @@ Plug 'hashivim/vim-vagrant'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+" Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " }}}
 
@@ -341,6 +344,8 @@ map <leader>o <C-p>
 " Plugin bindings and functionality {{{
 "
 
+let g:denops#debug = 1
+
 "
 " Goyo
 "
@@ -456,15 +461,15 @@ let g:go_auto_type_info = 1
 let g:go_doc_keywordprg_enabled = 0
 
 " Shougo/deoplete.nvim
-let g:deoplete#enable_at_startup = 1
-
-call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
-
-let g:deoplete#sources#jedi#statement_length = 50
-let g:deoplete#sources#jedi#enable_cache = 1
-let g:deoplete#sources#jedi#show_docstring = 0
-
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" let g:deoplete#enable_at_startup = 1
+"
+" call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+"
+" let g:deoplete#sources#jedi#statement_length = 50
+" let g:deoplete#sources#jedi#enable_cache = 1
+" let g:deoplete#sources#jedi#show_docstring = 0
+"
+" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " }}}
 "
