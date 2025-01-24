@@ -112,14 +112,15 @@ export GIT_EDITOR=$EDITOR
 unset MAILCHECK
 
 # Golang
-export GOPATH=$HOME
-export GOBIN=$HOME/bin
+export GOPATH=$HOME/.local/
+export GOBIN=$HOME/.local/bin
 
 # Google Cloud SDK
 export GOOGLE_CLOUD_SDK=/opt/google-cloud-sdk/bin
 
 # Rust
-export RUSTBIN="$HOME/.cargo/bin"
+export CARGO_HOME="$HOME/.local/lib/cargo"
+export RUSTBIN="$CARGO_HOME/bin"
 
 export PATH="$RUSTBIN:$GOBIN:$GOOGLE_CLOUD_SDK:$PATH"
 
