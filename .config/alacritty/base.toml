@@ -1,3 +1,6 @@
+[env]
+ALACRITTY="true"
+
 [general]
 live_config_reload = true
 
@@ -11,7 +14,7 @@ style = "Underline"
 unfocused_hollow = true
 
 [mouse]
-hide_when_typing = true
+hide_when_typing = false
 
 [scrolling]
 history = 10000

@@ -1,4 +1,0 @@
-import:
-  - ~/.config/alacritty/base.toml
-  - ~/.config/alacritty/font.toml
-  - ~/.config/alacritty/themes/breeze.toml
