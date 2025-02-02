@@ -160,11 +160,17 @@ filetype plugin indent on	 " required
 " }}}
 " Colors & Statusline {{{
 
-set background=dark
-" colorscheme pencil
+set background=light
+
+if $ALACRITTY_THEME ==# "Light"
+    set background=light
+else
+    set background=dark
+endif
+
+colorscheme pencil
 " colorscheme PaperColor
-"set background=light
-colorscheme paramount
+" colorscheme paramount
 
 set nocursorline
 set nocursorcolumn
@@ -472,12 +478,11 @@ let g:go_doc_keywordprg_enabled = 0
 " inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " }}}
-"
-" {{ vim-shfmt
+" {{{ vim-shfmt
 
 let g:shfmt_extra_args = '-i 2'
 let g:shfmt_fmt_on_save = 0
 
-" }}
+" }}}
 
 "vim: set ft=vim ts=4 sw=4 tw=78 fdm=marker foldlevel=0 noet :
