@@ -19,19 +19,14 @@ export GPG_TTY=$(tty)
 /usr/bin/gpg-connect-agent updatestartuptty /bye &>/dev/null
 
 export WINIT_X11_SCALE_FACTOR=1
+nitrogen --restore
+.screenlayout/home.sh
 #monitor &
 
 #xmodmap ~/.xmodmap &
 #xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 1
 #setxkbmap -option altwin:swap_lalt_lwin
 
-#sxhkd &
-#exec bspwm
-if [[ $REASON == "steam" ]]
-then
-    exec openbox
-else
-    exec 2bwm >| .cache/2bwm.log
-fi
+exec 2bwm >| .cache/2bwm.log
 
 # vim: ft=sh ts=4 sw=4 tw=0 fdm=marker foldlevel=0 :
