@@ -1,0 +1,10 @@
+#!/bin/bash
+
+arg="$1"
+
+case $arg in
+  "up") pamixer --increase 5;;
+  "down") pamixer --decrease 5;;
+  "mute") pamixer --toggle-mute;;
+esac
+

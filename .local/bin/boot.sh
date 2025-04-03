@@ -1,0 +1,1 @@
+efibootmgr --create --disk /dev/nvme1n1 --part 1 --label "Arch Linux" --loader /vmlinuz-linux --unicode "root=UUID=4106a157-08f8-4146-881d-d807a6114571 rw nvidia_drm.modeset=1 initrd=\amd-ucode.img initrd=\initramfs-linux.img"

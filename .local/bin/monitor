@@ -1,0 +1,78 @@
+#!/bin/sh
+
+# case $1 in
+#   "1") xrandr \
+#     --output DP-0 --off \
+#     --output DP-1 --off \
+#     --output DP-2 --primary --mode 3440x1440 --pos 0x0 \
+#     --output DP-3 --off \
+#     --output DP-4 --off \
+#     --output DP-5 --off
+#       ;;
+#   "2") xrandr \
+#     --output DP-0 --mode 3840x2160 --pos 0x0 \
+#     --output DP-1 --off \
+#     --output DP-2 --primary --mode 3440x1440 --pos 3840x360 \
+#     --output DP-3 --off \
+#     --output DP-4 --off \
+#     --output DP-5 --off
+#       ;;
+#   "steamdeck") xrandr \
+#     --output DP-0 --off \
+#     --output DP-1 --off \
+#     --output DP-2 --primary --mode 1680x1050 --pos 0x0 \
+#     --output DP-3 --off \
+#     --output DP-4 --off \
+#     --output DP-5 --off
+#       ;;
+#   "mac") xrandr \
+#     --output DP-0 --primary --mode 2560x1440 --pos 0x0 \
+#     --output DP-1 --off \
+#     --output DP-2 --off \
+#     --output DP-3 --off \
+#     --output DP-4 --off \
+#     --output DP-5 --off
+#       ;;
+#   "left") xrandr \
+#     --output DP-0 --mode 3840x2160 --pos 0x0 \
+#     --output DP-1 --off \
+#     --output DP-2 --primary --mode 3440x1440 --pos 3840x360 \
+#     --output DP-3 --off \
+#     --output DP-4 --off \
+#     --output DP-5 --off
+#       ;;
+#   "right") xrandr \
+#     --output DP-0 --off \
+#     --output DP-1 --off \
+#     --output DP-2 --primary --mode 3440x1440 --pos 0x360 \
+#     --output DP-3 --off \
+#     --output DP-4 --mode 3840x2160 --pos 3440x0 \
+#     --output DP-5 --off
+#       ;;
+#   *) xrandr \
+#     --output DP-0 --mode 3840x2160 --pos 0x0  \
+#     --output DP-1 --off \
+#     --output DP-2 --primary --mode 3440x1440 --pos 3840x360 \
+#     --output DP-3 --off \
+#     --output DP-4 --mode 3840x2160 --pos 7280x0 \
+#     --output DP-5 --off
+#       ;;
+# esac
+
+# xrandr \
+#   --output DP1 --mode 3840x2160 --pos 0x0 --set "Broadcast RGB" "Full" \
+#   --output DP2 --primary --mode 3840x2160 --right-of DP1 --set "Broadcast RGB" "Full" \
+#   --output eDP1 --mode 2560x1440 --right-of DP2 --set "Broadcast RGB" "Full" \
+#   --output VIRTUAL1 --off
+
+xrandr \
+  --output DP1 --mode 3840x2160 --pos 0x0 --set "Broadcast RGB" "Full" \
+  --output DP2 --primary --mode 3840x2160 --right-of DP1 --set "Broadcast RGB" "Full" \
+  --output eDP1 --off \
+  --output VIRTUAL1 --off
+
+xset s off
+xset s noblank
+xset -dpms
+
+nitrogen --restore 2>/dev/null
