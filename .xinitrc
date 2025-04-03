@@ -19,9 +19,7 @@ export GPG_TTY=$(tty)
 /usr/bin/gpg-connect-agent updatestartuptty /bye &>/dev/null
 
 export WINIT_X11_SCALE_FACTOR=1
-nitrogen --restore
-.screenlayout/home.sh
-#monitor &
+monitor &
 
 #xmodmap ~/.xmodmap &
 #xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 1

@@ -2,7 +2,7 @@
 draw_bold_text_with_bright_colors = false
 
 [font]
-size = 14
+size = 12
 
 [font.bold]
 family = "JetBrains Mono"
@@ -14,7 +14,7 @@ style = "Bold Italic"
 
 [font.glyph_offset]
 x = 1
-y = 2
+y = 1
 
 [font.italic]
 family = "JetBrains Mono"
@@ -24,5 +24,5 @@ style = "Italic"
 family = "JetBrains Mono"
 
 [font.offset]
-x = 2
-y = 6
+x = 1
+y = 3
