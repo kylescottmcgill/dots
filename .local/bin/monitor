@@ -66,10 +66,10 @@
 #   --output VIRTUAL1 --off
 
 xrandr \
-  --output DP1 --mode 3840x2160 --pos 0x0 --set "Broadcast RGB" "Full" \
-  --output DP2 --primary --mode 3840x2160 --right-of DP1 --set "Broadcast RGB" "Full" \
-  --output eDP1 --off \
-  --output VIRTUAL1 --off
+  --output DP-1 --primary --mode 3840x2160 --pos 0x0 --set "Broadcast RGB" "Full" \
+  --output DP-2 --mode 3840x2160 --right-of DP-1 --set "Broadcast RGB" "Full" \
+  --output eDP-1 --off \
+  --output DVI-I-1-1 --off
 
 xset s off
 xset s noblank
